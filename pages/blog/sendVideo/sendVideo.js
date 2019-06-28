@@ -126,7 +126,7 @@ Page({
         //调用视频上传的接口
         that.uploadFile(tempFilePaths);
         //视频的缩略图的上传
-        that.thumbUploadFile(res.thumbTempFilePath);
+        //that.thumbUploadFile(res.thumbTempFilePath);
       },
       fail: function (res) { },
       complete: function (res) { },

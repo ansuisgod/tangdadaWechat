@@ -30,9 +30,6 @@ Page({
     });
     this.getDrafBoxNumber();//获取草稿箱的条数的接口
 
-
-    console.log(JSON.parse(options.info))
-
   },
   /**
    * @desc:删除预览图片
@@ -212,7 +209,7 @@ Page({
           };
       
       //打印日志
-      console.log("tagId=" + tagId + "&platform=" + platform + "&html=" + html + "&title=" + title + "&wxSessionkey=" + wx_sessionKey + "&content=" + contents);
+      console.log("tagId=" + tagId + "&platform=" + platform + "&html=" + html + "&title=" + title + "&wxSessionkey=" + this.data.wxSessionKey + "&content=" + contents);
       abstac.sms_Interface(app.publicVariable.postBlogInterfaceAddress,
         { platform: platform, html: html, title: title, content: contents, wx_session_key: this.data.wxSessionKey, tag_id: tagId},
       function(res){
