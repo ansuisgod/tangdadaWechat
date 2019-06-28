@@ -1,0 +1,24 @@
+<!--pages/my/my_badge/my_badge.wxml-->
+
+<view class='myBadge-box'>
+
+  <block wx:for="{{myBadgeList}}">
+    <view class='myBadge-box-list' data-info='{{item}}' bindtap='goBadgeDetails'>
+      <view class='myBadge-box-list-img'>
+        <image class='' style='' src='{{item.image}}' mode='' />
+      </view>
+      <view class='myBadge-box-list-img-title'>{{item.name}}</view>
+      <view class='myBadge-box-list-img-num'>已获得{{item.type}}枚</view>
+    </view>
+  </block>
+
+</view>
+
+
+
+
+
+
+
+  <view bindtap='GoRules' class="float-button2">规则</view>
+  <!-- 悬浮按钮END -->

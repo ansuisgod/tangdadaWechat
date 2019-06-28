@@ -1,0 +1,24 @@
+/* pages/inputNickName/inputNickName.wxss */
+.conBox{
+  margin: 100rpx 0 0 0;
+}
+.name{
+  width: 90%;
+  height: 60rpx;
+  border-bottom: 1px solid #5e5e5e;
+  margin: 30rpx 0 0 30rpx;
+}
+.name input{
+  font-size: 26rpx;
+  text-align: center;
+}
+.next{
+  margin: 40rpx 0 0 0;
+}
+.next button{
+  width: 90%;
+  height: 80rpx;
+  font-size:0.7rem;
+  line-height: 80rpx;
+  border-radius: 50rpx;
+}

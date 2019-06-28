@@ -1,0 +1,406 @@
+/* pages/my/Statistical/Statistical.wxss */
+@import '../../../components/wux.wxss';
+
+/* 选择区 */
+.chooseBox{
+  height: 100rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+
+.chooseBox-bar1{
+  height: 100rpx;
+  width: 150rpx;
+  color: white;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,123,204,0.6);
+}
+
+.chooseBox-bar2{
+  height: 100rpx;
+  width: 150rpx;
+  color: white;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(230,88,83,0.6);
+}
+
+.chooseBox-bar3{
+  height: 100rpx;
+  width: 150rpx;
+  color: white;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(248,155,23,0.6);
+}
+
+.chooseBox-bar4{
+  height: 100rpx;
+  width: 150rpx;
+  color: white;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(92,183,92,0.6);
+}
+
+.chooseBox-bar5{
+  height: 100rpx;
+  width: 150rpx;
+  color: white;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(78,180,210,0.6);
+}
+
+
+
+
+
+/* 遮罩层 */
+.addBox-choose-cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 33;  
+}
+
+
+
+
+/* 日历 */
+
+
+.choose-box{
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.choose-box-lft{
+  flex: 1;
+  font-size: 28rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5fbe5f;
+  border-bottom-left-radius: 20rpx;
+}
+
+.choose-box-rit{
+  flex: 1;
+  font-size: 28rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #53b9d7;
+  border-bottom-right-radius: 20rpx;
+}
+
+
+
+
+
+
+
+
+
+.text_center {
+  text-align: center;
+}
+
+.selected_date {
+  padding: 20rpx;
+  overflow: hidden;
+}
+
+.selected_date>view {
+  width: 33.3%;
+  float: left;
+}
+
+.calendar_panel {
+  width: 100%;
+  height: 600rpx;
+}
+
+.calendar_box {
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+  border-bottom: 1rpx solid #ececec;
+}
+
+.weekday_label {
+  width: 14.28%;
+  float: left;
+  display: block;
+  text-align: center;
+  font-size: 26rpx;
+  padding: 10rpx 0;
+}
+
+.weekday_label>text {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  display: inline-block;
+}
+
+.select_icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.active_date {
+  background: #ff7382;
+  color: #fff;
+  border-radius: 50%;
+}
+
+
+.calendar_box:nth-child(2) .weekday_label{
+  float: right;
+}
+
+
+
+
+
+
+
+
+/* .addBox-choose-cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 33;
+} */
+
+
+
+/* 弹框 */
+.addBox-choose-content {
+}
+
+.addBox-choose-content-main {
+  /* height: 40%; */
+  width: 100%;
+  /* background-color: white; */
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  
+}
+
+
+.main-heights1{
+  height:630rpx;
+  background-color: rgba(255,255,255,1);
+}
+
+
+
+
+.addBox-choose-content-del image {
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+/* .addBox-choose-cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 33;
+} */
+
+/* 打开动画 */
+
+.addBox-choose-content-main {
+  -webkit-animation: slidingAN 0.3s linear 1 forwards;
+  animation: slidingAN 0.3s linear 1 forwards;
+}
+
+@keyframes slidingAN {
+  from {
+    transform: translateY(70%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slidingAN {
+  from {
+    transform: translateY(70%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+
+
+
+/* 运动/ */
+
+.list-box{
+  height: 80rpx;
+  display: flex;
+  /* background-color: yellowgreen; */
+}
+
+.list-box-1{
+  font-size: 30rpx;
+  color: #9a9a9a;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: gold; */
+}
+
+.list-box-2{
+    font-size: 30rpx;
+  color: #9a9a9a;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: coral; */
+}
+
+.list-box-3{
+    font-size: 30rpx;
+  color: #9a9a9a;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: gold; */
+}
+
+.list-box-4{
+      font-size: 30rpx;
+  color: #9a9a9a;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 第一个页面样式 */
+
+.list-scrollBox{
+  width: 100%;
+  display: flex;
+}
+
+.list-scrollBox-lft{
+  width: 150rpx;
+  font-size: 30rpx;
+  color: #9a9a9a;
+}
+
+.list-scrollBox-lft-title{
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-scrollBox-lft-data{
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-scrollBox-rit{
+width: 690rpx;
+overflow: hidden;
+white-space: nowrap;
+}
+
+.scrollBox{}
+
+.scrollBox-list-titleBox{
+}
+
+.scrollBox-list-dataBox{
+}
+
+.scrollBox-list-title{
+  display:inline-block;
+  font-size: 30rpx;
+  color: #9a9a9a;
+  height: 80rpx;
+  width: 200rpx;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.scrollBox-list-data{
+    display:inline-block;
+  font-size: 30rpx;
+  color: #9a9a9a;
+  height: 60rpx;
+  width: 200rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

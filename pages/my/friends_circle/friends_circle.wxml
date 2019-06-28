@@ -1,0 +1,60 @@
+<!--pages/Page_5/friends_circle/friends_circle.wxml-->
+
+<import src="../circle/my_attention.wxml" />
+<import src="../circle/my_fans.wxml" />
+
+
+
+
+<swiper class="swiper" current="{{currentPage}}" bindchange="turnTitle">
+
+  <!-- 我的关注   -->
+  <swiper-item id="my_attention">
+    <template is="my_attention" data="{{ts,testData,followsLists}}" />
+  </swiper-item>
+
+  <!-- 我的粉丝   -->
+  <swiper-item id="my_fans">
+    <template is="my_fans" data="{{ts1,testData,fansList}}" />
+  </swiper-item>
+
+</swiper>
+
+
+
+<!-- 内容区 -->
+<view class="tabbar">
+
+
+  <!--搜索 -->
+  <view class='tabbar-search' bindtap='search'>
+    <view class='tabbar-search-imgBox'>
+      <image style='height: 40rpx;width: 40rpx;' src='../../../images/personal/ss.png' mode='' />
+    </view>
+  </view>
+
+
+  <view class='tabbar-box'>
+
+    <view style=''></view>
+
+    <view class="title" bindtap="turnPage" data-types='0'>
+      <view class='tab-name' style="{{currentPage == 0?'color: #fff':'color: #fff'}};">
+        我的关注
+      </view>
+      <view class='tab-line' style="{{currentPage == 0?'color: #fff':'color: #fe7281'}};">———</view>
+    </view>
+
+    <view class="title" bindtap="turnPage" data-types='1'>
+      <view class='tab-name' style="{{currentPage == 1?'color: #fff':'color: #fff'}};">
+        我的粉丝
+      </view>
+      <view class='tab-line' style="{{currentPage == 1?'color: #fff':'color: #fe7281'}};">———</view>
+    </view>
+
+    <view style=''></view>
+
+  </view>
+
+
+</view>

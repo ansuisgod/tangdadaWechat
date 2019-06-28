@@ -1,0 +1,104 @@
+<!--pages/my/ProductIdeasList/ProductIdeasList.wxml-->
+
+
+
+
+<view class=''>
+
+
+
+
+  <scroll-view scroll-y="true" class=" " style="height:100vh;">
+    <view class='circle-box circle-box-style'>
+
+
+
+      <block wx:for="{{getFeedList}}">
+        <view style='margin-bottom:20rpx;'>
+          <view class='circle-box-list' bindtap='GoCommentDetails' data-info="{{item}}">
+
+
+
+            <!-- 内容 -->
+            <view class='circle-box-list-content'>
+
+              <view class='circle-box-list-content-text'>{{item.contents.text}}</view>
+              <view class='circle-box-list-content-img' hidden='{{item.contents.images == null}}'>
+
+
+
+                <block wx:for="{{item.contents.images}}">
+                  <image style='height:200rpx;width:200rpx;' mode='aspectFill' src='{{item.url}}'></image>
+                </block>
+              </view>
+
+            </view>
+            <!-- 内容end -->
+
+
+          </view>
+
+
+        </view>
+
+      </block>
+
+
+
+
+
+
+
+      <view style='height:140rpx;'></view>
+
+
+    </view>
+
+
+  </scroll-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 悬浮按钮 -->
+<view class='top-box' bindtap='goFill'>
+  <image class='top' style='height: 150rpx;width: 150rpx;border-radius: 75rpx;' src='../../../images/personal/record.png'></image>
+</view>

@@ -1,0 +1,118 @@
+/* pages/my/add_motion_Fill/add_motion_Fill.wxss */
+
+
+.placeholder {
+  color: #757575;
+  font-size: 32rpx;
+}
+
+.placeholderTo {
+  /* height: 80rpx; */
+  width: 170rpx;
+  color: #333;
+  border-bottom: 5rpx solid #fe7281;
+}
+
+.add-motion-box {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  height: 130rpx;
+}
+
+.add-motion-input {
+  display: flex;
+  align-items: center;
+}
+
+.add-motion-unit {
+  color: #757575;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.buttons {
+  position: fixed;
+  left: 37.5rpx;
+  bottom: 50rpx;
+  width: 675rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  color: white;
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 100rpx;
+  z-index: 10;
+  box-shadow: 0rpx 5rpx 12rpx #959595;
+}
+
+.saveNo{
+  background-color: #e0e0e0;
+}
+
+.saveYes{
+  background: #fe7281;
+}
+
+.saveNo:active {
+  background-color: rgba(224,224,224, 0.8);
+}
+
+.saveYes:active {
+  background-color: rgba(254, 114, 129, 0.8);
+}
+
+
+.addFill{}
+
+
+.addFill-1{
+  width: 90%;
+  margin-left: 5%;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.addFill-2{
+  height: 350rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.addFill-2-img{
+  width: 260rpx;
+  height: 260rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid #fe7281;
+}
+
+.addFill-3{
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 15rpx;
+  text-align: center;
+  color: #606060;
+  font-size: 40rpx;
+}
+
+.addFill-4{
+  width: 100%;
+  height: 100rpx;
+  color: #9a9a9a;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.addFill-6{
+  width: 100%;
+  color: #9a9a9a;
+  font-size: 30rpx;
+  text-align: center;
+}

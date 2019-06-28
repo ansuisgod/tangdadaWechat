@@ -1,0 +1,93 @@
+<!--pages/blogDetail/blogDetail.wxml-->
+<import src="../../../components/an/blogDetailReply.wxml" />
+<view class='main'>
+  <view class='external'>
+
+    <!-- 用户的信息 -->
+    <view class='top'>
+      <view class='left'>
+        <image wx:if="{{content.user.head_icon}}" src='{{content.user.head_icon}}' bindtap='homePage' data-friendid='{{content.user.id}}'></image>
+        <image wx:else src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561638291636&di=bae0f8e67e988b9522d8c6010f54c599&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fa12f24e688c1cda3ff4cc453f3486a88adaf08cc2cdb-tQvJqX_fw658'></image>
+      </view>
+      <view class='center'>
+        <view class='nickName'>{{content.user.nick_name}}</view>
+        <view class='infomation'>{{content.favorite_num}}人已阅读 {{content.like_num}}人点赞 {{content.reply_size}}回复</view>
+      </view>
+      <view class='right'>
+        <view class='theEllipticalCapsule' wx:if='{{content.order_num != 0}}'>置顶</view>
+        <view class='essence' wx:if='{{content.highlighted == 1}}'>精华</view>
+      </view>
+    </view>
+    <!-- 内容展示区域视图模板 -->
+    <view class='contentOut'>
+      <view class='articalTitle'>{{content.title}}</view>
+    </view>
+
+    <view class='picArea'>
+      <view class='contentOutImg' wx:if='{{imageArr.mp4 == undefined}}' wx:for-index="idx" wx:key='property' wx:for="{{imageArr.images}}">
+        <image bindtap='largerPreview1' data-list='{{imageArr.images}}' wx:if="{{item.url}}" src='{{item.url}}'></image>
+      </view>
+      <view class='contentOutImg' wx:if='{{videoSrc}}'>
+        <video class='imgList' src="{{videoSrc}}" controls></video>
+      </view>
+    </view>
+
+    <view class='contentOut' wx:if='{{content.content_text}}'>
+      <view class='contentText'>
+        <rich-text nodes='{{content.content_text}}'></rich-text>
+      </view>
+    </view>
+
+    <!-- 评论列表的区域 -->
+    <view class='commentList'>
+      <view class='selectCommentsTitle' style='display:{{plicesShow}};'>精选评论</view>
+      <view>
+        <template is="blogDetailReply" data="{{commentList}}" />
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class='bottomBox'>
+ <!-- 用户评论框 -->
+ <view class='theCommentsSection'>
+    <view class='replay'>
+      <view class='add'>
+        <image src='../../../static/add.png' bindtap='addImages'></image>
+      </view>
+      <view class='inputArea'>
+        <input type='text' placeholder='{{dynamicPlaceHolderValue}}' value='{{replyContent}}' bindinput='inputFunc'></input>
+      </view>
+      <!-- 动态改变点赞图片 【新增加的代码】 20190606 -->
+      <view class='giveALike' style='display:{{showHiden}};'>
+        <image src='{{dynamicLikedPicSrc}}' bindtap='giveALikeMethd'></image>
+      </view>
+      
+      <view class='share'>
+        <button open-type='share' send-message-title='分享了'>
+          <image style='display:{{showHiden}};' src='../../../static/share.png'></image>
+        </button>
+        
+        <view class='sends' bindtap='commentsSent' style='display:{{sendsOrHiden}};'>发送</view>
+      </view>
+    </view>
+ </view>
+ <!-- 发表图片展示区域 -->
+<view class='picBox' wx:if="{{thumbnailShow}}">
+  <view class='addPicBox'>
+    <image src='../../../static/addPic.png' bindtap='choosePhotos'></image>
+  </view>
+  <view class='picListBox'>
+
+    <view class='listssBox'  wx:for='{{chooseImgSrc}}' wx:key='property' wx:for-index='idx'>
+      <image class='del' src='../../../static/pro-fail.png' style="display:{{imgDisplay}}" bindtap='delPic' data-ids='{{idx}}'></image>
+      <image class='thumb' src='{{item}}' style="display:{{imgDisplay}}"></image>
+    </view>
+    
+  </view>
+</view>
+
+</view>
+ 
+

@@ -1,0 +1,25 @@
+<!--pages/my/choose/choose.wxml-->
+
+
+<view class='choose'>
+
+<block wx:for="{{testData}}">
+ <view class='choose-list' bindtap='addChoose'>
+   <view class='choose-list-lft'>
+    <image style='height:30rpx;width:30rpx;' src='{{is_vote == 0 ? "../../../images/personal/checkbox_selected_big_remind.png" : "../../../images/personal/checkbox_big_remind.png"}}' mode='' />
+   </view>
+   <view class='choose-list-rit'>{{item.name}}</view>
+ </view>
+ </block>
+
+
+
+<view class='SaveButton-box'>
+  <view class='SaveButton'>确定</view>
+</view>
+
+
+
+</view>
+
+

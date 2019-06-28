@@ -1,0 +1,255 @@
+/* pages/my/Remind_set/Remind_set.wxss */
+@import '../../../components/wux.wxss';
+/* 悬浮按钮 */
+
+
+
+
+
+.set_global {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 33;
+}
+
+page{
+  background-color: #f6f6f6;
+}
+
+
+.maxBox{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  justify-content: center;
+}
+
+
+.setBox{
+  height: 550rpx;
+  width: 100%;
+}
+
+
+.setBox-top{
+  height: 200rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: yellowgreen; */
+}
+
+.setBox-top image{
+  height: 200rpx;
+  width: 200rpx;
+}
+
+.setBox-bot{
+  height: 350rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: gold; */
+}
+
+.setBox-bot image{
+  height: 280rpx;
+  width: 380rpx;
+}
+
+
+
+
+
+.maskBox{
+  z-index: 35;
+  height: 180rpx;
+  width: 100%;
+
+  position: fixed;
+  top: 42%;
+  left: 0;
+
+  display: flex;
+
+  /* background-color: red; */
+}
+
+.maskBox-z{
+  flex: 1;
+}
+
+.maskBox-lft{
+  flex: 1;
+}
+
+.maskBox-lft-img{
+  height: 130rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.maskBox-lft-img image{
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.maskBox-lft-text{
+  color: #606060;
+  font-size: 35rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.maskBox-rit{
+  flex: 1;
+
+}
+
+.maskBox-rit-img{
+  height: 130rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.maskBox-rit-img image{
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.maskBox-rit-text{
+  color: #606060;
+  font-size: 35rpx;
+  height: 50rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* 列表样式 */
+
+
+.set_list{
+  background-color: white;
+  width: 100%;
+  position: relative;
+  margin-top: 20rpx;
+}
+
+.set_list-1{
+  height: 70rpx;
+  width: 90%;
+  margin-left: 5%;
+  /* background-color: yellow; */
+display: flex;
+}
+
+.set_list-1-time{
+  font-size: 35rpx;
+  color: #000000;
+  flex: 3;
+  display: flex;
+  align-items: center;
+}
+
+.set_list-1-date{
+  font-size: 45rpx;
+  color: #fe7281;
+  flex: 7;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.set_list-2{
+  font-size: 28rpx;
+  color: #606060;
+  height: 70rpx;
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  /* background-color: coral; */
+}
+
+.set_list-3{
+  font-size: 28rpx;
+  color: #606060;
+  height: 50rpx;
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  align-items: flex-start;
+  /* background-color: blueviolet; */
+}
+
+.set_list-4{
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: yellowgreen; */
+}
+
+.set_list-4-box{
+  height: 65rpx;
+  width: 150rpx;
+  background-color: #ff7382;
+  font-size: 30rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-right-radius: 40rpx;
+  border-bottom-right-radius: 40rpx;
+}
+
+
+.set_list-5{
+  height: 30rpx;
+}
+
+.set_list-pos{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /* background-color: goldenrod; */
+  display: flex;
+  height: 50rpx;
+}
+
+.set_list-pos-head{}
+
+.set_list-pos-list{
+  height: 50rpx;
+  background-color: #f5f5f5;
+  
+}
+
+
+/* 遮罩层 */
+.addBox-choose-cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 33;
+}
+
+

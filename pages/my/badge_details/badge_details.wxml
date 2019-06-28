@@ -1,0 +1,29 @@
+<!--pages/my/badge_details/badge_details.wxml-->
+
+
+<view class='badgeDetails-box'>
+
+
+<view class='badgeDetails-box-title'>
+
+ <view class=''>{{levelsList.descriptions}}</view>
+
+</view>
+
+
+  <block wx:for="{{levelsList.levels}}">
+    <view class='badgeDetails-box-list'>
+      <view class='badgeDetails-box-list-img'>
+        <image class='' style='' src='{{item.grey_image}}' mode='' />
+        <!-- {{levelsList.level == 0 ? item.grey_image : levelsList.level == 1 ? item.light_image}} -->
+      </view>
+      <view class='badgeDetails-box-list-img-title'>{{item.name}}</view>
+    </view>
+  </block>
+
+
+
+
+
+
+</view>

@@ -1,0 +1,616 @@
+/* pages/my/Modify_SMS_alerts/Modify_SMS_alerts.wxss */
+/* pages/my/SMS_alerts/SMS_alerts.wxss */
+
+page{
+  background-color: #f6f6f6;
+}
+
+.head{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 70rpx;
+  width: 100%;
+  z-index: 10;
+  background: #f6f6f6;
+  /* box-shadow: 0rpx 2rpx 6rpx #959595; */
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.SMSBox{}
+
+.SMSBox-list{
+  height: 100rpx;
+  display: flex;
+  background-color: white;
+}
+
+.SMSBox-1{
+  width: 30rpx;
+}
+
+.SMSBox-2s{
+  width: 600rpx;
+  color:#757575;
+  font-size:30rpx;
+  display:flex;
+  border-bottom:1rpx solid #d9d9d9;
+  align-items:center;
+  justify-content:flex-start;
+}
+
+.SMSBox-3s{
+  width:120rpx;
+  border-bottom:1rpx solid #d9d9d9;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.SMSBox-2{
+  width: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.SMSBox-2 image{
+  height: 55rpx;
+  width: 47rpx;
+}
+
+.SMSBox-3{
+  width: 580rpx;
+  color: #757575;
+  font-size: 30rpx;
+  display: flex;
+  border-bottom: 1rpx solid #d9d9d9;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.SMSBox-4{
+  width: 60rpx;
+  border-bottom: 1rpx solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SMSBox-4 image{
+  height: 40rpx;
+  width: 40rpx;
+}
+
+
+
+
+/* 输入验证码 */
+
+.SMSBox-list2{
+  height: 100rpx;
+  display: flex;
+  background-color: white;
+}
+
+.SMSBox-1-2{
+  width: 30rpx;
+}
+
+.SMSBox-2-2{
+  width: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.SMSBox-2-2 image{
+  height: 55rpx;
+  width: 47rpx;
+}
+
+.SMSBox-3-2{
+  width: 400rpx;
+  color: #757575;
+  font-size: 30rpx;
+  display: flex;
+  border-bottom: 1rpx solid #d9d9d9;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.SMSBox-4-2{
+  width: 240rpx;
+  border-bottom: 1rpx solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: yellowgreen; */
+}
+
+.SMSBox-4-2-code{
+  height: 60rpx;
+  width: 200rpx;
+  background-color: #fe7282;
+  font-size: 28rpx;
+  color: white;
+  border-radius: 40rpx;
+display: flex;
+align-items: center;
+justify-content: center;
+box-shadow:0rpx 2rpx 6rpx #f5f5f5;
+}
+
+
+/* .grey{
+  background-color: 
+} */
+
+/* 提醒频率 */
+.SMSBox-list-3{
+  height: 100rpx;
+  display: flex;
+  background-color: white;
+}
+
+.SMSBox-1-3{
+  width: 30rpx;
+}
+
+.SMSBox-2-3{
+  width: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.SMSBox-2-3 image{
+  height: 55rpx;
+  width: 47rpx;
+}
+
+.SMSBox-3-3{
+  width: 450rpx;
+  color: #757575;
+  font-size: 30rpx;
+  display: flex;
+  border-bottom: 1rpx solid #d9d9d9;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.SMSBox-4-3{
+  width: 60rpx;
+  border-bottom: 1rpx solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: yellowgreen; */
+}
+
+
+.SMSBox-4-3 image{
+  height: 40rpx;
+  width: 40rpx;
+}
+
+
+.SMSBox-5-3{
+  width: 130rpx;
+  color: #757575;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.SMSBox-3-3s{
+  width: 300rpx;
+  color: #757575;
+  font-size: 30rpx;
+  display: flex;
+  border-bottom: 1rpx solid #d9d9d9;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.SMSBox-5-3s{
+  width: 280rpx;
+  color: #757575;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+/* 弹框 */
+.addBox-choose-content {
+}
+
+.addBox-choose-content-main {
+  /* height: 40%; */
+  width: 100%;
+  /* background-color: white; */
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 35;
+  
+}
+
+.main-heights1{
+  height: 550rpx;
+}
+
+.main-heights2{
+  height: 445rpx;
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+  background-color: rgba(255,255,255,0.9);
+}
+
+.main-heights3{
+  height:630rpx;
+  background-color: rgba(255,255,255,1);
+}
+
+.main-heights4{
+  height:640rpx;
+  background-color: rgba(255,255,255,1);
+}
+
+.addBox-choose-content-del image {
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+.addBox-choose-cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 33;
+}
+
+/* 打开动画 */
+
+.addBox-choose-content-main {
+  -webkit-animation: slidingAN 0.3s linear 1 forwards;
+  animation: slidingAN 0.3s linear 1 forwards;
+}
+
+@keyframes slidingAN {
+  from {
+    transform: translateY(70%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slidingAN {
+  from {
+    transform: translateY(70%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+/* 测量弹框内容 */
+.addBox-choose-content-mainList1{
+  float: left;
+  color: #000000;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:0rpx 0rpx 4rpx #333333;
+  height: 80rpx;
+  width: 300rpx;
+  margin-left: 50rpx;
+  margin-top: 25rpx;
+  border-radius: 10rpx;
+}
+
+.addBox-choose-content-mainList2{
+  float: left;
+  color: #000000;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:0rpx 0rpx 4rpx #333333;
+  height: 80rpx;
+  width: 183.33rpx;
+  margin-left: 50rpx;
+  margin-top: 25rpx;
+  border-radius: 10rpx;
+}
+
+.addBox-choose-content-mainList3{
+  float: left;
+  color: #000000;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:0rpx 0rpx 4rpx #333333;
+  height: 80rpx;
+  width: 650rpx;
+  margin-left: 50rpx;
+  margin-top: 35rpx;
+  border-radius: 10rpx;
+}
+
+
+.addBox-choose-content-mainList1:active{
+  background-color: 	#efeff5;
+}
+.addBox-choose-content-mainList2:active{
+  background-color: 	#efeff5;
+}
+.addBox-choose-content-mainList3:active{
+  background-color: 	#efeff5;
+}
+.addBox-choose-content-mainList:active{
+  background-color: 	#efeff5;
+}
+.buttons:active{
+  background-color:  rgba(254,114,129,0.8);
+}
+
+
+.addBox-choose-content-mainList{
+  float: left;
+  color: #000000;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:0rpx 0rpx 4rpx #333333;
+  height: 80rpx;
+  width: 125rpx;
+  margin-left: 50rpx;
+  margin-top: 25rpx;
+  border-radius: 10rpx;
+  
+}
+
+
+/* 手机号提醒 */
+.texts-max{
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 37.5rpx;
+  /* background-color: yellowgreen; */
+}
+
+.texts{
+  text-indent:60rpx;
+  font-size: 32rpx;
+  color: #666;
+}
+
+
+
+/* 备注 */
+.note-box{
+  height: 200rpx;
+  width: 100%;
+  background-color: white;
+  letter-spacing: 10rpx;
+}
+
+
+/* 保存按钮 */
+.SaveButton-box{
+  height: 120rpx;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: yellowgreen; */
+}
+
+.SaveButton{
+  height: 90rpx;
+  width: 100%;
+  border-radius: 50rpx;
+  background-color: #fe7282;
+  color: white;
+  font-size: 35rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:0rpx 3rpx 4rpx #c1c1c1;
+}
+
+.SaveButton:active{
+  background-color:  rgba(254,114,129,0.8);
+}
+
+
+
+
+
+
+/* 选项卡 */
+
+.choose{
+  width: 750rpx;
+  padding: 0 30rpx;
+  background-color: white;
+}
+
+.choose-box{
+  float: left;
+  width: 172.5rpx;
+  height: 60rpx;
+  display: flex;
+  /* background-color: yellowgreen; */
+}
+
+.choose-box-lft{
+  width: 32.5rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.choose-box-lft-point{
+  height: 15rpx;
+  width: 15rpx;
+  border-radius: 20rpx;
+}
+
+.choose-box-rit{
+  color: #666;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+
+
+/* 弹框内容 */
+.headBox{
+  display: flex;
+  height: 140rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.headBox-lft{
+  width: 600rpx;
+  height: 140RPX;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 35rpx;
+  color:#606060;
+  margin-left: 37.5rpx;
+}
+
+.headBox-rit{
+  width: 75rpx;
+  height: 140RPX;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+
+.scrollBox{
+  height: 480rpx;
+}
+
+.maxBox{
+  width: 100%;
+}
+
+.listBox{
+  width: 675rpx;
+  margin-left: 37.5rpx;
+    display: flex;
+  height: 120rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.listBox-lft{
+    width: 600rpx;
+  height: 120RPX;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 35rpx;
+  color:#606060;
+  /* background-color: yellow; */
+}
+
+
+.listBox-rit{
+  width: 75rpx;
+  height: 120RPX;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* background-color: greenyellow; */
+}
+
+.headBox:active{
+  background-color: 	#f2f2f2;
+}
+
+.maxBox:active{
+  background-color: 	#f2f2f2;
+}
+
+
+
+
+
+
+
+
+
+
+/* 弹框内容END */
+
+/* 弹框end */
+
+.box-color1{
+  background-color: #ff6565;
+}
+
+.box-color2{
+  background-color: #ffd565;
+}
+
+.box-color3{
+  background-color: #f665ff;
+}
+
+.box-color4{
+  background-color: #71d951;
+}
+
+.box-color5{
+  background-color: #51d4d9;
+}
+
+.box-color6{
+  background-color: #656fff;
+}
+
+.box-color7{
+  background-color: #ffadd0;
+}

@@ -1,0 +1,3 @@
+<!--pages/blog/searchBlogMoreInfo/searchBlogMoreInfo.wxml 搜索帖子查看更多页面-->
+<import src="../../../components/an/searchBlogMore.wxml" />
+<template is="searchBlogMore" data="{{blogList}}" />

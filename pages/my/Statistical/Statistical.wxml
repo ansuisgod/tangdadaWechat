@@ -1,0 +1,277 @@
+<!--pages/my/Statistical/Statistical.wxml-->
+
+
+
+<!-- 日期显示面板 -->
+<view class='choose-box'>
+
+  <view class="choose-box-lft" bindtap='shareShare'>起：{{selectedDate}} {{selectedWeek}}</view>
+
+  <view class="choose-box-rit" bindtap='shareShare2'>至：{{selectedDate2}} {{selectedWeek2}}</view>
+
+</view>
+
+
+
+
+<!-- 选择区 -->
+<view class='chooseBox'>
+ <view class='chooseBox-bar1' bindtap='bar1' style='background-color: {{typ==1? "rgba(0,123,204,0.6)":"#a8a8a8"}};border-right: 1rpx solid #f5f5f5;'>血糖统计</view>
+ <view class='chooseBox-bar2' bindtap='bar2' style='background-color: {{typ==2? "rgba(230,88,83,0.6)":"#a8a8a8"}};border-right: 1rpx solid #f5f5f5;'>血压统计</view>
+ <view class='chooseBox-bar3' bindtap='bar3' style='background-color: {{typ==3? "rgba(248,155,23,0.6)":"#a8a8a8"}};border-right: 1rpx solid #f5f5f5;'>体重统计</view>
+ <view class='chooseBox-bar4' bindtap='bar4' style='background-color: {{typ==4? "rgba(92,183,92,0.6)":"#a8a8a8"}};border-right: 1rpx solid #f5f5f5;'>饮食统计</view>
+ <view class='chooseBox-bar5' bindtap='bar5' style='background-color: {{typ==5? "rgba(78,180,210,0.6)":"#a8a8a8"}};'>运动统计</view>
+</view>
+<!-- 选择区end -->
+
+
+
+<!-- 内容区 -->
+
+
+<view wx:if="{{typ==1?true:false}}" style='margin-top:110rpx;'>
+
+
+  <view class='list-scrollBox'>
+    <view class='list-scrollBox-lft'>
+     <view class='list-scrollBox-lft-title'>日期</view>
+
+      <block  wx:for="{{getSugarList}}">
+     <view class='list-scrollBox-lft-data'>{{item.time}}</view>
+     </block>
+
+    </view>
+    <view class='list-scrollBox-rit'>
+      
+
+      <scroll-view class='scrollBox' scroll-x="true" style="width: auto;overflow:hidden;">
+
+      <view class='scrollBox-list-titleBox'>
+          <view class='scrollBox-list-title'>早上空腹</view>
+          <view class='scrollBox-list-title'>早餐后1小时</view>
+          <view class='scrollBox-list-title'>早餐后2小时</view>
+          <view class='scrollBox-list-title'>早餐后3小时</view>
+          <view class='scrollBox-list-title'>午餐前</view>
+          <view class='scrollBox-list-title'>午餐后2小时</view>
+          <view class='scrollBox-list-title'>晚餐前</view>
+          <view class='scrollBox-list-title'>晚餐后2小时</view>
+          <view class='scrollBox-list-title'>睡前</view>
+          <view class='scrollBox-list-title'>随机</view>
+      </view>
+
+    <block  wx:for="{{getSugarList}}">
+      <view  class='scrollBox-list-dataBox'>
+          <view class='scrollBox-list-data'>{{item.category == 0? item.value:'-'}}</view>
+          <view class='scrollBox-list-data'>{{item.category == 1? item.value:'-'}}</view>
+          <view class='scrollBox-list-data'>{{item.category == 2? item.value:'-'}}</view>
+          <view class='scrollBox-list-data'>{{item.category == 3? item.value:'-'}}</view>
+          <view class='scrollBox-list-data'>{{item.category == 4? item.value:'-'}}</view>
+          <view class='scrollBox-list-data'>{{item.category == 5? item.value:'-'}}</view>
+          <view class='scrollBox-list-data'>{{item.category == 6? item.value:'-'}}</view>
+          <view class='scrollBox-list-data'>{{item.category == 7? item.value:'-'}}</view>
+          <view class='scrollBox-list-data'>{{item.category == 8? item.value:'-'}}</view>
+          <view class='scrollBox-list-data'>{{item.category == 9? item.value:'-'}}</view>
+      </view>
+    </block>
+
+
+
+      </scroll-view>
+
+
+    </view>
+  </view>
+
+
+</view>
+
+<!-- 血压 -->
+<view wx:if="{{typ==2?true:false}}" style='margin-top:100rpx;'>
+  <view class='list-box' style='height: 90rpx;font-size: 35rpx;'>
+    <view class='list-box-1'>日期</view>
+    <view class='list-box-2'>时间</view>
+    <view class='list-box-3'>收缩压</view>
+    <view class='list-box-4'>舒张压</view>
+  </view>
+
+<block  wx:for="{{getPressureList}}">
+  <view class='list-box' style='height: 70rpx;'>
+    <view class='list-box-1' style='color: #606060;'>{{item.time}}</view>
+    <view class='list-box-2' style='color: #606060;'>{{item.dates}}</view>
+    <view class='list-box-3' style='color: #606060;'>{{item.systolic}}</view>
+    <view class='list-box-4' style='color: #606060;'>{{item.diastolic}}</view>
+  </view>
+  </block>
+
+</view>
+
+<!-- 体重 -->
+<view wx:if="{{typ==3?true:false}}" style='margin-top:100rpx;'>
+  <view class='list-box' style='height: 90rpx;font-size: 35rpx;'>
+    <view class='list-box-1'>日期</view>
+    <view class='list-box-2'>时间</view>
+    <view class='list-box-3'>体重（KG）</view>
+  </view>
+
+<block  wx:for="{{getWeightList}}">
+  <view class='list-box' style='height: 70rpx;'>
+    <view class='list-box-1' style='color: #606060;'>{{item.time}}</view>
+    <view class='list-box-2' style='color: #606060;'>{{item.dates}}</view>
+    <view class='list-box-3' style='color: #606060;'>{{item.value}}</view>
+  </view>
+</block>
+
+</view>
+
+
+<!-- 饮食 -->
+<view wx:if="{{typ==4?true:false}}" style='margin-top:100rpx;'>
+  <view class='list-box' style='height: 90rpx;font-size: 35rpx;'>
+    <view class='list-box-1'>日期</view>
+    <view class='list-box-2'>时间</view>
+    <view class='list-box-3'>饮食（大卡）</view>
+  </view>
+
+<block  wx:for="{{getDietList}}">
+  <view class='list-box' style='height: 70rpx;'>
+    <view class='list-box-1' style='color: #606060;'>{{item.time}}</view>
+    <view class='list-box-2' style='color: #606060;'>{{item.categoryText}}</view>
+    <view class='list-box-3' style='color: #606060;'>{{item.energy}}</view>
+  </view>
+  </block>
+
+</view>
+
+
+<!-- 运动 -->
+<view wx:if="{{typ==5?true:false}}" style='margin-top:100rpx;'>
+
+  <view class='list-box' style='height: 90rpx;font-size: 35rpx;'>
+    <view class='list-box-1'>日期</view>
+    <view class='list-box-2'>时间</view>
+    <view class='list-box-3'>运动（大卡）</view>
+  </view>
+
+
+  <block  wx:for="{{getSportList}}">
+  <view class='list-box' style='height: 70rpx;'>
+    <view class='list-box-1' style='color: #606060;'>{{item.time}}</view>
+    <view class='list-box-2' style='color: #606060;'>{{item.dates}}</view>
+    <view class='list-box-3' style='color: #606060;'>{{item.energy}}</view>
+  </view>
+  </block>
+
+
+</view>
+
+
+
+
+
+
+
+<!-- 日历选择器-->
+<view class='addBox-choose-cover' wx:if='{{shareMenu}}' bindtap='hideCover'></view>
+<!-- 遮罩层 -->
+
+<view class='addBox-choose-content' wx:if='{{shareMenu}}' catchtouchmove="myCatchTouch">
+
+  <view class='addBox-choose-content-main  main-heights1'>
+
+    <!-- 按钮叉 -->
+    <!-- <view class='addBox-choose-content-del'>
+        <image class='' style='' bindtap='hideCover' mode='aspectFill' src='../../../images/personal/cha.png'></image>
+      </view> -->
+
+
+    <view class="selected_date">
+      <view bindtap="preMonth">
+        <image class="select_icon" src="../../../images/personal/remindPhone.png"></image>
+      </view>
+      <view class="text_center">{{curYear+'-'+curMonth}}</view>
+      <view style="text-align:right;" bindtap="nextMonth">
+        <image class="select_icon" src="../../../images/personal/remindPhone_note.png"></image>
+      </view>
+    </view>
+    <view class="calendar_panel">
+      <view class="calendar_box">
+        <view class="weekday_label">日</view>
+        <view class="weekday_label">一</view>
+        <view class="weekday_label">二</view>
+        <view class="weekday_label">三</view>
+        <view class="weekday_label">四</view>
+        <view class="weekday_label">五</view>
+        <view class="weekday_label">六</view>
+      </view>
+      <view class="calendar_box" wx:for="{{dateList}}" wx:for-item="week">
+        <view class="weekday_label" wx:for="{{week}}">
+          <text class="{{item.value==selectedDate?'active_date':''}}" bindtap="selectDate" data-date="{{item}}">{{item.date}}</text>
+        </view>
+      </view>
+    </view>
+
+
+  </view>
+
+</view>
+
+<!-- 日历选择器-- -->
+
+
+
+<!-- 22222222222 -->
+
+<!-- 日历选择器-- -->
+<view class='addBox-choose-cover' wx:if='{{shareMenu2}}' bindtap='hideCover2'></view>
+<!-- 遮罩层 -->
+
+<view class='addBox-choose-content' wx:if='{{shareMenu2}}' catchtouchmove="myCatchTouch">
+
+  <view class='addBox-choose-content-main  main-heights1'>
+
+    <!-- 按钮叉 -->
+    <!-- <view class='addBox-choose-content-del'>
+        <image class='' style='' bindtap='hideCover' mode='aspectFill' src='../../../images/personal/cha.png'></image>
+      </view> -->
+
+
+    <view class="selected_date">
+      <view bindtap="preMonth2">
+        <image class="select_icon" src="../../../images/personal/remindPhone.png"></image>
+      </view>
+      <view class="text_center">{{curYear2+'-'+curMonth2}}</view>
+      <view style="text-align:right;" bindtap="nextMonth2">
+        <image class="select_icon" src="../../../images/personal/remindPhone_note.png"></image>
+      </view>
+    </view>
+    <view class="calendar_panel">
+      <view class="calendar_box">
+        <view class="weekday_label">日</view>
+        <view class="weekday_label">一</view>
+        <view class="weekday_label">二</view>
+        <view class="weekday_label">三</view>
+        <view class="weekday_label">四</view>
+        <view class="weekday_label">五</view>
+        <view class="weekday_label">六</view>
+      </view>
+      <view class="calendar_box" wx:for="{{dateList2}}" wx:for-item="week">
+        <view class="weekday_label" wx:for="{{week}}">
+          <text class="{{item.value==selectedDate2?'active_date':''}}" bindtap="selectDate2" data-date="{{item}}">{{item.date}}</text>
+        </view>
+      </view>
+    </view>
+
+
+
+  </view>
+
+</view>
+
+<!-- 日历选择器-- -->
+
+
+
+
+
+
+

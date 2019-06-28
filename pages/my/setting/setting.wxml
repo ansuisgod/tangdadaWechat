@@ -1,0 +1,51 @@
+<!--pages/my/setting/setting.wxml-->
+
+
+
+
+
+<view class='setting-box-options' bindtap='goArticle'  data-status="1">
+  <view class='setting-box-options-title'>用户协议</view>
+  <view class='setting-box-options-rit'>
+    <image class='' style='' src='../../../images/personal/jian_right.png' mode='' />
+  </view>
+</view>
+
+
+<!-- <view class='setting-box-options' bindtap='goSetting'>
+  <view class='setting-box-options-title'>检查新版本</view>
+  <view class='setting-box-options-rit'>
+    <image class='' style='' src='../../../images/personal/jian_right.png' mode='' />
+  </view>
+</view> -->
+
+
+<view class='setting-box-options' bindtap='goProductIdeas'>
+  <view class='setting-box-options-title'>产品意见</view>
+  <view class='setting-box-options-rit'>
+    <image class='' style='' src='../../../images/personal/jian_right.png' mode='' />
+  </view>
+</view>
+
+
+<view class='setting-box-options' bindtap='goHelp'>
+  <view class='setting-box-options-title'>帮助</view>
+  <view class='setting-box-options-rit'>
+    <image class='' style='' src='../../../images/personal/jian_right.png' mode='' />
+  </view>
+</view>
+
+
+<view class='setting-box-options' bindtap='goBj'>
+  <view class='setting-box-options-title'>更改消息背景</view>
+  <view class='setting-box-options-rit'>
+    <image class='' style='' src='../../../images/personal/jian_right.png' mode='' />
+  </view>
+</view>
+
+
+
+
+<view class="buttons">退出登录</view>
+
+<view class='version'>版本号 V6.0.2</view>

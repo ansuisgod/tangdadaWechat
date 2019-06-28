@@ -1,0 +1,119 @@
+/* pages/shopping/shopping.wxss */
+/* 上面的头部的部分 */
+.userPicture{
+		width: 100%;
+		height: 170rpx;
+		margin-top: 10rpx;
+		display: flex;
+	}
+.userPicture .left{
+		width: 20%;
+		flex-direction: row;
+	}
+.userPicture .left image{
+		margin-top: 30rpx;
+		margin-left: 40rpx;
+		width: 100rpx;
+		height: 100rpx;
+		border-radius: 50rpx;
+		line-height: 100rpx;
+	}
+.userPicture .center{
+		width: 60%;
+		flex-direction: row;
+	}
+.userPicture .center .topp{
+		margin-top: 20rpx;
+		margin-left: 20rpx;
+		flex-direction: column;
+	}
+.userPicture .center .bottom{
+		margin-top: 20rpx;
+		margin-left: 20rpx;
+		flex-direction: column;
+		color: #999;
+	}
+.userPicture .center .bottom .nowJ{
+		color: #ff7382;
+	}
+.userPicture .right{
+		width: 20%;
+		flex-direction: row;
+	}
+ .userPicture .right image{
+		margin-top: 50rpx;
+		width: 60rpx;
+		height: 50rpx;
+	}
+
+  .listOfGoods{
+    display: block;
+    height: 100%;
+  }
+  .listOfGoods .singlePart{
+    width: 45%;
+    min-height: 500rpx;
+    border: 1px solid #dbddde;
+    flex-direction: column;
+    border-radius: 10rpx;
+    float: left;
+    margin: 15rpx 0 0 20rpx;
+  }
+  .listOfGoods .singlePart .pic{
+    height: 300rpx;
+    flex-direction: column;
+    position: relative;
+  }
+  .listOfGoods .singlePart .pic .inventory{
+    width: 120rpx;
+    height: 70rpx;
+    text-align: center;
+    background-color: #fd7aa2;
+    color: #fff;
+    line-height: 70rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 30rpx;
+    border-radius: 30rpx;
+  }
+   .listOfGoods .singlePart .pic image{
+     width: 100%;
+     height: 300rpx;
+   }
+ .listOfGoods .singlePart .goodsTitle{
+    color: #000;
+    font-weight: 600;
+    text-align: left;
+    font-size: 33rpx;
+    flex-direction: column;
+    padding: 10rpx 0 0 5rpx;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  .listOfGoods .singlePart .integral{
+    color: #999;
+    text-align: left;
+    font-size: 33rpx;
+    flex-direction: column;
+    padding: 10rpx 0 0 5rpx;
+  }
+ .listOfGoods .singlePart .toChange button{
+    width: 200rpx;
+    height: 70rpx;
+    line-height: 60rpx;
+    font-size: 30rpx;
+    border-radius: 40rpx;
+    margin: 15rpx auto 0 auto;
+    color: #ff7382;
+  }
+  .cleadd{
+    clear: both;
+  }
+  .records{
+    position:fixed;
+    top: 170rpx;
+    left: 0;
+    z-index: 999;
+  }

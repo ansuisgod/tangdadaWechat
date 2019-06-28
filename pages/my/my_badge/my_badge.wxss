@@ -1,0 +1,66 @@
+/* pages/my/my_badge/my_badge.wxss */
+
+.float-button2 {
+  position: fixed;
+  right: 20rpx;
+  bottom: 500rpx;
+  width: 150rpx;
+  height: 150rpx;
+  background: #eee;
+  z-index: 10;
+}
+
+
+
+
+
+.myBadge-box {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.myBadge-box-list {
+  width: 337.5rpx;
+  height: 420rpx;
+  float: left;
+  padding-top: 40rpx;
+  /* background-color: wheat; */
+}
+
+.myBadge-box-list:active {
+  background-color: #f2f2f2;
+}
+
+.myBadge-box-list-img {
+  width: 337.5rpx;
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+  /* border: 1rpx solid red; */
+}
+
+.myBadge-box-list-img image {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.myBadge-box-list-img-title {
+  height: 50rpx;
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35rpx;
+  color: #333;
+  /* border: 1rpx solid yellowgreen; */
+}
+
+.myBadge-box-list-img-num {
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 28rpx;
+  color: #999;
+  /* border: 1rpx solid blueviolet; */
+}

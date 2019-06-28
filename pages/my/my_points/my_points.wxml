@@ -1,0 +1,71 @@
+<!--pages/my/my_points/my_points.wxml-->
+<scroll-view scroll-y="true" enable-back-to-top="true" bindscroll="handleScroll" style='height:{{windowHeight}}'>
+
+  <view class='myPoints-box'>
+
+
+    <!-- 头部 -->
+    <view class='myPoints-box-head'>
+
+      <view class='myPoints-box-head-img'>
+        <image class='myPoints-box-head-img-headImg' style='' src='{{queryUserInfo.head_icon ? queryUserInfo.head_icon : queryUserInfo.gender == 1? man : woman}}' mode='' />
+      </view>
+
+      <view class='myPoints-box-head-info'>
+        <view class='myPoints-box-head-info-1'>{{queryUserInfo.nick_name}}</view>
+        <view class='myPoints-box-head-info-2'>x</view>
+        <view class='myPoints-box-head-info-3'>当前积分：
+          <text style='color:#fe7281'>{{userIntegral}}</text>
+        </view>
+      </view>
+    
+
+      <view class='myPoints-box-head-record'>
+        <view class='myPoints-box-head-record-title' bindtap='forRecord'>兑换记录</view>
+        <view class='myPoints-box-head-record-img'>
+          <image class='' style='' src='../../../images/personal/jian_right.png' mode='' />
+        </view>
+      </view>
+
+    </view>
+
+
+    <!-- 内容区 -->
+    <block wx:for="{{listTask}}">
+      <view class='myPoints-box-content'>
+
+        <view class='myPoints-box-content-lft'>{{item.name}}</view>
+        <view class='myPoints-box-content-cen'>
+          <view class='myPoints-box-content-cen-img'>
+            <image class='' style='' src='../../../images/personal/coin_icon.png' mode='widthFix' />
+          </view>
+          <view class='myPoints-box-content-cen-num'>+{{item.points}}</view>
+        </view>
+        <view class='myPoints-box-content-rit'>
+
+          <view wx:if='{{item.max_times == 0}}' class='myPoints-box-content-rit-box' style='background-color: #fe7281;'>无限次</view>
+          <view wx:elif='{{item.status == 1}}' class='myPoints-box-content-rit-box' style='background-color: #fe7281;'>{{item.times}} / {{item.max_times}}</view>
+          <view wx:else class='myPoints-box-content-rit-box' style='background-color: #c2c2c2;'>已完成</view>
+        </view>
+
+      </view>
+    </block>
+
+
+
+
+  </view>
+
+
+
+  <!-- 悬浮按钮 -->
+  <view class="float-button {{ iSscroll ? 'active' : ''}};">
+    <image bindtap='goIntegralRules' style='width: 150rpx;height: 150rpx;' src='../../../images/personal/jifen.jpg' mode='' />
+  </view>
+
+
+
+  <view bindtap='goMyBadge' class="float-button2"></view>
+  <!-- 悬浮按钮END -->
+
+</scroll-view>

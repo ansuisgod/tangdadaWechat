@@ -1,0 +1,40 @@
+<!--pages/Page_3/Page_3.wxml-->
+<template name="my_attention">
+
+
+
+
+  <scroll-view scroll-y="true" class=" " style="height:100vh;">
+
+    <view style='height:105rpx;'></view>
+
+    <view style='width: 100%;height: 80vh;display: flex;justify-content: center;align-items: center;' wx:if='{{followsLists.length == ""}}'>
+      <image src="../../../images/noData/no_man_bg.png" style="width: 450rpx; height: 450rpx;" />
+    </view>
+
+    <view wx:else>
+
+
+      <view class='myAttention-box'>
+        <view class='myAttention-box-head'>关注({{followsLists.length}})</view>
+
+        <block wx:for="{{followsLists}}">
+          <view class='myAttention-box-list' bindtap='checkInfo' data-id='{{item.id}}'>
+            <view class='myAttention-box-list-img'>
+              <image src="{{item.head_icon_circle}}" style="width: 80rpx; height: 80rpx;" />
+            </view>
+            <view class='myAttention-box-list-name'>{{item.nick_name}}</view>
+          </view>
+        </block>
+
+      </view>
+
+
+    </view>
+
+
+  </scroll-view>
+
+
+
+</template>

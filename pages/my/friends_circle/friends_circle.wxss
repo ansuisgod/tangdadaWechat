@@ -1,0 +1,116 @@
+/* pages/Page_5/friends_circle/friends_circle.wxss */
+
+page {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.tabbar {
+  position: fixed;
+  top: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  height: 100rpx;
+  background-color: #fe7281;
+  box-shadow: 0rpx 5rpx 8rpx #ffbed3;
+}
+
+.tabbar-search {
+  height: 100rpx;
+  width: 100rpx;
+  position: absolute;
+  right: 0rpx;
+  bottom: 0rpx;
+}
+
+.tabbar-search-imgBox {
+  height: 100rpx;
+  width: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabbar-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tabbar-box .title {
+  height: 100rpx;
+  width: 120rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.tab-name {
+  height: 70rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.tab-line {
+  height: 30rpx;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.swiper {
+  height: 100%;
+}
+
+
+
+
+/* 我的关注 */
+
+.myAttention-box{}
+
+.myAttention-box-head{
+  width: 95%;
+  padding-left: 5%;
+  height: 60rpx;
+  background-color: #f4f4f4;
+  color: #a5a5a5;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.myAttention-box-list{
+  width: 95%;
+  padding-left: 5%;
+  height: 120rpx;
+  display: flex;
+  border-bottom: 1rpx #d9d9d9 solid;
+}
+
+.myAttention-box-list:active{
+  background-color: 	#f2f2f2;
+}
+
+.myAttention-box-list-img{
+  width: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+.myAttention-box-list-name{
+  color: #5e5e5e;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+}
+
+/* 我的关注END */
+
+
+
+
+
+
+

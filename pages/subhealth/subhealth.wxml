@@ -1,0 +1,54 @@
+<!--pages/index/task/task.wxml 首页的任务-->
+<import src="../../components/an/subhelthIndex.wxml" />
+<!--自定义导航条-->
+<view class='nav bg-white' style='height:{{navH}}px'>
+    <view class='nav-title'>
+      <image src='../../static/search.png' mode='aspectFit' bindtap='search' class="back"></image>
+      <text class='profession' bindtap='release'>发布</text>
+    </view>
+</view>
+<view class='selectBox' wx:if='{{select}}'>
+  <view class='innerBox' bindtap='sendPicFont'>发图文</view>
+  <view class='innerBox' bindtap='sedsVideo'>发视频</view>
+</view>
+
+<scroll-view scroll-x="true" class="weui-navbar">
+  <!-- 导航条 -->
+  <block wx:for-items="{{tabs}}" wx:key='property'>
+    <view id="{{index}}" class="{{activeIndex == index ?'item_on':''}} default-item" bindtap="tabClick" style="width:{{tabW}}px">
+      {{item}}
+    </view>
+  </block>
+  <view class="weui-navbar-slider" style="transform:translateX({{slideOffset}}px);"></view>
+</scroll-view>
+<view class="rec"></view>
+<swiper current="{{activeIndex}}" class="swiper-box" duration="100" bindchange="bindChange">
+
+  <!-- 肥胖视图模板 -->
+  <swiper-item class="swiper-item">
+    <view class="slide-view">
+      <scroll-view scroll-y="true" style="height:100vh;">
+        <template is="subhelthIndex" data="{{obesity}}" />
+      </scroll-view>
+    </view>
+  </swiper-item>
+
+  <!-- 女性健康视图模板 -->
+  <swiper-item class="swiper-item">
+    <view class="slide-view">
+      <scroll-view scroll-y="true" style="height:100vh;">
+        <template is="subhelthIndex" data="{{womensHealth}}" />
+      </scroll-view>
+    </view>
+  </swiper-item>
+
+  <!-- 康复理疗视图模板 -->
+  <swiper-item class="swiper-item">
+    <view class="slide-view">
+      <scroll-view scroll-y="true" style="height:100vh;">
+        <template is="subhelthIndex" data="{{rehabilitationTherapy}}" />
+      </scroll-view>
+    </view>
+  </swiper-item>
+
+</swiper>

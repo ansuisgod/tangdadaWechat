@@ -1,0 +1,161 @@
+/* pages/my/diet_records/diet_records.wxss */
+
+
+/* 按钮 */
+.top-box{
+  position: fixed;
+  right: 45rpx;
+  bottom: 100rpx;
+}
+
+
+.bloodGlucose-box{}
+
+
+.bloodGlucose-box-head{
+  height: 30rpx;
+  width: 100%;
+  /* background-color: yellowgreen; */
+  display: flex;
+}
+
+
+.bloodGlucose-box-head-style{
+  width: 29%;
+  border-right: 1rpx solid #f5f5f5;
+  /* background-color: red; */
+}
+
+
+/* 主体 */
+
+.bloodGlucose-box-main{
+  display: flex;
+  height: 350rpx;
+}
+
+
+.bloodGlucose-box-main-lft{
+  width: 25.5%;
+  /* background-color: yellowgreen; */
+}
+
+.bloodGlucose-box-main-lft-box{}
+
+.bloodGlucose-box-main-lft-box-year{
+  width: 191.25rpx;
+  height: 60rpx;
+  font-size: 60rpx;
+  /* font-weight: bold; */
+  color: #fe7281;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30rpx;
+  /* background-color: yellow; */
+}
+
+.bloodGlucose-box-main-lft-box-month{
+  width: 217.5rpx;
+  height: 40rpx;
+  font-size: 28rpx;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: blueviolet; */
+}
+
+.bloodGlucose-box-main-lft-box-date{}
+
+
+.bloodGlucose-box-main-cen{
+    width: 7%;
+}
+
+.bloodGlucose-box-main-cen-img{
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bloodGlucose-box-main-cen-img image{
+  height: 45rpx;
+  width: 45rpx;
+}
+
+.bloodGlucose-box-main-cen-line{
+    width: 100%;
+  height: 100rpx;
+}
+
+.bloodGlucose-box-main-cen-line-line{
+  width: 50%;
+  height: 290rpx;
+  border-right: 1rpx solid #f5f5f5;
+}
+
+
+
+
+.bloodGlucose-box-main-rit{
+  width: 67.5%;
+}
+
+.bloodGlucose-box-main-rit-box{
+  width: 100%;
+  height: 320rpx;
+  border-bottom: 1rpx solid #f5f5f5; 
+}
+
+.bloodGlucose-box-main-rit-box-1{
+  font-size: 28rpx;
+  color: #9a9a9a;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.bloodGlucose-box-main-rit-box-2{
+  font-size: 34rpx;
+  color: #333333;
+  float: left;
+  /* height: 120rpx; */
+  /* display: flex;
+  align-items: flex-start; */
+}
+
+.bloodGlucose-box-main-rit-box-3{
+  font-size: 28rpx;
+  color: #9a9a9a;
+  height: 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+.bloodGlucose-box-main-rit-box-4{
+  font-size: 34rpx;
+  color: #333333;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+}
+
+
+.bloodGlucose-box-main-lft-time{}
+
+.bloodGlucose-box-main-lft-time-text{
+  height: 60rpx;
+  width: 80%;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
+  background-color: #fe7281;
+  font-size: 30rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

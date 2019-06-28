@@ -1,0 +1,364 @@
+/* pages/my/appraisal/appraisal.wxss */
+
+
+.head-progress {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 140rpx;
+  z-index: 10;
+  background: #fff;
+  box-shadow: 0rpx 2rpx 6rpx #959595;
+}
+
+
+
+
+.head-progress-box{
+  height: 105rpx;
+  /* background-color: gold; */
+}
+
+.head-progress-box-1{
+  height: 60rpx;
+display: flex;
+align-items: flex-end;
+ overflow: hidden;
+  /* background-color: green; */
+}
+
+.head-progress-box-1box{
+    font-size: 25rpx;
+  color: #757575;
+}
+
+.head-progress-box-2{
+      height: 10rpx;
+      overflow: hidden;
+  /* background-color: blueviolet; */
+}
+
+.head-progress-box-3{
+  height:25rpx;
+  width: 100%;
+  border: 1rpx solid #e7d8c9;
+  background-color: #f8f3f0;
+}
+
+.head-progress-box-4{
+    height: 10rpx;
+    overflow: hidden;
+  /* background-color: blueviolet; */
+}
+
+.head-progress-box-round{
+  height: 5rpx;
+  width: 5rpx;
+  border: 1rpx solid #fe7281;
+  border-radius: 5rpx;
+}
+
+
+
+
+
+.head-progress-amount{
+  height: 35rpx;
+  display: flex;
+  /* background-color: yellowgreen; */
+}
+
+.head-progress-amount-1{
+  font-size: 25rpx;
+  color: #757575;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+.head-progress-amount-2{
+  font-size: 25rpx;
+  color: #757575;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* 选项列表 */
+
+
+.appraisal-list-box{
+  height: 170rpx;
+}
+
+.appraisal-list{
+  height: 170rpx;
+  display: flex;
+}
+
+.appraisal-list-lft{
+  width: 30rpx;
+}
+
+.appraisal-list-cen1{
+  width: 640rpx;
+  padding-left: 15rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+  /* background-color: rgba(254, 114, 129, 0.8); */
+}
+
+
+.appraisal-list-top{
+  height: 85rpx;
+  font-size: 40rpx;
+  color: #606060;
+  display: flex;
+  align-items: flex-end;
+  /* background-color: gold; */
+}
+
+.appraisal-list-bot{
+  height: 75rpx;
+  font-size: 32rpx;
+  color: #fe7281;
+  display: flex;
+align-items: flex-end;
+  /* background-color: yellowgreen; */
+}
+
+
+.appraisal-list-cen2{
+  width: 50rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.appraisal-list-cen2 image{
+  height: 60rpx;
+  width: 60rpx;
+}
+
+.appraisal-list-rit{
+  width: 30rpx;
+}
+
+
+/* 针对最后一个的修改 */
+.appraisal-list-box2{}
+
+.appraisal-list2{
+  display: flex;
+}
+
+.appraisal-list-bot2{
+  
+  font-size: 32rpx;
+  color: #fe7281;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+}
+
+
+/* 针对最后一个的修改end */
+
+/* 弹框 */
+/* 测量时段 */
+
+
+.addBox-choose-content {
+}
+
+.addBox-choose-content-main {
+  /* height: 40%; */
+  width: 100%;
+  /* background-color: white; */
+  /* border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx; */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 35;
+  background-color: rgba(255,255,255,1);
+}
+
+.main-heights1{
+  height: 550rpx;
+}
+
+.main-heights2{
+  height: 640rpx;
+}
+
+
+.addBox-choose-content-del image {
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+.addBox-choose-cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 33;
+}
+
+/* 打开动画 */
+
+.addBox-choose-content-main {
+  -webkit-animation: slidingAN 0.3s linear 1 forwards;
+  animation: slidingAN 0.3s linear 1 forwards;
+}
+
+@keyframes slidingAN {
+  from {
+    transform: translateY(70%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slidingAN {
+  from {
+    transform: translateY(70%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+
+/* 弹框内容 */
+.headBox{
+  display: flex;
+  height: 140rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.headBox-lft{
+  width: 600rpx;
+  height: 140RPX;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 35rpx;
+  color:#606060;
+  margin-left: 37.5rpx;
+}
+
+.headBox-rit{
+  width: 75rpx;
+  height: 140RPX;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+
+.scrollBox{
+  height: 480rpx;
+}
+
+.maxBox{
+  width: 100%;
+}
+
+.listBox{
+  width: 675rpx;
+  margin-left: 37.5rpx;
+    display: flex;
+  height: 120rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.listBox-lft{
+    width: 600rpx;
+  height: 120RPX;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 35rpx;
+  color:#606060;
+  /* background-color: yellow; */
+}
+
+
+.listBox-rit{
+  width: 75rpx;
+  height: 120RPX;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* background-color: greenyellow; */
+}
+
+.headBox:active{
+  background-color: 	#f2f2f2;
+}
+
+.maxBox:active{
+  background-color: 	#f2f2f2;
+}
+
+
+
+
+
+
+
+
+
+
+/* 弹框内容END */
+
+/* 弹框end */
+
+
+.buttons {
+  /* position: fixed;
+  left: 37.5rpx;
+  bottom: 50rpx; */
+  margin-left: 37.5rpx;
+  margin-bottom: 20rpx;
+  width: 675rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  color: white;
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 100rpx;
+  z-index: 10;
+  background: #fe7281;
+  box-shadow: 0rpx 5rpx 12rpx #959595;
+}
+
+.buttons:active {
+  background-color: rgba(254, 114, 129, 0.8);
+}
+
+

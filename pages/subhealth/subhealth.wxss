@@ -1,0 +1,186 @@
+page {
+ height: 100%;
+}
+view , scroll-view{
+ padding: 0;
+ margin: 0;
+}
+.selectBox{
+  position: fixed;
+  top: 75rpx;
+  right: 0;
+  width: 250rpx;
+  height: 150rpx;
+  border: 1px solid #878787;
+  text-align: center;
+  font-size: 32rpx;
+  color: #000;
+  background-color: #fff;
+  z-index: 99999;
+}
+.selectBox .innerBox{
+  width: 100%;
+  height: 75rpx;
+  line-height: 75rpx;
+}
+.weui-navbar{
+ width: 100%;
+ position: fixed;
+ box-sizing: border-box;
+ white-space: nowrap; 
+ z-index: 100;
+ background: white;
+ margin: 90rpx 0 0 0;
+}
+.rec{
+ width: 100%;
+ height: 7%;
+}
+.weui-navbar .default-item{
+ /*width:25%;*/
+ display: inline-block;
+ text-align: center;
+ font-size: 36rpx;
+ font-weight: 400;
+ box-sizing: border-box;
+ height: 110rpx;
+ line-height: 110rpx;
+ padding-bottom: 15rpx;
+ color: #818181;
+ border-bottom: 1px solid #878787;
+}
+.weui-navbar .item_on{
+ border-bottom: 2px solid #fd7380;
+ color: #fd7380;
+}
+.weui-navbar-slider{
+ position: absolute;
+ width: 160rpx;
+ height: 2px;
+ content:"";
+ background: #fd7380;
+ bottom: 0;
+ left: 12.5rpx;
+ transition: transform .3s;
+}
+.swiper-box{
+  display: block;
+  overflow-y: hidden;
+  height:100%;
+  border-bottom: 1px solid #d1d1d1;
+}
+.swiper-box .swiper-item{
+  overflow-y: hidden;
+}
+.swiper-box .swiper-item .slide-view{
+  align-items: center;
+  box-sizing: border-box;
+  margin: 120rpx 0 0 0;
+}
+.swiper-box .swiper-item .slide-view .obesityBox{
+  width: 90%;
+  margin: 0 auto;
+  height: auto;
+  border-bottom:1px solid #c8c8c8; 
+}
+.swiper-box .swiper-item .slide-view .obesityBox .topBox{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .topBox .leftBox{
+  padding: 10rpx 0 0 0;
+  width: 15%;
+  line-height: 130rpx;
+  flex-direction: row;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .topBox .leftBox image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 60rpx;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .topBox .rightBox{
+  padding: 30rpx 0 0 0;
+  text-align: left;
+  font-size: 34rpx;
+  flex-direction: row;
+  color: #818181;
+  width: 85%;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .centerBox{
+  width: 100%;
+  height: 300rpx;
+  display: flex;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerLeftBox{
+  width: 60%;
+  flex-direction: row;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerLeftBox .titleBox{
+  height: 90rpx;
+  padding: 10rpx 0 0 0;
+  font-size: 34rpx;
+  color: #5e5e5e;
+  overflow:hidden;
+  font-weight: 500;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerLeftBox .mainBox{
+  font-size: 32rpx;
+  color: #828282;
+  height: 210rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:wrap;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerRightBox{
+  width: 40%;
+  flex-direction: row;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerRightBox image{
+  width: 250rpx;
+  height: 100%;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .bottomBox{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  position: relative;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .bottomBox .leftB{
+  position: absolute;
+  right: 280rpx;
+  top: 0;
+  flex-direction: row;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .bottomBox .leftB image{
+  margin-top: 20rpx;
+  width: 45rpx;
+  height: 45rpx;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .bottomBox .leftB .look{
+  position: absolute;
+  right: -45rpx;
+  top: 25rpx;
+  color: #a9a9a9;
+  font-size: 28rpx;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .bottomBox .rightB{
+  position: absolute;
+  right: 100rpx;
+  top: 0;
+  flex-direction: row;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .bottomBox .rightB image{
+  margin-top: 20rpx;
+  width: 45rpx;
+  height: 45rpx;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .bottomBox .rightB .like{
+  color: #a9a9a9;
+  position: absolute;
+  right: -35rpx;
+  top: 25rpx;
+  font-size: 28rpx;
+}

@@ -1,0 +1,113 @@
+/* pages/Page_5/my_post/my_post.wxss */
+
+.main{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.main .outContainer{
+  width: 100%;
+  height: 550rpx;
+  display: flex;
+  box-sizing: content-box;
+  border-bottom: 1px solid #f3f3f3;
+  margin: 50rpx 0 0 0;
+}
+.main .outContainer .insideCon{
+  width: 95%;
+  height: 100%;
+  margin: 50rpx auto 0 auto;
+}
+.main .outContainer .insideCon .top{
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+}
+.main .outContainer .insideCon .top .left{
+  flex-direction: row;
+}
+.main .outContainer .insideCon .top .left image{
+  border-radius: 70rpx;
+  width: 70rpx;
+  height: 70rpx;
+}
+.main .outContainer .insideCon .top .right{
+  padding: 0 0 0 10rpx;
+  line-height: 70rpx;
+  color: #a5a5a5;
+  flex-direction: row;
+  font-size: 28rpx;
+}
+.main .outContainer .insideCon .title{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #5e5e5e;
+  font-weight: 600;
+  font-size: 36rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.main .outContainer .insideCon .content{
+  padding: 15rpx 0 0 0;
+  width: 100%;
+  height:88rpx;
+  color: #828282;
+  font-size: 32rpx;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:wrap;
+}
+.main .outContainer .insideCon .imageDiv{
+  width: 100%;
+  height: 190rpx;
+}
+.main .outContainer .insideCon .imageDiv image{
+  margin-left: 10rpx;
+  width: 30%;
+  height: 180rpx;
+}
+.main .outContainer .insideCon .bottom{
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  position: relative;
+}
+.main .outContainer .insideCon .bottom .leftB{
+  position: absolute;
+  right: 280rpx;
+  top: 0;
+  flex-direction: row;
+}
+.main .outContainer .insideCon .bottom .leftB image{
+  width: 45rpx;
+  height: 45rpx;
+}
+.main .outContainer .insideCon .bottom .leftB .look{
+  position: absolute;
+  right: -45rpx;
+  top: 5rpx;
+  color: #a9a9a9;
+  font-size: 28rpx;
+}
+.main .outContainer .insideCon .bottom .rightB{
+  position: absolute;
+  right: 100rpx;
+  top: 0;
+  flex-direction: row;
+}
+.main .outContainer .insideCon .bottom .rightB image{
+  width: 45rpx;
+  height: 45rpx;
+}
+.main .outContainer .insideCon .bottom .rightB .like{
+  color: #a9a9a9;
+  position: absolute;
+  right: -35rpx;
+  top: 5rpx;
+  font-size: 28rpx;
+}

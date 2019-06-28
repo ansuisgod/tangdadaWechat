@@ -1,0 +1,29 @@
+<!--pages/my/add_motion_collect/add_motion_collect.wxml-->
+
+
+<view style='width: 100%;height: 80vh;display: flex;justify-content: center;align-items: center;' wx:if='{{favoriteSportList == ""}}'>
+  <view style='color: #606060;font-size: 30rpx;'>暂无数据</view>
+</view>
+
+
+<view  wx:else>
+
+
+  <!-- list -->
+  <block wx:for="{{favoriteSportList}}">
+
+    <view class='addMotion-list' bindtap='goFill'  data-id="{{item.id}}">
+      <view class='addMotion-list-lft'>
+        <image class='' style='' src='{{item.image_url}}'></image>
+      </view>
+      <view class='addMotion-list-cen'>{{item.name}}</view>
+      <view class='addMotion-list-rit'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+    </view>
+
+  </block>
+  <!-- list -->
+
+
+</view>

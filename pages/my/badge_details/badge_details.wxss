@@ -1,0 +1,42 @@
+/* pages/my/badge_details/badge_details.wxss */
+
+.badgeDetails-box-title{
+  height: 120rpx;
+  margin-left: 30rpx;
+  font-size: 35rpx;
+  color: #333333;
+  display: flex;
+  align-items: center;
+  /* background-color: royalblue; */
+}
+
+.badgeDetails-box-list{
+  width: 250rpx;
+  height: 300rpx;
+  /* background-color: red; */
+  float: left;
+}
+
+.badgeDetails-box-list-img{
+  width: 250rpx;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.badgeDetails-box-list-img image{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.badgeDetails-box-list-img-title{
+  font-size: 30rpx;
+  color: #666;
+  margin-top: 20rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+

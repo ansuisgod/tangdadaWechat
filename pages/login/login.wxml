@@ -1,0 +1,89 @@
+<!--pages/login/login.wxml-->
+<view class='section'>
+  <!--tab切换-->
+ <view class='help' style='background: url("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1355880457,1520660024&fm=26&gp=0.jpg") no-repeat;'>
+    
+ </view>
+ <view class='taBar'>
+      <view class="left {{currentTabb == 0 ? 'active':''}}" data-current="0" bindtap='clickTabb'>手机号登陆</view>
+      <!-- <view class="right {{currentTabb == 2 ?'active':''}}" data-current="2" bindtap='clickTabb'>密码登录</view> -->
+      <view class="right {{currentTabb == 1 ?'active':''}}" data-current="1" bindtap='clickTabb'>注\t\t\t册</view>
+    </view>
+<!--登录开始-->
+  <view class="{{currentTabb == 0 ? 'show':'hidden'}}">
+    <view class='rowlist' style='margin-top:40rpx;'>
+      <view class='left'>+86</view>
+      <view class='right'>
+        <input type='number' placeholder='请输入11位手机号码' bindinput='phoneInput' name='phoneNumber'></input>
+      </view>
+    </view>
+    <!--<view class='rowlist' style='margin-top:20rpx;'>
+      <view class='left'>密码</view>
+      <view class='right'>
+        <input type='password' placeholder='请输入密码' bindblur='pwdBlur' bindinput='pwdInput' name='pwdNumber'></input>
+      </view>
+    </view>-->
+    <view class='rowlistcode'>
+    <view class='left'>
+      <input type='number' placeholder='请输入验证码' bindinput='pwdInput' name="codeNumber"></input>
+    </view>
+    <view class='right'>
+      <button style='color:{{getcodeColortuses}};background:{{getCodeBackground}}' bindtap='getCodeFunc' disabled='{{disableCode}}'>{{getInfo}}</button>
+    </view>
+  </view>
+
+    <view class='loginbtn'>
+      <button style='background:{{loginBackgroundColr}};color:{{loginBtnFontColor}}' disabled='{{disableLoginBtn}}' bindtap='loginFunc'>登\t\t\t录</button>
+    </view>
+
+  </view>
+  <!--登录结束-->
+  <!--密码登录开始-->
+  <view class="{{currentTabb == 2 ? 'show':'hidden'}}">
+    <view class='rowlist' style='margin-top:40rpx;'>
+      <view class='left'>+86</view>
+      <view class='right'>
+        <input type='number' placeholder='请输入11位手机号码' bindblur='pwdLoginUserBlur' bindinput='pwdLoginPhoneInput' ></input>
+      </view>
+    </view>
+    <view class='rowlist' style='margin-top:40rpx;'>
+      <view class='left'>密码</view>
+      <view class='right'>
+        <input type='password' placeholder='请输入6~20位密码' bindblur='pwdLoginPwdBlur' bindinput='pwdLoginPwdInput' ></input>
+      </view>
+    </view>
+    <view class='loginbtn'>
+      <button style='background:{{pwdLoginBackgroundColr}};color:{{pwdLoginBtnFontColor}}' bindtap='pwdLoginFunc'>登\t\t\t录</button>
+    </view>
+  </view>
+  <!--密码登录结束-->
+  <!--注册开始-->
+  <view class="{{currentTabb == 1 ? 'show':'hidden'}}">
+    <view class='rowlist' style='margin-top:40rpx;'>
+      <view class='left'>+86</view>
+      <view class='right'>
+        <input type='number' placeholder='请输入11位手机号码' bindinput='regPhoneInput' name='phoneNumber'></input>
+      </view>
+    </view>
+    <view class='rowlist' style='margin-top:40rpx;'>
+      <view class='left'>密码</view>
+      <view class='right'>
+        <input type='password' placeholder='请输入6~20位密码' bindinput='regPwdInput' name='phoneNumber'></input>
+      </view>
+    </view>
+  <view class='rowlistcode'>
+    <view class='left'>
+      <input type='number' placeholder='请输入验证码' bindinput='regCodeInput' name="codeNumber"></input>
+    </view>
+    <view class='right'>
+      <button style='color:{{regGetCodeColor}};background:{{regGetCodeBackground}}' bindtap='regGetCodeFunc' disabled='{{disableCodeReg}}'>{{getInfoReg}}</button>
+    </view>
+  </view>
+   <view class='loginbtn'>
+    <button style='color:{{regBtnColor}};background:{{regBackgroundColr}}' disabled='{{disableRegBtn}}' bindtap='regFunc'>注\t\t\t册</button>
+  </view>
+  </view>
+  <!--注册结束-->
+
+</view>
+

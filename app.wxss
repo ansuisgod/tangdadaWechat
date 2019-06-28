@@ -1,0 +1,116 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
+/**顶部导航条的公告样式**/
+.nav{
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  border-bottom: 1px solid #000;
+}
+.nav-title{
+  width: 100%;
+  height: 45rpx;
+  line-height: 4rpx;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  font-size:34rpx;
+  letter-spacing:2rpx;
+  color: #000;
+}
+.nav .back{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  bottom: 20rpx;
+  left: 20rpx;
+}
+.nav .profession{
+  width: 120rpx;
+  height:80rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 30rpx;
+}
+.bg-white{
+  background-color: #fff;
+}
+.bg-gray{
+  background-color: #fff;
+}
+
+
+
+
+
+
+
+/* 弹框样式 */
+.punch-tankuang{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+   background-color: rgba(0,0,0,0.5); 
+  /* background-color: red; */
+  height: 100%;
+  z-index: 100;
+  /* display: none; */
+}
+.punch-tankuang-view{
+  width: 80%;
+  margin-left:10% ;
+  margin-top: 400rpx;
+  border-radius: 7rpx;
+  background-color:#fff;
+}
+.punch-tankuang-view-img{
+  padding: 43rpx 0;
+  width: 100%;
+  text-align: center;
+}
+.punch-tankuang-view-img image{
+  width: 142rpx;
+  height: 142rpx;
+
+}
+.punch-tankuang-view-text{
+  color: #999;
+  font-size: 30rpx;
+  text-align: center
+}
+.punch-tankuang-view-btn{
+  display: flex;
+  align-items: center;
+  border-top:   3rpx solid #d1d1d1;
+  padding: 5rpx 0;
+  margin-top: 55rpx;
+}
+.punch-tankuang-view-btn view{
+  flex: 1;
+}
+.punch-tankuang-view-btn view button:after{
+  border: none;
+}
+.punch-tankuang-view-btn view button{
+    background-color: #fff;
+    border-radius: 0;
+    color: #999;
+    font-size: 30rpx;
+}
+
+

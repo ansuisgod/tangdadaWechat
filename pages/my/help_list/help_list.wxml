@@ -1,0 +1,24 @@
+<!--pages/my/help_list/help_list.wxml-->
+
+
+
+<view class='setting-box-options'  bindtap='goArticle'  data-status="2">
+  <view class='setting-box-options-title'>使用说明</view>
+  <view class='setting-box-options-rit'>
+    <image class='' style='' src='../../../images/personal/jian_right.png' mode='' />
+  </view>
+</view>
+
+<view class='setting-box-options'  bindtap='goArticle'  data-status="3">
+  <view class='setting-box-options-title'>账号安全</view>
+  <view class='setting-box-options-rit'>
+    <image class='' style='' src='../../../images/personal/jian_right.png' mode='' />
+  </view>
+</view>
+
+<view class='setting-box-options'  bindtap='goArticle'  data-status="4">
+  <view class='setting-box-options-title'>常见安全</view>
+  <view class='setting-box-options-rit'>
+    <image class='' style='' src='../../../images/personal/jian_right.png' mode='' />
+  </view>
+</view>

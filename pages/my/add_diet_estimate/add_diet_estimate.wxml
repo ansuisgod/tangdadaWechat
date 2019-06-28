@@ -1,0 +1,22 @@
+<!--pages/my/add_diet_estimate/add_diet_estimate.wxml-->
+
+
+  <!-- list -->
+  <block wx:for="{{foodCategoryLists}}">
+
+    <view class='addMotion-list' bindtap='estimateDetails'>
+      <view class='addMotion-list-lft'>
+        <image class='' style='' src='{{item.image_url}}'></image>
+      </view>
+      <view class='addMotion-list-cen'>{{item.name}}</view>
+      <view class='addMotion-list-rit'>
+        <!-- <image class='' style='' src='{{is_vote == 0 ? "../../../images/personal/checkbox_big_remind.png" : "../../../images/personal/checkbox_selected_big_remind.png"}}' mode='' /> -->
+      </view>
+    </view>
+
+  </block>
+  <!-- list -->
+
+
+
+

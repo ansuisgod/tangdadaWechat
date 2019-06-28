@@ -1,0 +1,151 @@
+<!--pages/my/share/share.wxml-->
+<!-- <view class=''>
+
+
+
+  <view class='share-invite' bindtap='invite'>
+    <image style='' src='../../../images/personal/invite.png' mode='' />
+  </view>
+
+  <view class='share-rules' bindtap='rules'>
+    <image style='' src='../../../images/personal/rules.png' mode='' />
+  </view>
+
+  <view class='share-MyInvitation' bindtap='MyInvitation'>
+    <image style='' src='../../../images/personal/MyInvitation.png' mode='' />
+  </view>
+
+
+
+
+
+
+
+  // 转发类 //
+  <view class='addBox-choose-cover' wx:if='{{shareMenu}}' bindtap='hideCover'></view>
+
+
+  <view class='addBox-choose-content' wx:if='{{shareMenu}}' catchtouchmove="myCatchTouch">
+
+    <view class='addBox-choose-content-main  main-heights'>
+
+      <view class='share-box'>
+
+        <view class='share-box-img'>
+          <image style='height: 64rpx;width: 85rpx;' src='../../../images/personal/fxhb.png' mode='' />
+        </view>
+        <view class='share-box-text'>生成海报</view>
+
+      </view>
+
+      <view class='share-box'>
+
+        <view class='share-box-img'>
+          <image style='height: 70rpx;width: 70rpx;' src='../../../images/personal/fxwx.png' mode='' />
+        </view>
+        <view class='share-box-text'>转发好友</view>
+
+      </view>
+
+    </view>
+
+  </view>
+
+
+
+
+
+  // 活动规则类 //
+  <view class="dis-cou-detail zoom-in" wx:if="{{introduce}}" catchtouchmove="myCatchTouch">
+    <view class="detail-content">
+
+
+      <view class='rules-title'>活动规则</view>
+
+      <view class='rules-content'>
+       <view class='rules-content-img'>
+        <image class='' src='../../../images/personal/dot_1.png'></image>
+       </view>
+       <view class='rules-content-text'>啊是的地方vs士大夫得分速递公司</view>
+      </view>
+
+            <view class='rules-content'>
+       <view class='rules-content-img'>
+        <image class='' src='../../../images/personal/dot_2.png'></image>
+       </view>
+       <view class='rules-content-text'>啊是的地方vs士大夫似的发士大夫豆腐干的风格的 豆腐干的比赛得分速递公司</view>
+      </view>
+
+            <view class='rules-content'>
+       <view class='rules-content-img'>
+        <image class='' src='../../../images/personal/dot_3.png'></image>
+       </view>
+       <view class='rules-content-text'>啊是的地方vs</view>
+      </view>
+
+            <view class='rules-content'>
+       <view class='rules-content-img'>
+        <image class='' src='../../../images/personal/dot_4.png'></image>
+       </view>
+       <view class='rules-content-text'>啊是的地方vs士的 豆腐干的比赛得分速递公司</view>
+      </view>
+
+
+      <view class='detail-close'>
+        <image class='detail-img' src='../../../images/personal/delete_ruleView.png' bindtap='shut'></image>
+      </view>
+
+
+    </view>
+  </view>
+
+
+
+
+  <view class='addBox-choose-cover2' wx:if='{{introduce2}}' bindtap='shut2'></view>
+  // 我的邀请类 //
+
+  <view class="dis-cou-detail zoom-in" wx:if="{{introduce2}}" catchtouchmove="myCatchTouch">
+    <view class="detail-content2">
+
+
+      // <view class='rules-title'>活动规则</view> //
+
+      <view class='rules-content'>
+       <view class='rules-content-img'>
+        <image class='' src='../../../images/personal/dot_1.png'></image>
+       </view>
+       <view class='rules-content-text'>啊是的地方vs士大夫得分速递公司</view>
+      </view>
+
+
+      // <view class='detail-close'>
+        <image class='detail-img' src='../../../images/personal/delete_ruleView.png' bindtap='shut2'></image>
+      </view> //
+
+
+    </view>
+  </view>
+
+
+   //我的邀请类 //
+
+
+
+
+
+</view> -->
+
+
+
+
+
+
+
+
+
+
+
+<web-view src="{{optionsurl}}"  bindmessage=""></web-view> 
+
+

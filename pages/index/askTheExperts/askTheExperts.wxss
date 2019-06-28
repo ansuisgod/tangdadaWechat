@@ -1,0 +1,135 @@
+/* pages/index/askTheExperts/askTheExperts.wxss */
+.askTopA{
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  margin: 15rpx 0;
+}
+.askTopA .askInputLeft{
+  width: 80%;
+  padding: 10rpx 15rpx;
+  flex-direction: row;
+}
+.askTopA .askInputLeft input{
+  padding-left: 15rpx;
+  font-size: 32rpx;
+  border-radius: 30rpx;
+  border: 1px solid #5d625e;
+}
+.askTopA .askRightFont{
+  font-size: 34rpx;
+  text-align: center;
+  width: 20%;
+  line-height: 65rpx;
+  flex-direction: row;
+  margin: 0 auto;
+  color: #fd7380;
+}
+/* 语音部分样式 */
+.askTheExperts{
+  width: 100%;
+  height: auto;
+}
+.askTheExperts .insideC{
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  border-bottom: 1px solid #f5f5f5;
+}
+.askTheExperts .insideC .asking{
+  padding: 20rpx 0;
+  display: flex;
+}
+.askTheExperts .insideC .asking .askLeft{
+  width: 10%;
+  flex-direction: row;
+  padding-top: 10rpx;
+}
+.askTheExperts .insideC .asking .askLeft .askIcon{
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #fd7380;
+  border-radius: 50rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+.askTheExperts .insideC .asking .askRight{
+  color: #656565;
+  font-size: 32rpx;
+  width: 30%;
+  flex-direction: row;
+  padding-left: 10rpx;
+}
+.askTheExperts .insideC .asking .askRight .voiceOutA{
+  width: 160rpx;
+  height: 70rpx;
+  background-color: #fd7380;
+  line-height: 80rpx;
+  padding: 5rpx;
+  border-radius: 30rpx;
+}
+.askTheExperts .insideC .asking .askRight .voiceOutA image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.askTheExperts .insideC .asking .voicePlayTime{
+  padding: 15rpx 0 0 10rpx;
+  color: #676767;
+  font-size: 32rpx;
+  width: 30%;
+  flex-direction: row;
+}
+
+
+/* 问答部分 */
+.askQuestionArea{
+  width: 100%;
+  height: auto;
+}
+.askQuestionArea .insideC{
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  border-bottom: 1px solid #f5f5f5;
+}
+.askQuestionArea .insideC .asking{
+  padding: 20rpx 0;
+  display: flex;
+}
+.askQuestionArea .insideC .asking .askLeft{
+  width: 10%;
+  flex-direction: row;
+}
+.askQuestionArea .insideC .asking .askLeft .askIcon{
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #fd7380;
+  border-radius: 50rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+.askQuestionArea .insideC .asking .askLeft .answer{
+  width: 60rpx;
+  height: 60rpx;
+  background-color: #a9a9a9;
+  border-radius: 50rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color: #fff;
+}
+.askQuestionArea .insideC .asking .askRight{
+  padding-top:10rpx; 
+  color: #656565;
+  font-size: 32rpx;
+  width: 90%;
+  flex-direction: row;
+}
+.intrduce{
+  
+  margin:20rpx 0 0 15rpx;
+}

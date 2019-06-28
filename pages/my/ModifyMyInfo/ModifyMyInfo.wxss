@@ -1,0 +1,427 @@
+/* pages/my/ModifyMyInfo/ModifyMyInfo.wxss */
+
+
+.My-box-head {
+  width: 95%;
+  margin-left: 5%;
+  height: 200rpx;
+  display: flex;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.My-box-head-img {
+  width: 150rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  
+}
+
+.My-box-head-img-headImg {
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 100rpx;
+}
+
+.My-box-head-img-box {
+  height: 150rpx;
+  width: 150rpx;
+  /* position: relative; */
+}
+
+.My-box-head-img-headSex {
+  height: 55rpx;
+  width: 55rpx;
+  position: absolute;
+  right: 0rpx;
+  bottom: 0rpx;
+}
+
+.My-box-head-info {
+  width: 532.5rpx;
+  margin-left: 30rpx;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+.My-box-head-info-text{
+  color: #858585;
+  font-size: 28rpx;
+}
+
+
+
+
+/* list */
+
+.setting-box-options {
+  width: 100%;
+  /* margin-left: 5%; */
+  height: 100rpx;
+  /* margin-top: 35rpx; */
+  display: flex;
+}
+
+.setting-box-options:active{
+  background-color: 	#f2f2f2;
+}
+
+.setting-box-options-input{
+  padding-top: 20rpx;
+  flex: 5;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.setting-box-options-inputs{
+  flex: 5;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.setting-box-options-title {
+  flex: 3;
+  font-size: 30rpx;
+  margin-left: 37.5rpx;
+  color: #5e5e5e;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.setting-box-options-rit {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.setting-box-options-rit image {
+  height: 60rpx;
+  width: 60rpx;
+}
+
+
+
+
+
+
+
+/* list SEX */
+
+.setting-box-options1 {
+  width: 100%;
+  /* margin-left: 5%; */
+  height: 100rpx;
+  /* margin-top: 35rpx; */
+  display: flex;
+}
+
+.setting-box-options1:active{
+  background-color: 	#f2f2f2;
+}
+
+
+.setting-box-options1-inputs{
+  flex: 2;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.setting-box-options1-title {
+  flex: 3;
+  font-size: 30rpx;
+  margin-left: 37.5rpx;
+  color: #5e5e5e;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+
+.setting-box-options1-rit {
+  flex: 4;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.setting-box-options1-rit-choose{
+  height: 50rpx;
+  width: 100rpx;
+  border-radius: 30rpx;
+  background-color: #ff7382;
+  color: white;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 37.5rpx;
+}
+
+
+
+
+
+
+/* list 多选*/
+.setting-box-options2 {
+  width: 100%;
+  /* margin-left: 5%; */
+  /* height: 100rpx; */
+  /* margin-top: 35rpx; */
+  display: flex;
+
+}
+
+.yesHei{}
+
+.noHei{
+  height: 100rpx;
+}
+
+.setting-box-options2:active{
+  background-color: 	#f2f2f2;
+}
+
+
+.setting-box-options2-inputs{
+  flex: 5;
+  display: flex;
+  align-items: center;
+
+    padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.setting-box-options2-title {
+  flex: 3;
+  font-size: 30rpx;
+  margin-left: 37.5rpx;
+  color: #5e5e5e;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.setting-box-options2-rit {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.setting-box-options2-rit image {
+  height: 60rpx;
+  width: 60rpx;
+}
+
+
+
+
+
+
+
+
+
+
+/* 针对最后一个的修改end */
+
+/* 弹框 */
+/* 测量时段 */
+
+
+.addBox-choose-content {
+}
+
+.addBox-choose-content-main {
+  /* height: 40%; */
+  width: 100%;
+  /* background-color: white; */
+  /* border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx; */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 35;
+  background-color: rgba(255,255,255,1);
+}
+
+.main-heights1{
+  height: 550rpx;
+}
+
+.main-heights2{
+  height: 640rpx;
+}
+
+
+.addBox-choose-content-del image {
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+.addBox-choose-cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 33;
+}
+
+/* 打开动画 */
+
+.addBox-choose-content-main {
+  -webkit-animation: slidingAN 0.3s linear 1 forwards;
+  animation: slidingAN 0.3s linear 1 forwards;
+}
+
+@keyframes slidingAN {
+  from {
+    transform: translateY(70%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slidingAN {
+  from {
+    transform: translateY(70%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+
+/* 弹框内容 */
+.headBox{
+  display: flex;
+  height: 140rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.headBox-lft{
+  width: 600rpx;
+  height: 140RPX;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 35rpx;
+  color:#606060;
+  margin-left: 37.5rpx;
+}
+
+.headBox-rit{
+  width: 75rpx;
+  height: 140RPX;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+
+.scrollBox{
+  height: 480rpx;
+}
+
+.maxBox{
+  width: 100%;
+}
+
+.listBox{
+  width: 675rpx;
+  margin-left: 37.5rpx;
+    display: flex;
+  height: 120rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.listBox-lft{
+    width: 600rpx;
+  height: 120RPX;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 35rpx;
+  color:#606060;
+  /* background-color: yellow; */
+}
+
+
+.listBox-rit{
+  width: 75rpx;
+  height: 120RPX;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* background-color: greenyellow; */
+}
+
+.headBox:active{
+  background-color: 	#f2f2f2;
+}
+
+.maxBox:active{
+  background-color: 	#f2f2f2;
+}
+
+
+
+
+
+
+
+
+
+
+/* 弹框内容END */
+
+/* 弹框end */
+.buttons {
+  margin: 50rpx;
+  /* position: fixed;
+  left: 50rpx;
+  bottom: 80rpx; */
+  width: 650rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  color: white;
+  font-size: 38rpx;
+  text-align: center;
+  line-height: 100rpx;
+  z-index: 10;
+  background: #fe7281;
+  box-shadow: 0rpx 5rpx 12rpx #959595;
+}
+
+
+
+.buttons:active {
+  background-color: rgba(254, 114, 129, 0.8);
+}
+
+
+

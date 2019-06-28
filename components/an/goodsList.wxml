@@ -1,0 +1,23 @@
+<template name="goodsList">
+<view class='singlePart' wx:key='property' wx:for="{{goodsLists}}">
+  <view bindtap="intoDetail" data-goodsid='{{item.id}}'>
+    <view class='pic'>
+      <image src='{{item.pic}}'></image>
+      <view class='inventory'>{{item.surplus}} 件</view>
+    </view>
+    <view class='goodsTitle'>
+      {{item.name}}
+    </view>
+    <view class='integral'>
+      积分 <text style='color:#ff7382;'>{{item.points}}</text>
+    </view>
+  </view>
+  <view class='toChange'>
+    <!-- 判断库存是否为0，则将按钮置灰色无法点击，否则就显示为红色可以点击 -->
+    <button wx:if="{{item.surplus != 0}}" bindtap='wantChange' style='background: #fff;color: #ff7382;border:1px solid #ff7382;' data-surplus='{{item.surplus}}' data-goodsid='{{item.id}}'>我要兑换</button>
+    <button wx:if="{{item.surplus == 0}}" style='background: #e5e5e5;color: #a5a5a5;border:none;'>兑光了</button>
+  </view>
+</view>
+
+<view class='cleadd'></view>
+</template>

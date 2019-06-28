@@ -1,0 +1,132 @@
+<!--pages/my/add_blood_pressure/add_blood_pressure.wxml-->
+
+
+
+
+
+<!--pages/my/add_blood_glucose/add_blood_glucose.wxml-->
+
+
+<!--
+min [number] 默认值 0, // 最小值
+max[number] 默认值 100, // 最大值
+int[boolean] 默认值 true, // 是否开启整数模式 ，false为小数模式  整数模式 step最小单位是 1 ，小数模式，step的最小单位是 0.1
+step[number] 默认值 1, // 步长，相对传入的值，每个格子代表几个值（值只能是能被10整除的 整数 ，1，2，5）
+fiexNum[number] 默认值 60, // 刻度尺左右余量
+single[number] 默认值 10, // 单个格子的实际长度（单位px）
+h[number] 默认值 0,// 自定义高度 初始值为80
+active [null] 默认值 center ，// 自定义选中位置  （三个值 min, max ,center , 范围内合法数值）
+styles [object]  // 自定义卡尺颜色  注意： 仅支持 #dbdbdb  或者red  这种 颜色 不支持简写 如 #333
+默认值： {
+                  line: '#dbdbdb',   // 刻度颜色
+                  bginner: '#fbfbfb',  // 前景色颜色
+                  bgoutside: '#dbdbdb',  // 背景色颜色
+                  lineSelect: '#52b8f5',  // 选中线颜色
+                  font: '#404040'   // 刻度数字颜色
+                }
+      
+  -->
+
+
+<view class='addBox'>
+
+  <view class='addBox-scale'>
+
+    <view class='addBox-scale-name'>血压值</view>
+
+    <!-- 刻度尺 -->
+    <text style='color: #fe7281;font-size: 40rpx;'>{{value}}</text>
+
+<view class='title-box'>
+
+<view class='title-box-lft' style='color: #606060;font-size: 25rpx;'>收缩压（高压）</view>
+<view class='title-box-cen'><text style='color: #606060;font-size: 25rpx;'>mmHg</text></view>
+<view class='title-box-rit'><text style='color: #606060;font-size: 25rpx;'></text></view>
+
+</view>
+ 
+    
+    <view class='wrap'>
+      <scale min="0" max="260" int="{{true}}" step="1" fiexNum="60" single="10" h="65" active="{{val}}" styles="{{styles[0]}}" bindvalue="bindvalue"></scale>
+    </view>
+    
+
+
+ <text style='color: #fe7281;font-size: 40rpx;'>{{value2}}</text> 
+
+
+<view class='title-box'>
+
+<view class='title-box-lft' style='color: #606060;font-size: 25rpx;'>舒张压（低压）</view>
+<view class='title-box-cen'><text style='color: #606060;font-size: 25rpx;'>mmHg</text></view>
+<view class='title-box-rit'><text style='color: #606060;font-size: 25rpx;'></text></view>
+
+</view>
+
+<view class='wrap'>
+  <scale min="0" max="160" int="{{true}}" step="1" fiexNum="60" single="10" h="65" active="{{val2}}" styles="{{styles[0]}}" bindvalue="bindvalue2"></scale>
+</view>
+<!-- 刻度尺END -->
+
+  </view>
+
+
+
+
+
+
+
+  <!-- 个人end -->
+  <view class='addBox-choose'>个人状态</view>
+
+    <view class='addBox-choose-cover' wx:if='{{shareMenu2}}' bindtap='hideCover2'></view> <!-- 遮罩层 -->
+
+  <view class='addBox-choose-Period' bindtap='shareShare2'>
+
+    <view class=''>{{statusText}}</view>
+    <!-- 触发按钮 -->
+
+    <view class='jian-img'>
+      <image style='height:21rpx;width:38rpx;' src='../../../images/personal/arrow_right.png' mode='' />
+    </view>
+
+  </view>
+
+
+  <!-- 弹框 -->
+  <view class='addBox-choose-content' wx:if='{{shareMenu2}}' catchtouchmove="myCatchTouch">
+
+    <view class='addBox-choose-content-main  main-heights2'>
+
+      <!-- 按钮叉 -->
+      <!-- <view class='addBox-choose-content-del'>
+        <image class='' style='' bindtap='hideCover' mode='aspectFill' src='../../../images/personal/cha.png'></image>
+      </view> -->
+
+
+    
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="0" data-text="无">无</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="1" data-text="运动后">运动后</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="2" data-text="发脾气">发脾气</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="3" data-text="疲劳">疲劳</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="4" data-text="饮酒">饮酒</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="5" data-text="吃药后">吃药后</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="6" data-text="生病">生病</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="7" data-text="生理期">生理期</view>
+
+
+      <view class='addBox-choose-content-mainList3' bindtap='hideCover2'>取消</view>
+
+
+    </view>
+
+  </view>
+  <!-- 个人end -->
+
+<view class='divider'></view>
+
+
+  <view wx:if='{{lock == false}}' class="buttons saveYes" bindtap='SaveRecord'>保存</view>
+  <view wx:else class="buttons saveNo">新增成功</view>
+
+</view>

@@ -1,0 +1,126 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/task/task",
+    "pages/index/askTheExperts/askTheExperts",
+    "pages/index/expertsRecommend/expertsRecommend",
+    "pages/index/expertsReply/expertsReply",
+    "pages/index/askList/askList",
+    "pages/blog/blog",
+    "pages/blog/release/release",
+    "pages/blog/sendVideo/sendVideo",
+    "pages/blog/search/search",
+    "pages/blog/moreFriend/moreFriend",
+    "pages/blog/searchBlogMoreInfo/searchBlogMoreInfo",
+    "pages/blog/blogDetail/blogDetail",
+    "pages/shopping/shopping",
+    "pages/shopping/forRecord/forRecord",
+    "pages/shopping/goodsDetails/goodsDetails",
+    "pages/shopping/change/change",
+    "pages/login/login",
+    "pages/login/inputNickName/inputNickName",
+    "pages/login/choosePicture/choosePicture",
+    "pages/homePage/homePage",
+
+    
+
+    "pages/subhealth/subhealth",
+
+
+
+
+        "pages/my/my",
+        "pages/my/my_post/my_post",
+        "pages/my/share/share",
+        "pages/my/my_comments/my_comments",
+        "pages/my/friends_circle/friends_circle",
+        "pages/my/my_points/my_points",
+        "pages/my/Integral_rules/Integral_rules",
+        "pages/my/my_badge/my_badge",
+        "pages/my/badge_details/badge_details",
+        "pages/my/health_records/health_records",
+        "pages/my/draft_box/draft_box",
+        "pages/my/blood_glucose_record/blood_glucose_record",
+        "pages/my/motion_records/motion_records",
+        "pages/my/diet_records/diet_records",
+        "pages/my/weight_records/weight_records",
+        "pages/my/blood_pressure_recorded/blood_pressure_recorded",
+        "pages/my/Statistical/Statistical",
+        "pages/my/appraisal/appraisal",
+        "pages/my/add_blood_glucose/add_blood_glucose",
+        "pages/my/add_blood_pressure/add_blood_pressure",
+        "pages/my/add_weight/add_weight",
+        "pages/my/add_motion/add_motion",
+        "pages/my/add_motion_subset/add_motion_subset",
+        "pages/my/add_motion_collect/add_motion_collect",
+        "pages/my/add_motion_Fill/add_motion_Fill",
+        "pages/my/add_diet/add_diet",
+        "pages/my/add_diet_list/add_diet_list",
+        "pages/my/add_diet_Details/add_diet_Details",
+        "pages/my/add_diet_estimate/add_diet_estimate",
+        "pages/my/add_diet_estimateDetails/add_diet_estimateDetails",
+        "pages/my/favoriteFood/favoriteFood",
+        "pages/my/setting/setting",
+        "pages/my/help_list/help_list",
+        "pages/my/setting_article/setting_article",
+        "pages/my/Remind_set/Remind_set",
+        "pages/my/SMS_alerts/SMS_alerts",
+        "pages/my/Modify_SMS_alerts/Modify_SMS_alerts",
+        "pages/my/choose/choose",
+        "pages/my/health_advice/health_advice",
+        "pages/my/health_review/health_review",
+        "pages/my/ProductIdeas/ProductIdeas",
+        "pages/my/ProductIdeasList/ProductIdeasList",
+        "pages/my/IntegralRules/IntegralRules",
+        "pages/my/searchFood/searchFood",
+        "pages/my/ModifyMyInfo/ModifyMyInfo",
+        "pages/my/headImage/headImage"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ff7382",
+    "navigationBarTitleText": "糖大大",
+    "navigationBarTextStyle": "white",
+    "navigationStyle":"default"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#ff7382",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/home.png",
+        "selectedIconPath": "static/home-active.png",
+        "text": "糖大大"
+      },
+      {
+        "pagePath": "pages/subhealth/subhealth",
+        "iconPath": "static/media.png",
+        "selectedIconPath": "static/media.png",
+        "text": "亚健康"
+      },
+      {
+        "pagePath": "pages/blog/blog",
+        "iconPath": "static/blog.png",
+        "selectedIconPath": "static/blog.png",
+        "text": "帖子"
+      },
+      {
+        "pagePath": "pages/shopping/shopping",
+        "iconPath": "static/shopping-cart.png",
+        "selectedIconPath": "static/shopping-cart.png",
+        "text": "糖商城"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/center.png",
+        "selectedIconPath": "static/center.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

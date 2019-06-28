@@ -1,0 +1,17 @@
+<!--pages/my/IntegralRules/IntegralRules.wxml-->
+
+  <block wx:for="{{badgeRulesList}}">
+<view class='listBox'>
+
+<view class='listBox-List'>
+ <view class='listBox-List-img'>
+  <image class='' style='' src='{{item.image}}' mode='' />
+ </view>
+ <view class='listBox-List-text'>
+  <view class='listBox-List-text-top'>{{item.name}}</view>
+  <view class='listBox-List-text-bot'>{{item.rule}}</view>
+ </view>
+</view>
+
+</view>
+  </block>

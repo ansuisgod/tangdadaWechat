@@ -1,0 +1,57 @@
+<!--pages/my/draft_box/draft_box.wxml-->
+
+
+<view style='width: 100%;height: 80vh;display: flex;justify-content: center;align-items: center;' wx:if='{{topicNotes.length == ""}}'>
+  <image src="../../../images/noData/draft_no_data.png" style="width: 450rpx; height: 450rpx;" />
+</view>
+
+
+<view  wx:else>
+
+
+  <block wx:for="{{topicNotes}}">
+  <view class='draftBox-box-list'>
+    <view class='draftBox-box-list-content'  bindtap='goRelease' data-info='{{item}}'>
+      <view class='draftBox-box-list-content-title'>{{item.title}}</view>
+      <view class='' style=' font-size: 8rpx;color: white;'>placeholder</view>
+      <view class='draftBox-box-list-content-time'>{{item.updated_at}}</view>
+    </view>
+
+    <view class='draftBox-box-list-del-box'>
+        <image  bindtap='delBounced' data-info='{{item}}' class='draftBox-box-list-del' style='' src='../../../images/personal/rubblish.png' mode='' />
+    </view>
+
+  </view>
+    </block>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+<!-- 删除弹框 -->
+<view class='punch-tankuang' wx:if="{{delBounced}}">
+  <view class='punch-tankuang-view'>
+    <view class='punch-tankuang-view-img'>
+      <image src='../../../images/personal/selection_top_icon.png'></image>
+    </view>
+
+    <view class='punch-tankuang-view-text'>您真的需要删除吗</view>
+
+    <view class='punch-tankuang-view-btn'>
+      <view bindtap="delBounced_close">
+        <button style='color:#ff7382;'>取消</button>
+      </view>
+      <view bindtap="delBounced_operate">
+        <button style='border-left:3rpx solid #d1d1d1;'>确定</button>
+      </view>
+    </view>
+  </view>
+</view>
+

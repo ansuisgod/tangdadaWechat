@@ -1,0 +1,135 @@
+<!--pages/my/my.wxml-->
+
+
+<view class='My-box'>
+
+
+  <view class='My-box-head' bindtap='ModifyMyInfo'>
+
+    <view class='My-box-head-img'>
+      <view class='My-box-head-img-box'>
+        <image class='My-box-head-img-headImg' style='' src='{{queryUserInfo.head_icon ? queryUserInfo.head_icon : queryUserInfo.gender == 1? man : woman}}' mode='' />
+        <view>
+          <image class='My-box-head-img-headSex' style='' src='{{queryUserInfo.gender == 1? manIcon : womanIcon}}' mode='' />
+        </view>
+      </view>
+    </view>
+
+    <view class='My-box-head-info'>
+      <view class='My-box-head-info-1'>{{queryUserInfo.nick_name}}</view>
+      <view class='My-box-head-info-2'>x</view>
+      <view class='My-box-head-info-3'>糖大大号：{{queryUserInfo.no}}</view>
+    </view>
+
+  </view>
+
+
+
+  <view class='My-box-options'>
+    <view class='My-box-options-lft'>
+      <image class='' style='' src='../../images/list/list1.png' mode='' />
+    </view>
+    <view class='My-box-options-title'>我的帖子分享数</view>
+    <view class='My-box-options-num'>{{userCenter.topic_share_num}}</view>
+    <view class='My-box-options-rit'>
+      <!-- <image class='' style='' src='../../images/personal/jian_right.png' mode='' /> -->
+    </view>
+  </view>
+
+  <view class='My-box-options' bindtap='goMyPost'>
+    <view class='My-box-options-lft'>
+      <image class='' style='' src='../../images/list/list2.png' mode='' />
+    </view>
+    <view class='My-box-options-title'>我的帖子</view>
+    <view class='My-box-options-num'>{{userCenter.created_topics}}</view>
+    <view class='My-box-options-rit'>
+      <image class='' style='' src='../../images/personal/jian_right.png' mode='' />
+    </view>
+  </view>
+
+  <view class='My-box-options' bindtap='goMyComments'>
+    <view class='My-box-options-lft'>
+      <image class='' style='' src='../../images/list/list3.png' mode='' />
+    </view>
+    <view class='My-box-options-title'>我的评论</view>
+    <view class='My-box-options-num'>{{userCenter.replied_topics}}</view>
+    <view class='My-box-options-rit'>
+      <image class='' style='' src='../../images/personal/jian_right.png' mode='' />
+    </view>
+  </view>
+
+  <view style='background-color: #f5f5f5;height: 20rpx;'></view>
+
+  <view class='My-box-options' bindtap='goFriendsCircle'>
+    <view class='My-box-options-lft'>
+      <image class='' style='' src='../../images/list/list4.png' mode='' />
+    </view>
+    <view class='My-box-options-title'>糖友圈</view>
+    <!-- <view class='My-box-options-num'>0</view> -->
+    <view class='My-box-options-rit'>
+      <image class='' style='' src='../../images/personal/jian_right.png' mode='' />
+    </view>
+  </view>
+
+  <view class='My-box-options' bindtap='goDraftBox' draft_box>
+    <view class='My-box-options-lft'>
+      <image class='' style='' src='../../images/list/list5.png' mode='' />
+    </view>
+    <view class='My-box-options-title'>草稿箱</view>
+    <!-- <view class='My-box-options-num'>0</view> -->
+    <view class='My-box-options-rit'>
+      <image class='' style='' src='../../images/personal/jian_right.png' mode='' />
+    </view>
+  </view>
+
+  <view style='background-color: #f5f5f5;height: 20rpx;'></view>
+
+  <view class='My-box-options' bindtap='goMyPoints'>
+    <view class='My-box-options-lft'>
+      <image class='' style='' src='../../images/list/list6.png' mode='' />
+    </view>
+    <view class='My-box-options-title'>我的积分</view>
+    <!-- <view class='My-box-options-num'>0</view> -->
+    <view class='My-box-options-rit'>
+      <image class='' style='' src='../../images/personal/jian_right.png' mode='' />
+    </view>
+  </view>
+
+  <view class='My-box-options' bindtap='goHealthRecords'>
+    <view class='My-box-options-lft'>
+      <image class='' style='' src='../../images/list/list7.png' mode='' />
+    </view>
+    <view class='My-box-options-title'>健康记录</view>
+    <!-- <view class='My-box-options-num'>0</view> -->
+    <view class='My-box-options-rit'>
+      <image class='' style='' src='../../images/personal/jian_right.png' mode='' />
+    </view>
+  </view>
+
+  <view style='background-color: #f5f5f5;height: 20rpx;'></view>
+
+  <view class='My-box-options' bindtap='goShare'>
+    <view class='My-box-options-lft'>
+      <image class='' style='' src='../../images/list/list8.png' mode='' />
+    </view>
+    <view class='My-box-options-title'>邀请赚积分</view>
+    <!-- <view class='My-box-options-num'>0</view> -->
+    <view class='My-box-options-rit'>
+      <image class='' style='' src='../../images/personal/jian_right.png' mode='' />
+    </view>
+  </view>
+
+  <view class='My-box-options'  bindtap='goSetting'>
+    <view class='My-box-options-lft'>
+      <image class='' style='' src='../../images/list/list9.png' mode='' />
+    </view>
+    <view class='My-box-options-title'>设置</view>
+    <!-- <view class='My-box-options-num'>0</view> -->
+    <view class='My-box-options-rit'>
+      <image class='' style='' src='../../images/personal/jian_right.png' mode='' />
+    </view>
+  </view>
+
+  <view style='background-color: #fff;height: 20rpx;'></view>
+
+</view>

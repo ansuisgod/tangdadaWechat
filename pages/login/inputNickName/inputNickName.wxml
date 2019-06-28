@@ -1,0 +1,14 @@
+<!--输入昵称页面 pages/inputNickName/inputNickName.wxml-->
+<view class='nav bg-white' style='height:{{navH}}px'>
+    <view class='nav-title'>
+      <text class='profession' bindtap='skip'>跳过</text>
+    </view>
+  </view>
+<view class='conBox'>
+  <view class='name'>
+    <input type='text' placeholder='请输入昵称' bindblur='nameBlur' bindinput='nameInput'></input>
+  </view>
+  <view class='next'>
+    <button style='color:{{btnFontColor}};background:{{btnBgColor}};' disabled='{{nextDisable}}' bindtap='nextFunc'>下一步</button>
+  </view>
+</view>

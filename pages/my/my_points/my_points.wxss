@@ -1,0 +1,186 @@
+/* pages/my/my_points/my_points.wxss */
+
+
+
+.float-button2 {
+  position: fixed;
+  right: 20rpx;
+  bottom: 500rpx;
+  width: 150rpx;
+  height: 150rpx;
+  background: #eee;
+  z-index: 10;
+}
+
+/* 悬浮按钮 */
+
+.float-button {
+  position: fixed;
+  right: 20rpx;
+  bottom: 310rpx;
+  width: 150rpx;
+  height: 150rpx;
+  background: #eee;
+  z-index: 10;
+}
+
+/* 半隐藏动画 */
+
+.active {
+  opacity: 0.6;
+  -webkit-animation: countdownAN 0.5s linear 1 forwards;
+  animation: countdownAN 0.5s linear 1 forwards;
+}
+
+@keyframes countdownAN {
+  from {
+    transform: translateX(0rpx);
+  }
+
+  to {
+    transform: translate(100rpx);
+  }
+}
+
+@-webkit-keyframes countdownAN {
+  from {
+    transform: translateX(0rpx);
+  }
+
+  to {
+    transform: translate(100rpx);
+  }
+}
+
+/* 头部信息 */
+
+.myPoints-box-head {
+  width: 95%;
+  margin-left: 5%;
+  height: 180rpx;
+  display: flex;
+}
+
+.myPoints-box-head-img {
+  width: 130rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.myPoints-box-head-img-headImg {
+  height: 130rpx;
+  width: 130rpx;
+  border-radius: 100rpx;
+}
+
+.myPoints-box-head-info {
+  width: 340.5rpx;
+  margin-left: 30rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.myPoints-box-head-info-1 {
+  color: #5e5e5e;
+  font-size: 35rpx;
+  font-weight: bold;
+}
+
+.myPoints-box-head-info-2 {
+  color: #fff;
+  font-size: 10rpx;
+}
+
+.myPoints-box-head-info-3 {
+  color: #858585;
+  font-size: 28rpx;
+}
+
+.myPoints-box-head-record {
+  width: 212rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.myPoints-box-head-record-title {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.myPoints-box-head-record-img {
+  height: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.myPoints-box-head-record-img image {
+  height: 55rpx;
+  width: 55rpx;
+}
+
+/* 内容区 */
+
+.myPoints-box-content {
+  height: 120rpx;
+  display: flex;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.myPoints-box-content-lft {
+  width: 225rpx;
+  font-size: 30rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.myPoints-box-content-cen {
+  display: flex;
+  width: 225rpx;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.myPoints-box-content-cen-img {
+  width: 112.5rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.myPoints-box-content-cen-img image {
+  width: 60rpx;
+}
+
+.myPoints-box-content-cen-num {
+  width: 112.5rpx;
+  padding-left: 5rpx;
+  display: flex;
+  align-items: center;
+}
+
+.myPoints-box-content-rit {
+  width: 225rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.myPoints-box-content-rit-box {
+  width: 130rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: white;
+  border-radius: 10rpx;
+}

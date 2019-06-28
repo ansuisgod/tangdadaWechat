@@ -1,0 +1,27 @@
+<!--pages/my/add_weight/add_weight.wxml-->
+
+
+
+<view class='add-weight'>
+
+  <view class='add-weight-title'>体重值</view>
+
+  <view class='add-weight-box'>
+
+
+    <view class='add-weight-input'>
+      <input class='placeholderTo' placeholder-class='placeholder' bindinput="bindInput" value='{{inputValue}}' placeholder="请输入体重" maxlength="5" type="number" />
+    </view>
+
+    <view class="add-weight-unit">KG</view>
+
+
+  </view>
+
+</view>
+
+
+
+<view wx:if='{{inputValue == ""}}' class="buttons saveNo">保存</view>
+<view wx:elif='{{lock}}' class="buttons saveNo">已保存</view>
+<view wx:else class="buttons saveYes" bindtap='addnewWeight'>保存</view>

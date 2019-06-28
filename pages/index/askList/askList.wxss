@@ -1,0 +1,65 @@
+/* pages/index/askList/askList.wxss */
+.outBox{
+  width: 100%;
+  height: 100%;
+}
+.outBox .mainBox{
+  width: 100%;
+  height: auto;
+  margin: 25rpx 0 0 0;
+  padding: 0 0 25rpx 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.outBox .mainBox .allBox{
+  width: 95%;
+  margin: 0 auto;
+}
+.outBox .mainBox .allBox .askBox{
+  display: flex;
+}
+.outBox .mainBox .allBox .questionBox{
+  margin: 25rpx 0 15rpx 0;
+  display: flex;
+}
+.outBox .mainBox .allBox .askBox .askBoxLeft{
+  width: 10%;
+  flex-direction: row;
+}
+.outBox .mainBox .allBox .questionBox .questionBoxLeft{
+  width: 10%;
+  flex-direction: row;
+}
+.outBox .mainBox .allBox .askBox .askBoxLeft .tiBox{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50rpx;
+  background-color: #fd7380;
+  text-align: center;
+  color: #fff;
+  line-height: 60rpx;
+  font-size: 30rpx;
+}
+.outBox .mainBox .allBox .questionBox .questionBoxLeft .tiBox{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50rpx;
+  background-color: #a5a5a5;
+  text-align: center;
+  color: #fff;
+  line-height: 60rpx;
+  font-size: 30rpx;
+}
+.outBox .mainBox .allBox .askBox .askBoxRight{
+  width: 90%;
+  font-size: 32rpx;
+  color: #5e5e5e;
+  flex-direction: row;
+  padding: 10rpx 0 0 0;
+}
+.outBox .mainBox .allBox .questionBox .questionBoxRight{
+  padding: 10rpx 0 0 0;
+  width: 90%;
+  font-size: 32rpx;
+  color: #a5a5a5;
+  flex-direction: row;
+}

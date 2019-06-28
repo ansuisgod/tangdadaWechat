@@ -1,0 +1,143 @@
+<!--pages/my/diet_records/diet_records.wxml-->
+<view style='width: 100%;height: 80vh;display: flex;justify-content: center;align-items: center;' wx:if='{{getDieList.length == ""}}'>
+  <image src="../../../images/noData/NoRecord.png" style="width: 450rpx; height: 450rpx;" />
+</view>
+
+
+<view wx:else>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <view class='bloodGlucose-box'>
+
+    <!-- 头头上那一小竖线 -->
+    <view class='bloodGlucose-box-head'>
+      <view class='bloodGlucose-box-head-style'></view>
+    </view>
+
+
+
+    <block wx:for="{{destList}}">
+      <view class='bloodGlucose-box-main'>
+
+        <view class='bloodGlucose-box-main-lft'>
+
+          <view class='bloodGlucose-box-main-lft-time'>
+            <view class='bloodGlucose-box-main-lft-time-text'>{{item.categoryText}}</view>
+          </view>
+
+          <view class='bloodGlucose-box-main-lft-box'>
+            <view class='bloodGlucose-box-main-lft-box-year'>{{item.dd}}</view>
+            <view class='bloodGlucose-box-main-lft-box-month'>{{item.mm}}月</view>
+            <!-- <view class='bloodGlucose-box-main-lft-box-date'>2018年</view> -->
+          </view>
+        </view>
+
+        <view class='bloodGlucose-box-main-cen'>
+          <view class='bloodGlucose-box-main-cen-img'>
+            <image class='draftBox-box-list-del' style='' src='../../../images/personal/main_icon_normal.png' mode='' />
+          </view>
+          <view class='bloodGlucose-box-main-cen-line'>
+            <view class='bloodGlucose-box-main-cen-line-line'></view>
+          </view>
+        </view>
+
+
+        <view class='bloodGlucose-box-main-rit' bindtap='goAdd' data-info="{{item}}" bindlongtap='delBounced' bindtouchstart="bindTouchStart" bindtouchend="bindTouchEnd">
+          <view class='bloodGlucose-box-main-rit-box'>
+            <view class='bloodGlucose-box-main-rit-box-1'>食物</view>
+
+            <view style='height:120rpx;'>
+                <block wx:for="{{item.data}}">
+            <view class='bloodGlucose-box-main-rit-box-2'>{{item.food_name}}，</view>
+                </block>
+            </view>
+
+            <view class='bloodGlucose-box-main-rit-box-3'>卡路里 （cal）</view>
+            <view class='bloodGlucose-box-main-rit-box-4'>
+              <text style='color:#ff7382;font-weight: bold;' space="nbsp">{{item.energy}} </text>cal</view>
+          </view>
+        </view>
+
+
+      </view>
+    </block>
+
+
+
+  </view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 新增 -->
+<view class='top-box' bindtap='goAdds' bindtouchstart="bindTouchStart" bindtouchend="bindTouchEnd">
+  <image class='top' style='height: 150rpx;width: 150rpx;border-radius: 75rpx;' src='../../../images/personal/record.png'></image>
+</view>
+
+
+
+<!-- 查看建议 -->
+<view class='' style='position: fixed;right: 45rpx;bottom: 300rpx;' bindtap='goAdvice' data-status="3">
+  <image class='top' style='height: 100rpx;width: 100rpx;border-radius: 75rpx;' src='https://fakeimg.pl/200/?text=建议&font=noto&retina=1'></image>
+</view>
+
+
+
+
+<!-- 删除弹框 -->
+<view class='punch-tankuang' wx:if="{{delBounced}}">
+  <view class='punch-tankuang-view'>
+    <view class='punch-tankuang-view-img'>
+      <image src='../../../images/personal/selection_top_icon.png'></image>
+    </view>
+
+    <view class='punch-tankuang-view-text'>您真的需要删除吗</view>
+
+    <view class='punch-tankuang-view-btn'>
+      <view bindtap="delBounced_close">
+        <button style='color:#ff7382;'>取消</button>
+      </view>
+      <view bindtap="delBounced_operate">
+        <button style='border-left:3rpx solid #d1d1d1;'>确定</button>
+      </view>
+    </view>
+  </view>
+</view>

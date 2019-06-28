@@ -1,0 +1,89 @@
+<template name="homePage">
+<view class='My-box'>
+  <!-- 用户的头像部分 -->
+  <view class='My-box-head'>
+    <view class='My-box-head-img'>
+      <view class='My-box-head-img-box'>
+        <!-- 没有用户的头像设置默认的用户的头像 -->
+        <image class='My-box-head-img-headImg' wx:if='{{blogUserInfo.head_image}}' style='' src='{{blogUserInfo.head_image}}' mode='' />
+        <image class='My-box-head-img-headImg' wx:if='{{blogUserInfo.head_image == undefined}}' style='' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561638291636&di=bae0f8e67e988b9522d8c6010f54c599&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fa12f24e688c1cda3ff4cc453f3486a88adaf08cc2cdb-tQvJqX_fw658' mode='' />
+        <view>
+          <image class='My-box-head-img-headSex' wx:if='{{blogUserInfo.gender == 2}}' style='' src='../../images/personal/womanSex.png' mode='' />
+          <image class='My-box-head-img-headSex' wx:else style='' src='../../images/personal/manSex.png' mode='' />
+        </view>
+      </view>
+    </view>
+    <view class='My-box-head-info'>
+      <view class='My-box-head-info-1'>{{blogUserInfo.nickname}}</view>
+      <view class='My-box-head-info-2'>x</view>
+      <view class='My-box-head-info-3'>糖大大号：{{blogUserInfo.no}}</view>
+    </view>
+  </view>
+  
+  <view class='My-box-options'>
+    <view class='My-box-options-lft'>
+      <image class='' style='' src='../../images/list/list1.png' mode='' />
+    </view>
+    <view class='My-box-options-title'>TA发表的帖子</view>
+    <view class='My-box-options-num'>{{userCenter.created_topics}}</view>
+    <view class='My-box-options-rit'>
+      <!-- <image class='' style='' src='../../images/personal/jian_right.png' mode='' /> -->
+    </view>
+  </view>
+
+  <view class='My-box-options'>
+    <view class='My-box-options-lft'>
+      <image class='' style='' src='../../images/list/list1.png' mode='' />
+    </view>
+    <view class='My-box-options-title'>TA的帖子分享数</view>
+    <view class='My-box-options-num'>{{userCenter.topic_share_num}}</view>
+    <view class='My-box-options-rit'>
+      <!-- <image class='' style='' src='../../images/personal/jian_right.png' mode='' /> -->
+    </view>
+  </view>
+
+  <view class='My-box-options'>
+    <view class='My-box-options-lft'>
+      <image class='' style='' src='../../images/list/list1.png' mode='' />
+    </view>
+    <view class='My-box-options-title'>TA的粉丝</view>
+    <view class='My-box-options-num'>{{myFollowNum}}</view>
+    <view class='My-box-options-rit'>
+      <!-- <image class='' style='' src='../../images/personal/jian_right.png' mode='' /> -->
+    </view>
+  </view>
+
+  <view class='My-box-options'>
+    <view class='My-box-options-lft'>
+      <image class='' style='' src='../../images/list/list1.png' mode='' />
+    </view>
+    <view class='My-box-options-title'>TA的关注</view>
+    <view class='My-box-options-num'>{{userCenter.focus_topics}}</view>
+    <view class='My-box-options-rit'>
+      <!-- <image class='' style='' src='../../images/personal/jian_right.png' mode='' /> -->
+    </view>
+  </view>
+  <!-- 用户的帖子的部分 -->
+  <view class='artical' style='display:{{showOrHiden}};'>
+
+    <view class='articalList'>
+      <view class='tilteAtical'>{{userInfor.title}}</view>
+      <view class='contents'>{{userInfor.summary.text}}</view>
+      <view class='bottom'>
+        <view class='bLeft'>{{blogDate}}</view>
+        <view class='bRight'>
+          <view class='eye'><image src='../../static/eye.png'></image><text class='eyeNum'>{{userInfor.view_size}}</text></view>
+          <view class='information'><image src='../../static/theMessage.png'></image> <text class='messNum'>{{userInfor.reply_size}}</text></view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='lookMore' wx:if="{{followed == '0'}}" bindtap='attentionOther' style='background-color:#fd7380;'>查看更多帖子请点击关注</view>
+  <view class='lookMore' wx:if="{{followed == '1'}}" style='background-color:#858585;'>等待对方回复</view>
+
+  <view style='background-color: #fff;height: 20rpx;'></view>
+
+</view>
+</template>

@@ -1,0 +1,16 @@
+<!--pages/index/expertsRecommend/expertsRecommend.wxml-->
+<!-- 上面专家的信息区域 -->
+<view class='expertTop'>
+  <view class='expertInside'>
+    <view class='name'>{{dataList.name}} <text class='theTitle'>专家</text> </view>
+    <view class='department' style="height:{{contentHeight}};"><text class='theTitle'>{{dataList.description}}</text> </view>
+    <view class='lookInfo' style='display:{{listDisplay}}' bindtap='expertsDetails'>查看详情 > </view>
+  </view>
+</view>
+<!-- 姓名列表的滚动区域 -->
+<scroll-view scroll-y='true' style='background:#fff;height: 600rpx;'>
+  <view class='outAreas' style='display:{{listDisplay}}'>
+    <view class='cicle' wx:for='{{docotor}}' wx:key='property' bindtap='clickFun' data-exportid='{{item.id}}' data-name='{{item.name}}' data-description='{{item.description}}'>{{item.name}}</view>
+  </view>
+  <view class='clear'></view>
+</scroll-view>

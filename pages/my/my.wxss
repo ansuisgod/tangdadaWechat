@@ -1,0 +1,117 @@
+/* pages/my/my.wxss */
+
+.My-box-head {
+  width: 95%;
+  margin-left: 5%;
+  height: 200rpx;
+  display: flex;
+}
+
+.My-box-head-img {
+  width: 150rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  
+}
+
+.My-box-head-img-headImg {
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 100rpx;
+}
+
+.My-box-head-img-box {
+  height: 150rpx;
+  width: 150rpx;
+  position: relative;
+}
+
+.My-box-head-img-headSex {
+  height: 55rpx;
+  width: 55rpx;
+  position: absolute;
+  right: 0rpx;
+  bottom: 0rpx;
+}
+
+.My-box-head-info {
+  width: 532.5rpx;
+  margin-left: 30rpx;
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+}
+
+.My-box-head-info-1{
+  color: #5e5e5e;
+  font-size: 35rpx;
+}
+
+.My-box-head-info-2{
+  color: #fff;
+  font-size: 10rpx;
+}
+
+.My-box-head-info-3{
+  color: #858585;
+  font-size: 28rpx;
+}
+
+.My-box-options {
+  width: 100%;
+  /* margin-left: 5%; */
+  height: 100rpx;
+  /* margin-top: 35rpx; */
+  display: flex;
+}
+
+.My-box-options:active{
+  background-color: 	#f2f2f2;
+}
+
+.My-box-options-lft {
+  flex: 1;
+  margin-left: 37.5rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.My-box-options-lft image {
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.My-box-options-title {
+  flex: 7;
+  font-size: 30rpx;
+  color: #5e5e5e;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.My-box-options-num {
+  flex: 1;
+  font-size: 30rpx;
+  color: #5e5e5e;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.My-box-options-rit {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.My-box-options-rit image {
+  height: 60rpx;
+  width: 60rpx;
+}
+

@@ -1,0 +1,123 @@
+<!--pages/my/health_records/health_records.wxml-->
+
+<view class='health-records-box'>
+
+
+  <view class='health_records-bgImg'>
+
+
+    <!-- 导语 -->
+    <view class='health-records-title'>
+      <view class='health-records-title-name'>记得每天都记录一下哦~</view>
+      <view class='health-records-title-remind' bindtap='goRemindSet'>提醒设置</view>
+    </view>
+
+    <!-- 主体内容 -->
+    <view class='health-records-content'>
+
+      <!-- 血糖记录 -->
+      <view class='health-records-content-1 Click' bindtap='goBloodGlucoseRecord'>
+
+        <view class='health-records-content-box'>
+          <view class='health-records-content-box-img'>
+            <image class='' style='' src='../../../images/health/xt.png' mode='' />
+          </view>
+          <view class='health-records-content-box-name'>血糖记录</view>
+          <view class='health-records-content-box-english'>Blood Glucose Record</view>
+        </view>
+
+      </view>
+
+      <!-- 运动记录 -->
+      <view class='health-records-content-2 Click' bindtap='goMotionRecords'>
+
+        <view class='health-records-content-box'>
+          <view class='health-records-content-box-img'>
+            <image class='' style='' src='../../../images/health/yd.png' mode='' />
+          </view>
+          <view class='health-records-content-box-name'>运动记录</view>
+          <view class='health-records-content-box-english'>Motion Records</view>
+        </view>
+
+      </view>
+
+      <!-- 饮食记录 -->
+      <view class='health-records-content-3 Click' bindtap='goDietRecords'>
+
+        <view class='health-records-content-box'>
+          <view class='health-records-content-box-img'>
+            <image class='' style='' src='../../../images/health/ys.png' mode='' />
+          </view>
+          <view class='health-records-content-box-name'>饮食记录</view>
+          <view class='health-records-content-box-english'>Diet Records</view>
+        </view>
+
+      </view>
+
+      <!-- 体重记录 -->
+      <view class='health-records-content-4 Click' bindtap='goWeightRecords'>
+
+        <view class='health-records-content-box'>
+          <view class='health-records-content-box-img'>
+            <image class='' style='' src='../../../images/health/tz.png' mode='' />
+          </view>
+          <view class='health-records-content-box-name'>体重记录</view>
+          <view class='health-records-content-box-english'>Weight Records</view>
+        </view>
+
+      </view>
+
+      <!-- 血压记录 -->
+      <view class='health-records-content-5 Click' bindtap='goBloodPressureRecorded'>
+
+        <view class='health-records-content-box'>
+          <view class='health-records-content-box-img'>
+            <image class='' style='' src='../../../images/health/xy.png' mode='' />
+          </view>
+          <view class='health-records-content-box-name'>血压记录</view>
+          <view class='health-records-content-box-english'>Blood Pressure Recorded</view>
+        </view>
+
+      </view>
+
+      <!-- 统计 -->
+      <view class='health-records-content-6 Click' bindtap='goStatistical'>
+
+        <view class='health-records-content-box'>
+          <view class='health-records-content-box-img'>
+            <image class='' style='' src='../../../images/health/tj.png' mode='' />
+          </view>
+          <view class='health-records-content-box-name'>统计</view>
+          <view class='health-records-content-box-english'>Statistical</view>
+        </view>
+
+      </view>
+      <!-- END -->
+
+
+    </view>
+
+
+
+  </view>
+
+
+</view>
+
+
+
+
+
+
+
+
+
+<!-- 悬浮按钮 -->
+<view class='top-box'  bindtap='goAppraisal'>
+
+  <image class='top' style='height: 150rpx;width: 150rpx;border-radius: 75rpx;' src='../../../images/personal/record.png'></image>
+
+</view>
+
+
+

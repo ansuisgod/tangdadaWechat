@@ -1,0 +1,399 @@
+<!--pages/my/appraisal/appraisal.wxml-->
+
+
+<view class="head-progress">
+
+  <view class='head-progress-box'>
+
+    <view class='head-progress-box-1'>
+
+      <view class='head-progress-box-1box' style='margin-left: {{progressBar - 6}}%;'>{{progressBar}}%</view>
+
+    </view>
+    <view class='head-progress-box-2'>
+      <view class='head-progress-box-round' style='margin-left: {{progressBar - 1}}%;'></view>
+    </view>
+    <view class='head-progress-box-3'>
+      <view class='' style='height:25rpx;width:{{progressBar}}%;background-color: #fd6b98;'></view>
+    </view>
+    <view class='head-progress-box-4'>
+      <view class='head-progress-box-round' style='margin-left: {{progressBar - 1}}%;'></view>
+    </view>
+
+  </view>
+
+
+
+
+
+
+  <view class='head-progress-amount'>
+
+    <view class='head-progress-amount-1'>0%</view>
+    <view class='head-progress-amount-2'>100%</view>
+
+  </view>
+
+
+
+
+</view>
+
+
+<view style='height:140rpx;'></view>
+
+
+
+<!-- sex -->
+<view class='appraisal-list-box'>
+  <picker bindchange="changeSex" value="{{sexIndex}}" range="{{sexList}}">
+    <view class='appraisal-list'>
+
+      <view class='appraisal-list-lft'></view>
+      <view class='appraisal-list-cen1'>
+        <view class='appraisal-list-top'>您的性别</view>
+        <view class='appraisal-list-bot'>{{sexList[sexIndex]}}</view>
+      </view>
+      <view class='appraisal-list-cen2'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+      <view class='appraisal-list-rit'></view>
+
+    </view>
+  </picker>
+</view>
+
+
+<!-- 年龄 -->
+<view class='appraisal-list-box'>
+  <picker mode="date" value="1990-10-10" start="1900-10-01" end="2017-01-01" bindchange="changeAge">
+    <view class='appraisal-list'>
+
+      <view class='appraisal-list-lft'></view>
+      <view class='appraisal-list-cen1'>
+        <view class='appraisal-list-top'>您的年龄</view>
+        <view class='appraisal-list-bot'>{{age}}</view>
+      </view>
+      <view class='appraisal-list-cen2'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+      <view class='appraisal-list-rit'></view>
+
+    </view>
+  </picker>
+</view>
+
+
+
+
+
+<!-- 身高 -->
+<view class='appraisal-list-box'>
+  <picker bindchange="changeHeight" value="100" range="{{heightList}}">
+    <view class='appraisal-list'>
+
+      <view class='appraisal-list-lft'></view>
+      <view class='appraisal-list-cen1'>
+        <view class='appraisal-list-top'>您的身高（厘米）</view>
+        <view class='appraisal-list-bot'>{{heightList[heightIndex]}}</view>
+      </view>
+      <view class='appraisal-list-cen2'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+      <view class='appraisal-list-rit'></view>
+
+    </view>
+  </picker>
+</view>
+
+
+
+<!-- 体重 -->
+<view class='appraisal-list-box'>
+  <picker bindchange="changeWeight" value="40" range="{{weightList}}">
+    <view class='appraisal-list'>
+
+      <view class='appraisal-list-lft'></view>
+      <view class='appraisal-list-cen1'>
+        <view class='appraisal-list-top'>您的体重（千克）</view>
+        <view class='appraisal-list-bot'>{{weightList[weightIndex]}}</view>
+      </view>
+      <view class='appraisal-list-cen2'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+      <view class='appraisal-list-rit'></view>
+
+    </view>
+  </picker>
+</view>
+
+
+
+
+<!-- 糖尿病类型 -->
+<view class='appraisal-list-box'>
+  <picker bindchange="changeType" value="{{typeIndex}}" range="{{typeList}}">
+    <view class='appraisal-list'>
+
+      <view class='appraisal-list-lft'></view>
+      <view class='appraisal-list-cen1'>
+        <view class='appraisal-list-top'>您的糖尿病类型</view>
+        <view class='appraisal-list-bot'>{{typeList[typeIndex]}}</view>
+      </view>
+      <view class='appraisal-list-cen2'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+      <view class='appraisal-list-rit'></view>
+
+    </view>
+  </picker>
+</view>
+
+
+<!-- 计划怀孕或处于妊娠期？ -->
+<view class='appraisal-list-box' bindtap='Goplan'>
+  <picker bindchange="changePlan" value="{{planIndex}}" disabled='{{choose}}' range="{{planList}}">
+    <view class='appraisal-list'>
+
+      <view class='appraisal-list-lft'></view>
+      <view class='appraisal-list-cen1'>
+        <view class='appraisal-list-top'>您是否计划怀孕或处于妊娠期？</view>
+        <view class='appraisal-list-bot'>{{planList[planIndex]}}</view>
+      </view>
+      <view class='appraisal-list-cen2'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+      <view class='appraisal-list-rit'></view>
+
+    </view>
+  </picker>
+</view>
+
+
+
+
+
+
+<!-- 糖尿病病程年限 -->
+<view class='appraisal-list-box'>
+  <picker bindchange="changeYear" value="{{yearIndex}}" range="{{yearList}}">
+    <view class='appraisal-list'>
+
+      <view class='appraisal-list-lft'></view>
+      <view class='appraisal-list-cen1'>
+        <view class='appraisal-list-top'>您的糖尿病病程年限</view>
+        <view class='appraisal-list-bot'>{{yearList[yearIndex]}}</view>
+      </view>
+      <view class='appraisal-list-cen2'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+      <view class='appraisal-list-rit'></view>
+
+    </view>
+  </picker>
+</view>
+
+
+
+<!-- 是否运动 -->
+<view class='appraisal-list-box' bindtap='GoToastMove'>
+  <picker bindchange="changeMove" value="{{moveIndex}}" range="{{moveList}}">
+    <view class='appraisal-list'>
+
+      <view class='appraisal-list-lft'></view>
+      <view class='appraisal-list-cen1'>
+        <view class='appraisal-list-top'>您是否有运动习惯</view>
+        <view class='appraisal-list-bot'>{{moveList[moveIndex]}}</view>
+      </view>
+      <view class='appraisal-list-cen2'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+      <view class='appraisal-list-rit'></view>
+
+    </view>
+  </picker>
+</view>
+
+
+<!-- 是否家族史 -->
+<view class='appraisal-list-box' bindtap='GoToastFamily'>
+  <picker bindchange="changeFamily" value="{{familyIndex}}" range="{{familyList}}">
+    <view class='appraisal-list'>
+
+      <view class='appraisal-list-lft'></view>
+      <view class='appraisal-list-cen1'>
+        <view class='appraisal-list-top'>您是否有糖尿病家族史</view>
+        <view class='appraisal-list-bot'>{{familyList[familyIndex]}}</view>
+      </view>
+      <view class='appraisal-list-cen2'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+      <view class='appraisal-list-rit'></view>
+
+    </view>
+  </picker>
+</view>
+
+
+
+<!-- 血糖值 -->
+<view class='appraisal-list-box' bindtap='GoToastSugar'>
+  <picker bindchange="changeBloodSugar" value="{{BloodSugarIndex}}" range="{{BloodSugarList}}">
+    <view class='appraisal-list'>
+
+      <view class='appraisal-list-lft'></view>
+      <view class='appraisal-list-cen1'>
+        <view class='appraisal-list-top'>您最近一次空腹血糖值</view>
+        <view class='appraisal-list-bot'>{{BloodSugarList[BloodSugarIndex]}}</view>
+      </view>
+      <view class='appraisal-list-cen2'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+      <view class='appraisal-list-rit'></view>
+
+    </view>
+  </picker>
+</view>
+
+
+<!-- 血脂 -->
+<view class='appraisal-list-box'>
+  <picker bindchange="changeBloodFat" value="{{BloodFatIndex}}" range="{{BloodFatList}}">
+    <view class='appraisal-list'>
+
+      <view class='appraisal-list-lft'></view>
+      <view class='appraisal-list-cen1'>
+        <view class='appraisal-list-top'>您的血脂状况</view>
+        <view class='appraisal-list-bot'>{{BloodFatList[BloodFatIndex]}}</view>
+      </view>
+      <view class='appraisal-list-cen2'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+      <view class='appraisal-list-rit'></view>
+
+    </view>
+  </picker>
+</view>
+
+
+
+<!-- 血压 -->
+<view class='appraisal-list-box'>
+  <picker bindchange="changeBloodPressure" value="{{BloodPressureIndex}}" range="{{BloodPressureList}}">
+    <view class='appraisal-list'>
+
+      <view class='appraisal-list-lft'></view>
+      <view class='appraisal-list-cen1'>
+        <view class='appraisal-list-top'>您的血压状况</view>
+        <view class='appraisal-list-bot'>{{BloodPressureList[BloodPressureIndex]}}</view>
+      </view>
+      <view class='appraisal-list-cen2'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+      <view class='appraisal-list-rit'></view>
+
+    </view>
+  </picker>
+</view>
+
+
+<!-- 工作类型 -->
+<view class='appraisal-list-box'>
+  <picker bindchange="changeWork" value="{{workIndex}}" range="{{workList}}">
+    <view class='appraisal-list'>
+
+      <view class='appraisal-list-lft'></view>
+      <view class='appraisal-list-cen1'>
+        <view class='appraisal-list-top'>您的日常工作类型属于</view>
+        <view class='appraisal-list-bot'>{{workList[workIndex]}}</view>
+      </view>
+      <view class='appraisal-list-cen2'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+      <view class='appraisal-list-rit'></view>
+
+    </view>
+  </picker>
+</view>
+
+
+
+
+
+
+<!-- 您的合并病史 -->
+<view class='appraisal-list-box2' bindtap='shareShare'>
+  <view class='appraisal-list2'>
+
+    <view class='appraisal-list-lft'></view>
+    <view class='appraisal-list-cen1'>
+      <view class='appraisal-list-top'>您的合并病史(单选或多选)</view>
+      <view class='appraisal-list-bot2' style=''>{{arrText}}</view>
+    </view>
+    <view class='appraisal-list-cen2'>
+      <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+    </view>
+    <view class='appraisal-list-rit'></view>
+
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+<view class="buttons" bindtap='GoCalculate'>提交</view>
+
+
+
+
+
+
+
+
+<view class='addBox-choose-cover' wx:if='{{shareMenu}}' bindtap='hideCover'></view>
+<!-- 遮罩层 -->
+
+<!-- 弹框 -->
+<view class='addBox-choose-content' wx:if='{{shareMenu}}' catchtouchmove="myCatchTouch">
+
+  <view class='addBox-choose-content-main  main-heights2'>
+
+    <!-- 按钮叉 -->
+    <!-- <view class='addBox-choose-content-del'>
+        <image class='' style='' bindtap='hideCover' mode='aspectFill' src='../../../images/personal/cha.png'></image>
+      </view> -->
+
+
+    <view class='headBox' bindtap='chooseNo' >
+      <view class='headBox-lft'>无其它并发症</view>
+      <view class='headBox-rit'>
+        <image style='height: 35rpx;width: 35rpx;' mode='' src='{{noChoose? hasSelect : noSelect}}'></image>
+      </view>
+    </view>
+
+    <scroll-view class='scrollBox' scroll-y="true" scroll-top="{{scrollTop}}">
+      <block wx:for="{{selectIndex}}">
+        <view class='maxBox' bindtap='chooseHistory' data-selectIndex="{{index}}">
+          <view class='listBox'>
+            <view class='listBox-lft'>{{item.name}}</view>
+            <view class='listBox-rit'>
+              <image style='height: 35rpx;width: 35rpx;' mode='' src='{{selectIndex[index].sureid? hasSelect : noSelect}}'></image>
+            </view>
+          </view>
+        </view>
+        </block>
+    </scroll-view>
+
+  </view>
+
+</view>
+
+
+
+
+

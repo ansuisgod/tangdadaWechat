@@ -1,0 +1,143 @@
+<!--pages/my/add_diet_Details/add_diet_Details.wxml-->
+
+
+<view class='Details-box'>
+
+
+
+  <view class='Details-scroll'>
+    <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
+
+      <block wx:for="{{myFoodList}}">
+        <view class="tab-item {{currentTab== item.food.id?'active':''}}" data-info="{{item.food}}" data-index='{{index}}' bindtap="swichNav">
+          <image class='' style='' src='{{item.food.image_url}}' mode='' />
+        </view>
+      </block>
+
+    </scroll-view>
+  </view>
+
+
+
+
+
+
+  <swiper class="tab-content" current="{{currentTabIndex}}" data-info="{{item.food}}" duration="300" bindchange="switchTab" style="height:{{windowHeight}}rpx;">
+    <swiper-item wx:for="{{myFoodList}}">
+
+
+      <view class='Details-collect'>
+        <image class='' style='' bindtap='addCollect' data-info='{{item.food}}' src='{{item.food.collect == 0 ? "../../../images/personal/favorite_food_no.png" : "../../../images/personal/favorite_food_yes.png"}}' mode='' />
+      </view>
+
+
+      <view class='Details-info' style='height:{{windowHeight - 150}}rpx;'>
+
+        <view class='Details-info-img'>
+          <image class='' style='' src='{{item.food.image_url}}' mode='' />
+        </view>
+
+        <view class='Details-info-name'>{{item.food.name}}</view>
+
+        <view class='Details-info-heat'>
+          <text style='color:#fe7383;'>{{item.food.calory}}</text>大卡 / {{item.food.weight}}克</view>
+
+        <view style='' bindtap='infoFoods' data-info="{{item.food}}">
+
+<!--  -->
+         <view class='Details-info-heats' data-info="-1" bindtap='chooseFoods'>
+            <view class='Details-info-heats-name'>克</view>
+            <view class='Details-info-heats-img'>
+              <image class='' style='' src='{{FoodInfoId == -1 ? "../../../images/personal/mark_select_whlit.png" : "../../../images/personal/mark_unselect_whlit.png"}}' mode='' />
+            </view>
+          </view>
+<!--  -->
+
+        <block wx:for="{{item.units}}">
+          <view class='Details-info-heats' data-info="{{item}}" bindtap='chooseFood'>
+            <view class='Details-info-heats-name'>{{item.name}}</view>
+            <view class='Details-info-heats-img'>
+              <image class='' style='' src='{{item.id == FoodInfoId ? "../../../images/personal/mark_select_whlit.png" : "../../../images/personal/mark_unselect_whlit.png"}}' mode='' />
+            </view>
+          </view>
+        </block>
+        </view>
+
+
+        <view class='add-food-box'>
+          <view class='add-food-input'>
+            <input class='placeholderTo' placeholder-class='placeholder' bindinput="bindInput" value='{{inputValue}}' placeholder="请输入数量" maxlength="5" type="number" />
+          </view>
+          <view class="add-food-unit">{{item.food.unit_name}}</view>
+        </view>
+
+
+
+
+
+
+      </view>
+
+
+    </swiper-item>
+  </swiper>
+
+
+
+
+
+
+
+
+
+
+
+
+  <view class='Details-button'>
+    <view class='Details-button-sava' bindtap='newDiet'>保存</view>
+  </view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view class="float-button" bindtap='goadd'>
+  <image src="https://fakeimg.pl/200x100/?retina=1&text=热量页&font=noto" style="width: 150rpx; height: 150rpx;" />
+</view>

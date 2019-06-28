@@ -1,0 +1,99 @@
+<!--pages/my/health_review/health_review.wxml-->
+
+<view class='resultsBox'>
+
+  <view class='results-haed'>
+    <view class='results-haed-text'>{{results.introduce}}</view>
+    <view class='results-haed-text'>{{results.summary}}</view>
+  </view>
+
+<!-- 血糖 -->
+  <view class='results-list'>
+    <view class='results-list-img'>
+     <image class='' style='height: 90rpx;width: 90rpx;' src='../../../images/personal/bloodSugar.png' mode='' />
+    </view>
+    <view class='results-list-content'>
+      <view class='results-list-content-title'>血糖</view>
+      <view class='results-list-content-par'>糖化血红蛋白---</view>
+      <view class='results-list-content-par'>糖化血红蛋白---</view>
+      <view class='results-list-content-con'>{{results.sugar_tips}}</view>
+    </view>
+  </view>
+
+<!-- 血压 -->
+    <view class='results-list'>
+    <view class='results-list-img'>
+     <image class='' style='height: 90rpx;width: 90rpx;' src='../../../images/personal/bloodPressure.png' mode='' />
+    </view>
+    <view class='results-list-content'>
+      <view class='results-list-content-title'>血压</view>
+      <view class='results-list-content-par'>糖化血红蛋白---</view>
+      <view class='results-list-content-par'>糖化血红蛋白---</view>
+      <view class='results-list-content-con'>{{results.pressure_tips}}</view>
+    </view>
+  </view>
+
+<!-- 体重 -->
+    <view class='results-list'>
+    <view class='results-list-img'>
+     <image class='' style='height: 90rpx;width: 90rpx;' src='../../../images/personal/weight.png' mode='' />
+    </view>
+    <view class='results-list-content'>
+      <view class='results-list-content-title'>体重</view>
+      <view class='results-list-content-par'>糖化血红蛋白---</view>
+      <view class='results-list-content-par'>糖化血红蛋白---</view>
+      <view class='results-list-content-con'>{{results.weight_tips}}</view>
+    </view>
+  </view>
+
+  <!-- 饮食 -->
+    <view class='results-list'>
+    <view class='results-list-img'>
+     <image class='' style='height: 90rpx;width: 90rpx;' src='../../../images/personal/diet.png' mode='' />
+    </view>
+    <view class='results-list-content'>
+      <view class='results-list-content-title'>饮食</view>
+      <view class='results-list-content-par'>糖化血红蛋白---</view>
+      <view class='results-list-content-par'>糖化血红蛋白---</view>
+      <view class='results-list-content-con'>{{results.food_energy}}</view>
+      <view class='results-list-content-con'>{{results.food_tips}}</view>
+    </view>
+  </view>
+
+  <!-- 运动 -->
+    <view class='results-list'>
+    <view class='results-list-img'>
+     <image class='' style='height: 90rpx;width: 90rpx;' src='../../../images/personal/sport.png' mode='' />
+    </view>
+    <view class='results-list-content'>
+      <view class='results-list-content-title'>运动</view>
+      <view class='results-list-content-par'>糖化血红蛋白---</view>
+      <view class='results-list-content-par'>糖化血红蛋白---</view>
+      <view class='results-list-content-con'>{{results.sport_energy}}</view>
+      <view class='results-list-content-con'>{{results.sport_tips}}</view>
+    </view>
+  </view>
+
+
+<view class='results-bot'>
+ <view class=''>{{results.ending}}</view>
+</view>
+
+
+
+
+<view class='bnts-box'>
+ <view class='bnts'>朝着目标，开始管理吧</view>
+</view>
+<view style='height:50rpx;'></view>
+
+
+
+
+
+
+
+
+
+
+</view>

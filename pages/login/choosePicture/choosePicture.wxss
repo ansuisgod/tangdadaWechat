@@ -1,0 +1,35 @@
+/* pages/login/choosePicture/choosePicture.wxss */
+.rowList{
+  width: 50%;
+  height: 160rpx;
+  color: #888;
+  float: left;
+  font-size:0.7rem;
+}
+.rowList .left{
+  margin: 0 auto;
+}
+.rowList .left .top{
+  text-align: center;
+}
+.rowList .left .top image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.rowList .left .bottom{
+  text-align: center;
+}
+
+.finish{
+  clear: both;
+  width: 80%;
+  margin: 180rpx auto 0 auto;
+}
+.finish button{
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 50rpx;
+  font-size:0.7rem;
+  background-color: #ff7382;
+  color: #fff;
+}

@@ -1,0 +1,79 @@
+/* pages/my/add_weight/add_weight.wxss */
+
+page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.add-weight {
+  display: flex;
+  width: 320rpx;
+  height: 300rpx;
+}
+
+.add-weight-title {
+  color: #757575;
+  font-size: 28rpx;
+}
+
+.placeholder {
+  color: #757575;
+  font-size: 32rpx;
+}
+
+.placeholderTo {
+  /* height: 80rpx; */
+  width: 170rpx;
+  color: #333;
+  border-bottom: 5rpx solid #fe7281;
+}
+
+.add-weight-box {
+  display: flex;
+  height: 300rpx;
+}
+
+.add-weight-input {
+  display: flex;
+  align-items: center;
+}
+
+.add-weight-unit {
+  color: #757575;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+}
+
+.buttons {
+  position: fixed;
+  left: 37.5rpx;
+  bottom: 50rpx;
+  width: 675rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  color: white;
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 100rpx;
+  z-index: 10;
+  box-shadow: 0rpx 5rpx 12rpx #959595;
+}
+
+.saveNo{
+  background-color: #e0e0e0;
+}
+
+.saveYes{
+  background: #fe7281;
+}
+
+.saveNo:active {
+  background-color: rgba(224,224,224, 0.8);
+}
+
+.saveYes:active {
+  background-color: rgba(254, 114, 129, 0.8);
+}

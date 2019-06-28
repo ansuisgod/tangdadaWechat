@@ -1,0 +1,5 @@
+<!--pages/blog/moreFriend/moreFriend.wxml 搜索出来的好友更多的好友页面-->
+<import src="../../../components/an/moreFriends.wxml" />
+<view class='outBox'>
+  <template is="moreFriends" data="{{friendListInfo}}" />
+</view>

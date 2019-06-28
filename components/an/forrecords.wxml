@@ -1,0 +1,16 @@
+<template name="forrecords">
+<view class='theOutsidePart'>
+  <view class='empty' wx-if='{{orderList == 0}}'>你还没有兑换商品记录哦！</view>
+  <view class='line' wx-if='{{orderList != 0}}' wx:for='{{goodsListRecords}}' wx:key='property'>
+    <view class='lineLeft'>
+      <image src='{{item.item.pic}}'></image>
+      <!-- 如果此商品已经下架了就显示已下架字 -->
+      <view class='shelves' wx-if='{{item.item.deleted == 1}}'>已下架</view>
+    </view>
+    <view class='lineRight'>
+      <view class='top'>{{item.item.name}}</view>
+      <view class='bottom'>兑换日期：{{item.created_at}}</view>
+    </view>
+  </view>
+</view>
+</template>

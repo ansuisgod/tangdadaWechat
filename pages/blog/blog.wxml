@@ -1,0 +1,18 @@
+<!--pages/blog/blog.wxml-->
+<import src="../../components/an/bloggIndex.wxml" />
+<!--自定义导航条-->
+<view class='nav bg-white' style='height:{{navH}}px'>
+    <view class='nav-title'>
+      <image src='../../static/search.png' mode='aspectFit' bindtap='search' class="back"></image>
+      <text class='profession' bindtap='release'>发布</text>
+    </view>
+</view>
+
+<view class='selectBox' wx:if='{{select}}'>
+  <view class='innerBox' bindtap='sendPicFont'>发图文</view>
+  <view class='innerBox' bindtap='sedsVideo'>发视频</view>
+</view>
+<!-- 帖子的页面 -->
+<view class='main'>
+  <template is="bloggIndex" data="{{conArr}}" />
+</view>

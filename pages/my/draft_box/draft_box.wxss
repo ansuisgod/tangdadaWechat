@@ -1,0 +1,53 @@
+/* pages/my/draft_box/draft_box.wxss */
+
+.draftBox-box{}
+
+.draftBox-box-list{
+  height: 140rpx;
+  border-bottom: 1rpx #d9d9d9 solid;
+  position: relative;
+}
+
+.draftBox-box-list:active{
+  background-color: 	#f2f2f2;
+}
+
+.draftBox-box-list-content{
+  width: 100%;
+  height: 140rpx;
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  
+}
+
+.draftBox-box-list-content-title{
+  color: #757575;
+  font-size: 35rpx;
+}
+
+.draftBox-box-list-content-time{
+  color: #a7a6a6;
+  font-size: 30rpx; 
+}
+
+.draftBox-box-list-del-box{
+    position: absolute;
+  right: 25rpx;
+  bottom: 20rpx;
+}
+
+.draftBox-box-list-del{
+  height: 50rpx;
+  width: 50rpx;
+}
+
+
+
+
+
+
+
+
+

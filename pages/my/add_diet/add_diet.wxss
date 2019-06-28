@@ -1,0 +1,228 @@
+/* pages/my/add_diet/add_diet.wxss */
+
+PAGE {
+  /* background-color: #c1c1c1 */
+}
+
+.search-box {
+  width: 100%;
+  height: 100rpx;
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  z-index: 80;
+  box-shadow: 0rpx 0rpx 8rpx #959595;
+  background-color: white;
+}
+
+.addDiet-search {
+  height: 100rpx;
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.addDiet-search-lft {
+  background-color: #fff;
+  text-align: center;
+  border-radius: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 100%;
+  position: relative;
+  font-size: 30rpx;
+  border: 1rpx solid #f5f5f5;
+  box-shadow: 0rpx 0rpx 12rpx #959595;
+  opacity: 0.9;
+}
+
+.addDiet-search-rit {
+  position: absolute;
+  right: 20rpx;
+  top: 5rpx;
+}
+
+.addDiet-search-rit image {
+  height: 40rpx;
+  width: 40rpx;
+}
+
+
+
+/* 主体 */
+
+.addDiet {
+}
+
+.left-navbar {
+  position: absolute;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background-color: #888a7f;
+  color: white;
+  font-size: 28rpx;
+}
+
+.left-navbar view {
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.active {
+  background-color: #454545;
+  color: white;
+  font-size: 30rpx;
+}
+
+#right {
+  position: absolute;
+  right: 0;
+  width: 75%;
+  height: 100%;
+}
+
+
+/* 右边 */
+.foods-list{
+  height: 120rpx;
+  display: flex;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.foods-list:active{
+  background-color: 	#f2f2f2;
+}
+
+.foods-list-img{
+  width: 140rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foods-list-img image{
+  height: 100rpx;
+  width: 100rpx;
+}
+
+.foods-list-name{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35rpx;
+  color: #606060;
+}
+
+
+
+
+/* 底部栏 */
+
+
+.bar-box{
+  height: 110rpx;
+  width: 100%;
+  background-color: #585959;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 40;
+  box-shadow:0rpx -2rpx 6rpx #333333;
+
+display: flex;
+
+}
+
+.bar-box-head{
+  height: 110rpx;
+  width: 30rpx;
+  box-shadow:10rpx 0rpx 6rpx #333333;
+  background-color: #585959;
+  z-index:  41;
+}
+
+.bar-box-scroll{
+  width: 600rpx;
+overflow: hidden;
+white-space: nowrap;
+ margin-left: -40rpx;
+}
+
+
+.bar-box-scroll-box{
+  width: 150rpx;
+  height: 110rpx;
+  display: inline-block;
+  padding-top: 7.5rpx;
+}
+
+.bar-box-scroll-img{
+  display: flex;
+  /* background-color: yellow; */
+}
+
+
+.bar-box-scroll-img1{
+  width: 55rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #a2a2a2;
+}
+
+.bar-box-scroll-img2{
+  position: relative;
+}
+
+
+.bar-box-scroll-img2-del{  
+  /* background-color: yellowgreen; */
+  position: absolute;
+right: 0;
+top: 0;
+z-index: 50;
+}
+
+
+.bar-box-scroll-img2 image{
+  height: 95rpx;
+  width: 95rpx;
+  display: flex
+}
+
+.save-box{
+  width: 150rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rosybrown; */
+}
+
+.save-btn{
+  height: 60rpx;
+  width: 125rpx;
+  background-color: #fe7281;
+  box-shadow:0rpx 3rpx 6rpx #404040;
+  color: white;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10rpx;
+}
+
+
+.save-btn:active {
+  background-color: #fe0101;
+}
+
+
+
+
+
+

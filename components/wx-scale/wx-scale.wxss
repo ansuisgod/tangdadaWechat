@@ -1,0 +1,64 @@
+/* pages/test/test.wxss */
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  background: #dbdbdb;
+
+  /* border-radius: 15rpx; */
+  
+  /* border-top-left-radius: 15rpx;
+  border-top-right-radius: 15rpx; */
+}
+
+.zz {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 0px;
+  /* height: 40px; */
+  margin: auto;
+  border: 1px #52b8f5 solid;
+  z-index: 30;
+  /* border-radius: 15rpx; */
+}
+
+.scroll-wrapper {
+  display: flex;
+  /* border-radius: 15rpx; */
+}
+
+.scale-image {
+  flex-shrink: 0;
+  height: 70px;
+  box-sizing: border-box;
+  /* border: 1px red solid; */
+
+  /* border-radius: 15rpx; */
+
+}
+
+.scale-image image {
+  width: 100%;
+  height: 100%;
+
+  /* border-radius: 15rpx; */
+}
+
+.seat {
+  flex-shrink: 0;
+  box-sizing: border-box;
+
+  /* border-radius: 15rpx; */
+}
+
+.canvas {
+  position: absolute;
+  overflow: hidden;
+  box-sizing: border-box;
+  top: -100%;
+  left: 0;
+  z-index: -1;
+}

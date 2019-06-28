@@ -1,0 +1,23 @@
+<!--pages/shopping/goodsDetails/goodsDetails.wxml-->
+<view>
+  <view class='picture'>
+    <image src='{{goodsDeInfo.pic}}'></image>
+    <view class='inventory'>库存{{goodsDeInfo.surplus}}件</view>
+  </view>
+  <view class='titleDesc'>
+    <view class='titlesd'>{{goodsDeInfo.name}}</view>
+    <view class='inteager'>{{goodsDeInfo.points}} 积分</view>
+  </view>
+
+  <view class='detailContent'>
+    <view class='content'>商品名称：{{goodsDeInfo.name}}</view>
+    <view class='content'>商品简介：{{goodsDeInfo.description}}</view>
+    <view class='content'>商品流程：{{goodsDeInfo.remark}}</view>
+  </view>
+
+  <view class='detailContent'>
+    <view class='content'>版权归糖大大所有</view>
+  </view>
+  <view class='iWant' wx:if='{{inventory == 0}}' style='background-color:#e5e5e5;color:#a5a5a5;'>我要兑换</view>
+  <view class='iWant' wx:if='{{inventory == 1}}' bindtap='recordes' style='background-color:#fd7380;color:#fff;'>我要兑换</view>
+</view>

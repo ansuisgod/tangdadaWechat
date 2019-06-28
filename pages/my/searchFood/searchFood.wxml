@@ -1,0 +1,120 @@
+<!--pages/my/searchFood/searchFood.wxml-->
+<view class=''>
+  <view class='input-box'>
+    <input placeholder="请输入运动名称🔍" confirm-type='search' bindconfirm="search" bindinput='search' value='{{search}}' placeholder-style="font-size: 30rpx; color: #999; padding-left:30rpx; text-align: center;"></input>
+  </view>
+
+  <view style='height:110rpx;'></view>
+
+
+
+
+
+
+
+
+<block wx:if="{{keyword == ''}}">
+
+      <view class='noSearch'>请输入您的搜索词！</view>
+
+</block>
+
+<block wx:else>
+  <!-- list -->
+
+<view hidden='{{searchFoodList.length != ""}}' class='noSearch'>没找到呀，换个词试试吧！</view>
+
+
+  <block wx:for="{{searchFoodList}}">
+
+    <view class='addMotion-list' bindtap='addFood' data-item="{{item}}">
+      <view class='addMotion-list-lft'>
+        <image class='' style='' src='{{item.image_url}}'></image>
+      </view>
+      <view class='addMotion-list-cen'>{{item.name}}</view>
+      <view class='addMotion-list-rit'>
+        <image class='' style='' src='{{item.sureid ? "../../../images/personal/checkbox_selected_big_remind.png" : "../../../images/personal/checkbox_big_remind.png"}}' mode='' />
+      </view>
+    </view>
+
+  </block>
+  <!-- list -->
+  </block>
+
+
+
+
+
+
+
+</view>
+
+
+<view style='height:110rpx;'></view>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 底部栏 -->
+
+
+
+<view class='bar-box'>
+
+
+  <view class='bar-box-head'></view>
+
+
+  <view class='bar-box-scroll'>
+    <scroll-view scroll-x="true" class='' style="width: auto;overflow:hidden;">
+
+
+      <!--  -->
+      <block wx:for="{{addFoodsList}}">
+        <view class='bar-box-scroll-box'>
+          <view class='bar-box-scroll-img'>
+
+            <view class='bar-box-scroll-img1'>+</view>
+
+            <view class='bar-box-scroll-img2'>
+              <image class="" src="{{item.image_url}}"></image>
+
+              <view class='bar-box-scroll-img2-del' bindtap='del' data-info='{{item}}'>
+                <image class="" style='height:40rpx;width:40rpx;' src="../../../images/personal/del.png"></image>
+              </view>
+
+            </view>
+
+          </view>
+        </view>
+      </block>
+
+
+
+    </scroll-view>
+
+  </view>
+
+
+
+
+
+  <view class='save-box'>
+    <view wx:if='{{addFoodsList == ""}}' class='save-btn' style='background-color: #e0e0e0;'>请选择</view>
+    <view wx:else class='save-btn' bindtap='goDetails'>保存</view>    
+  </view>
+
+
+
+
+
+
+
+</view>

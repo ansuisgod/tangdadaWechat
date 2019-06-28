@@ -1,0 +1,78 @@
+<!--pages/my/ProductIdeas/ProductIdeas.wxml-->
+
+
+
+
+
+<view class=''>
+
+
+
+
+
+
+
+<view class="weui-cells weui-cells_after-title">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">
+      <textarea class="weui-textarea textarea_o" value="{{content}}" bindinput="content" maxlength="300" placeholder-class='textarea' placeholder="您的意见是我们前进的动力..." style="height: 300rpx;" />
+      <!-- <view class="weui-textarea-counter">0/200</view> -->
+    </view>
+  </view>
+</view>
+
+
+
+  <!-- 上传图片 -->
+
+
+  <view class="page__bd">
+    <!-- <view class="weui-cells clearance">
+      <view class="weui-cell">
+        <view class="weui-cell__bd"> -->
+          <view class="weui-uploader">
+            <view class="weui-uploader__hd">
+              <view class="weui-uploader__title">上传图片</view>
+            </view>
+            <view class="weui-uploader__bd">
+              <view class="weui-uploader__files" id="uploaderFiles">
+                <block wx:for-items="{{files}}" wx:key="{{index}}">
+                  <view class="weui-uploader__file" id="{{item}}">
+
+                    <view class='imgss'>
+                      <image bindtap="previewImages" class="weui-uploader__img" src="{{item}}" mode="aspectFill" data-index="{{index}}" />
+                      <image id="{{image.id}}" data-index="{{index}}" bindtap="delImg" class='det' src='../../../images/personal/del.png'></image>
+                    </view>
+                  </view>
+                </block>
+              </view>
+              <view class="weui-uploader__input-box">
+                <view class="weui-uploader__input" bindtap="chooseImage"></view>
+              </view>
+            </view>
+          </view>
+        </view>
+
+
+
+
+
+<view bindtap='releaseDynamic' formType="submit" class="buttons">提交</view>
+
+
+
+
+
+
+
+
+
+</view>
+
+
+
+
+
+
+
+

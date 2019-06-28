@@ -1,0 +1,90 @@
+/* pages/my/health_review/health_review.wxss */
+.resultsBox{
+  
+}
+
+.results-haed{
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 40rpx;
+  font-size: 25rpx;
+  color: #888888;
+}
+
+.results-haed-text{}
+
+.results-list{
+  display: flex;
+  margin-top: 40rpx;
+}
+
+.results-list-img{
+  width: 150rpx;
+  height: 150rpx;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  /* background-color: yellowgreen; */
+}
+
+.results-list-content{
+  width: 572.5rpx;
+  /* background-color: gold; */
+}
+
+.results-list-content-title{
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 36rpx;
+  color: #404040;
+}
+
+.results-list-content-par{
+  height: 35rpx;
+  line-height: 35rpx;
+    font-size: 25rpx;
+  color: #888888;
+}
+
+.results-list-content-con{
+    font-size: 25rpx;
+  color: #888888;
+  margin-top: 25rpx;
+}
+
+
+
+.results-bot{
+  width: 90%;
+  margin-left: 5%;
+  padding-top: 55rpx;
+  font-size: 25rpx;
+  color: #888888;
+}
+
+
+.bnts-box{
+  width: 80%;
+  margin-left: 10%;
+  height: 80rpx;
+  margin-top: 30rpx;
+}
+
+.bnts{
+  height: 80rpx;
+  width: 100%;
+  border-radius: 50rpx;
+  background-color: #ff7382;
+  color: white;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0rpx 5rpx 12rpx #959595;
+}
+
+.bnts:active {
+  background-color: rgba(254, 114, 129, 0.8);
+}

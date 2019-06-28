@@ -1,0 +1,58 @@
+<!--pages/my/add_motion_subset/add_motion_subset.wxml-->
+
+
+<view class=''>
+  <view class='input-box'>
+    <input placeholder="请输入运动名称🔍" confirm-type='search' bindinput='search' value='{{search}}' placeholder-style="font-size: 30rpx; color: #999; padding-left:30rpx; text-align: center;"></input>
+  </view>
+
+  <view style='height:110rpx;'></view>
+
+
+<block wx:if="{{keyword == ''}}">
+  <!-- list -->
+  <block wx:for="{{sportList}}">
+
+    <view class='addMotion-list' bindtap='goFill'  data-id="{{item.id}}">
+      <view class='addMotion-list-lft'>
+        <image class='' style='' src='{{item.image_url}}'></image>
+      </view>
+      <view class='addMotion-list-cen'>{{item.name}}</view>
+      <view class='addMotion-list-rit'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+    </view>
+
+  </block>
+  <!-- list -->
+    </block>
+
+<block wx:else>
+    <!-- list -->
+  <block wx:for="{{searchSportList}}">
+
+    <view class='addMotion-list' bindtap='goFill' data-id="{{item.id}}">
+      <view class='addMotion-list-lft'>
+        <image class='' style='' src='{{item.image_url}}'></image>
+      </view>
+      <view class='addMotion-list-cen'>{{item.name}}</view>
+      <view class='addMotion-list-rit'>
+        <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
+      </view>
+    </view>
+
+  </block>
+
+
+  <view style='font-size: 30rpx;color: #606060;height: 300rpx;width: 100%;text-align: center;line-height: 300rpx;' hidden='{{searchSportList.length != "0"}}'>请换个词搜索哦</view>
+  <!-- list -->
+  </block>
+
+
+
+
+
+
+
+
+</view>

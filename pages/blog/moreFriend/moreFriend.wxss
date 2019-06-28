@@ -1,0 +1,46 @@
+/* pages/blog/moreFriend/moreFriend.wxss */
+.outBox{
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.outBox .arrowList{
+  width: 90%;
+  height: 120rpx;
+  margin: 15rpx auto;
+  border-bottom: 1px solid #e6e6e6;
+}
+.outBox .arrowList .contens{
+  font-size: 34rpx;
+  color: #636363;
+  display: flex;
+}
+.outBox .arrowList .contens .userPic{
+  line-height:160rpx;
+  width: 20%;
+  flex-direction: row;
+}
+.outBox .arrowList .contens .userPic image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50rpx;
+  
+}
+.outBox .arrowList .contens .nickName{
+  text-align: left;
+  width: 50%;
+  flex-direction: row;
+  line-height:110rpx;
+}
+.outBox .arrowList .contens .date{
+  padding: 0 0 0 10rpx;
+  margin-top: 25rpx;
+  text-align: left;
+  width: 30%;
+  height: 60rpx;
+  flex-direction: row;
+  line-height:50rpx;
+  border-left: 1px solid #e0e0e0;
+}

@@ -1,0 +1,98 @@
+/* pages/my/ProductIdeasList/ProductIdeasList.wxss */
+
+page{
+  background-color: #f3f5f8;
+}
+
+.buttons:active {
+  background-color: rgba(254, 114, 129, 0.8);
+}
+
+/* 按钮 */
+.top-box{
+  position: fixed;
+  right: 45rpx;
+  bottom: 100rpx;
+}
+
+
+
+
+
+/* 圈子start */
+
+
+.circle-box {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFkAAAASCAYAAAAwlHIAAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAEXRFWHRTb2Z0d2FyZQBTbmlwYXN0ZV0Xzt0AAABISURBVFiF7dBRFYAgAMBAJDiZTKikYH54l2Bv17Pud3DU/DrgD0wOmBwwOWBywOSAyQGTAyYHTA6YHDA5YHLA5IDJAZMDJgc2XwUDTwfDmRoAAAAASUVORK5CYII=');
+  background-repeat: no-repeat;
+  background-size: 100% 300rpx;
+  width: 100%;
+  height: 110rpx;
+}
+
+.circle-box-style{
+
+}
+
+.circle-box-list{
+  width: 650rpx;
+  margin-left: 20rpx;
+  border-top-right-radius: 15rpx;
+  border-top-left-radius: 15rpx;
+  /* border-radius: 15rpx; */
+  padding: 30rpx 30rpx 30rpx 30rpx;
+  background-color: white;
+}
+
+
+
+.circle-box-list-content{}
+
+.circle-box-list-content-text{
+  font-size: 28rpx;
+  color: #333;
+  padding-top: 20rpx;
+  letter-spacing: 1rpx;
+}
+
+.circle-box-list-content-img{}
+
+.circle-box-list-content-img image{
+  padding-top: 16rpx;
+  margin-right: 16rpx;
+}
+
+
+.boders{
+  border-right: 1rpx solid #f3f3f3;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

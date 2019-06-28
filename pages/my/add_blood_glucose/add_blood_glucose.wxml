@@ -1,0 +1,172 @@
+<!--pages/my/add_blood_glucose/add_blood_glucose.wxml-->
+
+
+<!--
+min [number] 默认值 0, // 最小值
+max[number] 默认值 100, // 最大值
+int[boolean] 默认值 true, // 是否开启整数模式 ，false为小数模式  整数模式 step最小单位是 1 ，小数模式，step的最小单位是 0.1
+step[number] 默认值 1, // 步长，相对传入的值，每个格子代表几个值（值只能是能被10整除的 整数 ，1，2，5）
+fiexNum[number] 默认值 60, // 刻度尺左右余量
+single[number] 默认值 10, // 单个格子的实际长度（单位px）
+h[number] 默认值 0,// 自定义高度 初始值为80
+active [null] 默认值 center ，// 自定义选中位置  （三个值 min, max ,center , 范围内合法数值）
+styles [object]  // 自定义卡尺颜色  注意： 仅支持 #dbdbdb  或者red  这种 颜色 不支持简写 如 #333
+默认值： {
+                  line: '#dbdbdb',   // 刻度颜色
+                  bginner: '#fbfbfb',  // 前景色颜色
+                  bgoutside: '#dbdbdb',  // 背景色颜色
+                  lineSelect: '#52b8f5',  // 选中线颜色
+                  font: '#404040'   // 刻度数字颜色
+                }
+      
+  -->
+
+
+<view class='addBox'>
+
+  <view class='addBox-scale'>
+
+    <view class='addBox-scale-name'>血糖值</view>
+
+    <!-- 刻度尺 -->
+    <text style='color: #fe7281;font-size: 40rpx;'>{{value}}</text>
+    <text style='color: #606060;font-size: 25rpx;'>mmol/L</text>
+    <view class='wrap'>
+      <scale min="0" max="100" int="{{false}}" step="1" fiexNum="60" single="10" h="65"  active="{{val}}" styles="{{styles[0]}}" bindvalue="bindvalue"></scale>
+      <button class='share-btn' bindtap='assignment'>跳转至 ：50mmol/L</button>
+    </view>
+    <!-- 刻度尺END -->
+
+  </view>
+
+
+
+  <!-- 时间选择器 -->
+  <view class='addBox-choose'>测量日期</view>
+
+  <view class='addBox-choose-time'>
+
+    <view class='' style='flex: 5'>
+      <picker style='' mode="date" value="{{birthdayDisplay}}" start="1990-01-01" end="{{currentDate}}" bindchange="bindDateChange" class='datePicker'>
+        <view class="">
+          {{birthdayDisplay}}
+        </view>
+      </picker>
+    </view>
+
+    <view class='jian-img'>
+      <image style='height:21rpx;width:38rpx;' src='../../../images/personal/arrow_right.png' mode='' />
+    </view>
+
+  </view>
+  <!-- 时间选择器END -->
+
+  <!-- 测量时段 -->
+  <view class='addBox-choose'>测量时段</view>
+
+
+
+  <view class='addBox-choose-cover' wx:if='{{shareMenu}}' bindtap='hideCover'></view>
+  <!-- 遮罩层 -->
+
+  <view class='addBox-choose-Period' bindtap='shareShare'>
+
+    <view class=''>{{categoryText}}</view>
+    <!-- 触发按钮 -->
+
+    <view class='jian-img'>
+      <image style='height:21rpx;width:38rpx;' src='../../../images/personal/arrow_right.png' mode='' />
+    </view>
+
+  </view>
+
+
+  <!-- 弹框 -->
+  <view class='addBox-choose-content' wx:if='{{shareMenu}}' catchtouchmove="myCatchTouch">
+
+    <view class='addBox-choose-content-main main-heights1'>
+
+      <!-- 按钮叉 -->
+      <!-- <view class='addBox-choose-content-del'>
+        <image class='' style='' bindtap='hideCover' mode='aspectFill' src='../../../images/personal/cha.png'></image>
+      </view> -->
+
+
+      <view class='addBox-choose-content-mainList1'  bindtap='goCategory' data-category="0" data-text="早上空腹">早上空腹</view>
+      <view class='addBox-choose-content-mainList1'  bindtap='goCategory' data-category="1" data-text="早餐后1小时">早餐后1小时</view>
+      <view class='addBox-choose-content-mainList1'  bindtap='goCategory' data-category="2" data-text="早餐后2小时">早餐后2小时</view>
+      <view class='addBox-choose-content-mainList1'  bindtap='goCategory' data-category="3" data-text="早餐后3小时">早餐后3小时</view>
+
+      <view class='addBox-choose-content-mainList2'  bindtap='goCategory' data-category="4" data-text="午餐前">午餐前</view>
+      <view class='addBox-choose-content-mainList2'  bindtap='goCategory' data-category="5" data-text="午餐后2小时">午餐后2小时</view>
+      <view class='addBox-choose-content-mainList2'  bindtap='goCategory' data-category="6" data-text="晚餐前">晚餐前</view>
+      <view class='addBox-choose-content-mainList2'  bindtap='goCategory' data-category="7" data-text="晚餐后2小时">晚餐后2小时</view>
+      <view class='addBox-choose-content-mainList2'  bindtap='goCategory' data-category="8" data-text="睡前">睡前</view>
+      <view class='addBox-choose-content-mainList2'  bindtap='goCategory' data-category="9" data-text="随机">随机</view>
+
+      <view class='addBox-choose-content-mainList3' bindtap='hideCover'>取消</view>
+
+
+    </view>
+
+  </view>
+
+
+  <!-- 测量时段END -->
+
+
+  <!-- 个人end -->
+  <view class='addBox-choose'>个人状态</view>
+
+    <view class='addBox-choose-cover' wx:if='{{shareMenu2}}' bindtap='hideCover2'></view> <!-- 遮罩层 -->
+
+  <view class='addBox-choose-Period' bindtap='shareShare2'>
+
+    <view class=''>{{statusText}}</view>
+    <!-- 触发按钮 -->
+
+    <view class='jian-img'>
+      <image style='height:21rpx;width:38rpx;' src='../../../images/personal/arrow_right.png' mode='' />
+    </view>
+
+  </view>
+
+
+  <!-- 弹框 -->
+  <view class='addBox-choose-content' wx:if='{{shareMenu2}}' catchtouchmove="myCatchTouch">
+
+    <view class='addBox-choose-content-main  main-heights2'>
+
+      <!-- 按钮叉 -->
+      <!-- <view class='addBox-choose-content-del'>
+        <image class='' style='' bindtap='hideCover' mode='aspectFill' src='../../../images/personal/cha.png'></image>
+      </view> -->
+
+
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="0" data-text="无">无</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="1" data-text="运动后">运动后</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="2" data-text="发脾气">发脾气</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="3" data-text="疲劳">疲劳</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="4" data-text="饮酒">饮酒</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="5" data-text="吃药后">吃药后</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="6" data-text="生病">生病</view>
+      <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="7" data-text="生理期">生理期</view>
+
+
+      <view class='addBox-choose-content-mainList3' bindtap='hideCover2'>取消</view>
+
+
+    </view>
+
+  </view>
+  <!-- 个人end -->
+
+<view class='divider'></view>
+
+<view wx:if='{{lock == false}}'  bindtap='SaveRecord' class="buttons saveYes">保存</view>
+<view wx:else class="buttons saveNo">已保存</view>
+
+
+
+</view>
+

@@ -1,0 +1,75 @@
+/* pages/my/choose/choose.wxss */
+page{
+  background-color: #f8f8f8;
+}
+
+.choose-list{
+  height: 100rpx;
+display: flex;
+}
+
+
+.choose-list-lft{
+  width: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+}
+
+.choose-list-rit{
+    width: 670rpx;
+    font-size: 35rpx;
+    color: #606060;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #fff;
+}
+
+
+/* .choose-list-rit:active{
+  background-color: 	#f2f2f2;
+} */
+
+
+
+
+/* 保存按钮 */
+.SaveButton-box{
+  height: 120rpx;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: yellowgreen; */
+}
+
+.SaveButton{
+  height: 90rpx;
+  width: 100%;
+  border-radius: 50rpx;
+  background-color: #fe7282;
+  color: white;
+  font-size: 35rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:0rpx 3rpx 4rpx #c1c1c1;
+}
+
+.SaveButton:active{
+  background-color:  rgba(254,114,129,0.8);
+}
+
+
+
+
+
+
+
+
+
+

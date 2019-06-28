@@ -1,0 +1,236 @@
+<!--pages/my/health_advice/health_advice.wxml-->
+
+<!-- 11111111 -->
+<view wx:if='{{status == 1}}' class=''>
+  <view>
+
+    <view><!-- start -->
+      <view class='advice-tilte'>
+        <view class='advice-tilte-text'>空腹血糖参考范围（mmol/L）</view>
+      </view>
+
+      <view class='advice-input'>
+        <view class='advice-input-lft' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.before_sugar_min}}" bindinput="Input1" value='{{Input1}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+        <view class='advice-input-cen'>-</view>
+        <view class='advice-input-rit' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.before_sugar_max}}" bindinput="Input2" value='{{Input2}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+      </view>
+    </view><!-- start END -->
+
+
+    <view><!-- start -->
+      <view class='advice-tilte'>
+        <view class='advice-tilte-text'>餐后1小时血糖参考范围（mmol/L）</view>
+      </view>
+
+      <view class='advice-input'>
+        <view class='advice-input-lft' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.after_sugar1_min}}" bindinput="Input3" value='{{Input3}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+        <view class='advice-input-cen'>-</view>
+        <view class='advice-input-rit' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.after_sugar1_max}}" bindinput="Input4" value='{{Input4}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+      </view>
+    </view><!-- start END -->
+
+
+        <view><!-- start -->
+      <view class='advice-tilte'>
+        <view class='advice-tilte-text'>餐后2小时血糖参考范围（mmol/L）</view>
+      </view>
+
+      <view class='advice-input'>
+        <view class='advice-input-lft' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.after_sugar_min}}" bindinput="Input5" value='{{Input5}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+        <view class='advice-input-cen'>-</view>
+        <view class='advice-input-rit' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.after_sugar_max}}" bindinput="Input6" value='{{Input6}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+      </view>
+    </view><!-- start END -->
+
+
+        <view><!-- start -->
+      <view class='advice-tilte'>
+        <view class='advice-tilte-text'>餐后3小时血糖参考范围（mmol/L）</view>
+      </view>
+
+      <view class='advice-input'>
+        <view class='advice-input-lft' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.after_sugar3_min}}" bindinput="Input7" value='{{Input7}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+        <view class='advice-input-cen'>-</view>
+        <view class='advice-input-rit' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.after_sugar3_max}}" bindinput="Input8" value='{{Input8}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+      </view>
+    </view><!-- start END -->
+
+
+        <view><!-- start -->
+      <view class='advice-tilte'>
+        <view class='advice-tilte-text'>糖化血红蛋白参考范围（%）</view>
+      </view>
+
+      <view class='advice-input'>
+        <view class='advice-input-lft' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.sugar_percent_min}}" bindinput="Input9" value='{{Input9}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+        <view class='advice-input-cen'>-</view>
+        <view class='advice-input-rit' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.sugar_percent_max}}" bindinput="Input10" value='{{Input10}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+      </view>
+    </view><!-- start END -->
+
+
+
+
+    <view class='advice-article'>
+      <view class='advice-article-text'>{{refGoalInfoTextInfo.sugar_tips}}</view>
+    </view>
+
+
+  </view>
+</view>
+
+
+<!-- 222222222 -->
+<view wx:if='{{status == 2}}' class=''>
+  <view>
+
+    <view><!-- start -->
+      <view class='advice-tilte'>
+        <view class='advice-tilte-text'>当日消耗量参考值（大卡）</view>
+      </view>
+
+      <view class='advice-input'>
+        <view class='advice-input-lft' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.sport_min}}" bindinput="Input11" value='{{Input11}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+        <view class='advice-input-cen'>-</view>
+        <view class='advice-input-rit' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.sport_max}}" bindinput="Input12" value='{{Input12}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+      </view>
+    </view><!-- start END -->
+
+
+    <view class='advice-article'>
+      <view class='advice-article-text'>{{refGoalInfoTextInfo.sport_tips}}</view>
+      <view class='advice-article-text'>{{refGoalInfoTextInfo.sport_energy}}</view>
+    </view>
+
+
+  </view>
+</view>
+
+
+<!-- 333333333 -->
+<view wx:if='{{status == 3}}' class=''>
+  <view>
+
+    <view><!-- start -->
+      <view class='advice-tilte'>
+        <view class='advice-tilte-text'>当日摄入量参考值（大卡）</view>
+      </view>
+
+      <view class='advice-input'>
+        <view class='advice-input-lft' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.energy_min}}" bindinput="Input13" value='{{Input13}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+        <view class='advice-input-cen'>-</view>
+        <view class='advice-input-rit' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.energy_max}}" bindinput="Input14" value='{{Input14}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+      </view>
+    </view><!-- start END -->
+
+
+    <view class='advice-article'>
+      <view class='advice-article-text'>{{refGoalInfoTextInfo.food_tips}}</view>
+      <view class='advice-article-text'>{{refGoalInfoTextInfo.food_energy}}</view>
+    </view>
+
+
+  </view>
+</view>
+
+<!-- 4444444 -->
+<view wx:if='{{status == 4}}' class=''>
+  <view>
+
+    <view><!-- start -->
+      <view class='advice-tilte'>
+        <view class='advice-tilte-text'>建议体重参考范围（KG）</view>
+      </view>
+
+      <view class='advice-input'>
+        <view class='advice-input-lft' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.weigh_min}}" bindinput="Input15" value='{{Input15}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+        <view class='advice-input-cen'>-</view>
+        <view class='advice-input-rit' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.weigh_max}}" bindinput="Input16" value='{{Input16}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+      </view>
+    </view><!-- start END -->
+
+
+    <view class='advice-article'>
+      <view class='advice-article-text'>{{refGoalInfoTextInfo.weight_tips}}</view>
+    </view>
+
+
+  </view>
+</view>
+
+
+<view wx:if='{{status == 5}}' class=''>
+  <view>
+
+    <view><!-- start -->
+      <view class='advice-tilte'>
+        <view class='advice-tilte-text'>舒张（低）压参考范围（mmHg）</view>
+      </view>
+
+      <view class='advice-input'>
+        <view class='advice-input-lft' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.diastolic_pressure_min}}" bindinput="Input17" value='{{Input17}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+        <view class='advice-input-cen'>-</view>
+        <view class='advice-input-rit' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.diastolic_pressure_max}}" bindinput="Input18" value='{{Input18}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+      </view>
+    </view><!-- start END -->
+
+        <view><!-- start -->
+      <view class='advice-tilte'>
+        <view class='advice-tilte-text'>收缩（高）压参考范围（mmHg）</view>
+      </view>
+
+      <view class='advice-input'>
+        <view class='advice-input-lft' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.systolic_pressure_min}}" bindinput="Input19" value='{{Input19}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+        <view class='advice-input-cen'>-</view>
+        <view class='advice-input-rit' style='color:#fb3703;font-size:40rpx;text-align: center'>
+          <input class='input-class' placeholder="{{refGoalInfo.systolic_pressure_max}}" bindinput="Input20" value='{{Input20}}' maxlength="6" type="number" auto-focus placeholder-style='color:#fb3703;font-size:40rpx; text-align: center' />
+        </view>
+      </view>
+    </view><!-- start END -->
+
+
+    <view class='advice-article'>
+      <view class='advice-article-text'>{{refGoalInfoTextInfo.pressure_tips}}</view>
+    </view>
+
+
+  </view>
+</view>

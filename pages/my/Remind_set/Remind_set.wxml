@@ -1,0 +1,195 @@
+<!--pages/my/Remind_set/Remind_set.wxml-->
+<import src="../../../components/button/button.wxml"/>
+
+
+
+
+
+<view wx:if='{{listAlarmList.length == 0}}'>
+
+
+
+
+
+
+<view class='maxBox'>
+
+
+<view class='set_global' wx:if='{{shareMenu}}' bindtap='hideCover'></view>
+
+<view class='setBox'>
+
+  <view class='setBox-top'>
+    <image class='' bindtap='shareShare' style='' src='../../../images/personal/addRemind.png' mode='' />
+  </view>
+
+  <view class='setBox-bot'>
+    <image class='' style='' src='https://fakeimg.pl/200/?text=占位图&font=noto&retina=1' mode='' />
+  </view>
+
+</view>
+
+
+
+
+
+
+
+<view class='' wx:if='{{shareMenu}}' catchtouchmove="myCatchTouch">
+
+
+  <view class='maskBox' >
+
+
+<view class='maskBox-z' bindtap='hideCover'></view>
+
+    <view class='maskBox-lft'  bindtap='goSMS'>
+      <view class='maskBox-lft-img'>
+        <image class='' style='' src='../../../images/personal/remindPhone_note.png' mode='' />
+      </view>
+      <view class='maskBox-lft-text'>短信提醒</view>
+    </view>
+
+    <view class='maskBox-z' bindtap='hideCover'></view>
+
+
+    <view class='maskBox-rit'>
+      <view class='maskBox-rit-img'>
+        <image class='' style='' src='../../../images/personal/remindPhone.png' mode='' />
+      </view>
+      <view class='maskBox-rit-text'>微信提醒</view>
+    </view>
+
+<view class='maskBox-z' bindtap='hideCover'></view>
+
+  </view>
+
+
+
+</view>
+
+
+</view>
+
+
+
+
+</view>
+<view wx:else>
+
+
+
+
+
+
+
+<view class=''>
+
+<block wx:for="{{listAlarmList}}">
+ <view class='set_list' bindtap='goAdd'  data-info="{{item}}"  bindlongtap='delBounced' bindtouchstart="bindTouchStart" bindtouchend="bindTouchEnd">
+ 
+  <view class='set_list-1'>
+   <view class='set_list-1-time'>{{item.newtime}}</view>
+   <view class='set_list-1-date'>没发现是什么字段</view>
+  </view>
+  <view class='set_list-2'>提醒内容：{{item.arrInfo}}</view>
+  <view class='set_list-3'>提醒手机号：{{item.phone}}</view>
+
+  <view class='set_list-4' wx:if='{{item.expired_status == 1}}'>
+    <view class='set_list-4-box'>已过期</view>
+  </view>
+
+  <view class='set_list-5'></view>
+ 
+
+<view class='set_list-pos'>
+
+<view class='set_list-pos-head'>
+  <image style='height:50rpx;width:50rpx;' src='../../../images/personal/iconBack.png' mode='' />
+</view>
+
+<block wx:for="{{item.arrImgs}}">
+<view class='set_list-pos-list'>
+  <image style='height:50rpx;width:50rpx;padding-right: 10rpx;' src='{{item}}' mode='' />
+</view>
+</block>
+
+</view>
+
+
+ </view>
+
+</block>
+
+
+
+
+
+
+
+
+
+
+  <view class='addBox-choose-cover' wx:if='{{opened}}' bindtap='hideCoverss'></view>
+  <!-- 遮罩层 -->
+
+  <template is="button" data="{{ ...$wux.button.br }}"/>
+
+
+
+
+
+
+
+
+
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+<!-- 删除弹框 -->
+<view class='punch-tankuang' wx:if="{{delBounced}}">
+  <view class='punch-tankuang-view'>
+    <view class='punch-tankuang-view-img'>
+      <image src='../../../images/personal/selection_top_icon.png'></image>
+    </view>
+
+    <view class='punch-tankuang-view-text'>您真的需要删除吗</view>
+
+    <view class='punch-tankuang-view-btn'>
+      <view bindtap="delBounced_close">
+        <button style='color:#ff7382;'>取消</button>
+      </view>
+      <view bindtap="delBounced_operate">
+        <button style='border-left:3rpx solid #d1d1d1;'>确定</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+

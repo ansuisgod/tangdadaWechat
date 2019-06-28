@@ -1,0 +1,192 @@
+/**index.wxss**/
+/* 全部最大的容器 */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+/* 任务圆形按钮 */
+.ellipse{
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #ff7382;
+  color: #fff;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 100rpx;
+  position: fixed;
+  bottom: 20rpx;
+  right: 0;
+  z-index: 999;
+}
+/* 外部整块的内容 */
+.outAll{
+  margin:84rpx 0 0 0;
+  width: 90%;
+  height: 400rpx;
+}
+.outAll .top{
+  flex-direction: column;
+  height: 350rpx;
+  position: relative;
+  overflow:hidden;
+}
+.outAll .top image{
+  width: 100%;
+  background-size: cover;
+}
+/* 黑色透明的胶囊形状 */
+.outAll .top .capsuleRectangle{
+  width: 400rpx;
+  height: 70rpx;
+  background: rgba(0,0,0, 0.5);
+  position: absolute;
+  bottom: 15rpx;
+  right: 15rpx;
+  color: #fff;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 30rpx;
+}
+.outAll .top .capsuleRectangle1{
+  width: 200rpx;
+  height: 70rpx;
+  background: rgba(0,0,0, 0.5);
+  position: absolute;
+  bottom: 15rpx;
+  right: 15rpx;
+  color: #fff;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 70rpx;
+  border-radius: 30rpx;
+}
+/* 旋转的奖杯 */
+.outAll .top .rotating{
+  width: 200rpx;
+  height: 120rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 0;
+  color: #da4a37;
+  font-size: 36rpx;
+  text-align: center;
+  line-height: 120rpx;
+  font-weight: 600;
+  -webkit-transition-property:-webkit-transform;
+	-webkit-transition-duration:4s;
+	-moz-transition-property:-webkit-transform;
+	-moz-transition-duration:4s;
+	-webkit-animation:rorate 4s linear infinite;
+	animation: rotate 4s linear infinite;
+}
+@-webkit-keyframes rotate{from{-webkit-transform:rotateY(0deg)}
+to{-webkit-transform:rotateY(360deg)}
+}
+@keyframes rotate{
+from{-webkit-transform: rotateY(0deg);transform: rotateY(0deg)}
+to{-webkit-transform: rotateY(360deg);transform: rotateY(360deg)}
+}
+/* 标题样式 */
+.outAll .bottom{
+  padding: 10rpx 0 0 0;
+  flex-direction: column;
+  height: 50rpx;
+  font-size: 38rpx;
+  font-weight: bold;
+  color: #5e5e5e;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+/*显示整个conts */  
+.show{   
+  display: block;
+  }  
+/*隐藏整个conts */  
+.hide{   
+  display: none;  
+  }
+
+/*遮罩层 */  
+.bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1001;
+  -moz-opacity: 0.7;
+  opacity: 0.70;
+  filter: alpha(opacity=70);
+}
+.show {
+  display: none;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 53%;
+  height: 100%;
+  background-color: #f8f8f8;
+  z-index: 1002;
+  overflow:hidden;
+}
+.show .topArea{
+  width: 100%;
+  height: 270rpx;
+}
+.show .topArea image{
+  width: 200rpx;
+  height: 200rpx;
+}
+.show .topArea .titleName{
+  color: #fc747e;
+  text-align: center;
+  font-size: 38rpx;
+  font-weight: 600;
+}
+.show .listArea{
+  width: 100%;
+  height: 100%;
+}
+.show .listArea .aRow{
+  width: 100%;
+  height: 80rpx;
+  background-color: #f8f8f8;
+  display: flex;
+  line-height: 80rpx;
+}
+.show .listArea .aRow .aRowLeft{
+  text-align: right;
+  width: 40%;
+  flex-direction: row;
+}
+.show .listArea .aRow .aRowLeft image{
+  padding: 23rpx 0 0 0;
+  width: 40rpx;
+  height: 40rpx;
+}
+.show .listArea .aRow .aRowRight{
+  text-align: left;
+  font-size: 34rpx;
+  color: #5f5f5f;
+  width: 60%;
+  flex-direction: row;
+}
+.active{
+  background-color:#fff;
+  color: #ff7382;
+}
+.txt{
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: royalblue;
+}

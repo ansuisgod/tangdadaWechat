@@ -1,0 +1,131 @@
+<!--pages/my/add_diet/add_diet.wxml-->
+
+<view class='search-box'>
+  <view class='addDiet-search'>
+    <view class='addDiet-search-lft' bindtap='goAdds'>
+      <input placeholder="请输入食物名称" disabled='true' confirm-type='search' bindconfirm="searchBtn" bindinput='search' value='{{search}}' placeholder-style="font-size: 30rpx; color: #999; text-align: center;"></input>
+      <view class='addDiet-search-rit'>
+        <image class='' style='' src='../../../images/personal/fdj.png' mode='' />
+      </view>
+    </view>
+  </view>
+</view>
+
+
+
+
+<view class="addDiet">
+
+  <!--分类导航栏-->
+
+  <scroll-view class='left-navbar' scroll-y="true">
+
+    <view style='height:110rpx;'></view>
+
+    <view wx:for="{{testData}}" class="nav_left_items {{curNav == index? 'active' : ''}}" wx:key="key" bindtap="left" data-index="{{index}}">{{item.name}}
+
+    </view>
+
+  </scroll-view>
+
+
+
+  <scroll-view id="right" scroll-y="true" scroll-top="{{scrollTop}}">
+    <!--商品展示-->
+
+    <view style='height:110rpx;'></view>
+
+
+    <view class='foods-list' bindtap='goAddFavorite'>
+
+      <view class='foods-list-img'>
+        <image class="" src="../../../images/personal/xy_fivorate.png"></image>
+      </view>
+      <view class='foods-list-name'>收藏</view>
+
+    </view>
+
+    <!-- 列表 -->
+    <block wx:for="{{foodCategoryList}}">
+      <view class='foods-list' bindtap='goAdd' data-id="{{item.id}}">
+
+        <view class='foods-list-img'>
+          <image class="" src="{{item.image_url}}"></image>
+        </view>
+        <view class='foods-list-name'>{{item.name}}</view>
+
+      </view>
+    </block>
+
+
+<view style='height:120rpx;'></view>
+
+  </scroll-view>
+
+
+</view>
+
+
+
+<!-- 底部栏 -->
+
+
+
+<view class='bar-box'>
+
+
+<view class='bar-box-head'></view>
+
+
+<view class='bar-box-scroll'>
+  <scroll-view scroll-x="true" class='' style="width: auto;overflow:hidden;">
+
+
+<!--  -->
+<block wx:for="{{addFoodsList}}">
+<view class='bar-box-scroll-box'>
+<view class='bar-box-scroll-img'>
+
+<view class='bar-box-scroll-img1'>+</view>
+<view class='bar-box-scroll-img2'>
+  <image class="" src="{{item.image_url}}"></image>
+
+<view class='bar-box-scroll-img2-del' bindtap='del' data-info='{{item}}'>
+  <image class="" style='height:40rpx;width:40rpx;' src="../../../images/personal/del.png"></image>
+</view>
+
+</view>
+
+</view>
+</view>
+</block>
+
+    </scroll-view>
+
+</view>
+
+
+
+
+
+
+  <view class='save-box'>
+    <view wx:if='{{addFoodsList == ""}}' class='save-btn' style='background-color: #e0e0e0;'>请选择</view>
+    <view wx:else class='save-btn' bindtap='goDetails'>保存</view>    
+  </view>
+
+
+
+
+
+</view>
+
+
+
+
+
+
+
+
+
+

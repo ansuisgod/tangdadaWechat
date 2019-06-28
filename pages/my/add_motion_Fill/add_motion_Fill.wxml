@@ -1,0 +1,46 @@
+<!--pages/my/add_motion_Fill/add_motion_Fill.wxml-->
+
+
+<view class='addFill'>
+
+
+
+<view class='addFill-1'>
+   <image class=''  bindtap='addCollect' style='height:56rpx;width:167rpx;' src='{{favoriteSport == 0 ? "../../../images/personal/favorite_food_no.png" : "../../../images/personal/favorite_food_yes.png"}}' mode='' />
+</view>
+
+<view class='addFill-2'>
+  <view class='addFill-2-img'>
+   <image class='' style='height:250rpx;width:250rpx;' src='{{sportInfo.image_url}}' mode='' />
+   </view>
+</view>
+
+<view class='addFill-3'>{{sportInfo.name}}</view>
+
+<view class='addFill-4'><text style='color:#fb8736;'>{{sportInfo.calory}}</text>大卡/小时</view>
+
+
+
+
+  <view class='add-motion-box'>
+
+    <view class='add-motion-input'>
+      <input class='placeholderTo' placeholder-class='placeholder' bindblur="calculateCal" value='{{inputValue}}' placeholder="请输入时间" maxlength="6" type="number" />
+    </view>
+
+    <view class="add-motion-unit">min</view>
+
+  </view>
+
+
+  <view class='addFill-6'>您已消耗了<text style='color:#fb8736;'>{{calculateCal}}KCal</text></view>
+
+
+<view wx:if='{{inputValue == ""}}' class="buttons saveNo">保存</view>
+<view wx:elif='{{lock}}' class="buttons saveNo">已保存</view>
+<view wx:else class="buttons saveYes" bindtap='addNewSport'>保存</view>
+
+
+</view>
+
+

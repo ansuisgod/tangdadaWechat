@@ -1,0 +1,82 @@
+/* pages/my/health_advice/health_advice.wxss */
+
+
+.advice-tilte{
+  height: 80rpx;
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* background-color: yellow; */
+}
+
+.advice-tilte-text{
+  color: #606060;
+  font-size: 35rpx;
+}
+
+
+.advice-input{
+  height: 80rpx;
+  width: 90%;
+  margin-left: 5%;
+  /* background-color: greenyellow; */
+  display: flex;
+}
+
+.advice-input-lft{
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advice-input-cen{
+  flex: 2;
+  color:#fb3703;
+  font-weight: bold;
+  font-size: 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   /* background-color: blueviolet; */
+}
+
+.advice-input-rit{
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-class{
+  border-bottom: 3rpx solid #727272;
+  height: 80rpx;
+  width: 200rpx;
+}
+
+
+
+.advice-article{
+  /* height: 60rpx; */
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 40rpx;
+  /* display: flex;
+  align-items: center;
+  justify-content: flex-start; */
+}
+
+
+.advice-article-text{
+  font-size: 26rpx;
+  color: #727272;
+}
+
+
+
+
+
+
+

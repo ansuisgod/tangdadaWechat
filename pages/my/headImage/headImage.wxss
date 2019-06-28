@@ -1,0 +1,78 @@
+/* pages/my/headImage/headImage.wxss */
+
+page{
+   background-color: #f3f3f3
+}
+/* view{
+  border: 1px solid red;
+} */
+.contain{
+  width: 690rpx;
+  margin-left: 30rpx;
+}
+.imagetext-logo {
+  margin-top: 75rpx;
+   text-align: center;
+}
+.imagetext-logo image{
+  width:200rpx;
+  height: 200rpx;
+  margin: 0 auto;
+}
+.imagetext-logo-text{
+  font-size: 33rpx;
+  color: #555;
+  text-align: center;
+  margin-top: 40rpx
+}
+.imagetext-logo-text-1{
+  font-size: 35rpx;
+  color: #999;
+  margin-top: 39rpx
+}
+
+.imagetext-logo-img{
+  /* height: 415rpx; */
+  width: 100%;
+  background: #fff;
+  margin-top: 39rpx
+}
+
+.imagetext-logo-img image{
+   width: 100%;
+   height: 100%;
+}
+
+.imagetext-logo-button button:after{
+   border: none;
+}
+.imagetext-logo-button button{
+   background-color: #ff7382;
+   width: 90%;
+   color: #fff
+}
+.imagetext-logo-button{
+  padding: 40rpx 0;
+}
+
+
+/* 灰色按钮 */
+.imagetext-logo-button2 button:after{
+   border: none;
+}
+.imagetext-logo-button2 button{
+   background-color: #e0e0e0;
+   width: 90%;
+   color: #fff
+}
+.imagetext-logo-button2{
+  padding: 40rpx 0;
+}
+
+
+
+
+
+
+
+

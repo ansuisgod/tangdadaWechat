@@ -1,0 +1,244 @@
+/* pages/my/add_blood_pressure/add_blood_pressure.wxss */
+
+/* pages/my/add_blood_glucose/add_blood_glucose.wxss */
+
+text {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.wrap {
+  width: 90%;
+  margin: 10rpx 30rpx auto;
+  border: 1px #ccc solid;
+  /* border-radius: 15rpx; */
+}
+
+.addBox {
+}
+
+.addBox-scale {
+  background-color: #efeff5;
+  padding-bottom: 30rpx;
+}
+
+.addBox-scale-name {
+  height: 70rpx;
+  font-size: 30rpx;
+  padding-left: 5%;
+  line-height: 70rpx;
+  color: #666;
+}
+
+.title-box{
+  /* margin-left: 37.5rpx; */
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+}
+
+.title-box-lft{
+  flex: 1;
+}
+
+.title-box-cen{
+  flex: 1;
+}
+
+.title-box-rit{
+  flex: 1;
+}
+
+.addBox-choose {
+  height: 80rpx;
+  font-size: 30rpx;
+  padding-left: 5%;
+  line-height: 80rpx;
+  color: #666;
+  background-color: #efeff5;
+}
+
+.jian-img {
+  position: absolute;
+  right: 37.5rpx;
+  /* top: 29.5rpx; */
+}
+
+
+
+
+
+/* 个人 */
+
+.addBox-choose-Period{
+  display: flex;
+  padding: 0rpx 37.5rpx;
+  font-size: 30rpx;
+  align-items: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  position: relative;
+}
+
+.addBox-choose-content {
+}
+
+.addBox-choose-content-main {
+  /* height: 40%; */
+  width: 100%;
+  /* background-color: white; */
+  border-top-right-radius: 30rpx;
+  border-top-left-radius: 30rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 35;
+  background-color: rgba(255,255,255,0.9);
+}
+
+.main-heights1{
+  height: 550rpx;
+}
+
+.main-heights2{
+  height: 340rpx;
+}
+
+
+.addBox-choose-content-del image {
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+.addBox-choose-cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 33;
+}
+
+/* 打开动画 */
+
+.addBox-choose-content-main {
+  -webkit-animation: slidingAN 0.3s linear 1 forwards;
+  animation: slidingAN 0.3s linear 1 forwards;
+}
+
+@keyframes slidingAN {
+  from {
+    transform: translateY(70%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slidingAN {
+  from {
+    transform: translateY(70%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+/* 弹框内容 */
+
+
+.addBox-choose-content-mainList3{
+  float: left;
+  color: #000000;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:0rpx 0rpx 4rpx #333333;
+  height: 80rpx;
+  width: 650rpx;
+  margin-left: 50rpx;
+  margin-top: 35rpx;
+  border-radius: 10rpx;
+}
+
+
+.addBox-choose-content-mainList3:active{
+  background-color: 	#efeff5;
+}
+.addBox-choose-content-mainList:active{
+  background-color: 	#efeff5;
+}
+.buttons:active{
+  background-color:  rgba(254,114,129,0.8);
+}
+
+
+.addBox-choose-content-mainList{
+  float: left;
+  color: #000000;
+  font-size: 28rpx;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:0rpx 0rpx 4rpx #333333;
+  height: 80rpx;
+  width: 125rpx;
+  margin-left: 50rpx;
+  margin-top: 25rpx;
+  border-radius: 10rpx;
+}
+
+.divider{
+  height: 40rpx;
+  background-color: #efeff5;
+}
+
+.buttons {
+  position: fixed;
+  left: 37.5rpx;
+  bottom: 50rpx;
+  width: 675rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  color: white;
+  font-size: 40rpx;
+  text-align: center;
+  line-height: 100rpx;
+  z-index: 10;
+  box-shadow:0rpx 5rpx 12rpx #959595;
+}
+
+
+
+.saveNo{
+  background-color: #e0e0e0;
+}
+
+.saveYes{
+  background: #fe7281;
+}
+
+.saveNo:active {
+  background-color: rgba(224,224,224, 0.8);
+}
+
+.saveYes:active {
+  background-color: rgba(254, 114, 129, 0.8);
+}
