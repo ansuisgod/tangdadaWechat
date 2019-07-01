@@ -19,9 +19,10 @@
 
   <!-- 回复区域视图模板 -->
 <view class='expectsReply' wx:if='{{dataInfo.reply}}'>
-  <view class='replayList' wx:for='{{replarList}}' wx:key='property'>
+  <view class='replayList' wx:if='{{replarList}}' wx:for='{{replarList}}' wx:key='property'>
     <view class='userPicLeft'>
-      <image src='{{item.user.head_icon}}'></image>
+      <image wx:if='{{dataInfo.user.head_icon}}' src='{{item.user.head_icon}}' bindtap='homePage' data-friendid='{{item.user.id}}'></image>
+      <image wx:else src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561638291636&di=bae0f8e67e988b9522d8c6010f54c599&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fa12f24e688c1cda3ff4cc453f3486a88adaf08cc2cdb-tQvJqX_fw658' bindtap='homePage' data-friendid='{{item.user.id}}'></image>
     </view>
     <view class='right'>
       <view class='userArea'>

@@ -89,7 +89,7 @@ function mobilePhoneModels(platform){
     if (platt == 'IP') {//如果是ios
       platt = '1';
     }
-    if (platt == 'AN') {//如果是安卓
+    if (platt == 'AN' || platt == 'RE') {//如果是安卓
       platt = '2';
     }
     return platt;

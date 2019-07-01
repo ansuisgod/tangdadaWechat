@@ -121,6 +121,16 @@ Page({
     })
   },
   /**
+   * @desc:点击用户的头像进入用户的主页
+   */
+  homePage: function (e) {
+    console.log("帖友id=" + e.target.dataset.friendid);
+    //跳转到用户的主页
+    wx.navigateTo({
+      url: '../../../pages/homePage/homePage?friendid=' + e.target.dataset.friendid
+    })
+  },
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {

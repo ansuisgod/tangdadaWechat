@@ -1,3 +1,4 @@
+<!-- 亚健康视图模板 -->
 <template name="subhelthIndex">
 <!-- 肥胖视图模板 -->
   <view class='obesityBox' wx:for-items="{{obesity}}" wx:key='property' bindtap='goDetailInfo' data-articlid='{{item.id}}'>

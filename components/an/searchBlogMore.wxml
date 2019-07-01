@@ -1,3 +1,4 @@
+<!-- 搜索更多帖子的视图模板 -->
 <template name="searchBlogMore">
   <view class='allBox'wx:for='{{blogList}}' wx:key='property'>
     <view class='cycleBox' bindtap='blogDetails' data-blogid='{{item.id}}'>

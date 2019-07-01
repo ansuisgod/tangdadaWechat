@@ -50,8 +50,18 @@
   font-size: 32rpx;
 }
 .records{
-  background-color: #ff7584;
-  color: #fff;
-  font-size: 32rpx;
+  width: 650rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  color: white;
+  font-size: 38rpx;
+  text-align: center;
+  line-height: 100rpx;
+  z-index: 10;
+  background: #fe7281;
+  box-shadow: 0rpx 5rpx 12rpx #959595;
   margin-bottom: 200rpx;
+}
+.records:active {
+  background-color: rgba(254, 114, 129, 0.8);
 }

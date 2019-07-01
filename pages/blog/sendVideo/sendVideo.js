@@ -110,7 +110,7 @@ Page({
    */
   chooseVideo: function () {
     var that = this;
-    wx: wx.chooseVideo({
+    wx.chooseVideo({
       sourceType: ['album', 'camera'],
       compressed: true,
       maxDuration: 60,

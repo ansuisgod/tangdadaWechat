@@ -7,7 +7,7 @@
   <view wx:for='{{chooseImgSrc}}' wx:key='property' wx:for-key='item' class='imgShowBox' wx:for-index='idx'>
     <image class='del' src='../../../static/pro-fail.png' style="display:{{imgDisplay}}" bindtap='delPic' data-ids='{{idx}}'></image>
     <!-- <image class='imgList' src='{{item}}' style="display:{{imgDisplay}}"></image> -->
-    <video class='imgList' src="{{item}}" style="display:{{imgDisplay}}" controls></video>
+    <video class='imgList' src="{{interfaceData}}" style="display:{{imgDisplay}}" controls></video>
   </view>
   
 </view>

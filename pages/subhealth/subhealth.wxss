@@ -10,7 +10,7 @@ view , scroll-view{
   top: 75rpx;
   right: 0;
   width: 250rpx;
-  height: 150rpx;
+  height: 140rpx;
   border: 1px solid #878787;
   text-align: center;
   font-size: 32rpx;

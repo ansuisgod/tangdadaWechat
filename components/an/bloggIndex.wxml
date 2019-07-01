@@ -1,4 +1,4 @@
-
+<!-- 帖子首页的模板 -->
 <template name="bloggIndex">
 <view class='outContainer' wx:for-item='item' wx:key='property' wx:for="{{conArr}}">
     <view class='insideCon'>

@@ -27,8 +27,8 @@
       <view class='contentOutImg' wx:if='{{imageArr.mp4 == undefined}}' wx:for-index="idx" wx:key='property' wx:for="{{imageArr.images}}">
         <image bindtap='largerPreview1' data-list='{{imageArr.images}}' wx:if="{{item.url}}" src='{{item.url}}'></image>
       </view>
-      <view class='contentOutImg' wx:if='{{videoSrc}}'>
-        <video class='imgList' src="{{videoSrc}}" controls></video>
+      <view class='contentOutImg'>
+        <video class='imgList' wx:if='{{videoSrc}}' src="{{videoSrc}}" controls></video>
       </view>
     </view>
 

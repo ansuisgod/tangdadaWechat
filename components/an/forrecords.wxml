@@ -1,3 +1,4 @@
+<!-- 兑换记录的模板 -->
 <template name="forrecords">
 <view class='theOutsidePart'>
   <view class='empty' wx-if='{{orderList == 0}}'>你还没有兑换商品记录哦！</view>

@@ -1,3 +1,4 @@
+<!-- 帖子详情点击用户的头像跳转到个人中心模板 -->
 <template name="homePage">
 <view class='My-box'>
   <!-- 用户的头像部分 -->

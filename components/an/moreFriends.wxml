@@ -1,3 +1,4 @@
+<!-- 搜索好友更多视图模板 -->
 <template name="moreFriends">
   <view class='arrowList' wx:for='{{friendListInfo}}' wx:key='property' bindtap='queryInfo' data-frid='{{item.id}}'>
     <view class='contens'>

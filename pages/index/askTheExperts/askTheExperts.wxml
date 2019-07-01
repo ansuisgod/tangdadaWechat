@@ -1,16 +1,18 @@
 <!--pages/index/askTheExperts/askTheExperts.wxml-->
-<view><button class='intrduce' type='primary' size='mini' plain="true" bindtap='expertsRecommend'>推荐专家</button></view>
-<view class='askTopA'>
-  <view class='askInputLeft'>
-    <input type='text' bindfocus='searchBoxFocus' placeholder='请输入您想搜索的问题'></input>
+<view class='toppBoxx' style='border:1px solid red;position:fixed;top:0;left:0;'>
+  <view class='askTopA'>
+    <view class='askInputLeft'>
+      <input type='text' bindfocus='searchBoxFocus' placeholder='请输入您想搜索的问题'></input>
+    </view>
+    <view class='askRightFont'>
+      <view bindtap='askQuestions'>提问</view>
+    </view>
   </view>
-  <view class='askRightFont'>
-    <view bindtap='askQuestions'>提问</view>
-  </view>
+  <view><button class='intrduce' type='primary' size='mini' plain="true" bindtap='expertsRecommend'>推荐专家</button></view>
 </view>
 
 <!-- 搜索语音部分 -->
-<view class='askTheExperts'>
+<!-- <view class='askTheExperts'>
   <view class='insideC' wx:for="{{audioArr}}" wx:for-item="v" wx:for-index="key" wx:key="content">
 
     <view class='asking'>
@@ -18,7 +20,7 @@
       <view class='askLeft'>
         <view class='askIcon'>问</view>
       </view>
-      <!-- 默认状态 -->
+      
       <view class='askRight' wx:if="{{!v.isplay}}" bindtap="play" data-key="{{key}}" data-id="{{v.id}}" data-isplay="{{v.isplay}}">
         <view class='voiceOutA'>
           <image src='https://xcx.quan5fen.com/Public/xcx-hitui/image/imgs-jyh/yuyin-ico.png'></image>
@@ -29,7 +31,7 @@
         {{v.time}}
       </view>
 
-      <!-- 当前正在播放状态 -->
+      
       <view class='askRight' wx:if="{{v.isplay}}" bindtap="stop" data-key="{{key}}" data-id="{{v.id}}" data-isplay="{{v.isplay}}">
         <view class='voiceOutA'>
           <image src='https://xcx.quan5fen.com/Public/xcx-hitui/image/imgs-jyh/yuyin-gif.gif'></image>
@@ -41,7 +43,7 @@
       </view>
     </view>
   </view>
-</view>
+</view> -->
 
 <!-- 问答部分 -->
 <view class='askQuestionArea'>
