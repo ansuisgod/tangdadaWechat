@@ -133,11 +133,13 @@
   </view>
 
 <block  wx:for="{{getDietList}}">
+
   <view class='list-box' style='height: 70rpx;'>
-    <view class='list-box-1' style='color: #606060;'>{{item.time}}</view>
-    <view class='list-box-2' style='color: #606060;'>{{item.categoryText}}</view>
-    <view class='list-box-3' style='color: #606060;'>{{item.energy}}</view>
+    <view class='list-box-1' style='color: #606060;'>{{item[0].data.time}}</view>
+    <view class='list-box-2' style='color: #606060;'>{{item[0].data.categoryText}}</view>
+    <view class='list-box-3' style='color: #606060;'>{{item[0].data.nums}}</view>
   </view>
+
   </block>
 
 </view>

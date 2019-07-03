@@ -75,7 +75,7 @@ opacity: 0.6
   align-items: center;
   flex-direction: column;
   margin-left: 122.5rpx;
-  background-color: yellowgreen;
+  /* background-color: yellowgreen; */
 }
 
 .Details-info-img{}
@@ -102,7 +102,8 @@ opacity: 0.6
   height: 45rpx;
   padding-left: 10rpx;
   padding-right: 10rpx;
-  background-color: #f6f4f4;
+  /* background-color: #f6f4f4; */
+  /* border-bottom: 1rpx solid #f6f4f4 */
 }
 
 .Details-info-heats-name{

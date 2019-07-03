@@ -149,13 +149,13 @@ Page({
     console.log(e.currentTarget.dataset.id)
     let toId = e.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/my/add_diet_list/add_diet_list?id=' + toId,
+      url: '/pages/my/add_diet_list/add_diet_list?id=' + toId + '&category=' + this.data.curNav,
     })
   },
   
   goAddFavorite: function () {  //跳转入跳转入饮食收藏列表
     wx.navigateTo({
-      url: '/pages/my/favoriteFood/favoriteFood',
+      url: '/pages/my/favoriteFood/favoriteFood' + '?category=' + this.data.curNav,
     })
   },
 
@@ -172,13 +172,13 @@ Page({
     console.log(ids)
 
     wx.navigateTo({
-      url: '/pages/my/add_diet_Details/add_diet_Details?ids=' + ids,
+      url: '/pages/my/add_diet_Details/add_diet_Details?ids=' + ids + '&category=' + this.data.curNav,
     })
   },
 
   goAdds: function () {  //跳转入饮食搜索列表
     wx.navigateTo({
-      url: '/pages/my/searchFood/searchFood',
+      url: '/pages/my/searchFood/searchFood' + '?category=' + this.data.curNav,
     })
   },
 

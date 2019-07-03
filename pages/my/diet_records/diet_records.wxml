@@ -1,4 +1,37 @@
 <!--pages/my/diet_records/diet_records.wxml-->
+
+<!-- <wxs module="m1">
+  var msg = "hello world"; module.exports.message = msg;
+
+
+function hasOrder ( day, days ) {
+
+  var hasOrder = false;
+
+  var i = 0;
+ 
+if(days != null){
+
+  for ( i = 0; i < days.length; i++ ) {
+
+    if ( days [ i ].addtime == day ) {
+
+      hasOrder = true;
+
+      break;
+    }
+  }
+}
+  return hasOrder;
+}
+
+module.exports.hasOrder = hasOrder;
+
+
+</wxs> -->
+
+
+
 <view style='width: 100%;height: 80vh;display: flex;justify-content: center;align-items: center;' wx:if='{{getDieList.length == ""}}'>
   <image src="../../../images/noData/NoRecord.png" style="width: 450rpx; height: 450rpx;" />
 </view>
@@ -28,18 +61,18 @@
 
 
 
-    <block wx:for="{{destList}}">
+    <block wx:for="{{integration}}">
       <view class='bloodGlucose-box-main'>
 
         <view class='bloodGlucose-box-main-lft'>
 
           <view class='bloodGlucose-box-main-lft-time'>
-            <view class='bloodGlucose-box-main-lft-time-text'>{{item.categoryText}}</view>
+            <view class='bloodGlucose-box-main-lft-time-text'>{{item[0].data.categoryText}}</view>
           </view>
 
           <view class='bloodGlucose-box-main-lft-box'>
-            <view class='bloodGlucose-box-main-lft-box-year'>{{item.dd}}</view>
-            <view class='bloodGlucose-box-main-lft-box-month'>{{item.mm}}月</view>
+            <view class='bloodGlucose-box-main-lft-box-year'>{{item[0].data.dd}}</view>
+            <view class='bloodGlucose-box-main-lft-box-month'>{{item[0].data.mm}}月</view>
             <!-- <view class='bloodGlucose-box-main-lft-box-date'>2018年</view> -->
           </view>
         </view>
@@ -59,16 +92,19 @@
             <view class='bloodGlucose-box-main-rit-box-1'>食物</view>
 
             <view style='height:120rpx;'>
-                <block wx:for="{{item.data}}">
-            <view class='bloodGlucose-box-main-rit-box-2'>{{item.food_name}}，</view>
-                </block>
+              <block wx:for="{{item}}">
+                <view class='bloodGlucose-box-main-rit-box-2'>{{item.data.food_name}}，</view>
+              </block>
             </view>
 
             <view class='bloodGlucose-box-main-rit-box-3'>卡路里 （cal）</view>
             <view class='bloodGlucose-box-main-rit-box-4'>
-              <text style='color:#ff7382;font-weight: bold;' space="nbsp">{{item.energy}} </text>cal</view>
+              <text style='color:#ff7382;font-weight: bold;' space="nbsp">{{item[0].data.nums}}</text>
+            cal</view>
           </view>
         </view>
+
+
 
 
       </view>

@@ -23,11 +23,24 @@
   right: 0;
   z-index: 999;
 }
+.profession{
+  width: 180rpx;
+  height: 80rpx;
+  background-color: #ff7382;
+  color: #fff;
+  font-size: 34rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 20rpx;
+  position: fixed;
+  top: 115rpx;
+  left: 10rpx;
+  z-index: 999;
+}
 /* 外部整块的内容 */
 .outAll{
   margin:84rpx 0 0 0;
   width: 90%;
-  height: 400rpx;
 }
 .outAll .top{
   flex-direction: column;
@@ -94,7 +107,7 @@ to{-webkit-transform: rotateY(360deg);transform: rotateY(360deg)}
 }
 /* 标题样式 */
 .outAll .bottom{
-  padding: 10rpx 0 0 0;
+  margin: 15rpx 0 0 0;
   flex-direction: column;
   height: 50rpx;
   font-size: 38rpx;
@@ -104,89 +117,18 @@ to{-webkit-transform: rotateY(360deg);transform: rotateY(360deg)}
   text-overflow:ellipsis;
   white-space:nowrap;
 }
-/*显示整个conts */  
-.show{   
-  display: block;
-  }  
-/*隐藏整个conts */  
-.hide{   
-  display: none;  
-  }
-
-/*遮罩层 */  
-.bg {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  z-index: 1001;
-  -moz-opacity: 0.7;
-  opacity: 0.70;
-  filter: alpha(opacity=70);
-}
-.show {
-  display: none;
-  text-align: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 53%;
-  height: 100%;
-  background-color: #f8f8f8;
-  z-index: 1002;
-  overflow:hidden;
-}
-.show .topArea{
-  width: 100%;
-  height: 270rpx;
-}
-.show .topArea image{
-  width: 200rpx;
-  height: 200rpx;
-}
-.show .topArea .titleName{
-  color: #fc747e;
-  text-align: center;
-  font-size: 38rpx;
-  font-weight: 600;
-}
-.show .listArea{
-  width: 100%;
-  height: 100%;
-}
-.show .listArea .aRow{
-  width: 100%;
-  height: 80rpx;
-  background-color: #f8f8f8;
-  display: flex;
-  line-height: 80rpx;
-}
-.show .listArea .aRow .aRowLeft{
-  text-align: right;
-  width: 40%;
-  flex-direction: row;
-}
-.show .listArea .aRow .aRowLeft image{
-  padding: 23rpx 0 0 0;
-  width: 40rpx;
-  height: 40rpx;
-}
-.show .listArea .aRow .aRowRight{
-  text-align: left;
-  font-size: 34rpx;
-  color: #5f5f5f;
-  width: 60%;
-  flex-direction: row;
-}
-.active{
-  background-color:#fff;
-  color: #ff7382;
-}
+/*显示整个conts */
 .txt{
   margin-top: 20rpx;
   font-size: 28rpx;
   color: royalblue;
+}
+.weui-navbar{
+ width: 100%;
+ position: fixed;
+ box-sizing: border-box;
+ white-space: nowrap; 
+ z-index: 100;
+ background: white;
+ margin:0;
 }

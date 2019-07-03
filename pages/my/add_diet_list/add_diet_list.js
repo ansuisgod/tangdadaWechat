@@ -20,7 +20,7 @@ Page({
 
     addFoodsList: [], //选中的食物
 
-
+    category: '', //时间段分类id
   },
 
   /**
@@ -31,6 +31,7 @@ Page({
     that.setData({
       platform: app.globalData.platform,
       food_group_id: options.id,
+      category: options.category
     });
     that.foodList()
 
@@ -273,7 +274,7 @@ Page({
     console.log(ids)
 
     wx.navigateTo({
-      url: '/pages/my/add_diet_Details/add_diet_Details?ids=' + ids,
+      url: '/pages/my/add_diet_Details/add_diet_Details?ids=' + ids + '&category=' + this.data.category,
     })
   },
 

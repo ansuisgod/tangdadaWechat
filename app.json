@@ -92,32 +92,32 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "static/home.png",
-        "selectedIconPath": "static/home-active.png",
+        "iconPath": "static/index.png",
+        "selectedIconPath": "static/indexActive.png",
         "text": "糖大大"
       },
       {
         "pagePath": "pages/subhealth/subhealth",
-        "iconPath": "static/media.png",
-        "selectedIconPath": "static/media.png",
+        "iconPath": "static/uhealth.png",
+        "selectedIconPath": "static/uhealthActive.png",
         "text": "亚健康"
       },
       {
         "pagePath": "pages/blog/blog",
-        "iconPath": "static/blog.png",
-        "selectedIconPath": "static/blog.png",
+        "iconPath": "static/blogg.png",
+        "selectedIconPath": "static/blogActive.png",
         "text": "帖子"
       },
       {
         "pagePath": "pages/shopping/shopping",
-        "iconPath": "static/shopping-cart.png",
-        "selectedIconPath": "static/shopping-cart.png",
+        "iconPath": "static/shopp.png",
+        "selectedIconPath": "static/shoppActive.png",
         "text": "糖商城"
       },
       {
         "pagePath": "pages/my/my",
-        "iconPath": "static/center.png",
-        "selectedIconPath": "static/center.png",
+        "iconPath": "static/ucenter.png",
+        "selectedIconPath": "static/ucenterActive.png",
         "text": "个人中心"
       }
     ]

@@ -1,39 +1,14 @@
 <import src="../../components/an/indexAll.wxml" />
-<!--index.wxml-->
-<!--自定义导航条-->
-<view class='nav bg-white' style='height:{{navH}}px'>
-    <view class='nav-title'>
-      <!-- 首页 -->
-      <image src='../../static/outdent.png' mode='aspectFit' bindtap='montmorilloniteLayer' class="back"></image>
-      <text class='profession' bindtap='bindViewTap'>问专家</text>
-    </view>
-  </view>
+<import src="../../components/an/swiperTabber.wxml" />
+
+<scroll-view scroll-x="true" class="weui-navbar">
+  <!-- 导航条 -->
+  <template is="swiperTabber" data="{{tabs, tabW, activeIndex}}" />
+</scroll-view>
+
 <!--任务圆形按钮-->
 <view class='ellipse' bindtap='tasks'>任务</view>
-  <view class='main'>
-    <template is="indexAll" data="{{allOtherArea,dataListInfo,otherTypeDataList,increaseknowledge}}" />
-  </view>
-
-  <!--点击图标显示蒙层-->
-  <view class="bg" bindtap='montmorilloniteLayerHiden' style='display:{{display}}'></view>
-  <view class="show" bindtap='montmorilloniteLayerHiden' style='display:{{display}}'>
-
-    <view class='topArea'>
-      <image src='../../static/logoIcon.png'></image>
-      <view class='titleName'>糖大大</view>
-    </view>
-    <view class='listArea'>
-      <!-- 展示蒙层里面的列表信息 -->
-      <view class='aRow' wx:key="property" wx:for='{{array}}' data-typeid='{{item.tagId}}' bindtap='montmorilloniteLayerListFunc'>
-        <view class='aRowLeft'>
-          <image src='{{item.src}}'></image>
-        </view>
-        <view class='aRowRight'>\r\t \r\t {{item.type}}</view>
-      </view>
-  </view>
-
+<view class='profession' bindtap='bindViewTap'>问专家</view>
+<view class='main'>
+  <template is="indexAll" data="{{allOtherArea,dataListInfo,otherTypeDataList,increaseknowledge}}" />
 </view>
-
-
-
-

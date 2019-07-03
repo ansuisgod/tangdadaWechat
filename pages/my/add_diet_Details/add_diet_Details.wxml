@@ -7,9 +7,9 @@
 
   <view class='Details-scroll'>
     <scroll-view scroll-x="true" class="tab-h" scroll-left="{{scrollLeft}}">
-
+<!--  -->
       <block wx:for="{{myFoodList}}">
-        <view class="tab-item {{currentTab== item.food.id?'active':''}}" data-info="{{item.food}}" data-index='{{index}}' bindtap="swichNav">
+        <view class="tab-item {{currentTab == current?'active':''}}" data-info="{{item.food}}" data-index='{{index}}' bindtap="swichNav">
           <image class='' style='' src='{{item.food.image_url}}' mode='' />
         </view>
       </block>
@@ -44,31 +44,26 @@
 
         <view style='' bindtap='infoFoods' data-info="{{item.food}}">
 
-<!--  -->
-         <view class='Details-info-heats' data-info="-1" bindtap='chooseFoods'>
-            <view class='Details-info-heats-name'>克</view>
-            <view class='Details-info-heats-img'>
-              <image class='' style='' src='{{FoodInfoId == -1 ? "../../../images/personal/mark_select_whlit.png" : "../../../images/personal/mark_unselect_whlit.png"}}' mode='' />
-            </view>
-          </view>
-<!--  -->
 
-        <block wx:for="{{item.units}}">
-          <view class='Details-info-heats' data-info="{{item}}" bindtap='chooseFood'>
-            <view class='Details-info-heats-name'>{{item.name}}</view>
-            <view class='Details-info-heats-img'>
-              <image class='' style='' src='{{item.id == FoodInfoId ? "../../../images/personal/mark_select_whlit.png" : "../../../images/personal/mark_unselect_whlit.png"}}' mode='' />
+          <!-- 食物单位选择 -->
+          <block wx:for="{{item.units}}">
+            <view class='Details-info-heats' data-info="{{item}}" bindtap='chooseFood'>
+              <view class='Details-info-heats-name'>{{item.name}}</view>
+              <view class='Details-info-heats-img'>
+                <image class='' style='' src='{{item.sureid == true ? "../../../images/personal/mark_select_whlit.png" : "../../../images/personal/mark_unselect_whlit.png"}}' mode='' />
+              </view>
             </view>
-          </view>
-        </block>
+          </block>
+          <!-- 食物单位选择end -->
+
         </view>
 
 
         <view class='add-food-box'>
-          <view class='add-food-input'>
-            <input class='placeholderTo' placeholder-class='placeholder' bindinput="bindInput" value='{{inputValue}}' placeholder="请输入数量" maxlength="5" type="number" />
+          <view class='add-food-input' >
+            <input  data-info="{{item}}" class='placeholderTo' disabled='{{item.food.disabled}}' placeholder-class='placeholder' bindinput="bindInput" value='' placeholder="请选择单位" maxlength="5" type="number" />
           </view>
-          <view class="add-food-unit">{{item.food.unit_name}}</view>
+          <view class="add-food-unit">{{item.food.unitsName}}</view>
         </view>
 
 

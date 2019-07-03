@@ -1,37 +1,11 @@
 <!--pages/index/task/task.wxml 首页的任务-->
+<import src="../../../components/an/swiperTabber.wxml" />
+<import src="../../../components/an/taskView.wxml" />
 <scroll-view scroll-x="true" class="weui-navbar">
   <!-- 导航条 -->
-  <block wx:for-items="{{tabs}}" wx:key='property'>
-  <view id="{{index}}" class="{{activeIndex == index ?'item_on':''}} default-item" bindtap="tabClick" style="width:{{tabW}}px">
-  {{item}}
-  </view>
- </block>
- <view class="weui-navbar-slider" style="transform:translateX({{slideOffset}}px);"></view>
+  <template is="swiperTabber" data="{{tabs, tabW, activeIndex}}" />
 </scroll-view>
 <view class="rec"></view>
-<swiper current="{{activeIndex}}" class="swiper-box" duration="100" bindchange="bindChange">
-  <!-- 活动任务 -->
-  <swiper-item class="swiper-item">
-    <view class="slide-view" wx:for="{{imgSrcs}}" wx:key='property'  wx:for-item='imgIndex' wx:for-index='idx'>
-      <view class='picture'>
-        <image src='{{imgIndex.pic}}' bindtap='jumpPage' data-indexs='{{idx}}'></image>
-      </view>
-    </view>
-  </swiper-item>
-  <!-- 每日任务 -->
-  <swiper-item class="swiper-item">
-    <view class="slide-view">
-
-      <view class='dailyTask' wx:for="{{everyDayTaskArr}}" wx:key='property'  wx:for-item='indexs'>
-        <view class='dailyTaskInfo'>
-          <view class='taskTtile'>{{indexs.texts}}</view>
-          <view class='botomDaily'>
-            <image src='../../../static/task_daily_icon.png'></image>
-            <text class='integral'>+{{indexs.point}}积分</text>  
-          </view>
-        </view>
-      </view>
-
-    </view>
-  </swiper-item>
+<swiper current="{{activeIndex}}" class="swiper-box" duration="100" bindchange="bindChange" style='height:{{tabW1}}px;'>
+  <template is="taskView" data="{{everyDayTaskArr, imgSrcs}}" />
 </swiper>

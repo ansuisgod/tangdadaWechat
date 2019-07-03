@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -60,6 +60,14 @@
 					"id": -1,
 					"name": "短信提醒设置",
 					"pathName": "pages/my/SMS_alerts/SMS_alerts",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "饮食记录列表",
+					"pathName": "pages/my/diet_records/diet_records",
+					"query": "",
 					"scene": null
 				}
 			]

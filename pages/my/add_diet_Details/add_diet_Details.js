@@ -8,30 +8,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-
-    myFoodList: [],  //食物列表
-    currentTab: 0, //预设当前项的id值，也就是第一次进入页面显示第一个食物
+    currents: '',
+    myFoodList: [],  //食物详情列表
+    myFoodIds: '',  //我的食物的id列表  
+    currentTab: '', //预设当前项的id值，也就是第一次进入页面显示第一个食物
     op: '', //点击收藏判断
 
-    inputValue:1,
+    inputValue: 1,
 
 
 
-    windowHeight:'',
+    windowHeight: '',  //窗口宽度
     winHeight: "",//窗口高度
     scrollLeft: 0, //tab标题的滚动条位置
 
 
-    currentTabIndex:0,
+    currentTabIndex: '0',
+    nowDataTime: '', //当前时间
 
+    foodArr: [],
 
-    FoodInfoId:-1, //食物重量选择id
-    FoodInfoname:'',
-    // FoodYesNo:'',// 判断该食物是否收藏 0为未收藏
-
-    
-    myFoodIds:'',  //我的食物的id列表  
-    foodArr:[],
+    category: '', //时间段分类id
   },
 
   /**
@@ -41,13 +38,14 @@ Page({
     var that = this;
 
 
-      let ids = options.ids
-      var arr = ids.split(',');
-      that.setData({
-        myFoodIds: arr,
-        wxSessionKey: wx.getStorageSync('sessionKey')
-      });
-    
+    let ids = options.ids
+    var arr = ids.split(',');
+    that.setData({
+      myFoodIds: arr,  //我的食物的id列表  
+      platform: app.globalData.platform,
+      wxSessionKey: wx.getStorageSync('sessionKey'),
+      category: options.category
+    });
 
     if (options.foodInfos != undefined) {   //点击修改进入携带的数据信息
       console.log('-=-=-===-=-=-=-=')
@@ -56,30 +54,38 @@ Page({
       });
     }
 
-    that.setData({
-      // myFoodList: JSON.parse(options.myFoodList),
-      platform: app.globalData.platform,
-    })
-
-    // that.setData({
-    //   currentTab: that.data.myFoodList[0].id,
-    // })
-
     wx.getSystemInfo({   //手机设备信息
       success: function (res) {
         console.log(res)
         that.setData({
-          windowHeight: res.windowHeight * 2  - 340
+          windowHeight: res.windowHeight * 2 - 340
         })
       }
     })
 
     that.foodInfo()
-    
-
-
+    that.getNowFormatDate()
   },
 
+
+
+
+
+
+  getNowFormatDate: function () {//获取当前时间
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+    var strDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate
+      + " " + date.getHours() + seperator2 + date.getMinutes()
+      + seperator2 + date.getSeconds();
+    // return currentdate;
+    this.setData({
+      nowDataTime: currentdate, //获取当前时间
+    });
+  },
 
 
 
@@ -89,96 +95,85 @@ Page({
 * @date:2019.06.17
 * @auther:li
 */
-  // foodInfo: function () {
-  //   var that = this;
-  //   let platform = abstac.mobilePhoneModels(that.data.platform);//手机型号
 
-  //     abstac.sms_Interface(app.publicVariable.foodInfoInterfaceAddress,
-  //       { platform: platform, id: that.data.currentTab },
-  //       function (res) {//查询成功
-  //         //打印日志
-  //         console.log("****************饮食详情***************");
-  //         console.log(res);
-  //         //判断是否有数据，有则取数据
-  //         if (res.data.result.code == '2000') {
-  //           var data = res.data.data.units;
-
-
-  //           that.setData({
-  //             foodInfo: data,
-  //           });
-  //         } else {
-  //           abstac.promptBox(res.data.result.message);
-  //         }
-  //       },
-  //       function (error) {//查询失败
-  //         console.log(error);
-  //       });
-  // },
-
-
-
-
-
-
-
-// 
   foodInfo: function () {
     var that = this;
     let platform = abstac.mobilePhoneModels(that.data.platform);//手机型号
 
 
-     var arrList = []
+    var arrList = []
     for (var i = 0; i < that.data.myFoodIds.length; i++) {
       var list = that.data.myFoodIds[i];
 
 
-    abstac.sms_Interface(app.publicVariable.foodInfoInterfaceAddress,
-      { platform: platform, id: list },
-      function (res) {//查询成功
-        //打印日志
-        console.log("****************饮食详情***************");
-        console.log(res);
-        //判断是否有数据，有则取数据
-        if (res.data.result.code == '2000') {
-          var data = res.data.data;
+      abstac.sms_Interface(app.publicVariable.foodInfoInterfaceAddress,
+        { platform: platform, id: list },
+        function (res) {//查询成功
+          //打印日志
+          console.log("****************饮食详情***************");
+          console.log(res);
+          //判断是否有数据，有则取数据
+          if (res.data.result.code == '2000') {
+            var data = res.data.data;
 
 
 
 
-          for (var i = 0; i < that.data.foodArr.length; i++) {
-            var foodStates = that.data.foodArr[i];
-            if (foodStates.food_id == data.food.id){
-              data.food.unit_id = foodStates.unit_id,
-                data.food.weight = foodStates.weight
+
+            data.units.unshift({
+              name: "克",
+              weight: "1.0",
+              eat_weight: "1.0",
+              id: "-1",
+            })
+
+            for (var k = 0; k < data.units.length; k++) {   //每个食物的可选单位，循环加入sureid
+              var foodChoose = data.units[k];
+              foodChoose.sureid = false
             }
+
+
+            data.food.inputValue = ''
+            data.food.unitsName = ''
+            data.food.disabled = true
+            data.food.unit_id = ''
+            data.food.energyDetail = ''
+            data.food.energy = ''
+
+
+
+
+            // if (that.data.foodArr.length != '') {
+            //   for (var v = 0; v < that.data.foodArr.length; v++) {  //处理点击修改进入携带的数据信息
+            //     var foodStates = that.data.foodArr[v];
+            //     if (foodStates.food_id == data.food.id) {
+            //       data.food.disabled = false
+            //       data.food.inputValue = foodStates.data.weight
+            //       data.food.unitsName = foodStates.data.unit_name
+            //       data.food.unit_id = foodStates.data.unit_id
+            //       // data.food.energyDetail = foodStates.data.energy
+            //       data.food.energy = foodStates.data.energy
+            //     }
+            //   }
+            // }
+
+
+            arrList.push(data)   //循环push入所有食物进入列表
+
+            that.setData({
+              myFoodList: arrList, //食物详情列表
+              currentTab: arrList[0].food.id,
+            });
+
+            that.FoodYesNo() //循环判断每个食物是否收藏
+
+          } else {
+            abstac.promptBox(res.data.result.message);
           }
-
-
-          
-
-          for (var k = 0; k < data.units.length; k++) {
-            var foodChoose = data.units[k];
-            foodChoose.sureid = false
-          }
-
-
-
-
-
-          arrList.push(data)
-
-          that.setData({
-            myFoodList: arrList,
-          });
-          that.FoodYesNo()
-        } else {
-          abstac.promptBox(res.data.result.message);
-        }
-      },
-      function (error) {//查询失败
-        console.log(error);
-      });
+        },
+        function (error) {//查询失败
+          console.log(error);
+        });
 
 
 
@@ -190,7 +185,7 @@ Page({
 
 
   },
-// 
+  // 
 
 
 
@@ -202,59 +197,43 @@ Page({
    */
   FoodYesNo: function () {
     var that = this;
-console.log('cscscscscscscscsscscscsc')
-
     for (var i = 0; i < that.data.myFoodList.length; i++) {
       var list = that.data.myFoodList[i];
-      console.log(list)
       let id = list.food.id
       console.log(id)
 
-    abstac.sms_Interface(app.publicVariable.favoriteFoodInterfaceAddress, {
-      id: id,
-      wx_session_key: this.data.wxSessionKey,
-    },
-      function (res) { //查询成功
-        //打印日志
-        console.log("****************是否收藏***************");
-        console.log(res);
-        //判断是否有数据，有则取数据
-        if (res.data.result.code == '2000') {
-          var data = res.data.data;
-
-
-console.log(id)
-
-          for (var j = 0; j < that.data.myFoodList.length; j++) {
-            var listId = that.data.myFoodList[j];
-            if (id == listId.food.id) {
-              listId.food.collect = data
-            }
-          }
-          console.log(that.data.myFoodList)
-
-
-          // if (data == 1) {
-          //   that.setData({
-          //     op: "remove",
-          //   });
-          // } else {
-          //   that.setData({
-          //     op: "add",
-          //   });
-          // }
-
-          that.setData({
-            myFoodList: that.data.myFoodList,
-          });
-        } else {
-          abstac.promptBox(res.data.result.message);
-        }
+      abstac.sms_Interface(app.publicVariable.favoriteFoodInterfaceAddress, {
+        id: id,
+        wx_session_key: this.data.wxSessionKey,
       },
-      function (error) { //查询失败
-        console.log(error);
-      });
+        function (res) { //查询成功
+          //打印日志
+          console.log("****************是否收藏***************");
+          console.log(res);
+          //判断是否有数据，有则取数据
+          if (res.data.result.code == '2000') {
+            var data = res.data.data;
 
+            console.log(id)
+
+            for (var j = 0; j < that.data.myFoodList.length; j++) {
+              var listId = that.data.myFoodList[j];
+              if (id == listId.food.id) {
+                listId.food.collect = data   //给没给食物信息里加入是否收藏的判断信息 collect=0为未收藏
+              }
+            }
+
+            that.setData({
+              myFoodList: that.data.myFoodList,
+            });
+
+          } else {
+            abstac.promptBox(res.data.result.message);
+          }
+        },
+        function (error) { //查询失败
+          console.log(error);
+        });
 
     }
 
@@ -272,15 +251,15 @@ console.log(id)
     console.log(e.currentTarget.dataset.info.collect)
     let collect = e.currentTarget.dataset.info.collect;
 
-        if (collect == 1) {
-            that.setData({
-              op: "remove",
-            });
-          } else {
-            that.setData({
-              op: "add",
-            });
-          }
+    if (collect == 1) {
+      that.setData({
+        op: "remove",
+      });
+    } else {
+      that.setData({
+        op: "add",
+      });
+    }
 
     abstac.sms_Interface(app.publicVariable.favoriteFoodInterfaceAddress, {
       op: that.data.op,
@@ -314,12 +293,13 @@ console.log(id)
     console.log(e)
     let index = e.detail.current;
     this.setData({
-      currentTabIndex: index,
-      currentTab: this.data.myFoodList[index].food.id
+      currentTabIndex: index,  //获取当前页食物下标
+      currents: index,  //获取当前页食物下标
+      currentTab: this.data.myFoodList[index].food.id,  //获取当前页食物id
     });
     this.checkCor();
-    // this.foodInfo()
   },
+
   // 点击标题切换当前页时改变样式
   swichNav: function (e) {
     console.log(e)
@@ -330,15 +310,9 @@ console.log(id)
         currentTab: cur,
         currentTabIndex: e.currentTarget.dataset.index
       })
-      // this.foodInfo()
     }
-
-
-
-
-
-
   },
+
   //判断当前滚动超过一屏时，设置tab标题滚动条。
   checkCor: function () {
     if (this.data.currentTabIndex > 4) {
@@ -353,75 +327,67 @@ console.log(id)
   },
 
 
-  // infoFood: function (e) {
-  //   console.log(e)
-  //   var that = this;
-  //   for (var j = 0; j < that.data.myFoodList.length; j++) {
-  //     var listId = that.data.myFoodList[j];
-  //     if (e.currentTarget.dataset.info.id == listId.id) {
-  //       listId.unit_id = that.data.FoodInfoId;
-  //       listId.unit_name = that.data.FoodInfoname;
-  //       listId.weight = '1';
 
-  //       for (var i = 0; i < that.data.units.length; i++) {
-  //         var units = that.data.units[i];
-  //         if (units.id = that.data.FoodInfoId){
-  //           units.states = that.data.FoodInfostates;
-  //         }else{
-  //           units.states = !that.data.FoodInfostates;
-  //         }
-  //       }
-
-  //       this.setData({
-  //         myFoodList: that.data.myFoodList,
-  //       })
-
-        
-  //     }
-  //   }
-
-
-  //   listId.unit_id = data.units[0].id;
-  //   listId.unit_name = data.units[0].name;
-  //   listId.weight = '1';
-  //   data.units[0].states = true;
-
-
-  // },
-
-
-
-  chooseFoods: function (e) {
-    console.log(e)
-    var id = e.currentTarget.dataset.info;
-    var name = '克';
-    // var states = e.currentTarget.dataset.info.states;
-    this.setData({
-      FoodInfoId: id,
-      FoodInfoname: name,
-      // FoodInfostates: states
-    })
-  },
+  //关键处理 //关键处理 //关键处理
 
   chooseFood: function (e) {
     console.log(e)
     var id = e.currentTarget.dataset.info.id;
-    var name = e.currentTarget.dataset.info.name;
-    var sureid = e.currentTarget.dataset.info.sureid;
-    // var states = e.currentTarget.dataset.info.states;
+
+    let unitsList = this.data.myFoodList[this.data.currentTabIndex].units
+    let foodList = this.data.myFoodList[this.data.currentTabIndex].food
+    let unitsName = this.data.myFoodList[this.data.currentTabIndex].food.unitsName
+    for (var j = 0; j < unitsList.length; j++) {
+      var list = unitsList[j];
+      if (id == list.id) {
+        list.sureid = true;
+        this.data.myFoodList[this.data.currentTabIndex].food.unitsName = list.name
+        this.data.myFoodList[this.data.currentTabIndex].food.disabled = false
+        this.data.myFoodList[this.data.currentTabIndex].food.unit_id = list.id
+        this.data.myFoodList[this.data.currentTabIndex].food.energyDetail = list.weight
+        // this.data.myFoodList[this.data.currentTabIndex].food.inputValue = ''
+      } else {
+        list.sureid = false;
+      }
+    }
+
+
     this.setData({
-      FoodInfoId: id,
-      FoodInfoname: name,
-      // FoodInfostates: states
+      myFoodList: this.data.myFoodList,  //把修改的数据作用在数据里
     })
+
   },
 
 
   // 输入数量
   bindInput: function (e) {
-    this.setData({
-      inputValue: e.detail.value
-    })
+    console.log(e)
+
+    if (!(this.data.myFoodList[this.data.currentTabIndex].food.disabled)) {
+
+      let id = e.currentTarget.dataset.info.food.id;
+      let foodList = this.data.myFoodList[this.data.currentTabIndex].food;
+
+      for (var j = 0; j < this.data.myFoodList.length; j++) {
+        var list = this.data.myFoodList[j];
+        if (id == list.food.id) {
+          list.food.inputValue = e.detail.value;
+          this.data.myFoodList[this.data.currentTabIndex].food.energy = parseInt(Number(foodList.energyDetail) / 100 * Number(foodList.calory) * Number(e.detail.value))
+        }
+      }
+
+      this.setData({
+        myFoodList: this.data.myFoodList,  //必须全局改变才能渲染页面？
+      })
+
+      // this.setData({
+      //   inputValue: e.detail.value
+      // })
+
+    } else {
+      abstac.promptBox('请先选择食物单位');
+    }
+
   },
 
 
@@ -431,7 +397,7 @@ console.log(id)
     wx.navigateTo({
       url: '/pages/my/add_diet_estimate/add_diet_estimate',
     })
-  }, 
+  },
 
 
 
@@ -441,7 +407,7 @@ console.log(id)
 
 
 
- 
+
   /**
 * @desc:添加食物记录到列表的的接口
 * @date:2019.06.19
@@ -450,95 +416,54 @@ console.log(id)
   newDiet: function () {
     var that = this;
 
-
-
-
-
-    var param = [
-      // {
-      //   "category": "1",
-      //   "inspect_at": "2019-06-20 16:11:39",
-      //   "food_id": "16395",
-      //   "food_name": "牛奶",
-      //   "unit_id": "150",
-      //   "unit_name": "杯",
-      //   "weight": "10",
-      //   "energy": "1240"
-      // },
-      // {
-      //   "category": "1",
-      //   "inspect_at": "2019-06-20 16:11:39",
-      //   "food_id": "16801",
-      //   "food_name": "酸奶(中脂)",
-      //   "unit_id": "-1",
-      //   "unit_name": "克",
-      //   "weight": "155",
-      //   "energy": "111"
-      // },
-
-
-
-    {
-        "category": "5",
-        "inspect_at": "2019-06-21 17:57:26",
-        "food_id": "16400",
-        "food_name": "面条(生)",
-        "unit_id": "-1",
-        "unit_name": "克",
-        "weight": "1000",
-        "energy": "2890"
-      },
-      {
-        "category": "5",
-        "inspect_at": "2019-06-21 17:57:26",
-        "food_id": "16463",
-        "food_name": "包子（猪肉馅）",
-        "unit_id": "-1",
-        "unit_name": "克",
-        "weight": "80",
-        "energy": "190"
-      },
-      {
-        "category": "5",
-        "inspect_at": "2019-06-21 17:57:26",
-        "food_id": "16397",
-        "food_name": "马铃薯",
-        "unit_id": "118",
-        "unit_name": "个(小)",
-        "weight": "3",
-        "energy": "331"
+    for (var i = 0; i < this.data.myFoodList.length; i++) {
+      var list = this.data.myFoodList[i];
+      if (list.food.inputValue == '') {
+        abstac.promptBox('请完成信息填写');
+        return
       }
+    }
 
+    console.log('-=-=-=-=-=-')
 
-
-    ]
-
-
-
-
-
+    let InfoDetail = []
+    for (var j = 0; j < this.data.myFoodList.length; j++) {
+      var list = this.data.myFoodList[j];
+      InfoDetail.push({
+        category: that.data.category,
+        inspect_at: that.data.nowDataTime,
+        food_id: list.food.id,
+        food_name: list.food.name,
+        unit_id: list.food.unit_id,
+        unit_name: list.food.unitsName,
+        weight: list.food.inputValue,
+        energy: list.food.energy,
+      })
+    }
+    console.log(InfoDetail)
 
 
 
 
     abstac.sms_Interface(app.publicVariable.newDietInterfaceAddress,
-      { wx_session_key: this.data.wxSessionKey, diet_list: param},
-        function (res) {//查询成功
-          //打印日志
-          console.log("****************添加食物记录到列表的的接口***************");
-          console.log(res);
-          //判断是否有数据，有则取数据
-          if (res.data.result.code == '2000') {
+      { wx_session_key: this.data.wxSessionKey, diet_list: InfoDetail },
+      function (res) {//查询成功
+        //打印日志
+        console.log("****************添加食物记录到列表的的接口***************");
+        console.log(res);
+        //判断是否有数据，有则取数据
+        if (res.data.result.code == '2000') {
 
-            that.setData({
-            });
-          } else {
-            abstac.promptBox(res.data.result.message);
-          }
-        },
-        function (error) {//查询失败
-          console.log(error);
-        });
+          that.setData({
+          });
+        } else {
+          abstac.promptBox(res.data.result.message);
+        }
+      },
+      function (error) {//查询失败
+        console.log(error);
+      });
+
   },
 
 

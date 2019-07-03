@@ -6,12 +6,10 @@ var abstac = require('../../commonmethod/abstract.js'),
 
 Page({
   data: {
-    display:'',//控制蒙层的显示与隐藏
-    array: [// 0:全部，1:涨知识，2:糖活动:糖友荟，4:养生糖
-      { src: '../../static/theMessage.png', type: '全部', tagId: '0' }, { src: '../../static/theMessage.png', type: '涨知识', tagId: '1'},
-      { src: '../../static/theMessage.png', type: '糖活动', tagId: '2' }, { src: '../../static/theMessage.png', type: '糖友荟', tagId: '3' }, 
-      { src: '../../static/theMessage.png', type: '养生糖', tagId: '4' }
-          ],
+    tabs: ["全部", "涨知识", "糖活动", "糖友荟", "养生糖"],
+    activeIndex: 0,
+    slideOffset: 0,
+    tabW: 0,
     pages:'1',
     dataListInfo:'',
     increaseknowledge:'',
@@ -31,8 +29,9 @@ Page({
         url: '/pages/login/login'
       });
     }
-    
+    var mtabW = app.globalData.mtabW / 5;
     this.setData({
+      tabW: mtabW,
       platform: app.globalData.platform,
       navH: app.globalData.navHeight
     })
@@ -224,18 +223,6 @@ Page({
       });
   },
   /**
-   * @desc:点击蒙层里面的列表触发函数
-   */
-  montmorilloniteLayerListFunc:function(e){
-    console.log("类型的id值="+e.currentTarget.dataset.typeid);
-    var typeId = e.currentTarget.dataset.typeid;
-    this.setData({
-      typesId: typeId,
-      pages:'1'
-    });
-    this.getDataList();//获取数据
-  },
-  /**
    * @desc:点击任务触发的函数
    */
   tasks:function(){
@@ -257,30 +244,12 @@ Page({
     })
   },
   /**
-   * 蒙层
-   */
-  montmorilloniteLayer: function () {
-    // wx.navigateTo({
-    //   url: '../login/login'
-    // });
-    this.setData({
-      display: "block"
-    });
-  },
-  montmorilloniteLayerShow: function () {
-    this.setData({
-      display: "block"
-    });
-  },
-  montmorilloniteLayerHiden: function () {
-    this.setData({
-      display: "none"
-    });
-  },
-  /**
    * @desc:页面的下拉刷新操作
    */
   onPullDownRefresh:function(){
+    this.setData({
+      pages: '1'
+    });
     this.getDataList();//获取数据
     wx.stopPullDownRefresh();
   },
@@ -290,5 +259,34 @@ Page({
   onReachBottom:function(){
     console.log("触底事件的处理函数,页数" + this.data.pages);
     this.getDataList();
-  }
+  },
+  /**
+   * @func：tabClick()
+   * @desc:tab的切换
+   */
+  tabClick: function (e) {
+    var that = this,
+        idIndex = e.currentTarget.id,
+        offsetW = e.currentTarget.offsetLeft; //2种方法获取距离文档左边有多少距离
+    console.log(idIndex);
+
+    this.setData({
+      activeIndex: idIndex,
+      typesId: idIndex,
+      slideOffset: offsetW,
+      pages: '1'
+    });
+    this.getDataList();//获取数据
+  },
+  bindChange: function (e) {
+    var current = e.detail.current;
+    if ((current + 1) % 5 == 0) {
+
+    }
+    var offsetW = current * mtabW; //2种方法获取距离文档左边有多少距离
+    this.setData({
+      activeIndex: current,
+      slideOffset: offsetW
+    });
+  },
 })

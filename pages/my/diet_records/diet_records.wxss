@@ -120,7 +120,7 @@
 
 
 .bloodGlucose-box-main-rit-box-2{
-  font-size: 34rpx;
+  font-size: 28rpx;
   color: #333333;
   float: left;
   /* height: 120rpx; */

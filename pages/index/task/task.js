@@ -26,6 +26,7 @@ Page({
     mtabW = app.globalData.mtabW / 2;
     this.setData({
       tabW: mtabW,
+      tabW1: app.globalData.mtabW * 1.2,
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
     this.activeTask();//调用接口显示数据的方法

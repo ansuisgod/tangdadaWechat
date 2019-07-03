@@ -1,5 +1,6 @@
 <!--pages/index/task/task.wxml 首页的任务-->
 <import src="../../components/an/subhelthIndex.wxml" />
+<import src="../../components/an/swiperTabber.wxml" />
 <!--自定义导航条-->
 <view class='nav bg-white' style='height:{{navH}}px'>
     <view class='nav-title'>
@@ -14,12 +15,7 @@
 
 <scroll-view scroll-x="true" class="weui-navbar">
   <!-- 导航条 -->
-  <block wx:for-items="{{tabs}}" wx:key='property'>
-    <view id="{{index}}" class="{{activeIndex == index ?'item_on':''}} default-item" bindtap="tabClick" style="width:{{tabW}}px">
-      {{item}}
-    </view>
-  </block>
-  <view class="weui-navbar-slider" style="transform:translateX({{slideOffset}}px);"></view>
+  <template is="swiperTabber" data="{{tabs, tabW, activeIndex}}" />
 </scroll-view>
 <view class="rec"></view>
 <swiper current="{{activeIndex}}" class="swiper-box" duration="100" bindchange="bindChange">

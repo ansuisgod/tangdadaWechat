@@ -527,7 +527,7 @@ Page({
     }
     //图片预览
     wx.previewImage({
-      current: '', // 当前显示图片的http链接
+      current: '1', // 当前显示图片的http链接
       urls: cc // 需要预览的图片http链接列表
     });
   },

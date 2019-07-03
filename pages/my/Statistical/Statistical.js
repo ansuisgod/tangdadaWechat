@@ -187,33 +187,95 @@ Page({
    * @date:2019.06.19
    * @auther:li
    */
+  // getDietList: function () {
+  //   var that = this;
+  //   // let platform = abstac.mobilePhoneModels(that.data.platform);//手机型号
+  //   abstac.sms_Interface(app.publicVariable.getDietInterfaceAddress, {
+  //     wx_session_key: that.data.wxSessionKey,
+  //     end_date: that.data.selectedDate2,
+  //     start_date: that.data.selectedDate
+  //   },
+  //     function (res) { //查询成功
+  //       //打印日志
+  //       console.log("****************饮食统计列表***************");
+  //       console.log(res);
+  //       //判断是否有数据，有则取数据
+  //       if (res.data.result.code == '2000') {
+  //         var data = res.data.data;
+  //         let time, dates;
+  //         for (var i = 0; i < data.length; i++) {
+  //           var dataList = data[i];
+  //           if (dataList.inspect_at != '') {
+  //             dataList.time = dataList.inspect_at.slice(5, 10)
+  //             dataList.dates = dataList.inspect_at.slice(11, 16)
+  //           }
+
+
+
+
+
+
+
+  //           if (dataList.category == 0) {
+  //             dataList.categoryText = "早餐"
+  //           }
+  //           if (dataList.category == 1) {
+  //             dataList.categoryText = "上午加餐"
+  //           }
+  //           if (dataList.category == 2) {
+  //             dataList.categoryText = "中餐"
+  //           }
+  //           if (dataList.category == 3) {
+  //             dataList.categoryText = "下午加餐"
+  //           }
+  //           if (dataList.category == 4) {
+  //             dataList.categoryText = "晚餐"
+  //           }
+  //           if (dataList.category == 5) {
+  //             dataList.categoryText = "夜宵"
+  //           }
+
+
+  //         }
+  //         that.setData({
+  //           getDietList: data,
+  //         });
+  //       } else {
+  //         abstac.promptBox(res.data.result.message);
+  //       }
+  //     },
+  //     function (error) { //查询失败
+  //       console.log(error);
+  //     });
+  // },
+
+
+
+
+
   getDietList: function () {
     var that = this;
     // let platform = abstac.mobilePhoneModels(that.data.platform);//手机型号
-    abstac.sms_Interface(app.publicVariable.getDietInterfaceAddress, {
-      wx_session_key: that.data.wxSessionKey,
-      end_date: that.data.selectedDate2,
-      start_date: that.data.selectedDate
-    },
-      function (res) { //查询成功
+    abstac.sms_Interface(app.publicVariable.getDietInterfaceAddress,
+      { wx_session_key: this.data.wxSessionKey, type: '1' },
+      function (res) {//查询成功
         //打印日志
-        console.log("****************饮食统计列表***************");
+        console.log("****************饮食记录列表***************");
         console.log(res);
         //判断是否有数据，有则取数据
         if (res.data.result.code == '2000') {
+
           var data = res.data.data;
-          let time, dates;
+          let mm, dd;
           for (var i = 0; i < data.length; i++) {
             var dataList = data[i];
+
             if (dataList.inspect_at != '') {
-              dataList.time = dataList.inspect_at.slice(5, 10)
-              dataList.dates = dataList.inspect_at.slice(11, 16)
+              dataList.mm = dataList.inspect_at.slice(5, 7)   //月
+              dataList.dd = dataList.inspect_at.slice(8, 10)   //日
+              dataList.time = dataList.inspect_at.slice(0, 10)  //年月日
+              dataList.nums = 0  //总卡路里
             }
-
-
-
-
-
 
 
             if (dataList.category == 0) {
@@ -237,17 +299,129 @@ Page({
 
 
           }
+
+
+          // 先分离时间出时间相同的
+          var map = {},
+            dest = [];
+          for (var i = 0; i < data.length; i++) {
+            var dataList = data[i];
+            console.log(map[dataList.time])
+            if (!map[dataList.time]) {
+              dest.push({
+                categoryText: dataList.categoryText,
+                mm: dataList.mm,
+                dd: dataList.dd,
+                time: dataList.time,
+                data: [dataList]
+              });
+              map[dataList.time] = dataList;
+              // console.log(ai)
+            } else {
+              for (var j = 0; j < dest.length; j++) {
+                var dj = dest[j];
+                if (dj.time == dataList.time) {
+                  dj.data.push(dataList);
+                  break;
+                }
+              }
+            }
+          }
+
+          // 在分离时间段
+          for (var z = 0; z < dest.length; z++) {
+            var destList = dest[z];
+            var category0 = [], category1 = [], category2 = [], category3 = [], category4 = [], category5 = [];
+            for (var c = 0; c < destList.data.length; c++) {
+              var dataListDea = destList.data[c];
+
+              if (dataListDea.category == '0') {
+                category0.push({
+                  data: dataListDea
+                })
+              }
+              if (dataListDea.category == '1') {
+                category2.push({
+                  data: dataListDea
+                })
+              }
+              if (dataListDea.category == '2') {
+                category2.push({
+                  data: dataListDea
+                })
+              }
+              if (dataListDea.category == '3') {
+                category3.push({
+                  data: dataListDea
+                })
+              }
+              if (dataListDea.category == '4') {
+                category4.push({
+                  data: dataListDea
+                })
+              }
+              if (dataListDea.category == '5') {
+                category5.push({
+                  data: dataListDea
+                })
+              }
+
+            }
+
+            destList.Arrs = [category0, category1, category2, category3, category4, category5]
+
+          }
+
+
+          //最后合并调整为一个数组
+          var integration = [];
+          for (var v = 0; v < dest.length; v++) {
+            var destList = dest[v];
+
+            for (var x = 0; x < destList.Arrs.length; x++) {
+              var Lists = destList.Arrs[x];
+              if (Lists.length != '') {
+                integration.push(Lists)
+              }
+            }
+
+          }
+
+
+          //计算卡路里总值
+          for (var n = 0; n < integration.length; n++) {
+            var Lists = integration[n];
+
+            for (var q = 0; q < integration[n].length; q++) {
+              var ListsNum = integration[n][q];
+              console.log(ListsNum.data.energy)
+              Lists[0].data.nums += parseInt(ListsNum.data.energy);
+            }
+
+          }
+
+
           that.setData({
-            getDietList: data,
+            getDietList: integration,
           });
+
+
         } else {
           abstac.promptBox(res.data.result.message);
         }
       },
-      function (error) { //查询失败
+      function (error) {//查询失败
         console.log(error);
       });
   },
+
+
+
+
+
+
+
+
 
 
 

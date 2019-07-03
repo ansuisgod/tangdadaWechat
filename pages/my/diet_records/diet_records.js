@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    getDieList: '',  //体重列表
+    getDieList: '',  //饮食列表
 
     delBounced: false,//删除弹框
 
@@ -51,9 +51,10 @@ Page({
             var dataList = data[i];
 
             if (dataList.inspect_at != '') {
-              dataList.mm = dataList.inspect_at.slice(5, 7)
-              dataList.dd = dataList.inspect_at.slice(8, 10)
-              dataList.time = dataList.inspect_at.slice(0, 10)
+              dataList.mm = dataList.inspect_at.slice(5, 7)   //月
+              dataList.dd = dataList.inspect_at.slice(8, 10)   //日
+              dataList.time = dataList.inspect_at.slice(0, 10)  //年月日
+              dataList.nums = 0  //总卡路里
             }
 
 
@@ -82,52 +83,30 @@ Page({
 
 
 
-          // var arr = [];
-          // // 处理相同时间日期的
-          // for (var j = 0; j < data.length; j++) {
-          //   var dataList1 = data[j];
-
-
-          //   for (var k = 0; k < data.length; k++) {
-          //     var dataList2 = data[k];
-
-          //     console.log(dataList1.time == dataList2.time)
-          //     console.log(dataList1.category == dataList2.category)
-          //     console.log(dataList1.time == dataList2.time && dataList1.category == dataList2.category)
-          //     if (dataList1.time == dataList2.time && dataList1.category == dataList2.category){
-          //       arr.push(dataList1)
-          //     }
-          //   }
-
-
-          // }
-          // console.log(arr)
-
-
-
-
-
           var map = {},
-            dest = [];
+              dest = [];
           for (var i = 0; i < data.length; i++) {
-            var ai = data[i];
-            // console.log(!map[ai.time])
+            var dataList = data[i];
+            // console.log(map)
+            // console.log(dataList.time)
+            console.log(map[dataList.time])
+            // console.log(!map[dataList.time])
             // console.log(!map[ai.category])
-            if (!map[ai.time]) {
+            if (!map[dataList.time]) {
               dest.push({
-                categoryText: ai.categoryText,
-                mm: ai.mm,
-                dd: ai.dd,
-                time: ai.time,
-                data: [ai]
+                categoryText: dataList.categoryText,
+                mm: dataList.mm,
+                dd: dataList.dd,
+                time: dataList.time,
+                data: [dataList]
               });
-              map[ai.time] = ai;
+              map[dataList.time] = dataList;
               // console.log(ai)
             } else {
               for (var j = 0; j < dest.length; j++) {
                 var dj = dest[j];
-                if (dj.time == ai.time) {
-                  dj.data.push(ai);
+                if (dj.time == dataList.time) {
+                  dj.data.push(dataList);
                   break;
                 }
               }
@@ -137,25 +116,105 @@ Page({
           console.log(dest);
 
 
-    
+
+          // var integration = [];
+          for (var z = 0; z < dest.length; z++) {
+            var destList = dest[z];
+            var category0 = [], category1 = [], category2 = [], category3 = [], category4 = [], category5 = [];
+            for (var c = 0; c < destList.data.length; c++) {
+              var dataListDea = destList.data[c];
+
+              if (dataListDea.category == '0'){
+                category0.push({
+                  data: dataListDea
+                })
+              }
+              if (dataListDea.category == '1') {
+                category2.push({
+                  data: dataListDea
+                })
+              }
+              if (dataListDea.category == '2') {
+                category2.push({
+                  data: dataListDea
+                })
+              }
+              if (dataListDea.category == '3') {
+                category3.push({
+                  data: dataListDea
+                })
+              }
+              if (dataListDea.category == '4') {
+                category4.push({
+                  data: dataListDea
+                })
+              }
+              if (dataListDea.category == '5') {
+                category5.push({
+                  data: dataListDea
+                })
+              }
+
+              console.log(category0)
+              console.log(category1)
+              console.log(category2)
+              console.log(category3)
+              console.log(category4)
+              console.log(category5)
+            }
+
+            destList.Arrs = [category0, category1, category2, category3, category4, category5]
+
+
+          }
+
+          // integration = [category0, category1, category2, category3, category4, category5]
+
+          // console.log(integration);
+
+          var integration = [];
+          for (var v = 0; v < dest.length; v++) {
+            var destList = dest[v];
+
+            
+            for (var x = 0; x < destList.Arrs.length; x++) {
+              var Lists = destList.Arrs[x];
+              if (Lists.length != ''){
+                integration.push(Lists)
+              }
+          }
+
+            
+
+
+          }
+          console.log(integration);
+
+
+
+          for (var n = 0; n < integration.length; n++) {
+            var Lists = integration[n];
+            // console.log(Lists)
+            // console.log(integration[1])
+            console.log('-=-=-=-=-===')
+
+            for (var q = 0; q < integration[n].length; q++) {
+              var ListsNum = integration[n][q];
+              console.log(ListsNum.data.energy)
+              // Lists[0].nums = ++ListsNum.data.energy
+              // Lists[0].nums += Number(ListsNum.data.energy);
+              Lists[0].data.nums += parseInt(ListsNum.data.energy);
+            }
+
+          }
+
+
+
 
           that.setData({
             destList: dest,
+            integration: integration,
           });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -219,8 +278,20 @@ Page({
   //删除弹框显示
   delBounced: function (e) {
     var that = this;
-    console.log(e.currentTarget.dataset.info.id)
-    let delId = e.currentTarget.dataset.info.id
+    console.log(e.currentTarget.dataset.info)
+    // let delId = e.currentTarget.dataset.info.id
+
+
+
+    let infos = e.currentTarget.dataset.info
+    let foodArr = []
+    for (var i = 0; i < infos.length; i++) {
+      var foodList = infos[i];
+      foodArr.push(foodList.data.id)
+    }
+    let ids = foodArr.join(',')
+    console.log(ids)
+
     console.log("长按");
     wx.vibrateShort({
       success: function (res) {
@@ -228,7 +299,7 @@ Page({
     })
     that.setData({
       delBounced: true,
-      delId: delId,
+      delId: ids,
     })
   },
 
@@ -255,6 +326,7 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
+    console.log('-=---=-=-=-==-=')
     that.deleteDiet()
 
   },
@@ -273,20 +345,20 @@ Page({
     if (this.endTime - this.startTime < 350) {   //按压时间小于350毫秒跳转
 
       // let ids = '16397,16463,16400';
-      let infos = e.currentTarget.dataset.info.data
+      let infos = e.currentTarget.dataset.info
 
       let foodArr = []
       for (var i = 0; i < infos.length; i++) {
         var foodList = infos[i];
-        foodArr.push(foodList.food_id)
+        foodArr.push(foodList.data.food_id)
       }
       
       let ids = foodArr.join(',')
 
 
-      wx.navigateTo({
-        url: '/pages/my/add_diet_Details/add_diet_Details?ids=' + ids + '&foodInfos=' + JSON.stringify(infos),
-      })
+      // wx.navigateTo({   //跳转入修改状态
+      //   url: '/pages/my/add_diet_Details/add_diet_Details?ids=' + ids + '&foodInfos=' + JSON.stringify(infos),
+      // })
 
     }
 
