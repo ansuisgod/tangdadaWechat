@@ -1,4 +1,14 @@
 /* pages/index/askTheExperts/askTheExperts.wxss */
+@import '../../../components/wux.wxss';
+.addBox-choose-cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 33;
+}
 .toppBoxx{
   width: 100%;
   background-color: #fff;
@@ -132,7 +142,4 @@
   font-size: 32rpx;
   width: 90%;
   flex-direction: row;
-}
-.intrduce{
-  margin:20rpx 0 0 15rpx;
 }

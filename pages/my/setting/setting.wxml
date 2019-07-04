@@ -46,6 +46,6 @@
 
 
 
-<view class="buttons">退出登录</view>
+<!-- <view class="buttons">退出登录</view> -->
 
 <view class='version'>版本号 V6.0.2</view>

@@ -1,7 +1,7 @@
 // pages/Page_5/my_comments/my_comments.js
 var abstac = require('../../../commonmethod/abstract.js'),
   app = getApp();
-var size = '20';
+var size = '3';
 
 
 Page({

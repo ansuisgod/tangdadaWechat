@@ -1,7 +1,7 @@
 // pages/Page_5/my_post/my_post.js
 var abstac = require('../../../commonmethod/abstract.js'),
   app = getApp();
-var size = '20';
+var size = '3';
 Page({
 
   /**
@@ -92,9 +92,6 @@ Page({
 
 
 
-
-
-
           // that.setData({
           //   // userIntegral: res.data.data.points
           // });
@@ -170,6 +167,7 @@ Page({
     } else {
       this.myCreateTopic()
     }
+
 
     /**
      * 滚动到底部是就让滚动条回到顶部

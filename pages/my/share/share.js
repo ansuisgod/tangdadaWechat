@@ -5,8 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
-    optionsurl:'http://172.16.4.58:8093/im/activities/register/index.jsp',
+    // http://api.prod.tangdada.com.cn/im/item/integral_rule.html
+    optionsurl:'https://sit.tangdadatech.com/im/activities/register/index.jsp',
 
     shareMenu: false,  //弹框
     introduce: false,

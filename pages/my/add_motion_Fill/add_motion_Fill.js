@@ -30,9 +30,9 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    // that.setData({
-    //   sport_id: options.id,
-    // });
+    that.setData({
+      wxSessionKey: wx.getStorageSync('sessionKey')
+    });
 
 
     if (options.alter == 1) {
@@ -43,7 +43,7 @@ Page({
         alter: options.alter,
         sport_id: options.sport_id,
         calculateCal: options.energy,
-        wxSessionKey: wx.getStorageSync('sessionKey')
+        
       })
     } else {
       that.setData({

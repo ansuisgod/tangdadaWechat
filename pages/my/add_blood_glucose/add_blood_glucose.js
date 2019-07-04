@@ -43,6 +43,7 @@ Page({
 
     lock: false, //防止多次点击按钮
 
+
   },
 
   /**
@@ -50,8 +51,9 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-
-
+    that.setData({
+    wxSessionKey: wx.getStorageSync('sessionKey')
+    })
     if (options.alter == 1) {
       that.setData({
         id: options.toId,
@@ -63,7 +65,6 @@ Page({
         statusText: that.data.statusTextArr[options.status],
         category: options.category,//测量时段
         categoryText: that.data.categoryTextArr[options.category],
-        wxSessionKey: wx.getStorageSync('sessionKey')
       })
     } else {
       that.setData({

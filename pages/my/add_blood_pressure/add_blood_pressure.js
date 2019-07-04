@@ -46,6 +46,10 @@ Page({
   onLoad: function(options) {
     var that = this;
 
+    that.setData({
+      wxSessionKey: wx.getStorageSync('sessionKey')
+    })
+
     if (options.alter == 1) {
       that.setData({
         id: options.toId,
@@ -55,7 +59,6 @@ Page({
         statusText: that.data.statusTextArr[options.category],
         inspect_at: options.inspect_at,
         alter: options.alter,
-        wxSessionKey: wx.getStorageSync('sessionKey')
       })
     } else {
       that.setData({

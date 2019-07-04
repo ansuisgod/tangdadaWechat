@@ -1,4 +1,5 @@
 // pages/index/task/task.js
+import { $wuxButton } from '../../components/wux'
 var app = getApp(),
     abstac = require('../../commonmethod/abstract.js'),
     sizes = '20',
@@ -18,8 +19,10 @@ Page({
     imgSrcs: '',
     obesity:'',//肥胖的数据标签
     womensHealth:'',//女性健康数据标签
-    select: false,
-    rehabilitationTherapy: ''//康复理疗数据标签 
+    rehabilitationTherapy: '',//康复理疗数据标签
+    // types: ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'],
+    index: 3,
+    opened: !1
   },
 
   /**
@@ -37,6 +40,7 @@ Page({
     this.getDataInfo('97');//调用亚健康下面的肥胖类型的数据接口方法
     this.getDataInfo('98');//调用亚健康下面的女性健康类型的数据接口方法
     this.getDataInfo('99');//调用亚健康下面的康复理疗类型的数据接口方法
+    this.initButton();
   },
   /**
    * @func：getDataInfoMore()
@@ -194,36 +198,6 @@ Page({
     })
   },
   /**
-   * @desc:点击下拉框里面的发图文触发的方法
-   */
-  sendPicFont: function () {
-    wx.navigateTo({
-      url: '../../pages/blog/release/release'
-    });
-    this.setData({
-      select: false
-    })
-  },
-  /**
-   * @desc:点击下拉框里面的发视频触发的方法
-   */
-  sedsVideo: function () {
-    wx.navigateTo({
-      url: '../../pages/blog/sendVideo/sendVideo'
-    });
-    this.setData({
-      select: false
-    })
-  },
-  /**
-   * @desc:点击发布显示和隐藏的下拉框的效果
-   */
-  release: function () {
-    this.setData({
-      select: !this.data.select
-    })
-  },
-  /**
    * @desc:点击搜索的图标
    */
   search:function(){
@@ -299,5 +273,44 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+  * @desc:悬浮的按钮动画的效果隐藏和显示菜单
+  * @date：20190704
+  */
+  initButton(position = 'bottomRight') {
+    this.setData({
+      opened: !1,
+    })
+
+    this.button = $wuxButton.init('br', {
+      position: position,
+      buttons: [
+        {
+          label: '发图文',
+          icon: "http://pic.51yuansu.com/pic2/cover/00/36/41/5811d43c85d48_610.jpg",
+        },
+        {
+          label: '发视频',
+          icon: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562236755743&di=15a335a3203646dfbe5faf2b3dcdd19a&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F01%2F14%2F63%2F59043def1e433_610.jpg",
+        }
+      ],
+      buttonClicked(index, item) {
+        index === 0 && wx.navigateTo({
+          url: '/pages/blog/release/release'
+        })
+
+        index === 1 && wx.navigateTo({
+          url: '/pages/blog/sendVideo/sendVideo'
+        })
+
+        return true
+      },
+      callback(vm, opened) {
+        vm.setData({
+          opened,
+        })
+      },
+    })
   }
 })

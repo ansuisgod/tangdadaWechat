@@ -58,7 +58,7 @@ page{
 .circle-box-list-content-img{}
 
 .circle-box-list-content-img image{
-  padding-top: 16rpx;
+  margin-top: 16rpx;
   margin-right: 16rpx;
 }
 

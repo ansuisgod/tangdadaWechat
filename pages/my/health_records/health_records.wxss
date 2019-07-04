@@ -1,5 +1,17 @@
 /* pages/my/health_records/health_records.wxss */
 
+/* 评测悬浮按钮 */
+.review{
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 100rpx;
+  background-color: #ff7382;
+  color: white;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .health-records-box{
   height: 100vh;

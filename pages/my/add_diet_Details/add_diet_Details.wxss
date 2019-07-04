@@ -49,7 +49,7 @@ opacity: 0.6
   width: 84%;
   margin-left: 7%;
   border-radius: 15rpx;
-  background-color: #fff;
+  background-color: #f3f3f3;
 }
 
 /* 主内容区 */
@@ -144,7 +144,7 @@ opacity: 0.6
   height: 100rpx;
   width: 90%;
   margin-left: 5%;
-  background-color: #fe7282;
+  /* background-color: #fe7282; */
   color: white;
   font-size: 30RPX;
   display: flex;
@@ -154,11 +154,26 @@ opacity: 0.6
   box-shadow:0rpx 3rpx 8rpx #333333;
 }
 
-.Details-button-sava:active{
+/* .Details-button-sava:active{
   background-color:  rgba(254,114,129,0.8);
-}
+} */
 
   
+.saveNo{
+  background-color: #e0e0e0;
+}
+
+.saveYes{
+  background: #fe7281;
+}
+
+.saveNo:active {
+  background-color: rgba(224,224,224, 0.8);
+}
+
+.saveYes:active {
+  background-color: rgba(254, 114, 129, 0.8);
+}
 
 
 
@@ -197,16 +212,34 @@ opacity: 0.6
 
 
 /* 浮动按钮 */
-.float-button {
+/* .float-button {
   position: fixed;
   right: 20rpx;
   bottom: 350rpx;
   width: 150rpx;
   height: 150rpx;
   z-index: 10;
+} */
+
+
+/* 悬浮按钮 */
+/* 按钮 */
+.top-box{
+  position: fixed;
+  right: 25rpx;
+  bottom: 325rpx;
 }
 
-
-
+.review{
+  height: 150rpx;
+  width: 150rpx;
+  border-radius: 100rpx;
+  background-color: #ff7382;
+  color: white;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 

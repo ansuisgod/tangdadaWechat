@@ -25,6 +25,10 @@
 .draftBox-box-list-content-title{
   color: #757575;
   font-size: 35rpx;
+  width: 90%;
+  overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;
 }
 
 .draftBox-box-list-content-time{

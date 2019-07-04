@@ -172,7 +172,7 @@ Page({
     console.log(e.currentTarget.dataset.info)
     let info = e.currentTarget.dataset.info
     wx.navigateTo({
-      url: '/pages/blog/release/release?info=' + JSON.stringify(info),
+      url: '/pages/blog/release/release?info=' + JSON.stringify(info)+'&drafbox=1',
     })
   },
 

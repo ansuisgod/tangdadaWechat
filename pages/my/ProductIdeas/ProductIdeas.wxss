@@ -244,11 +244,25 @@ page{
   text-align: center;
   line-height: 100rpx;
   z-index: 10;
-  background: #fe7281;
+  /* background: #fe7281; */
   box-shadow: 0rpx 5rpx 12rpx #959595;
 }
 
 
+.saveNo{
+  background-color: #e0e0e0;
+}
 
+.saveYes{
+  background: #fe7281;
+}
+
+.saveNo:active {
+  background-color: rgba(224,224,224, 0.8);
+}
+
+.saveYes:active {
+  background-color: rgba(254, 114, 129, 0.8);
+}
 
 

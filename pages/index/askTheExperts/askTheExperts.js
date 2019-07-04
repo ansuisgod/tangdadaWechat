@@ -1,5 +1,6 @@
 // pages/index/askTheExperts/askTheExperts.js
 //创建audio控件
+import { $wuxButton } from '../../../components/wux'
 const myaudio = wx.createInnerAudioContext();
 var abstac = require('../../../commonmethod/abstract.js'),
     app = getApp(),
@@ -23,7 +24,9 @@ Page({
         time: '1:20"',
         isplay: false
       }
-    ]
+    ],
+    index: 3,
+    opened: !1
   },
 
   /**
@@ -35,6 +38,7 @@ Page({
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
     this.askExports();
+    this.initButton();
   },
   /**
    * @desc：搜索输入框获取到焦点触发的函数
@@ -236,5 +240,35 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+   * @desc:悬浮的按钮动画的效果隐藏和显示菜单
+   * @date：20190704
+   */
+  initButton(position = 'bottomRight') {
+    this.setData({
+      opened: !1,
+    })
+
+    this.button = $wuxButton.init('br', {
+      position: position,
+      buttons: [
+        {
+          label: '推荐专家',
+          icon: "http://pic.51yuansu.com/pic2/cover/00/46/80/58158bcb979c1_610.jpg",
+        }
+      ],
+      buttonClicked(index, item) {
+        index === 0 && wx.navigateTo({
+          url: '/pages/index/expertsRecommend/expertsRecommend'
+        })
+        return true
+      },
+      callback(vm, opened) {
+        vm.setData({
+          opened,
+        })
+      },
+    })
   }
 })

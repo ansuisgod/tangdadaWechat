@@ -42,14 +42,14 @@ Page({
     },
       function (res) { //查询成功
         //打印日志
-        wx.hideLoading();
+        
         console.log("****************意见列表的接口***************");
         console.log(res);
         //判断是否有数据，有则取数据
         if (res.data.result.code == '2000') {
           var data = res.data.data;
-
-
+          wx.hideLoading();
+          
           for (var i = 0; i < data.length; i++) {
             var list = data[i];
             list.contents = JSON.parse(list.content)
@@ -89,7 +89,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    wx.hideLoading();
   },
 
   /**

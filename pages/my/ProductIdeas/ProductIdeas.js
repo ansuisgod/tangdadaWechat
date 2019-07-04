@@ -15,6 +15,8 @@ Page({
     lang: '',
 
     chooseImgSrc:[],
+
+    lock: false, //防止多次点击按钮
   },
 
   /**
@@ -56,26 +58,12 @@ Page({
       })
       return
     }
-
-
-    // if (that.data.files.length != 0) {
-    //   that.releaseDynamicUpimg()
-    // }
-
-
-    // wx.showLoading({ title: '提交信息中。。' })
-
-
-
-    // var imgList = '';
-    // if (that.data.lang != '') {
-    //   var imgs = that.data.lang;
-
-    //   //添加动态
-    //   imgList = imgs.substring(0, imgs.length - 1);
-    //   console.log(imgList)
-    // }
-
+    wx.showLoading({
+      title: '加载中',
+    })
+    that.setData({
+      lock: true,
+    })
 
     if (that.data.files == ''){
       let content = { 'text': that.data.content }
@@ -88,7 +76,7 @@ Page({
 
       that.releaseDynamicUpimg()
 
-      setTimeout(function () {  
+      setTimeout(function () {
       // 处理数据
       let imgArr = [];
       let imglist = that.data.chooseImgSrc
@@ -106,7 +94,7 @@ Page({
 
     }
     
-    setTimeout(function () {  
+    setTimeout(function () {
 console.log('-=-==-=-=')
     console.log(that.data.MYcontent)
     console.log(platform)
@@ -126,6 +114,9 @@ console.log('-=-==-=-=')
         'content-type': 'application/x-www-form-urlencoded'
       },
       success: function (res) {
+        that.setData({
+          lock: true,
+        })
         wx.hideLoading()
         console.log(res)
           wx.showToast({

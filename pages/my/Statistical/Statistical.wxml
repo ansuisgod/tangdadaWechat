@@ -188,11 +188,11 @@
 
     <view class="selected_date">
       <view bindtap="preMonth">
-        <image class="select_icon" src="../../../images/personal/remindPhone.png"></image>
+        <image class="select_icon" src="../../../images/personal/left.png"></image>
       </view>
       <view class="text_center">{{curYear+'-'+curMonth}}</view>
       <view style="text-align:right;" bindtap="nextMonth">
-        <image class="select_icon" src="../../../images/personal/remindPhone_note.png"></image>
+        <image class="select_icon" src="../../../images/personal/rigth.png"></image>
       </view>
     </view>
     <view class="calendar_panel">
@@ -239,11 +239,11 @@
 
     <view class="selected_date">
       <view bindtap="preMonth2">
-        <image class="select_icon" src="../../../images/personal/remindPhone.png"></image>
+        <image class="select_icon" src="../../../images/personal/left.png"></image>
       </view>
       <view class="text_center">{{curYear2+'-'+curMonth2}}</view>
       <view style="text-align:right;" bindtap="nextMonth2">
-        <image class="select_icon" src="../../../images/personal/remindPhone_note.png"></image>
+        <image class="select_icon" src="../../../images/personal/rigth.png"></image>
       </view>
     </view>
     <view class="calendar_panel">

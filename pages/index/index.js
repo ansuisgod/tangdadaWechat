@@ -1,5 +1,6 @@
 //index.js
 //获取应用实例
+import { $wuxButton } from '../../components/wux'
 var abstac = require('../../commonmethod/abstract.js'),
     app = getApp(),
     sizess = '20';
@@ -15,9 +16,23 @@ Page({
     increaseknowledge:'',
     otherTypeDataList:'',
     typesId:'0',
-    allOtherArea:'0'
+    allOtherArea:'0',
+    // types: ['topLeft', 'topRight', 'bottomLeft', 'bottomRight'],
+    index: 3,
+    opened: !1
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    /**
+     *@desc:判断是不是从外面的分享页面进来的
+     *@auther:an
+     *@date:20190704
+     */
+    if (options.come && options.come == 'share') {
+      wx.navigateTo({
+        url: '/pages/blog/blogDetail/blogDetail?blogId=' + options.blogId
+      });
+    }
+
     /**
      * 开始从本地缓存中查找sessionKey 和 appendid
      * 注释: 如果找到了这个sessionKey值则说明已经注册的用户，就向跳转到首页
@@ -36,6 +51,7 @@ Page({
       navH: app.globalData.navHeight
     })
     this.getDataList();//获取数据
+    this.initButton();
   },
   /**
    * @desc:获取数据列表信息
@@ -222,22 +238,6 @@ Page({
         console.log(error);
       });
   },
-  /**
-   * @desc:点击任务触发的函数
-   */
-  tasks:function(){
-    wx.navigateTo({
-      url: '../../../task/task'
-    })
-  },
-  /**
-   * @desc:点击问专家触发的函数
-   */
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../../../askTheExperts/askTheExperts'
-    })
-  },
   allClik:function(e){
     wx.navigateTo({
       url: '../../pages/blog/blogDetail/blogDetail?blogId=' + e.currentTarget.dataset.articlid
@@ -289,4 +289,50 @@ Page({
       slideOffset: offsetW
     });
   },
+  hideCoverss: function () {
+    let menu = this.data.$wux.button.bt.opened;
+    let mytypes = $wux.button.bt.opened
+    this.setData({
+      mytypes: !menu,
+    })
+  },
+  /**
+   * @desc:悬浮的按钮动画的效果隐藏和显示菜单
+   * @date：20190704
+   */
+  initButton(position = 'bottomRight') {
+    this.setData({
+      opened: !1,
+    })
+
+    this.button = $wuxButton.init('br', {
+      position: position,
+      buttons: [
+        {
+          label: '任务',
+          icon: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562236684673&di=7c4217757c15998bb5ce16038a7ffa38&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F31%2F56%2F5810bd78d645b_610.jpg",
+        },
+        {
+          label: '问专家',
+          icon: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562236532578&di=1dbd5447533e8dea28ab5a6419776c23&imgtype=0&src=http%3A%2F%2Fwww.zhongoudoctor.com%2Fimages%2Fupload%2Fimage%2F20150728%2F20150728080306_40888.png",
+        }
+      ],
+      buttonClicked(index, item) {
+        index === 0 && wx.navigateTo({
+          url: '/pages/index/task/task'
+        })
+
+        index === 1 && wx.navigateTo({
+          url: '/pages/index/askTheExperts/askTheExperts'
+        })
+
+        return true
+      },
+      callback(vm, opened) {
+        vm.setData({
+          opened,
+        })
+      },
+    })
+  }
 })

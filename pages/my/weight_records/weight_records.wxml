@@ -1,4 +1,6 @@
 <!--pages/my/weight_records/weight_records.wxml-->
+<import src="../../../components/button/button.wxml"/>
+
 <view style='width: 100%;height: 80vh;display: flex;justify-content: center;align-items: center;' wx:if='{{getWeightList.length == ""}}'>
   <image src="../../../images/noData/NoRecord.png" style="width: 450rpx; height: 450rpx;" />
 </view>
@@ -65,17 +67,17 @@
 
 
 <!-- 新增 -->
-<view class='top-box' bindtap='goAdd' bindtouchstart="bindTouchStart" bindtouchend="bindTouchEnd">
+<!-- <view class='top-box' bindtap='goAdd' bindtouchstart="bindTouchStart" bindtouchend="bindTouchEnd">
   <image class='top' style='height: 150rpx;width: 150rpx;border-radius: 75rpx;' src='../../../images/personal/record.png'></image>
-</view>
+</view> -->
 
 
 
 
 <!-- 查看建议 -->
-<view class='' style='position: fixed;right: 45rpx;bottom: 300rpx;' bindtap='goAdvice'   data-status="4">
+<!-- <view class='' style='position: fixed;right: 45rpx;bottom: 300rpx;' bindtap='goAdvice'   data-status="4">
  <image class='top' style='height: 100rpx;width: 100rpx;border-radius: 75rpx;' src='https://fakeimg.pl/200/?text=建议&font=noto&retina=1' ></image>
-</view>
+</view> -->
 
 
 
@@ -106,3 +108,9 @@
 </view>
 
 
+
+
+  <view class='addBox-choose-cover' wx:if='{{opened}}' bindtap='hideCoverss'></view>
+  <!-- 遮罩层 -->
+
+  <template is="button" data="{{ ...$wux.button.br }}"/>

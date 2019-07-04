@@ -1,18 +1,68 @@
 // pages/my/health_records/health_records.js
+var abstac = require('../../../commonmethod/abstract.js'),
+  app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    status:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var that = this;
+    that.setData({
+      wxSessionKey: wx.getStorageSync('sessionKey')
+    });
+    
+  },
 
+
+  /**
+* @desc:获取我的参考建议文本文字的接口
+* @date:2019.06.14
+* @auther:li
+*/
+  getProfileText: function () {
+    var that = this;
+    abstac.sms_Interface(app.publicVariable.getProfileTextInterfaceAddress,
+      { wx_session_key: that.data.wxSessionKey },
+      function (res) {//查询成功
+        //打印日志
+        console.log("****************文本文字***************");
+        console.log(res);
+
+        //判断是否有数据，有则取数据
+        if (res.data.result.code == '2000') {
+          var data = res.data;
+
+          if (data.data != undefined){
+            wx.setStorageSync('reviewStatus', '1') //缓存信息
+            that.setData({
+              status: '1',
+            });
+          }else{
+            wx.setStorageSync('reviewStatus', '0') //缓存信息
+            that.setData({
+              status: '1',
+            });
+          }
+
+          // that.setData({
+            // refGoalInfoText: data,
+            // refGoalInfoTextInfo: JSON.parse(data.profile_text),
+          // });
+        } else {
+          abstac.promptBox(res.data.result.message);
+        }
+      },
+      function (error) {//查询失败
+        console.log(error);
+      });
   },
 
 
@@ -78,7 +128,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+var that = this;
+    that.getProfileText()
   },
 
   /**

@@ -29,6 +29,7 @@ Page({
     foodArr: [],
 
     category: '', //时间段分类id
+    lock: false, //防止多次点击按钮
   },
 
   /**
@@ -455,7 +456,17 @@ Page({
         if (res.data.result.code == '2000') {
 
           that.setData({
+            lock: true,
+          })
+
+          that.setData({
           });
+          abstac.promptBox('添加成功');
+          wx.redirectTo({
+            url: '/pages/my/diet_records/diet_records'
+          })
+
+
         } else {
           abstac.promptBox(res.data.result.message);
         }

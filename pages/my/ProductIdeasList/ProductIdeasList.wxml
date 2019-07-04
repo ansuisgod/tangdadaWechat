@@ -28,7 +28,7 @@
 
 
                 <block wx:for="{{item.contents.images}}">
-                  <image style='height:200rpx;width:200rpx;' mode='aspectFill' src='{{item.url}}'></image>
+                  <image style='height:200rpx;width:200rpx;background-color: #f3f3f3;' mode='aspectFill' src='{{item.url}}'></image>
                 </block>
               </view>
 

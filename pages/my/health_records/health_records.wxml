@@ -115,7 +115,11 @@
 <!-- 悬浮按钮 -->
 <view class='top-box'  bindtap='goAppraisal'>
 
-  <image class='top' style='height: 150rpx;width: 150rpx;border-radius: 75rpx;' src='../../../images/personal/record.png'></image>
+  <!-- <image class='top' style='height: 150rpx;width: 150rpx;border-radius: 75rpx;' src='../../../images/personal/record.png'></image> -->
+
+  <view wx:if='{{status == 0}}' class='review'>评测</view>
+  <view wx:else class='review'>重新评测</view>
+
 
 </view>
 

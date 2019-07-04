@@ -122,7 +122,7 @@
 
 
 <!-- 修改密码 -->
-<view class='setting-box-options' bindtap='goArticle'>
+<!-- <view class='setting-box-options' bindtap='goArticle'>
   <view class='setting-box-options-title'>修改密码</view>
 
   <view class='setting-box-options-inputs'>
@@ -132,7 +132,7 @@
   <view class='setting-box-options-rit'>
     <image class='' style='' src='../../../images/personal/jian_right.png' mode='' />
   </view>
-</view>
+</view> -->
 
 
 <!-- 以下为特定弹框 -->

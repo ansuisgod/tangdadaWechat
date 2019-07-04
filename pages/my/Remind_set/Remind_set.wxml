@@ -24,7 +24,7 @@
   </view>
 
   <view class='setBox-bot'>
-    <image class='' style='' src='https://fakeimg.pl/200/?text=占位图&font=noto&retina=1' mode='' />
+    <image class='' style='' src='../../../images/personal/tuIcon.png' mode='' />
   </view>
 
 </view>

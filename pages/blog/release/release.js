@@ -12,6 +12,8 @@ Page({
    */
   data: {
     chooseImgSrc:[],
+    title:'',
+    contentTitle:'',
     interfaceData: '',
     imgDisplay:'none',
     articalTilte:'',//文章的标题
@@ -24,12 +26,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (options.drafbox == '1'){
+      this.setData({
+        drafBoxData: JSON.parse(options.info)
+      });
+      console.log(this.data.drafBoxData);
+    } else{
+      this.setData({
+        drafBoxData: ''
+      });
+    }
     this.setData({
       platform: app.globalData.platform,
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
-    this.getDrafBoxNumber();//获取草稿箱的条数的接口
-
+    this.getDrafBoxNumber(options.drafbox);//获取草稿箱的条数的接口
   },
   /**
    * @desc:删除预览图片
@@ -63,7 +74,7 @@ Page({
   /**
    * @desc:获取草稿箱的条数
    */
-  getDrafBoxNumber:function(){
+  getDrafBoxNumber: function (drafBbox){
     let that = this;
     abstac.sms_Interface(app.publicVariable.getDraftBoxNumberInterfaceAddress,
       { page: pagess, wx_session_key: this.data.wxSessionKey, size: sizes},
@@ -77,9 +88,22 @@ Page({
         });
         //判断草稿箱里条数是否有，如果有则弹出提示框
         if (that.data.draftBoxNumber > '0'){
-          that.confirmationBox();//调用弹出提示框
+          
+          if (drafBbox == '1'){
+            var cc = that.data.drafBoxData;
+            
+            cc.content = JSON.parse(cc.content);
+            that.setData({
+              title: cc.title,
+              contentTitle: cc.content.text,
+              articalTilte: cc.title,
+              content: cc.content.text
+            });
+            console.log(cc);
+          }else{
+            that.confirmationBox();//调用弹出提示框
+          }
         }
-        console.log(that.data.draftBoxNumber);
       }else{
           abstac.promptBox(res.data.result.message);
       }

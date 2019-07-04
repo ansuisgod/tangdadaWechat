@@ -1,14 +1,16 @@
 <import src="../../components/an/indexAll.wxml" />
 <import src="../../components/an/swiperTabber.wxml" />
+<import src="../../components/button/button.wxml"/>
 
 <scroll-view scroll-x="true" class="weui-navbar">
   <!-- 导航条 -->
   <template is="swiperTabber" data="{{tabs, tabW, activeIndex}}" />
 </scroll-view>
 
-<!--任务圆形按钮-->
-<view class='ellipse' bindtap='tasks'>任务</view>
-<view class='profession' bindtap='bindViewTap'>问专家</view>
 <view class='main'>
   <template is="indexAll" data="{{allOtherArea,dataListInfo,otherTypeDataList,increaseknowledge}}" />
 </view>
+
+<view class='addBox-choose-cover' wx:if='{{opened}}' bindtap='hideCoverss'></view>
+<!-- 遮罩层 -->
+<template is="button" data="{{ ...$wux.button.br }}"/>

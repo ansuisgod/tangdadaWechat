@@ -89,7 +89,8 @@
 
 
   <view class='Details-button'>
-    <view class='Details-button-sava' bindtap='newDiet'>保存</view>
+    <view wx:if='{{lock == false}}' class='Details-button-sava saveYes' bindtap='newDiet'>保存</view>
+    <view wx:else class='Details-button-sava saveNo' bindtap='newDiet'>已保存</view>
   </view>
 
 </view>
@@ -122,17 +123,17 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-<view class="float-button" bindtap='goadd'>
-  <image src="https://fakeimg.pl/200x100/?retina=1&text=热量页&font=noto" style="width: 150rpx; height: 150rpx;" />
+<view class='top-box' bindtap='goadd'>
+<view class='review'>如何估算</view>
 </view>
+
+
+
+
+
+
+
+
+<!-- <view class="float-button" bindtap='goadd'>
+  <image src="https://fakeimg.pl/200x100/?retina=1&text=热量页&font=noto" style="width: 150rpx; height: 150rpx;" />
+</view> -->

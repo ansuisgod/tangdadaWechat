@@ -515,6 +515,11 @@ Page({
 */
   queryUserInfo: function () {
     var that = this;
+
+    wx.showLoading({
+      title: '加载中',
+    })
+
     let platform = abstac.mobilePhoneModels(that.data.platform);//手机型号
 
     abstac.sms_Interface(app.publicVariable.queryUserInformationInterfaceAddress,
@@ -523,6 +528,7 @@ Page({
         //打印日志
         console.log("****************查询用户信息接口***************");
         console.log(res);
+        wx.hideLoading()
         //判断是否有数据，有则取数据
         if (res.data.result.code == '2000') {
 

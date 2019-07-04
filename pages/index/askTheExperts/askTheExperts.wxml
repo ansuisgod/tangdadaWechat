@@ -1,5 +1,6 @@
 <!--pages/index/askTheExperts/askTheExperts.wxml-->
-<view class='toppBoxx' style='border:1px solid red;position:fixed;top:0;left:0;'>
+<import src="../../../components/button/button.wxml"/>
+<view class='toppBoxx' style='position:fixed;top:0;left:0;'>
   <view class='askTopA'>
     <view class='askInputLeft'>
       <input type='text' bindfocus='searchBoxFocus' placeholder='请输入您想搜索的问题'></input>
@@ -8,7 +9,6 @@
       <view bindtap='askQuestions'>提问</view>
     </view>
   </view>
-  <view><button class='intrduce' type='primary' size='mini' plain="true" bindtap='expertsRecommend'>推荐专家</button></view>
 </view>
 
 <!-- 搜索语音部分 -->
@@ -64,3 +64,7 @@
   </view>
 
 </view>
+
+<view class='addBox-choose-cover' wx:if='{{opened}}' bindtap='hideCoverss'></view>
+<!-- 遮罩层 -->
+<template is="button" data="{{ ...$wux.button.br }}"/>

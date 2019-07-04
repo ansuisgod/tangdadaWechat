@@ -1,4 +1,7 @@
 <!--pages/my/my_points/my_points.wxml-->
+<import src="../../../components/button/button.wxml"/>
+
+
 <scroll-view scroll-y="true" enable-back-to-top="true" bindscroll="handleScroll" style='height:{{windowHeight}}'>
 
   <view class='myPoints-box'>
@@ -59,13 +62,25 @@
 
 
   <!-- 悬浮按钮 -->
-  <view class="float-button {{ iSscroll ? 'active' : ''}};">
+
+  <!-- 滚动隐藏悬浮按钮 -->
+  <!-- <view class="float-button {{ iSscroll ? 'active' : ''}};">
     <image bindtap='goIntegralRules' style='width: 150rpx;height: 150rpx;' src='../../../images/personal/jifen.jpg' mode='' />
   </view>
 
 
 
-  <view bindtap='goMyBadge' class="float-button2"></view>
+  <view bindtap='goMyBadge' class="float-button2"></view> -->
   <!-- 悬浮按钮END -->
 
 </scroll-view>
+
+
+
+
+
+  <view class='addBox-choose-cover' wx:if='{{opened}}' bindtap='hideCoverss'></view>
+  <!-- 遮罩层 -->
+
+  <template is="button" data="{{ ...$wux.button.br }}"/>
+

@@ -102,6 +102,10 @@ Page({
 
 
 
+
+
+
+
   // 以下為跳转业务
   goMyPost: function () {  //跳转入我的帖子
     wx.navigateTo({

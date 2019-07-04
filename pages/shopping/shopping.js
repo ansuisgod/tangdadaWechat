@@ -167,13 +167,13 @@ Page({
   },
   /**
    * @desc:点击我要兑换按钮触发的函数
-   */
+   
   forRecord: function () {
-    //跳转到积分详细列表页面
     wx.navigateTo({
       url: '../../../forRecord/forRecord'
     })
   },
+  */
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

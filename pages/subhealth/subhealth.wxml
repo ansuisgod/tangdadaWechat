@@ -1,16 +1,13 @@
 <!--pages/index/task/task.wxml 首页的任务-->
 <import src="../../components/an/subhelthIndex.wxml" />
 <import src="../../components/an/swiperTabber.wxml" />
+<import src="../../components/button/button.wxml"/>
 <!--自定义导航条-->
 <view class='nav bg-white' style='height:{{navH}}px'>
     <view class='nav-title'>
       <image src='../../static/search.png' mode='aspectFit' bindtap='search' class="back"></image>
-      <text class='profession' bindtap='release'>发布</text>
+      <!-- <text class='profession' bindtap='release'>发布</text> -->
     </view>
-</view>
-<view class='selectBox' wx:if='{{select}}'>
-  <view class='innerBox' bindtap='sendPicFont'>发图文</view>
-  <view class='innerBox' bindtap='sedsVideo'>发视频</view>
 </view>
 
 <scroll-view scroll-x="true" class="weui-navbar">
@@ -48,3 +45,6 @@
   </swiper-item>
 
 </swiper>
+<view class='addBox-choose-cover' wx:if='{{opened}}' bindtap='hideCoverss'></view>
+<!-- 遮罩层 -->
+<template is="button" data="{{ ...$wux.button.br }}"/>

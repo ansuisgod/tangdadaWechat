@@ -220,7 +220,7 @@ Page({
         console.log("********************评论发送接口返回数据***********************");
         console.log(res);
         if (res.data.result.code == '2000') {
-          abstac.promptBox("评论成功！");
+          abstac.promptBox("+5积分,需等待审核");
           that.setData({
             replyContent: '',
             showHiden: 'block',
@@ -599,7 +599,7 @@ Page({
     var that = this;
     return {
       title: this.data.content.title,
-      path: '/pages/blog/blogDetail/blogDetail?blogId=' + this.data.blogId,
+      path: '/pages/index/index?come=share&blogId=' + this.data.blogId,
       imageUrl:'https://wx.qlogo.cn/mmhead/Q3auHgzwzM4INibMaWvVambKxpcRkq8IIlF89NiaORtZicQPW2icEDtcUg/0',
       success: function (res) {
         console.log(res);

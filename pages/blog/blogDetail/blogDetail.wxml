@@ -11,7 +11,7 @@
       </view>
       <view class='center'>
         <view class='nickName'>{{content.user.nick_name}}</view>
-        <view class='infomation'>{{content.favorite_num}}人已阅读 {{content.like_num}}人点赞 {{content.reply_size}}回复</view>
+        <view class='infomation'>{{content.view_size}}人已阅读 {{content.like_num}}人点赞 {{content.reply_size}}回复</view>
       </view>
       <view class='right'>
         <view class='theEllipticalCapsule' wx:if='{{content.order_num != 0}}'>置顶</view>
@@ -21,6 +21,9 @@
     <!-- 内容展示区域视图模板 -->
     <view class='contentOut'>
       <view class='articalTitle'>{{content.title}}</view>
+      <!-- <view class='articalTitle'>
+        <rich-text nodes='{{content.title}}'></rich-text>
+      </view> -->
     </view>
 
     <view class='picArea'>
@@ -34,7 +37,7 @@
 
     <view class='contentOut' wx:if='{{content.content_text}}'>
       <view class='contentText'>
-        <rich-text nodes='{{content.content_text}}'></rich-text>
+        <!-- <rich-text nodes='{{content.content_text}}'></rich-text> -->
       </view>
     </view>
 

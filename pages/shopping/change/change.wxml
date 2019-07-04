@@ -8,7 +8,7 @@
       </view>
       <view class='goodDesc'>
         <view class='goodsTiltle'>{{goodsDeInfo.name}}</view>
-        <view class='integral'>{{goodsDeInfo.surplus}} \r\t 积分</view>
+        <view class='integral'>{{goodsDeInfo.points}} \r\t 积分</view>
       </view>
     </view>
 

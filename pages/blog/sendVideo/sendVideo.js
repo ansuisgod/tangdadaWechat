@@ -55,7 +55,9 @@ Page({
       abstac.promptBox("标题不能为空！");
     } else if (this.data.content.length <= 20) {
       abstac.promptBox("正文内容不能少于20个字！");
-    } else {
+    } else if (this.data.interfaceData.length == '0'){
+      abstac.promptBox("请选择上传视频");
+    }else{
       //循环动态的拼装参数的字符串的格式
       var parmLength = this.data.interfaceData.length,
         arrya1 = [];

@@ -57,8 +57,8 @@
 
 
 
-<view bindtap='releaseDynamic' formType="submit" class="buttons">提交</view>
-
+<view wx:if='{{lock == false}}' bindtap='releaseDynamic' formType="submit" class="buttons saveYes">提交</view>
+<view wx:else bindtap=''  class="buttons saveNo">提交中</view>
 
 
 

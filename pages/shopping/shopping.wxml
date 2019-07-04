@@ -1,7 +1,7 @@
 <!--pages/shopping/shopping.wxml-->
 <import src="../../components/an/goodsList.wxml" />
 <view>
-  <button class='records' type='primary' size='mini' plain="true" bindtap='forRecord'>兑换记录</button>
+  <!-- <button class='records' type='primary' size='mini' plain="true" bindtap='forRecord'>兑换记录</button> -->
   <!-- 上面的头部的部分开始 -->
 		<view class="userPicture" bindtap='integralList'>
 			<view class="left">

@@ -66,7 +66,7 @@ Page({
 
     abstac.sms_Interface(app.publicVariable.getSugarInterfaceAddress, {
       wx_session_key: that.data.wxSessionKey,
-        end_date: that.data.selectedDate2,
+      end_date: that.data.newSelectedDate2,
         start_date: that.data.selectedDate
       },
       function(res) { //查询成功
@@ -105,7 +105,7 @@ Page({
     var that = this;
     abstac.sms_Interface(app.publicVariable.getPressureInterfaceAddress, {
       wx_session_key: that.data.wxSessionKey,
-        end_date: that.data.selectedDate2,
+      end_date: that.data.newSelectedDate2,
         start_date: that.data.selectedDate
       },
       function(res) { //查询成功
@@ -148,7 +148,7 @@ Page({
     // let platform = abstac.mobilePhoneModels(that.data.platform);//手机型号
     abstac.sms_Interface(app.publicVariable.getWeightInterfaceAddress, {
       wx_session_key: that.data.wxSessionKey,
-        end_date: that.data.selectedDate2,
+      end_date: that.data.newSelectedDate2,
         start_date: that.data.selectedDate
       },
       function(res) { //查询成功
@@ -257,7 +257,10 @@ Page({
     var that = this;
     // let platform = abstac.mobilePhoneModels(that.data.platform);//手机型号
     abstac.sms_Interface(app.publicVariable.getDietInterfaceAddress,
-      { wx_session_key: this.data.wxSessionKey, type: '1' },
+      { wx_session_key: this.data.wxSessionKey,
+        end_date: that.data.newSelectedDate2,
+        start_date: that.data.selectedDate
+      },
       function (res) {//查询成功
         //打印日志
         console.log("****************饮食记录列表***************");
@@ -437,7 +440,7 @@ Page({
     // let platform = abstac.mobilePhoneModels(that.data.platform);//手机型号
     abstac.sms_Interface(app.publicVariable.getSportInterfaceAddress, {
       wx_session_key: that.data.wxSessionKey,
-        end_date: that.data.selectedDate2,
+      end_date: that.data.newSelectedDate2,
         start_date: that.data.selectedDate
       },
       function(res) { //查询成功
@@ -582,9 +585,17 @@ Page({
   },
 
 
-
-
-
+  Conversiontime: function (timestamp) {   //时间戳转时间
+    var date = new Date(timestamp);
+    var Y = date.getFullYear() + '-';
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+    var D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
+    var h = (date.getHours() < 10 ? '0' + (date.getHours()) : date.getHours()) + ':';
+    var m = (date.getMinutes() < 10 ? '0' + (date.getMinutes()) : date.getMinutes()) + ':';
+    var s = (date.getSeconds() < 10 ? '0' + (date.getSeconds()) : date.getSeconds());
+    // return Y + M + D + h + m + s;
+    return Y + M + D;
+  },
 
 
 
@@ -613,10 +624,27 @@ Page({
     var mon = today.getMonth() + 1; //月  
     var d = today.getDate(); //日  
     var i = today.getDay(); //星期  
+
+    let times = y + '-' + mon + '-' + d
+
+
+    var T = new Date(times);  // 将指定日期转换为标准日期格式。Fri Dec 08 2017 20:05:30 GMT+0800 (中国标准时间)
+    // 将转换后的标准日期转换为时间戳。
+    let couTime = T.getTime() / 1000
+    let newtime = Number(couTime) + 86400
+    let newSelectedDate2 = this.Conversiontime(newtime * 1000)
+    console.log(couTime)
+    console.log(newSelectedDate2)
+
+ 
+
+
+
     this.setData({
       curYear2: y,
       curMonth2: mon,
       selectedDate2: y + '-' + mon + '-' + d,
+      newSelectedDate2: newSelectedDate2,
       selectedWeek2: this.data.weekArr2[i]
     });
 
@@ -779,8 +807,24 @@ Page({
   selectDate2: function(e) {
     var that = this;
     // console.log('选中', e.currentTarget.dataset.date.value);
+
+
+
+    let times = e.currentTarget.dataset.date.value
+
+
+    var T = new Date(times);  // 将指定日期转换为标准日期格式。Fri Dec 08 2017 20:05:30 GMT+0800 (中国标准时间)
+    // 将转换后的标准日期转换为时间戳。
+    let couTime = T.getTime() / 1000
+    let newtime = Number(couTime) + 86400
+    let newSelectedDate2 = this.Conversiontime(newtime * 1000)
+    console.log(couTime)
+    console.log(newSelectedDate2)
+
+
     that.setData({
       selectedDate2: e.currentTarget.dataset.date.value,
+      newSelectedDate2: newSelectedDate2,
       selectedWeek2: that.data.weekArr2[e.currentTarget.dataset.date.week]
     });
 
