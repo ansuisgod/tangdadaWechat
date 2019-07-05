@@ -35,7 +35,7 @@
   width: 50rpx;
   height: 50rpx;
   position: absolute;
-  bottom: 20rpx;
+  bottom: 10rpx;
   left: 20rpx;
 }
 .nav .profession{

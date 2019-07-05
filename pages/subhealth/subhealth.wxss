@@ -9,6 +9,10 @@
   left: 0;
   z-index: 999;
 }
+.floating-button{
+  width: 90rpx;
+  height: 90rpx;
+}
 page {
  height: 100%;
 }

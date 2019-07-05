@@ -86,7 +86,7 @@ function mobilePhoneModels(platform){
     /**
     * 判断platformSub为苹果值为1，为安卓值为2
     */
-    if (platt == 'IP') {//如果是ios
+    if (platt == 'IOS') {//如果是ios
       platt = '1';
     }
     if (platt == 'AN' || platt == 'RE') {//如果是安卓

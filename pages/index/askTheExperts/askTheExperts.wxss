@@ -9,6 +9,10 @@
   left: 0;
   z-index: 33;
 }
+.floating-button{
+  width: 90rpx;
+  height: 90rpx;
+}
 .toppBoxx{
   width: 100%;
   background-color: #fff;

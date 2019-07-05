@@ -67,7 +67,7 @@ Page({
       unickName = this.data.nickName;
     }
     //打印日志
-    console.log("randomm====" + randomm + "*platform===" + platforms + "*注册电话号码=" + this.data.regPhone + "*密码=" + this.data.regCode + "*验证码==" + this.data.regverificationCodePhone + "*昵称=" + unickName + '*角色id' + this.data.role_id);
+    console.log("randomm=" + randomm + "*platform===" + platforms + "*注册电话号码=" + this.data.regPhone + "*密码=" + this.data.regCode + "*验证码==" + this.data.regverificationCodePhone + "*昵称=" + unickName + '*角色id' + this.data.role_id);
     let that = this;
     /**
      * @desc:调用注册的接口
@@ -82,31 +82,21 @@ Page({
         console.log("****************用户注册接口成功时返回函数***************");
         console.log(res);
         if (res.data.result.code == '2000') {
+          wx.navigateTo({
+            url: '../../../pages/login/login'
+          });
+          
           /**
            * @desc:调用微信的登录接口来获取微信的code值
            * @param：无
-           */
+           
           abstac.weChat_Login(function (res) {
             if (res.code) {
               let weCode = res.code;
-              wx.navigateTo({
-                url: '../../../pages/login/login'
-              })
-              /**
-               * @desc:调用自己后台的登录接口
-               * @param：phone:电话号码、code：微信返回的code值、v_code：验证码
-               
-              abstac.sms_Interface(app.publicVariable.loginInterfaceAddress, 
-                { phone: that.data.regPhone, code: weCode, v_code: that.data.regverificationCodePhone},
-                function(res){
-                  console.log(res);
-                },function(res){
-                  console.log(res);
-                });*/
             } else {
               return;
             }
-          });
+          });*/
 
         } else {
           abstac.promptBox(res.data.result.message);
