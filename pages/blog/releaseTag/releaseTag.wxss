@@ -1,0 +1,82 @@
+/* pages/blog/releaseTag/releaseTag.wxss */
+.blogTtile{
+  width: 90%;
+  height: 90rpx;
+  margin: 25rpx auto;
+}
+.blogContent{
+  width: 90%;
+  margin: 0 auto;
+  height: auto;
+}
+.blogContent textarea{
+  width: 100%;
+  height: 250rpx;
+}
+.blogContent .imgShowBox{
+  position: relative;
+}
+.blogContent .imgShowBox .del{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.imgList{
+  width: 100%;
+  margin: 15rpx 0;
+}
+.blogContent .outBox{
+  display: flex;
+}
+.blogContent .outBox .btn{
+  border: 1px solid #f77287;
+  color: #f77287;
+  background-color:#fff;
+  font-size: 34rpx;
+  flex-direction: row;
+  margin:80rpx 0 70rpx 10rpx;
+}
+.blogContent .outBox .btn.active{
+  color: #fff;
+  background-color:#ff7584;
+}
+.bottomArea{
+  width: 100%;
+  height: 90rpx;
+  border: 1px solid #e7e7e7;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 999;
+}
+.bottomArea image{
+  margin: 15rpx 0 0 15rpx;
+  width: 60rpx;
+  height:60rpx;
+}
+.bottomArea .draftBox{
+  color: #a9a9a9;
+  position: absolute;
+  top: 25rpx;
+  right: 45rpx;
+  font-size: 32rpx;
+}
+.records{
+  width: 650rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  color: white;
+  font-size: 38rpx;
+  text-align: center;
+  line-height: 100rpx;
+  z-index: 10;
+  background: #fe7281;
+  box-shadow: 0rpx 5rpx 12rpx #959595;
+  margin-bottom: 200rpx;
+}
+.records:active {
+  background-color: rgba(254, 114, 129, 0.8);
+}

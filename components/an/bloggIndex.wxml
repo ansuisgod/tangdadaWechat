@@ -30,13 +30,17 @@
         <view class='bottom'>
           <!-- 浏览粗疏 -->
           <view class='leftB'>
-            <image wx:if="{{item.title}}" src='../../static/eye.png'></image>
-            <text class='look'>{{item.like_num}}</text>
+            <view class='leftBoxs'>
+              <image wx:if="{{item.title}}" src='../../static/eye.png'></image>
+            </view>
+            <view class='look'>{{item.view_size}}</view>
           </view>
           <!-- 点赞的次数 -->
           <view class='rightB'>
-            <image wx:if="{{item.title}}" src='../../static/like.png'></image>
-            <text class='like'>{{item.favorite_num}}</text>
+            <view class='boxRight'>
+              <image wx:if="{{item.title}}" src='../../static/like.png'></image>
+            </view>
+            <view class='like'>{{item.like_num}}</view>
           </view>
         </view>
       </view>

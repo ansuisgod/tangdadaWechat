@@ -21,13 +21,17 @@
         <view class='bottomBox'>
           <!-- 浏览粗疏 -->
           <view class='leftB'>
-            <image src='../../static/eye.png'></image>
-            <text class='look'>{{item.view_size}}</text>
+            <view class='leftBoxs'>
+              <image src='../../static/eye.png'></image>
+            </view>
+            <view class='look'>{{item.view_size}}</view>
           </view>
           <!-- 点赞的次数 -->
           <view class='rightB'>
-            <image src='../../static/like.png'></image>
-            <text class='like'>{{item.like_num}}</text>
+            <view class='boxRight'>
+              <image src='../../static/like.png'></image>
+            </view>
+            <view class='like'>{{item.like_num}}</view>
           </view>
         </view>
       </view>
@@ -53,13 +57,17 @@
         <view class='bottomBox'>
           <!-- 浏览粗疏 -->
           <view class='leftB'>
-            <image src='../../static/eye.png'></image>
-            <text class='look'>{{item.view_size}}</text>
+            <view class='leftBoxs'>
+              <image src='../../static/eye.png'></image>
+            </view>
+            <view class='look'>{{item.view_size}}</view>
           </view>
           <!-- 点赞的次数 -->
           <view class='rightB'>
-            <image src='../../static/like.png'></image>
-            <text class='like'>{{item.like_num}}</text>
+            <view class='boxRight'>
+              <image src='../../static/like.png'></image>
+            </view>
+            <view class='like'>{{item.like_num}}</view>
           </view>
         </view>
       </view>
@@ -86,13 +94,17 @@
         <view class='bottomBox'>
           <!-- 浏览粗疏 -->
           <view class='leftB'>
-            <image src='../../static/eye.png'></image>
-            <text class='look'>{{item.view_size}}</text>
+            <view class='leftBoxs'>
+              <image src='../../static/eye.png'></image>
+            </view>
+            <view class='look'>{{item.view_size}}</view>
           </view>
           <!-- 点赞的次数 -->
           <view class='rightB'>
-            <image src='../../static/like.png'></image>
-            <text class='like'>{{item.like_num}}</text>
+            <view class='boxRight'>
+              <image src='../../static/like.png'></image>
+            </view>
+            <view class='like'>{{item.like_num}}</view>
           </view>
         </view>
 

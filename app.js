@@ -76,9 +76,10 @@ App({
     // 获取手机系统信息
     wx.getSystemInfo({
       success: res => {
+        console.log(res);
         //导航高度
         this.globalData.navHeight = res.statusBarHeight + 10;
-        this.globalData.platform = res.model;
+        this.globalData.platform = res.platform;
         this.globalData.mtabW = res.windowWidth;
       }, fail(err) {
         console.log(err);

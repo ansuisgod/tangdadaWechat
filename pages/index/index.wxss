@@ -104,6 +104,16 @@ to{-webkit-transform: rotateY(360deg);transform: rotateY(360deg)}
   text-overflow:ellipsis;
   white-space:nowrap;
 }
+.outAll .bottom1{
+  margin: 10rpx 0 0 0;
+  flex-direction: column;
+  height: 50rpx;
+  font-size: 32rpx;
+  color: #5e5e5e;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
 /*显示整个conts */
 .txt{
   margin-top: 20rpx;

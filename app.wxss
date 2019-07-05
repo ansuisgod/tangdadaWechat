@@ -220,41 +220,49 @@
   width: 100%;
   height: 80rpx;
   display: flex;
-  position: relative;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .bottomBox .leftB{
-  position: absolute;
-  right: 280rpx;
-  top: 0;
+  width: 85%;
+  display: flex;
+  text-align: right;
   flex-direction: row;
 }
+.swiper-box .swiper-item .slide-view .obesityBox .bottomBox .leftB .leftBoxs{
+  width: 85%;
+  flex-direction: row;
+  line-height: 85rpx;
+}
 .swiper-box .swiper-item .slide-view .obesityBox .bottomBox .leftB image{
-  margin-top: 20rpx;
   width: 45rpx;
   height: 45rpx;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .bottomBox .leftB .look{
-  position: absolute;
-  right: -45rpx;
-  top: 25rpx;
+  line-height: 70rpx;
+  width: 15%;
+  flex-direction: row;
   color: #a9a9a9;
   font-size: 28rpx;
+  text-align: center;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .bottomBox .rightB{
-  position: absolute;
-  right: 100rpx;
-  top: 0;
+  width: 15%;
   flex-direction: row;
+  display: flex;
 }
-.swiper-box .swiper-item .slide-view .obesityBox .bottomBox .rightB image{
-  margin-top: 20rpx;
+.swiper-box .swiper-item .slide-view .obesityBox .bottomBox .rightB .boxRight{
+  width: 50%;
+  flex-direction: row;
+  line-height: 85rpx;
+}
+.swiper-box .swiper-item .slide-view .obesityBox .bottomBox .rightB .boxRight image{
   width: 45rpx;
   height: 45rpx;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .bottomBox .rightB .like{
+  text-align: center;
+  line-height: 70rpx;
+  width: 50%;
   color: #a9a9a9;
-  position: absolute;
-  right: -35rpx;
-  top: 25rpx;
+  flex-direction: row;
   font-size: 28rpx;
 }

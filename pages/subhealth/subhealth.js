@@ -297,7 +297,7 @@ Page({
       ],
       buttonClicked(index, item) {
         index === 0 && wx.navigateTo({
-          url: '/pages/blog/release/release'
+          url: '/pages/blog/releaseTag/releaseTag'
         })
 
         index === 1 && wx.navigateTo({

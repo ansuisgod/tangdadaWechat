@@ -1,7 +1,7 @@
 <!-- 首页视图模板 -->
 <template name="indexAll">
 <!-- 全部视图模板 -->
-<view class='outAll' wx:if='{{allOtherArea == 0}}' wx:for-item='item' wx:for-index="idx" wx:key='property' wx:for="{{dataListInfo}}" bindtap='allClik' data-articlid='{{item.id}}'>
+<view class='outAll' wx:if='{{allOtherArea == 0}}' wx:for-item='item' wx:for-index="idx" wx:key='property' wx:for="{{dataListInfo}}" bindtap='allClik' data-articlid='{{item.topic_id}}'>
   <view class='top'>
     <image src='{{item.data.pic.url}}'></image>
     <view class='capsuleRectangle'>阅读:{{item.topic.view_size}} 分享：{{item.topic.share_num}} 点赞：{{item.topic.like_num}}</view>
@@ -9,7 +9,8 @@
       {{idx+1}}
     </view>
   </view>
-  <view class='bottom'>{{item.data.desc}}</view>
+  <view wx:if='{{item.title}}' class='bottom'>{{item.title}}</view>
+  <view wx:if='{{item.data.desc}}' class='bottom1'>{{item.data.desc}}</view>
 </view>
 
 <!-- 糖活动、糖友荟、养生糖视图模板 -->
@@ -18,7 +19,8 @@
     <image src='{{item.data.pic.url}}'></image>
     <view class='capsuleRectangle'>阅读:{{item.topic.view_size}} 分享：{{item.topic.share_num}} 点赞：{{item.topic.like_num}}</view>
   </view>
-  <view class='bottom'>{{item.data.desc}}</view>
+  <view wx:if='{{item.topic.title}}' class='bottom'>{{item.topic.title}}</view>
+  <view wx:if='{{item.data.desc}}' class='bottom1'>{{item.data.desc}}</view>
 </view>
 
 <!-- 涨知识视图模板 -->
@@ -27,7 +29,7 @@
     <image src='{{item.icon_url}}'></image> 
     <view class='capsuleRectangle1'>阅读:{{item.view_size}}</view>
   </view>
-  <view class='bottom'>{{item.title}}</view>
+  <view wx:if='{{item.title}}' class='bottom'>{{item.title}}</view>
 </view>
 
 </template>

@@ -14,7 +14,7 @@ Page({
     regCode: '',//从上个页面传的参数：注册密码
     regPhone: '',//从上个页面传的参数：注册电话号码
     verificationCode: '',//从上个页面传的参数：注册验证码
-    role_id: '',//角色id
+    role_id: '1',//角色id
     array: [{ src: 'http://hbimg.b0.upaiyun.com/69ad7a731f43d4b8729f1a2fbe65c43801ca0f033250-EV1vMf_fw658', type: '1型糖友', value: '1' }, 
             { src: 'http://hbimg.b0.upaiyun.com/69ad7a731f43d4b8729f1a2fbe65c43801ca0f033250-EV1vMf_fw658', type: '2型糖友', value: '2' },
             { src: 'http://pic.51yuansu.com/pic3/cover/02/96/71/5ad09ba522904_610.jpg', type: '糖友亲友', value: '14' }, 
@@ -85,19 +85,6 @@ Page({
           wx.navigateTo({
             url: '../../../pages/login/login'
           });
-          
-          /**
-           * @desc:调用微信的登录接口来获取微信的code值
-           * @param：无
-           
-          abstac.weChat_Login(function (res) {
-            if (res.code) {
-              let weCode = res.code;
-            } else {
-              return;
-            }
-          });*/
-
         } else {
           abstac.promptBox(res.data.result.message);
         }

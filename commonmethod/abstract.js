@@ -82,14 +82,14 @@ function randomWord(randomFlag, min, max) {
  */
 function mobilePhoneModels(platform){
   if (typeof(platform) == 'string'){
-    var platt = platform.substring(0, 2).toUpperCase();//将字符串转化为大写字母
+    var platt = platform;//将字符串转化为大写字母
     /**
     * 判断platformSub为苹果值为1，为安卓值为2
     */
-    if (platt == 'IOS') {//如果是ios
+    if (platt == 'ios') {//如果是ios
       platt = '1';
     }
-    if (platt == 'AN' || platt == 'RE') {//如果是安卓
+    if (platt == 'android') {//如果是安卓
       platt = '2';
     }
     return platt;

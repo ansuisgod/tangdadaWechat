@@ -8,6 +8,7 @@
     "pages/index/askList/askList",
     "pages/blog/blog",
     "pages/blog/release/release",
+    "pages/blog/releaseTag/releaseTag",
     "pages/blog/sendVideo/sendVideo",
     "pages/blog/search/search",
     "pages/blog/moreFriend/moreFriend",
