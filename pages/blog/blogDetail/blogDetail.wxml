@@ -37,7 +37,7 @@
 
     <view class='contentOut' wx:if='{{content.content_text}}'>
       <view class='contentText'>
-        <!-- <rich-text nodes='{{content.content_text}}'></rich-text> -->
+        <rich-text nodes='{{content.content_text}}'></rich-text>
       </view>
     </view>
 
