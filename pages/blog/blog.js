@@ -211,7 +211,7 @@ Page({
         })
 
         index === 1 && wx.navigateTo({
-          url: '/pages/blog/sendVideo/sendVideo'
+          url: '/pages/blog/sendVideo/sendVideo?flags=1'
         })
 
         return true

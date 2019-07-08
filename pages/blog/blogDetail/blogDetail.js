@@ -193,6 +193,12 @@ Page({
         'text': this.data.replyContent
       };
       arrya1 = { "text": this.data.replyContent };
+      var titleStr = this.hasSensitiveWords(this.data.replyContent);
+      if (titleStr){
+        console.log('包含了违法的词汇');
+        abstac.promptBox("包含了违法的词汇，请重新输入");
+        return;
+      }
     }else{
       for (var j = 0; j <= parmLength - 1; j++) {
         arrya1.push({ 'url': src_array1[j] });
@@ -241,7 +247,23 @@ Page({
         console.log(error);
       }
     );//调用发送评论的内容的接口
-
+  },
+  /**
+   * @desc：简单的过滤一些敏感词，后面估计要换成请求接口来过滤敏感词
+   * @date：20190708
+   * @auther：an
+   */
+  hasSensitiveWords:function(str) {
+    if(str == '' || str == undefined) return false;
+    var words = '台独,藏独,色情,淫荡,法轮功,淫秽,打到共产党,反党,胸部,裸体,傻逼,傻屌,funck,他妈的,操你妈';
+    var array = words.split(','), len = array.length;
+    for (var i = 0; i < len; i++) {
+      var item = array[i];
+      if (str.indexOf(item) >= 0 && item != '') {
+        return item;
+      }
+    }
+    return false;
   },
   /**
    * @desc:点击评论列表的回复图标触发的函数

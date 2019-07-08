@@ -22,10 +22,12 @@ view , scroll-view{
  /*width:25%;*/
  display: inline-block;
  text-align: center;
- font-size: 32rpx;
+ font-size: 34rpx;
  box-sizing: border-box;
- height: 7%;
- padding-bottom: 20rpx;
+ height: 90rpx;
+ line-height:90rpx;
+ padding-bottom: 15rpx;
+ color: #818181;
 }
 .weui-navbar .item_on{
  border-bottom: 2px solid #fd7380;
@@ -40,6 +42,12 @@ view , scroll-view{
  bottom: 0;
  left: 12.5rpx;
  transition: transform .3s;
+}
+.swiper-box{
+  display: block;
+  overflow-y: hidden;
+  height:100%;
+  border-bottom: none;
 }
 .swiper-box .swiper-item{
  text-align: center;

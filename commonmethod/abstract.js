@@ -89,7 +89,7 @@ function mobilePhoneModels(platform){
     if (platt == 'ios') {//如果是ios
       platt = '1';
     }
-    if (platt == 'android') {//如果是安卓
+    if (platt == 'android' || platt == 'devtools') {//如果是安卓
       platt = '2';
     }
     return platt;
@@ -98,11 +98,27 @@ function mobilePhoneModels(platform){
   }
   
 }
-
+/**
+ * @desc:封装了判断首页的阅读数、分享数、点赞数，如果大于了一千就在后面加k
+ * @param：resData【调用函数传入的参数】
+ * @auther：an
+ * @date：20190708
+ */
+function judgeGreater(resData) {
+  if (resData > '1000') {
+    var cc = (resData).toString();
+    resData = cc.substring(0, 1) + 'k';
+  } else if (resData > '10000') {
+    var cc = (resData).toString();
+    resData = cc.substring(0, 2) + 'k';
+  }
+  return resData;
+}
 module.exports = {
   sms_Interface: sms_Interface,
   weChat_Login: weChat_Login,
   promptBox: promptBox,
   randomWord: randomWord,
-  mobilePhoneModels: mobilePhoneModels
+  mobilePhoneModels: mobilePhoneModels,
+  judgeGreater: judgeGreater
 }

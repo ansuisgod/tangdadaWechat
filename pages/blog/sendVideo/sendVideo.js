@@ -26,8 +26,20 @@ Page({
   onLoad: function (options) {
     this.setData({
       platform: app.globalData.platform,
-      wxSessionKey: wx.getStorageSync('sessionKey')
+      wxSessionKey: wx.getStorageSync('sessionKey'),
+      flaggs: options.flags
     });
+    //如果从帖子里面进入就会加上标识，表明是从帖子进入发视频，tagId=0隐藏肥胖、女性健康、康复理疗标签，否则tagId=97，98，99
+    if (this.data.flaggs == '1'){
+      this.setData({
+        tagId:'0',
+        tagShow:false
+      });
+    }else{
+      this.setData({
+        tagShow: true
+      });
+    }
   },
   /**
    * @desc:删除预览图片
@@ -128,7 +140,7 @@ Page({
         //调用视频上传的接口
         that.uploadFile(tempFilePaths);
         //视频的缩略图的上传
-        //that.thumbUploadFile(res.thumbTempFilePath);
+        that.thumbUploadFile();
       },
       fail: function (res) { },
       complete: function (res) { },
@@ -170,33 +182,40 @@ Page({
 
   },
   thumbUploadFile: function (thumbTempFilePath){
-    let that = this,
-      platformS = abstac.mobilePhoneModels(this.data.platform),
-      file_category = '2';
-    //将图片的路径上传服务器的地址
-    wx.uploadFile({
-      url: app.publicVariable.fileUploadPicInterfaceAddress + '?file_category=' + file_category + '&wx_session_key=' + this.data.wxSessionKey + '&platform=' + platformS,
-      filePath: thumbTempFilePath,
-      name: 'file',
-      success: res => {
-        console.log("****************上传缩略图的接口返回函数***************");
-        console.log(res);
-        if (res.statusCode == '200') {
-          var dataResult = res;
-          dataResult.data = JSON.parse(dataResult.data);
-          that.setData({
-            interfaceData: src_array1.push(res.data.data.urls.origin),
-            imgDisplay: 'block'
-          });
-          that.setData({
-            interfaceData: src_array1
-          });
-          console.log(that.data.interfaceData);
-        } else {
+    this.setData({
+      interfaceData: src_array1.push('../../static/defaultThumber.png'),
+      imgDisplay: 'block'
+    });
+    this.setData({
+      interfaceData: src_array1
+    });
+    //微信小程序真机上面获取不到视频的封面图，用一张静态的图片代替视频的封面图 http://img3.imgtn.bdimg.com/it/u=1183417802,3760407947&fm=26&gp=0.jpg
+    // let that = this,
+    //   platformS = abstac.mobilePhoneModels(this.data.platform),
+    //   file_category = '2';
+    // wx.uploadFile({
+    //   url: app.publicVariable.fileUploadPicInterfaceAddress + '?file_category=' + file_category + '&wx_session_key=' + this.data.wxSessionKey + '&platform=' + platformS,
+    //   filePath: thumbTempFilePath,
+    //   name: 'file',
+    //   success: res => {
+    //     console.log("****************上传缩略图的接口返回函数***************");
+    //     console.log(res);
+    //     if (res.statusCode == '200') {
+    //       var dataResult = res;
+    //       dataResult.data = JSON.parse(dataResult.data);
+    //       that.setData({
+    //         interfaceData: src_array1.push(res.data.data.urls.origin),
+    //         imgDisplay: 'block'
+    //       });
+    //       that.setData({
+    //         interfaceData: src_array1
+    //       });
+    //       console.log(that.data.interfaceData);
+    //     } else {
 
-        }
-      }
-    })
+    //     }
+    //   }
+    // })
   },
   /**
    * @desc：获取标题输入框的值

@@ -7,7 +7,7 @@
   <view wx:for='{{chooseImgSrc}}' wx:key='property' wx:for-key='item' class='imgShowBox' wx:for-index='idx'>
     <image class='del' src='../../../static/pro-fail.png' style="display:{{imgDisplay}}" bindtap='delPic' data-ids='{{idx}}'></image>
     <!-- <image class='imgList' src='{{item}}' style="display:{{imgDisplay}}"></image> -->
-    <video class='imgList' src="{{interfaceData}}" style="display:{{imgDisplay}}" controls></video>
+    <video class='imgList' src="{{interfaceData[1]}}" style="display:{{imgDisplay}}" controls></video>
   </view>
   
 </view>
@@ -16,7 +16,7 @@
   <text class='draftBox'></text>
 </view>
 
-<view class='blogContent'>
+<view class='blogContent' wx:if='{{tagShow == true}}'>
   <view class="outBox">
     <button class="btn {{btnActives == 'fant' ? 'active' : ''}}" bindtap='selectedPinche' data-active='fant' data-tagid='97'>肥胖</button>
     <button class="btn {{btnActives == 'meal' ? 'active' : ''}}" bindtap='selectedPinche' data-active='meal' data-tagid='98'>女性健康</button>

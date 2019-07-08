@@ -76,7 +76,7 @@ App({
     // 获取手机系统信息
     wx.getSystemInfo({
       success: res => {
-        console.log(res);
+        // console.log(res);
         //导航高度
         this.globalData.navHeight = res.statusBarHeight + 10;
         this.globalData.platform = res.platform;

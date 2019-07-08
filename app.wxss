@@ -127,11 +127,10 @@
  font-size: 36rpx;
  font-weight: 400;
  box-sizing: border-box;
- height: 110rpx;
- line-height: 110rpx;
- padding-bottom: 15rpx;
+ height: 90rpx;
+ line-height:90rpx;
+ padding-bottom: 0;
  color: #818181;
- border-bottom: 1px solid #878787;
 }
 .weui-navbar .item_on{
  border-bottom: 2px solid #fd7380;

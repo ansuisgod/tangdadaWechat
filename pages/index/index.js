@@ -146,6 +146,12 @@ Page({
             if (knowledge == undefined) {
               for (var i = 0; i < strLength; i++) {
                 str.data[i].data = JSON.parse(str.data[i].data);
+                //desc: 判断阅读次数、分享数、点赞数是否大于一千后面，大于一千后面就加k
+                str.data[i].view_size = abstac.judgeGreater(str.data[i].view_size);
+                str.data[i].share_num = abstac.judgeGreater(str.data[i].share_num);
+                if (str.data[i].topic == undefined){}else{
+                  str.data[i].topic.like_num = abstac.judgeGreater(str.data[i].topic.like_num);
+                }
               }
               //实现滚动加载数据
               if (that.data.pages == '1'){
@@ -213,6 +219,8 @@ Page({
           }else{
             for (var j = 0; j < stres.length; j++) {
               stres[j].data = JSON.parse(stres[j].data);
+              //desc: 判断阅读次数是否大于一千后面，大于一千后面就加k
+              stres[j].topic.view_size = abstac.judgeGreater(stres[j].topic.view_size);
             }
             var otherTy = that.data.otherTypeDataList,
                 otherData = res.data.data[taggsIds].data.topics;
