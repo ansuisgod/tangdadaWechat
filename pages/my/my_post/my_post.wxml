@@ -17,53 +17,102 @@
 
 
 
-<!-- 帖子的页面 -->
-<view class='main'>
 
-  <view class='outContainer' wx:for-item='item' wx:key='property' wx:for="{{myCreateTopic}}">
-    <view class='insideCon'>
-      <view class='top'>
-        <!-- 用户的头像部分 -->
-        <view class='left'>
-          <!-- 没有用户的头像设置默认的用户的头像 -->
-          <image wx:if="{{item.user.head_icon}}"  src='{{item.user.head_icon}}' bindtap='homePage' data-friendid='{{item.user.id}}'></image>
-          <image wx:if="{{item.user.head_icon == undefined}}"  src='../../../static/logo.png' bindtap='homePage' data-friendid='{{item.user.id}}'></image>
+
+
+
+
+
+
+  <block wx:for="{{myCreateTopic}}" wx:for-item='item' wx:key='property'>
+    <view class='maxBox'>
+
+
+      <view class='headimg-box'>
+        <view class='headimg-box-img'>
+
+          <image wx:if="{{item.user.head_icon}}" src='{{item.user.head_icon}}' bindtap='homePage' data-friendid='{{item.user.id}}' style='height: 50rpx;width: 50rpx;border-radius: 50rpx;'></image>
+          <image wx:if="{{item.user.head_icon == undefined}}" src='../../../static/logo.png' bindtap='homePage' data-friendid='{{item.user.id}}' style='height: 50rpx;width: 50rpx;border-radius: 50rpx;'></image>
+
         </view>
-        <!-- 用户的姓名 -->
-        <view class='right'>{{item.user.nick_name}}</view>
+        <view class='headimg-box-name'>{{item.user.nick_name}}</view>
       </view>
-      <!-- 文章的标题 -->
-      <view bindtap='clickIntoDetail' data-articlId='{{item.id}}' data-tagid='{{item.tag_id}}'>
-        <view class='title'>
-          {{item.title}}
-        </view>
-        <!-- 内容的标题 -->
-        <view class='content'>
-          {{item.summary.text}}
-        </view>
-        <!-- 封面图片 -->
-        <view class='imageDiv'>
-          <image wx:if="{{item.summary.images[0].url}}"  src='{{item.summary.images[0].url}}'></image>
-          <image wx:if="{{item.summary.images[1].url}}"  src='{{item.summary.images[1].url}}'></image>
-          <image wx:if="{{item.summary.images[2].url}}"  src='{{item.summary.images[2].url}}'></image>
-        </view>
-        <view class='bottom'>
-          <!-- 浏览粗疏 -->
-          <view class='leftB'>
-            <image wx:if="{{item.title}}" src='../../../static/eye.png'></image>
-            <text class='look'>{{item.like_num}}</text>
-          </view>
-          <!-- 点赞的次数 -->
-          <view class='rightB'>
-            <image wx:if="{{item.title}}" src='../../../static/like.png'></image>
-            <text class='like'>{{item.favorite_num}}</text>
-          </view>
+
+      <!-- 第一种三张图片的 -->
+      <view wx:if='{{item.summary.images.length >= "3"}}' bindtap='clickIntoDetail' data-articlId='{{item.id}}' data-tagid='{{item.tag_id}}'>
+        <view class='A-content-1'>{{item.title}}</view>
+        <view class='A-content-2'>{{item.summary.text}}</view>
+        <view class='A-content-3'>
+          <image wx:if="{{item.summary.images[0].url}}" src='{{item.summary.images[0].url}}' style='height: 223.3rpx;width: 223.3rpx;margin-left: 20rpx;'></image>
+          <image wx:if="{{item.summary.images[1].url}}" src='{{item.summary.images[1].url}}' style='height: 223.3rpx;width: 223.3rpx;margin-left: 20rpx;'></image>
+          <image wx:if="{{item.summary.images[2].url}}" src='{{item.summary.images[2].url}}' style='height: 223.3rpx;width: 223.3rpx;margin-left: 20rpx;'></image>
         </view>
       </view>
+      <!-- 第一种三张图片的end -->
+
+
+
+      <!-- 第二种一张图片的 -->
+      <view wx:elif='{{item.summary.images.length <= "2"}}' class='B-maxBox' bindtap='clickIntoDetail' data-articlId='{{item.id}}' data-tagid='{{item.tag_id}}'>
+
+        <view class='B-text'>
+          <view class='B-content-1'>{{item.title}}</view>
+          <view class='B-content-2'>{{item.summary.text}}</view>
+        </view>
+
+        <view class='B-img'>
+          <view class='B-content-3'>
+            <image wx:if="{{item.summary.images[0].url}}" src='{{item.summary.images[0].url}}' style='height: 220rpx;width: 220rpx;'></image>
+          </view>
+        </view>
+
+      </view>
+      <!-- 第二种一张图片的end -->
+
+
+
+      <!-- 第三种无图片 -->
+      <view wx:else bindtap='clickIntoDetail' data-articlId='{{item.id}}' data-tagid='{{item.tag_id}}'>
+        <view class='C-content-1'>{{item.title}}</view>
+        <view class='C-content-2'>{{item.summary.text}}</view>
+      </view>
+      <!-- 第三种无图片end -->
+
+
+      <view class='bottomBox'>
+
+        <view class='bottomBox-lft'>
+          <view class='bottomBox-img'>
+            <image src='/images/personal/liulan.png' style='height: 25rpx;width: 28rpx;'></image>
+          </view>
+          <view class='bottomBox-text' style='margin-left: 5rpx;'>{{item.view_size}}</view>
+        </view>
+
+        <view class='bottomBox-rit' style='margin-left: 15rpx;'>
+          <view class='bottomBox-img'>
+            <image src='/images/personal/zan1.png' style='height: 25rpx;width: 28rpx;'></image>
+          </view>
+          <view class='bottomBox-text' style='margin-left: 5rpx;'>{{item.like_num}}</view>
+        </view>
+
+      </view>
+
+
     </view>
-  </view>
 
-</view>
+  </block>
+
+
+
+
+
+
+  <view class="loading" hidden="{{!searchLoading}}">正在载入更多...</view>
+  <view class="loading" hidden="{{!searchLoadingComplete}}">没有更多啦！</view>
+
+
+
+
 
 
 

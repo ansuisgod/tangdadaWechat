@@ -1,5 +1,5 @@
 <!--pages/my/share/share.wxml-->
-<!-- <view class=''>
+<view class=''>
 
 
 
@@ -21,7 +21,7 @@
 
 
 
-  // 转发类 //
+  <!-- // 转发类 // -->
   <view class='addBox-choose-cover' wx:if='{{shareMenu}}' bindtap='hideCover'></view>
 
 
@@ -55,7 +55,7 @@
 
 
 
-  // 活动规则类 //
+  <!-- // 活动规则类 // -->
   <view class="dis-cou-detail zoom-in" wx:if="{{introduce}}" catchtouchmove="myCatchTouch">
     <view class="detail-content">
 
@@ -103,13 +103,22 @@
 
 
   <view class='addBox-choose-cover2' wx:if='{{introduce2}}' bindtap='shut2'></view>
-  // 我的邀请类 //
+  <!-- // 我的邀请类 // -->
 
   <view class="dis-cou-detail zoom-in" wx:if="{{introduce2}}" catchtouchmove="myCatchTouch">
     <view class="detail-content2">
 
 
-      // <view class='rules-title'>活动规则</view> //
+      <!-- // <view class='rules-title'>活动规则</view> // -->
+
+
+       <view class='detail-close'>
+        <image class='detail-img' src='../../../images/personal/delete_ruleView.png' bindtap='shut2'></image>
+      </view> 
+
+
+
+<view class='listBox'>
 
       <view class='rules-content'>
        <view class='rules-content-img'>
@@ -118,23 +127,20 @@
        <view class='rules-content-text'>啊是的地方vs士大夫得分速递公司</view>
       </view>
 
-
-      // <view class='detail-close'>
-        <image class='detail-img' src='../../../images/personal/delete_ruleView.png' bindtap='shut2'></image>
-      </view> //
+</view>
 
 
     </view>
   </view>
 
 
-   //我的邀请类 //
+   <!-- //我的邀请类 // -->
 
 
 
 
 
-</view> -->
+</view>
 
 
 
@@ -146,6 +152,6 @@
 
 
 
-<web-view src="{{optionsurl}}"  bindmessage=""></web-view> 
+<!-- <web-view src="{{optionsurl}}"  bindmessage=""></web-view>  -->
 
 

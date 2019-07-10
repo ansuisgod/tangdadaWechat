@@ -183,13 +183,13 @@ Page({
   },
   thumbUploadFile: function (thumbTempFilePath){
     this.setData({
-      interfaceData: src_array1.push('../../static/defaultThumber.png'),
+      interfaceData: src_array1.push('http://hbimg.b0.upaiyun.com/1e3ead27ad747c7c92e659ac5774587a680bb8d25252-mRVFlu_fw658'),
       imgDisplay: 'block'
     });
     this.setData({
       interfaceData: src_array1
     });
-    //微信小程序真机上面获取不到视频的封面图，用一张静态的图片代替视频的封面图 http://img3.imgtn.bdimg.com/it/u=1183417802,3760407947&fm=26&gp=0.jpg
+    //微信小程序真机上面获取不到视频的封面图，用一张静态的图片代替视频的封面图
     // let that = this,
     //   platformS = abstac.mobilePhoneModels(this.data.platform),
     //   file_category = '2';

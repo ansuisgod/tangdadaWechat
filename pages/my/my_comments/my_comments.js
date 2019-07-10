@@ -1,8 +1,6 @@
 // pages/Page_5/my_comments/my_comments.js
 var abstac = require('../../../commonmethod/abstract.js'),
   app = getApp();
-var size = '3';
-
 
 Page({
 
@@ -10,9 +8,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    page: '1',
-
     myJoinTopic: [], //我的评论列表
+    isFromSearch: true,   // 用于判断searchSongList数组是不是空数组，默认true，空的数组
+    page: 1,   // 设置加载的第几次，默认是第一次
+    size: 5,      //返回数据的个数
+    searchLoading: false, //"上拉加载"的变量，默认false，隐藏
+    searchLoadingComplete: false,  //“没有数据”的变量，默认false，隐藏
   },
 
   /**
@@ -26,13 +27,8 @@ Page({
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
 
-
     that.myJoinTopic()
   },
-
-
-
-
 
 
 
@@ -43,20 +39,23 @@ Page({
  */
   myJoinTopic: function () {
     var that = this;
+
+    let page = that.data.page,//把第几次加载次数作为参数
+      size = that.data.size; //返回数据的个数
+
     wx.showLoading({
       title: '请求中',
     });
     let platform = abstac.mobilePhoneModels(that.data.platform);//手机型号
 
     abstac.sms_Interface(app.publicVariable.myJoinTopicInterfaceAddress,
-      { page: that.data.page, wx_session_key: this.data.wxSessionKey, platform: platform, size: size },
+      { page: page, wx_session_key: this.data.wxSessionKey, platform: platform, size: size },
       function (res) {//查询成功
         //打印日志
         wx.hideLoading();
         console.log("****************我的评论列表的接口***************");
         console.log(res);
         if (res.data.result.code == '2000') {
-
 
 
           /**
@@ -66,41 +65,26 @@ Page({
           for (var i = 0; i <= str.length - 1; i++) {
             str[i].summary = JSON.parse(str[i].summary);
           }
-          /**
-           * 将后台的数据放到数组中
-           */
-          var datas = res.data.data.topics;
-          var newList = that.data.myJoinTopic;
-          var totalPage = res.data.pages;//数据的总页数
-          /**
-           * 判断当前的页数是否超过了总页数
-           */
-          if (that.data.page == 1) {
-            newList = datas;
+
+          var data = res.data.data.topics;
+          if (data != 0) {
+            // var data = res.data.rows
+            let searchList = [];
+            //如果isFromSearch是true从data中取出数据，否则先从原来的数据继续添加
+            that.data.isFromSearch ? searchList = data : searchList = that.data.myJoinTopic.concat(data)
             that.setData({
-              myJoinTopic: datas,
-            });
-          } else if (that.data.page > totalPage) {
-            abstac.promptBox("没有数据了！");
-            that.data.page = 1;
+              myJoinTopic: searchList, //获取数据数组
+              searchLoading: true   //把"上拉加载"的变量设为false，显示
+            })
+            //没有数据了，把“没有数据”显示，把“上拉加载”隐藏
           } else {
-            abstac.promptBox("加载中...");
             that.setData({
-              myJoinTopic: newList.concat(datas),
-              page: that.data.page,
-              totalPage: res.data.pages
+              searchLoadingComplete: true, //把“没有数据”设为true，显示
+              searchLoading: false  //把"上拉加载"的变量设为false，隐藏
             });
           }
-          that.data.page++;
 
 
-
-
-
-
-          // that.setData({
-          //   // userIntegral: res.data.data.points
-          // });
         } else {
           abstac.promptBox(res.data.result.message);
         }
@@ -110,6 +94,9 @@ Page({
         wx.hideLoading();
       });
   },
+
+
+
 
 
 
@@ -128,7 +115,16 @@ Page({
   },
 
 
-
+  /**
+   * @desc:点击用户的头像进入用户的主页
+   */
+  homePage: function (e) {
+    console.log("帖友id=" + e.target.dataset.friendid);
+    //跳转到用户的主页
+    wx.navigateTo({
+      url: '/pages/homePage/homePage?friendid=' + e.target.dataset.friendid
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -165,24 +161,21 @@ Page({
 
   },
 
+
+  // 页面上拉触底事件（上拉加载更多）
   onReachBottom: function () {
-    console.log("触底事件的处理函数,页数" + this.data.page);
-
-    //判断是否超过了总页数，如果超过了则没有下一页，否则还有下一页的数据
-    if (this.data.totalPage < this.data.page) {
-      abstac.promptBox("没有数据了！");
-      return;
-    } else {
-      this.myJoinTopic();
+    // console.log('eeeeeeeeeee')
+    let that = this;
+    if (that.data.searchLoading && !that.data.searchLoadingComplete) {
+      that.setData({
+        page: that.data.page + 1,  //每次触发上拉事件，把page+1
+        isFromSearch: false  //触发到上拉事件，把isFromSearch设为为false
+      });
+      that.myJoinTopic();
     }
-
-    /**
-     * 滚动到底部是就让滚动条回到顶部
-     
-    wx.pageScrollTo({
-      scrollTop: 0,
-    })*/
   },
+
+////////////////////
 
   /**
    * 用户点击右上角分享

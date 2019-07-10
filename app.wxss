@@ -154,7 +154,7 @@
   width: 90%;
   margin: 0 auto;
   height: auto;
-  border-bottom:1px solid #c8c8c8; 
+  /* border-bottom:1px solid #c8c8c8;  */
 }
 .swiper-box .swiper-item .slide-view .obesityBox .topBox{
   width: 100%;
@@ -182,7 +182,7 @@
 }
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox{
   width: 100%;
-  height: 300rpx;
+  height: 280rpx;
   display: flex;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerLeftBox{
@@ -190,8 +190,8 @@
   flex-direction: row;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerLeftBox .titleBox{
-  height: 90rpx;
-  padding: 10rpx 0 0 0;
+  height: 65rpx;
+  padding: 15rpx 0 0 0;
   font-size: 34rpx;
   color: #5e5e5e;
   overflow:hidden;
@@ -210,14 +210,15 @@
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerRightBox{
   width: 40%;
   flex-direction: row;
+  text-align: center;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerRightBox image{
   width: 250rpx;
-  height: 100%;
+  height: 90%;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .bottomBox{
   width: 100%;
-  height: 80rpx;
+  height: 70rpx;
   display: flex;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .bottomBox .leftB{
@@ -232,8 +233,8 @@
   line-height: 85rpx;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .bottomBox .leftB image{
-  width: 45rpx;
-  height: 45rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .bottomBox .leftB .look{
   line-height: 70rpx;
@@ -254,8 +255,8 @@
   line-height: 85rpx;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .bottomBox .rightB .boxRight image{
-  width: 45rpx;
-  height: 45rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .bottomBox .rightB .like{
   text-align: center;

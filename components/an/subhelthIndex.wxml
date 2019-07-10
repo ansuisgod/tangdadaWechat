@@ -15,7 +15,7 @@
             <view class='mainBox'>{{item.summary.text}}</view>
           </view>
           <view class='centerRightBox'>
-            <image src='{{item.summary.images[0].url}}'></image>
+            <image src='{{item.summary.images[0].url}}' mode='aspectFill'></image>
           </view>
         </view>
         <view class='bottomBox'>
@@ -51,7 +51,7 @@
             <view class='mainBox'>{{item.summary.text}}</view>
           </view>
           <view class='centerRightBox'>
-            <image src='{{item.summary.images[0].url}}'></image>
+            <image src='{{item.summary.images[0].url}}' mode='aspectFill'></image>
           </view>
         </view>
         <view class='bottomBox'>
@@ -88,7 +88,7 @@
             <view class='mainBox'>{{item.summary.text}}</view>
           </view>
           <view class='centerRightBox'>
-            <image src='{{item.summary.images[0].url}}'></image>
+            <image src='{{item.summary.images[0].url}}' mode='aspectFill'></image>
           </view>
         </view>
         <view class='bottomBox'>

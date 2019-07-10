@@ -6,7 +6,7 @@ Page({
    */
   data: {
     // http://api.prod.tangdada.com.cn/im/item/integral_rule.html
-    optionsurl:'https://sit.tangdadatech.com/im/activities/register/index.jsp',
+    // optionsurl:'https://sit.tangdadatech.com/im/activities/register/index.jsp',
 
     shareMenu: false,  //弹框
     introduce: false,

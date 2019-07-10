@@ -15,8 +15,8 @@
           {{item.content_text}}
         </view>
         <view class='centerComment' wx:if='{{item.content_images}}'>
-          <image bindtap='largerPreview' data-list='{{item.content_images}}' wx:if='{{item.content_images[0]}}' src='{{item.content_images[0]}}'></image>
-          <image bindtap='largerPreview' data-list='{{item.content_images}}' wx:if='{{item.content_images[1]}}' src='{{item.content_images[1]}}'></image>
+          <image mode='aspectFill' bindtap='largerPreview' data-list='{{item.content_images}}' wx:if='{{item.content_images[0]}}' src='{{item.content_images[0]}}'></image>
+          <image mode='aspectFill' bindtap='largerPreview' data-list='{{item.content_images}}' wx:if='{{item.content_images[1]}}' src='{{item.content_images[1]}}'></image>
         </view>
         <view class='replies' wx:if='{{item.quote_content.text}}'>
           <view class='repliesInfo'>回复：{{item.quote_user.nick_name}}</view>

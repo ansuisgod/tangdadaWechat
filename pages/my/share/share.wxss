@@ -219,8 +219,8 @@
 
 .detail-close{
   position: absolute;
-  right: 30rpx;
-  top: 30rpx;
+  right: 45rpx;
+  top: 120rpx;
 }
 .detail-img{
   /* margin-top: 50rpx; */
@@ -279,7 +279,7 @@
 }
 
 
-
+.listBox{}
 
 
 
@@ -308,7 +308,7 @@
   background-size:cover; 
   -moz-background-size:cover;
    width: 550rpx;
-   height:907rpx 
+   height:907rpx;
 }
 
 

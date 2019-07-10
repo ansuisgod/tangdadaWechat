@@ -3,7 +3,7 @@
 <view class='singlePart' wx:key='property' wx:for="{{goodsLists}}">
   <view bindtap="intoDetail" data-goodsid='{{item.id}}'>
     <view class='pic'>
-      <image src='{{item.pic}}'></image>
+      <image src='{{item.pic}}' mode='aspectFill'></image>
       <view class='inventory'>{{item.surplus}} 件</view>
     </view>
     <view class='goodsTitle'>

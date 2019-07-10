@@ -47,7 +47,7 @@
 }
 .picture .inventory{
   position: absolute;
-  bottom:20rpx;
+  bottom:-10rpx;
   right: 20rpx;
   width: 150rpx;
   height: 60rpx;

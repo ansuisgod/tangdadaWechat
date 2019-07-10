@@ -3,7 +3,7 @@
 <!-- 全部视图模板 -->
 <view class='outAll' wx:if='{{allOtherArea == 0}}' wx:for-item='item' wx:for-index="idx" wx:key='property' wx:for="{{dataListInfo}}" bindtap='allClik' data-articlid='{{item.topic_id}}'>
   <view class='top'>
-    <image src='{{item.data.pic.url}}'></image>
+    <image src='{{item.data.pic.url}}' mode='aspectFill'></image>
     <view class='capsuleRectangle'>阅读:{{item.view_size}} 分享：{{item.share_num}} 点赞：{{item.topic.like_num}}</view>
     <view class='rotating' wx:if='{{idx <= 9}}' style='background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561453122080&di=a70747ce90ce792cafcb1a07e5ac92d3&imgtype=0&src=http%3A%2F%2Fpic22.nipic.com%2F20120710%2F8856735_175907574000_2.jpg) no-repeat center;background-size: 150rpx;'>
       {{idx+1}}
@@ -16,7 +16,7 @@
 <!-- 糖活动、糖友荟、养生糖视图模板 -->
 <view class='outAll' wx:if='{{allOtherArea == 1}}' wx:for-item='item' wx:key='property' wx:for="{{otherTypeDataList}}" bindtap='allClik' data-articlid='{{item.topic.id}}'>
   <view class='top'>
-    <image src='{{item.data.pic.url}}'></image>
+    <image src='{{item.data.pic.url}}' mode='aspectFill'></image>
     <view class='capsuleRectangle'>阅读:{{item.topic.view_size}} 分享：{{item.topic.share_num}} 点赞：{{item.topic.like_num}}</view>
   </view>
   <view wx:if='{{item.topic.title}}' class='bottom'>{{item.topic.title}}</view>
@@ -26,7 +26,7 @@
 <!-- 涨知识视图模板 -->
 <view class='outAll' wx:if='{{allOtherArea == 2}}' wx:for-item='item' wx:key='property' wx:for="{{increaseknowledge}}" bindtap='allClik' data-articlid='{{item.id}}'>
   <view class='top'>
-    <image src='{{item.icon_url}}'></image> 
+    <image src='{{item.icon_url}}' mode='aspectFill'></image> 
     <view class='capsuleRectangle1'>阅读:{{item.view_size}}</view>
   </view>
   <view wx:if='{{item.title}}' class='bottom'>{{item.title}}</view>

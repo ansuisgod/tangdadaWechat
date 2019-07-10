@@ -1,7 +1,7 @@
 <!--pages/shopping/goodsDetails/goodsDetails.wxml-->
 <view>
   <view class='picture'>
-    <image src='{{goodsDeInfo.pic}}'></image>
+    <image src='{{goodsDeInfo.pic}}' mode='aspectFill'></image>
     <view class='inventory'>库存{{goodsDeInfo.surplus}}件</view>
   </view>
   <view class='titleDesc'>

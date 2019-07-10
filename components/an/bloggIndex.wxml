@@ -23,9 +23,9 @@
         </view>
         <!-- 封面图片 -->
         <view class='imageDiv'>
-          <image wx:if="{{item.summary.images[0].url}}"  src='{{item.summary.images[0].url}}'></image>
-          <image wx:if="{{item.summary.images[1].url}}"  src='{{item.summary.images[1].url}}'></image>
-          <image wx:if="{{item.summary.images[2].url}}"  src='{{item.summary.images[2].url}}'></image>
+          <image wx:if="{{item.summary.images[0].url}}"  src='{{item.summary.images[0].url}}' mode='aspectFill'></image>
+          <image wx:if="{{item.summary.images[1].url}}"  src='{{item.summary.images[1].url}}' mode='aspectFill'></image>
+          <image wx:if="{{item.summary.images[2].url}}"  src='{{item.summary.images[2].url}}' mode='aspectFill'></image>
         </view>
         <view class='bottom'>
           <!-- 浏览粗疏 -->
