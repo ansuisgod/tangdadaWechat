@@ -104,7 +104,7 @@ Page({
 
 
 
-
+ 
   account: function (e) {
     var that = this
     if (e.detail.value.length === 11) {

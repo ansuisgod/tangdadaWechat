@@ -296,7 +296,8 @@ Page({
    */
   mores:function(e){
     var that = this,
-        copyContent = e.target.dataset.copycontent;
+        copyContent = e.target.dataset.copycontent,
+        otherBlogId = e.target.dataset.topicid;
     wx:wx.showActionSheet({
       itemList: ['点赞','举报','复制'],
       itemColor: '#000',
@@ -304,7 +305,7 @@ Page({
         console.log(res.tapIndex);
         if (res.tapIndex == '0'){
           console.log("点赞");
-          that.giveALikeMethd();//执行点赞的方法
+          that.giveALikeMethdss(otherBlogId);//执行点赞的方法
         }else if (res.tapIndex == '1'){
           console.log("举报");
           that.toReport();//点击举报触发的函数
@@ -379,7 +380,25 @@ Page({
    * @param：
    *        id：帖子id、wx_session_key：微信的code值、op：cancel 取消点赞是传递 点赞则不传op这个参数
    */
-  giveALikeMethd:function(){
+  giveALikeMethdss:function(replyIds){
+    //打印参数的日志
+    console.log("id=" + replyIds + "&wx_session_key=" + this.data.wxSessionKey);
+    abstac.sms_Interface(app.publicVariable.likeInterfaceAddress, 
+      { id: replyIds, wx_session_key: this.data.wxSessionKey },
+    function (res) {//点赞成功
+      console.log("********点赞评论的接口返回的数据**************");
+      console.log(res);
+      if (res.data.result.code == '2000') {
+        abstac.promptBox("点赞成功！");
+      } else {
+        abstac.promptBox(res.data.result.message);
+      }
+    },
+    function (error) {//点赞失败
+      console.log(error);
+    });
+  },
+  giveALikeMethd: function (){
     //打印参数的日志
     console.log("id=" + this.data.blogId + "&wx_session_key=" + this.data.wxSessionKey);
     /**
@@ -411,7 +430,7 @@ Page({
             dynamicLikedPicSrc: "../../../static/like.png"
           });
         }
-        
+        that.getBlogDetail();
       }else{
         abstac.promptBox(res.data.result.message);
       }
@@ -444,7 +463,7 @@ Page({
       wx.chooseImage({
         count: 2,
         sizeType: ['original', 'compressed'],
-        sourceType: ['album'],
+        sourceType: ['album', 'camera'],
         success: function (res) {
           //将所有的图片路径放在对象里面
           src_array = src_array.concat(res.tempFilePaths);
@@ -565,7 +584,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
@@ -601,24 +620,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
-    // if(res.form === 'button'){
-    //   console.log(res.target, res);
-    // }
-    // return {
-    //   title: '分享了',
-    //   path: '/pages/blog/blogDetail/blogDetail',
-    //   success: function (res) {
-    //     console.log(res);
-    //   },
-    //   fail: function (error) {
-    //     console.log(error);
-    //   }
-    // }
-    
+    //调用后台分享的接口
+    this.shareInterfaces();
+
     if(res.form === 'menu'){
       console.log(res.target, res);
     }
-    var that = this;
     return {
       title: this.data.content.title,
       path: '/pages/index/index?come=share&blogId=' + this.data.blogId,
@@ -630,6 +637,17 @@ Page({
         console.log(error);
       }
     }
-
+  },
+  shareInterfaces:function(){
+    var that = this;
+    abstac.sms_Interface(app.publicVariable.shareInterfaceAddress,
+      { topic_id: that.data.blogId, wx_session_key: that.data.wxSessionKey },
+      function (res) {//成功
+        console.log("********分享后调用接口返回的数据**************");
+        console.log(res);
+      },
+      function (error) {//失败
+        console.log(error);
+      });
   }
 })

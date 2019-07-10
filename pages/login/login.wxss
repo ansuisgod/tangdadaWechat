@@ -53,7 +53,7 @@
   flex-direction: row;
 }
 .section .rowlist .right input{
-  margin-top: 18rpx;
+  margin-top: 22rpx;
 }
 .section .rowlistcode{
   width: 95%;
@@ -66,7 +66,7 @@
 }
 .section .rowlistcode .left{
   padding-left: 12rpx;
-  margin-top: 18rpx;
+  margin-top: 21rpx;
   width: 60%;
   flex-direction: row;
 }
@@ -78,7 +78,7 @@
   color: #a5a5a5;
   background-color: #e5e5e5;
   font-size:0.7rem;
-  padding-top: 6rpx;
+  padding-top: 9rpx;
   width: 220rpx;
   height: 80rpx;
   border-radius: 50rpx;
@@ -87,19 +87,25 @@ button::after{
   border: none;
 }
 .section .loginbtn{
-  width: 95%;
+  width: 90%;
   height: 100rpx;
-  font-size:0.8rem;
+  border-radius: 50rpx;
   display: flex;
   margin-left: 20rpx;
   margin-top: 50rpx;
 }
 .section .loginbtn button{
   width: 100%;
-  line-height: 100rpx;
-  font-size: 0.8rem;
-  color: #a5a5a5;
+  height: 100rpx;
   border-radius: 50rpx;
+  font-size: 38rpx;
+  text-align: center;
+  line-height: 100rpx;
+  z-index: 10;
+  box-shadow: 0rpx 5rpx 12rpx #959595;
+}
+.section .loginbtn:active {
+  background-color: rgba(254, 114, 129, 0.8);
 }
 .section .registerist{
   font-size: 0.8rem;

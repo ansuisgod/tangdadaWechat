@@ -279,7 +279,14 @@
 }
 
 
-.listBox{}
+.listBox{
+  height: 800rpx;
+  width: 500rpx;
+  position:absolute;
+right:45rpx;
+top:120rpx;
+  background-color: yellowgreen;
+}
 
 
 

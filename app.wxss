@@ -16,7 +16,7 @@
   top: 0;
   left: 0;
   z-index: 10;
-  border-bottom: 1px solid #b8b4b4;
+  /* border-bottom: 1px solid #b8b4b4; */
 }
 .nav-title{
   width: 100%;
@@ -36,7 +36,7 @@
   height: 50rpx;
   position: absolute;
   bottom: 10rpx;
-  left: 20rpx;
+  right: 20rpx;
 }
 .nav .profession{
   width: 120rpx;
@@ -124,11 +124,11 @@
  /*width:25%;*/
  display: inline-block;
  text-align: center;
- font-size: 36rpx;
+ font-size: 30rpx;
  font-weight: 400;
  box-sizing: border-box;
- height: 90rpx;
- line-height:90rpx;
+ height: 80rpx;
+ line-height:80rpx;
  padding-bottom: 0;
  color: #818181;
 }
@@ -148,7 +148,7 @@
 .swiper-box .swiper-item .slide-view{
   align-items: center;
   box-sizing: border-box;
-  margin: 120rpx 0 0 0;
+  margin: 23rpx 0 0 0;
 }
 .swiper-box .swiper-item .slide-view .obesityBox{
   width: 90%;
@@ -175,7 +175,7 @@
 .swiper-box .swiper-item .slide-view .obesityBox .topBox .rightBox{
   padding: 30rpx 0 0 0;
   text-align: left;
-  font-size: 34rpx;
+  font-size: 32rpx;
   flex-direction: row;
   color: #818181;
   width: 85%;
@@ -192,7 +192,7 @@
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerLeftBox .titleBox{
   height: 65rpx;
   padding: 15rpx 0 0 0;
-  font-size: 34rpx;
+  font-size: 30rpx;
   color: #5e5e5e;
   overflow:hidden;
   font-weight: 500;
@@ -200,7 +200,7 @@
   white-space:nowrap;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerLeftBox .mainBox{
-  font-size: 32rpx;
+  font-size: 28rpx;
   color: #828282;
   height: 210rpx;
   overflow:hidden;

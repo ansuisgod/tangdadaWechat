@@ -97,7 +97,7 @@ to{-webkit-transform: rotateY(360deg);transform: rotateY(360deg)}
   margin: 15rpx 0 0 0;
   flex-direction: column;
   height: 50rpx;
-  font-size: 34rpx;
+  font-size: 32rpx;
   font-weight: bold;
   color: #5e5e5e;
   overflow:hidden;
@@ -108,7 +108,7 @@ to{-webkit-transform: rotateY(360deg);transform: rotateY(360deg)}
   margin: 10rpx 0 0 0;
   flex-direction: column;
   height: 50rpx;
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #5e5e5e;
   overflow:hidden;
   text-overflow:ellipsis;

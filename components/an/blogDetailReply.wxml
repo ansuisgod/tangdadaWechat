@@ -9,7 +9,7 @@
       <view class='rightComment'>
         <view class='topComment'>
           {{item.user.nick_name}}
-          <image src='../../../static/more.png' bindtap='mores' data-copycontent='{{item.content_text}}'></image>
+          <image src='../../../static/more.png' bindtap='mores' data-topicid='{{item.id}}' data-copycontent='{{item.content_text}}'></image>
         </view>
         <view class='centerComment'>
           {{item.content_text}}

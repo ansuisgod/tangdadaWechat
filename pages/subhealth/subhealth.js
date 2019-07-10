@@ -29,7 +29,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    mtabW = app.globalData.mtabW / 3;
+    mtabW = app.globalData.mtabW / 3.5;
     this.setData({
       tabW: mtabW,
       platform: app.globalData.platform,
@@ -216,7 +216,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getDataInfo('97');//调用亚健康下面的肥胖类型的数据接口方法
+    this.getDataInfo('98');//调用亚健康下面的女性健康类型的数据接口方法
+    this.getDataInfo('99');//调用亚健康下面的康复理疗类型的数据接口方法
   },
 
   /**

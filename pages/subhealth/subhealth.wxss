@@ -39,11 +39,21 @@ view , scroll-view{
   line-height: 75rpx;
 }
 .weui-navbar{
- width: 100%;
+ width: 90%;
  position: fixed;
+ right: 0;
  box-sizing: border-box;
  white-space: nowrap; 
  z-index: 100;
  background: white;
- margin: 90rpx 0 0 0;
+}
+.searchIconn{
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.searchIconn image{
+  margin: 20rpx 0 0 5rpx;
+  width: 50rpx;
+  height: 50rpx;
 }

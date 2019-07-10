@@ -391,6 +391,7 @@ Page({
           let weCode = res.code;
           
           //封装网络请求接口
+          abstac.promptBox('登录中......');//提示框
           abstac.sms_Interface(app.publicVariable.loginInterfaceAddress, { code: weCode, phone: that.data.phoneNumber, v_code: that.data.pwdNumber },
             function (res) {//成功时返回函数
               console.log("****************手机号、验证码登录接口成功时返回函数***************");

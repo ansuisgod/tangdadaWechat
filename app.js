@@ -206,6 +206,7 @@ App({
     storageDraftBoxFrendInterfaceAddress: httpAdress + '/im/api/v1/note/create_topic_notes.json',//存入草稿箱的接口
     getDraftBoxNumberInterfaceAddress: httpAdress + '/im/api/v1/note/list_topic_notes.json',//存入草稿箱的接口
     contactInformationInterfaceAddress: httpAdress + '/im/api/v1/store/exchange_item.json',//商城兑换商品填写提交用户兑换的地址信息接口
+    shareInterfaceAddress: httpAdress + '/im/api/v1/topics/share_topic.json',//分享之后调用后台接口
 
 
 
