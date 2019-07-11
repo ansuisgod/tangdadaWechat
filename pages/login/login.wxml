@@ -1,9 +1,7 @@
 <!--pages/login/login.wxml-->
 <view class='section'>
   <!--tab切换-->
- <view class='help' style='background: url("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1355880457,1520660024&fm=26&gp=0.jpg") no-repeat;'>
-    
- </view>
+ <view class='help' style='background: url("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1355880457,1520660024&fm=26&gp=0.jpg") no-repeat;'></view>
  <view class='taBar'>
       <view class="left {{currentTabb == 0 ? 'active':''}}" data-current="0" bindtap='clickTabb'>手机号登陆</view>
       <!-- <view class="right {{currentTabb == 2 ?'active':''}}" data-current="2" bindtap='clickTabb'>密码登录</view> -->
@@ -31,11 +29,9 @@
       <button style='color:{{getcodeColortuses}};background:{{getCodeBackground}}' bindtap='getCodeFunc' disabled='{{disableCode}}'>{{getInfo}}</button>
     </view>
   </view>
-
     <view class='loginbtn'>
       <button style='background:{{loginBackgroundColr}};color:{{loginBtnFontColor}}' disabled='{{disableLoginBtn}}' bindtap='loginFunc'>登\t\t\t录</button>
     </view>
-
   </view>
   <!--登录结束-->
   <!--密码登录开始-->
@@ -84,6 +80,4 @@
   </view>
   </view>
   <!--注册结束-->
-
 </view>
-

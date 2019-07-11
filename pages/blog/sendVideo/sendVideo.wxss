@@ -13,13 +13,12 @@
   height: 250rpx;
 }
 .blogContent .imgShowBox{
-  border: 1px solid #000;
+  border: 1px solid #c4c1c1;
   position: relative;
 }
 .blogContent .imgShowBox .del{
   width: 50rpx;
   height: 50rpx;
-  border: 1px solid red;
   position: absolute;
   top: 0;
   right: 0;

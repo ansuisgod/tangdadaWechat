@@ -1,11 +1,11 @@
 var src_array = [],
-  src_array1 = [],
-  abstac = require('../../../commonmethod/abstract.js'),
-  app = getApp(),
-  sizes = '20',
-  pagess = '1';
+    src_array1 = [],
+    arrya1 = [],
+    abstac = require('../../../commonmethod/abstract.js'),
+    app = getApp(),
+    sizes = '20',
+    pagess = '1';
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -19,7 +19,6 @@ Page({
     content: '',//文本域
     draftBoxNumber: ''//草稿箱的草稿条数
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -45,7 +44,6 @@ Page({
    * @desc:删除预览图片
    */
   delPic: function (e) {
-
     var imgArr = this.data.chooseImgSrc,
       picIndex = e.currentTarget.dataset.ids;
     if (picIndex == '0') {
@@ -53,11 +51,13 @@ Page({
     } else {
       imgArr.splice(picIndex, picIndex);
     }
-
     this.setData({
-      chooseImgSrc: imgArr
+      chooseImgSrc: ''
     });
     console.log(imgArr);
+    arrya1 = [];
+    src_array = [];
+    src_array1 = [];
   },
   /**
    * @desc:点击发布按钮触发的函数
@@ -71,12 +71,10 @@ Page({
       abstac.promptBox("请选择上传视频");
     }else{
       //循环动态的拼装参数的字符串的格式
-      var parmLength = this.data.interfaceData.length,
-        arrya1 = [];
+      var parmLength = this.data.interfaceData.length;
       for (var j = 0; j <= parmLength - 1; j++) {
         arrya1.push({ 'url': src_array1[j] });
       }
-
       //调接口
       var that = this,
           platform = abstac.mobilePhoneModels(this.data.platform),
@@ -87,7 +85,6 @@ Page({
             'mp4':'true',
             'images': arrya1
           };
-
       //打印日志
       console.log("tagId=" + this.data.tagId + "&platform=" + platform + "&html=" + html + "&title=" + title + "&wxSessionkey=" + this.data.wxSessionKey + "&content=" + contents);
       abstac.sms_Interface(app.publicVariable.postBlogInterfaceAddress,
@@ -103,16 +100,14 @@ Page({
               chooseImgSrc: '',
               interfaceData: ''
             });
-            
             wx.switchTab({
               url: '../../../pages/subhealth/subhealth'
             })
           } else {
             abstac.promptBox(res.data.result.message);
           }
-
         }, function (error) {
-
+          console.log(error);
         });
       arrya1 = [];
       src_array = [];
@@ -145,7 +140,6 @@ Page({
       fail: function (res) { },
       complete: function (res) { },
     })
-
   },
   /**
    *  @desc：调用视频上传服务器的地址
@@ -174,16 +168,13 @@ Page({
             interfaceData: src_array1
           });
           console.log(that.data.interfaceData);
-        } else {
-
-        }
+        } else {}
       }
     })
-
   },
-  thumbUploadFile: function (thumbTempFilePath){
+  thumbUploadFile: function (){
     this.setData({
-      interfaceData: src_array1.push('http://hbimg.b0.upaiyun.com/1e3ead27ad747c7c92e659ac5774587a680bb8d25252-mRVFlu_fw658'),
+      interfaceData: src_array1.push('http://pic.51yuansu.com/pic2/cover/00/32/61/5810fbc5d202c_610.jpg'),
       imgDisplay: 'block'
     });
     this.setData({
@@ -247,49 +238,29 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
-
+  onReady: function () {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
-
+  onShow: function () {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
-
+  onHide: function () {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
-
+  onUnload: function () {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
-  },
-
+  onPullDownRefresh: function () {},
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
-  },
-
+  onReachBottom: function () {},
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function () {}
 })

@@ -2,7 +2,6 @@
 var abstac = require('../../commonmethod/abstract.js'),
     app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -17,7 +16,6 @@ Page({
     myFollowNum:'',
     showOrHiden:'none'
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -75,9 +73,6 @@ Page({
               followed: res.data.data.follow_status//是否已经关注1已经关注0未关注
             });
           }
-          
-          
-    
         }else{
           abstac.promptBox(res.data.result.message);
         }
@@ -119,51 +114,69 @@ Page({
     });
   },
   /**
+   * @desc:跳转到TA的粉丝页面
+   * @date:20190711
+   * @auther：an
+   */
+  itFans:function(){
+    //跳转到TA的粉丝页面
+    wx.navigateTo({
+      url: '../../pages/my/friends_circle/friends_circle?friendId=' + this.data.friendId
+    })
+  },
+  /**
+   * @desc:跳转到TA的关注页面
+   * @date:20190711
+   * @auther：an
+   */
+  itFlows:function(){
+    //跳转到TA的关注页面
+    wx.navigateTo({
+      url: '../../pages/my/friends_circle/friends_circle?friendId=' + this.data.friendId
+    })
+  },
+  /**
+   * @desc:跳转到TA发表的帖子
+   * @date:20190711
+   * @auther：an
+   */
+  postings:function(){
+    if (this.data.followed == '0'){
+      abstac.promptBox("关注成功才能查看");
+    }else{
+      wx.navigateTo({
+        url: '../../pages/my/my_post/my_post?userid=' + this.data.friendId
+      })
+    }
+  },
+  /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
-
+  onReady: function () {},
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.queryBlogFriendInfomation();//获取帖友的用户信息
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
-
+  onHide: function () {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
-
+  onUnload: function () {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
-  },
-
+  onPullDownRefresh: function () {},
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
-  },
-
+  onReachBottom: function () {},
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function () {}
 })

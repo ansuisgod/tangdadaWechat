@@ -4,7 +4,6 @@ import { $wuxButton } from '../../components/wux'
 var abstac = require('../../commonmethod/abstract.js'),
     app = getApp(),
     sizess = '20';
-
 Page({
   data: {
     tabs: ["全部", "涨知识", "糖活动", "糖友荟", "养生糖"],
@@ -32,7 +31,6 @@ Page({
         url: '/pages/blog/blogDetail/blogDetail?blogId=' + options.blogId
       });
     }
-
     /**
      * 开始从本地缓存中查找sessionKey 和 appendid
      * 注释: 如果找到了这个sessionKey值则说明已经注册的用户，就向跳转到首页
@@ -72,7 +70,6 @@ Page({
       this.setData({
         allOtherArea: '0'
       });
-
       this.getAllData(ajaxUrl, parm);//调用获取查询全部数据信息
       return;
     } else if (taggId == '1') {//涨知识 返回数据接口不一样重新构造方法
@@ -85,7 +82,6 @@ Page({
         allOtherArea: '2'
       });
     } else if (taggId == '2') {//糖活动 返回数据和全部的接口返回数据不一样重新构造方法
-
       taggsId = '4';
       //其他类别查询数据方法
       ajaxUrl = app.publicVariable.indexOtherTypeGetDataInterfaceAddress;
@@ -96,7 +92,6 @@ Page({
       });
       return;
     } else if (taggId == '3') {//糖友荟 返回数据和全部的接口返回数据不一样重新构造方法
-
       taggsId = '3';
       //其他类别查询数据方法
       ajaxUrl = app.publicVariable.indexOtherTypeGetDataInterfaceAddress;
@@ -107,7 +102,6 @@ Page({
       });
       return;
     } else if (taggId == '4') {//养生糖 返回数据和全部的接口返回数据不一样重新构造方法
-
       taggsId = '7';
       //其他类别查询数据方法
       ajaxUrl = app.publicVariable.indexOtherTypeGetDataInterfaceAddress;
@@ -141,7 +135,6 @@ Page({
               increaseknowledge = that.data.increaseknowledge,
               dataKnowledge = res.data.data.list,
               datas = res.data.data;
-        
             //判断涨知识是否有数据
             if (knowledge == undefined) {
               for (var i = 0; i < strLength; i++) {
@@ -288,9 +281,7 @@ Page({
   },
   bindChange: function (e) {
     var current = e.detail.current;
-    if ((current + 1) % 5 == 0) {
-
-    }
+    if ((current + 1) % 5 == 0) {}
     var offsetW = current * mtabW; //2种方法获取距离文档左边有多少距离
     this.setData({
       activeIndex: current,
@@ -312,7 +303,6 @@ Page({
     this.setData({
       opened: !1,
     })
-
     this.button = $wuxButton.init('br', {
       position: position,
       buttons: [
@@ -333,7 +323,6 @@ Page({
         index === 1 && wx.navigateTo({
           url: '/pages/index/askTheExperts/askTheExperts'
         })
-
         return true
       },
       callback(vm, opened) {

@@ -57,13 +57,6 @@
   width: 60rpx;
   height:60rpx;
 }
-.bottomArea .draftBox{
-  color: #a9a9a9;
-  position: absolute;
-  top: 25rpx;
-  right: 45rpx;
-  font-size: 32rpx;
-}
 .records{
   width: 650rpx;
   height: 100rpx;

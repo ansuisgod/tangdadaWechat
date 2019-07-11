@@ -4,7 +4,6 @@ var abstac = require('../../../commonmethod/abstract.js'),
     src_array = [],
     src_array1 = [];
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -51,7 +50,6 @@ Page({
   getBlogDetail: function () {
     let localplatform = abstac.mobilePhoneModels(this.data.platform),
         that = this;
-
     //打印日志
     console.log("session_key=" + this.data.wxSessionKey + "&topic_id=" + this.data.blogId + "&platform=" + localplatform);
     abstac.promptBox("数据加载中...");
@@ -71,8 +69,7 @@ Page({
               likeFlagss = '',//点赞图片的路径变量 【新增加的代码】
               replies = res.data.data.replies;//回复列表
               exchangeContents.content = JSON.parse(exchangeContents.content);
-          var imagesS = '';
-          
+           var imagesS = '';
           /**
            * @desc:循环回复列表里面的回复字段，将其转化为JSON格式。新增加了判断replies是否是undefien的判断
            */
@@ -90,7 +87,6 @@ Page({
               plicesShow:'block'
             });
           }
-          
           /**
            * @desc:判断图片是否为undefined,如果不判断会报错
            */
@@ -154,13 +150,11 @@ Page({
         videoSrc: videoInfo.images[1].url
       });
     }
-    
   },
   /**
    * @desc:评论输入框触发的函数
    */
   inputFunc: function (e) {
-    
     this.setData({
       replyContent: e.detail.value
     });
@@ -208,7 +202,6 @@ Page({
         'images': arrya1
       };
     }
-    
     //通过标识判断是评论还是回复的操作
     if (this.data.noReplyFlag == '0') {
       console.log("评论");
@@ -267,8 +260,6 @@ Page({
   },
   /**
    * @desc:点击评论列表的回复图标触发的函数
-   * @param：
-   * 
    */
   replyReviewer: function (e) {
     this.setData({
@@ -276,10 +267,8 @@ Page({
       quoteId: e.target.dataset.quoteid,
       noReplyFlag: '1'
     });
-
     //打印日志
     console.log("quote_id=" + e.target.dataset.quoteid + "&placeHolder=" + e.target.dataset.nickname + "&noReplyFlag=" + this.data.noReplyFlag);
-
   },
   /**
    * @desc:点击用户的头像进入用户的主页
@@ -377,8 +366,7 @@ Page({
    * @desc：点赞执行的方法
    * @note：新增加的代码
    * @date：20190606
-   * @param：
-   *        id：帖子id、wx_session_key：微信的code值、op：cancel 取消点赞是传递 点赞则不传op这个参数
+   * @param:id：帖子id、wx_session_key：微信的code值、op：cancel 取消点赞是传递 点赞则不传op这个参数
    */
   giveALikeMethdss:function(replyIds){
     //打印参数的日志
@@ -434,14 +422,12 @@ Page({
       }else{
         abstac.promptBox(res.data.result.message);
       }
-
     },
     function (error) {//点赞失败
       console.log(error);
     });
   },
   /**
-   * 
    * @desc:增加图片按钮实现隐藏和显示的效果
    */
   addImages:function(){
@@ -483,7 +469,6 @@ Page({
       sendsOrHiden:'block',
       showHiden:'none'
     });
-
   },
   /**
    *  @desc：调用图片上传服务器的地址
@@ -492,7 +477,6 @@ Page({
     let that = this,
       platformS = abstac.mobilePhoneModels(this.data.platform),
       file_category = '2';
-
       //将图片的路径上传服务器的地址
       wx.uploadFile({
         url: app.publicVariable.fileUploadPicInterfaceAddress + '?file_category=' + file_category + '&wx_session_key=' + that.data.wxSessionKey + '&platform=' + platformS,
@@ -513,7 +497,7 @@ Page({
               interfaceData: src_array1
             });
           } else {
-
+            abstac.promptBox(res.data.result.message);
           }
         }
       })
@@ -573,34 +557,21 @@ Page({
     });
   },
   /**
-   * 
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
-
+  onReady: function () {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    
-  },
-
+  onShow: function () {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
-
+  onHide: function () {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
-
+  onUnload: function () {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
@@ -608,21 +579,16 @@ Page({
     this.getBlogDetail();
     wx.stopPullDownRefresh();
   },
-
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
-  },
-
+  onReachBottom: function () {},
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
     //调用后台分享的接口
     this.shareInterfaces();
-
     if(res.form === 'menu'){
       console.log(res.target, res);
     }
@@ -638,6 +604,9 @@ Page({
       }
     }
   },
+  /**
+   * 调用后台分享的接口
+   */
   shareInterfaces:function(){
     var that = this;
     abstac.sms_Interface(app.publicVariable.shareInterfaceAddress,

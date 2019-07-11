@@ -4,8 +4,8 @@
   <view class='obesityBox' wx:for-items="{{obesity}}" wx:key='property' bindtap='goDetailInfo' data-articlid='{{item.id}}'>
         <view class='topBox'>
           <view class='leftBox'>
-            <image wx:if='{{item.user.head_icon}}' src='{{item.user.head_icon}}'></image>
-            <image wx:else src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561638291636&di=bae0f8e67e988b9522d8c6010f54c599&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fa12f24e688c1cda3ff4cc453f3486a88adaf08cc2cdb-tQvJqX_fw658'></image>
+            <image wx:if='{{item.user.head_icon}}' src='{{item.user.head_icon}}' mode='aspectFill'></image>
+            <image wx:else src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561638291636&di=bae0f8e67e988b9522d8c6010f54c599&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fa12f24e688c1cda3ff4cc453f3486a88adaf08cc2cdb-tQvJqX_fw658' mode='aspectFill'></image>
           </view>
           <view class='rightBox'>{{item.user.nick_name}}</view>
         </view>
@@ -34,8 +34,7 @@
             <view class='like'>{{item.like_num}}</view>
           </view>
         </view>
-      </view>
-  
+      </view>  
   <!-- 女性健康视图模板 -->
   <view class='obesityBox' wx:for-items="{{womensHealth}}" wx:key='property' bindtap='goDetailInfo' data-articlid='{{item.id}}'>
         <view class='topBox'>
@@ -71,10 +70,8 @@
           </view>
         </view>
       </view>
-
       <!-- 康复理疗视图模板 -->
       <view class='obesityBox' wx:for-items="{{rehabilitationTherapy}}" wx:key='property' bindtap='goDetailInfo' data-articlid='{{item.id}}'>
-
         <view class='topBox'>
           <view class='leftBox'>
             <image wx:if='{{item.user.head_icon}}' src='{{item.user.head_icon}}'></image>
@@ -107,6 +104,5 @@
             <view class='like'>{{item.like_num}}</view>
           </view>
         </view>
-
       </view>
 </template>

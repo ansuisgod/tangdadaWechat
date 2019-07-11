@@ -51,9 +51,13 @@ view , scroll-view{
   position: fixed;
   top: 0;
   left: 0;
+  background: white;
+  z-index: 100;
+  width: 70rpx;
+  height: 78rpx;
 }
 .searchIconn image{
-  margin: 20rpx 0 0 5rpx;
+  margin: 20rpx 0 0 10rpx;
   width: 50rpx;
   height: 50rpx;
 }

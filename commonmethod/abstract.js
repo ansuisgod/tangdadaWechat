@@ -1,7 +1,6 @@
 /**
  * 抽象出公用的方法
  */
-
 /** 
 *@desc: 网络请求封装
 *@param：reqUrl：请求的地址、data：传入的需要的参数值（eg:{xxx:aaa,xxx:bbbb}）、succFunc()请求成功时回调函数、failFunc()请求失败时回调函数
@@ -40,7 +39,6 @@ function weChat_Login(succFunc){
     }
   })
 }
-
 /** 
 *@desc: 弹出框
 *@param：titleIn：传入的弹出的标题
@@ -96,7 +94,6 @@ function mobilePhoneModels(platform){
   }else{
     return;
   }
-  
 }
 /**
  * @desc:封装了判断首页的阅读数、分享数、点赞数，如果大于了一千就在后面加k

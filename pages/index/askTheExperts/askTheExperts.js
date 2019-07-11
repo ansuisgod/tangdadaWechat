@@ -8,7 +8,6 @@ var abstac = require('../../../commonmethod/abstract.js'),
     tag_id = '25',
     sizes = '20';
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -28,7 +27,6 @@ Page({
     index: 3,
     opened: !1
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -136,7 +134,6 @@ Page({
         audioArr: audioArr,
       })
     })
-  
   },
    /**
    * @desc:音频播放停止
@@ -188,31 +185,19 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
-
+  onReady: function () {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
-
+  onShow: function () {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
-
+  onHide: function () {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
-
+  onUnload: function () {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
@@ -220,7 +205,6 @@ Page({
     this.askExports();
     wx.stopPullDownRefresh();
   },
-
   /**
    * 页面上拉触底事件的处理函数
    */
@@ -234,13 +218,10 @@ Page({
       this.askExports();
     }
   },
-
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  },
+  onShareAppMessage: function () {},
   /**
    * @desc:悬浮的按钮动画的效果隐藏和显示菜单
    * @date：20190704
@@ -249,7 +230,6 @@ Page({
     this.setData({
       opened: !1,
     })
-
     this.button = $wuxButton.init('br', {
       position: position,
       buttons: [

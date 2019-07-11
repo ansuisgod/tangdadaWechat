@@ -1,13 +1,6 @@
 <!--pages/index/task/task.wxml 首页的任务-->
 <import src="../../components/an/subhelthIndex.wxml" />
 <import src="../../components/button/button.wxml"/>
-<!--自定义导航条-->
-<!-- <view class='nav bg-white' style='height:{{navH}}px'>
-    <view class='nav-title'>
-      <image src='../../static/search.png' mode='aspectFit' bindtap='search' class="back"></image>
-    </view>
-</view> -->
-
 <view class='searchIconn'>
   <image src='../../static/search.png' mode='aspectFit' bindtap='search' class="back"></image>
 </view>
@@ -21,7 +14,6 @@
 </scroll-view>
 <view class="rec"></view>
 <swiper current="{{activeIndex}}" class="swiper-box" duration="100" bindchange="bindChange">
-
   <!-- 肥胖视图模板 -->
   <swiper-item class="swiper-item">
     <view class="slide-view">
@@ -30,7 +22,6 @@
       </scroll-view>
     </view>
   </swiper-item>
-
   <!-- 女性健康视图模板 -->
   <swiper-item class="swiper-item">
     <view class="slide-view">
@@ -39,7 +30,6 @@
       </scroll-view>
     </view>
   </swiper-item>
-
   <!-- 康复理疗视图模板 -->
   <swiper-item class="swiper-item">
     <view class="slide-view">
@@ -48,7 +38,6 @@
       </scroll-view>
     </view>
   </swiper-item>
-
 </swiper>
 <view class='addBox-choose-cover' wx:if='{{opened}}' bindtap='hideCoverss'></view>
 <!-- 遮罩层 -->

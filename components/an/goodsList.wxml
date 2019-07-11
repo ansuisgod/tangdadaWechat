@@ -6,9 +6,7 @@
       <image src='{{item.pic}}' mode='aspectFill'></image>
       <view class='inventory'>{{item.surplus}} 件</view>
     </view>
-    <view class='goodsTitle'>
-      {{item.name}}
-    </view>
+    <view class='goodsTitle'>{{item.name}}</view>
     <view class='integral'>
       积分 <text style='color:#ff7382;'>{{item.points}}</text>
     </view>
@@ -19,6 +17,5 @@
     <button wx:if="{{item.surplus == 0}}" style='background: #e5e5e5;color: #a5a5a5;border:none;'>兑光了</button>
   </view>
 </view>
-
 <view class='cleadd'></view>
 </template>

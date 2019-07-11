@@ -34,7 +34,6 @@
   font-size: 30rpx;
   font-weight: 600;
 }
-
 /* 收货人的联系方式的输入区域 */
 .outmain .contactInformationOfConsignee{
   display: flex;
@@ -46,13 +45,11 @@
   flex-direction: row;
   font-size: 33rpx;
 }
-
 .outmain .contactInformationOfConsignee .goodDesc{
   padding: 15rpx 0 0 15rpx;
   flex-direction: row;
   font-size: 33rpx;
 }
-
 .outmain .consigneeDetail{
   font-size: 33rpx;
   height: 220rpx;

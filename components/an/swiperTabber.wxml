@@ -1,9 +1,7 @@
 <!-- 顶部菜单条视图模板 -->
 <template name="swiperTabber">
   <block wx:for-items="{{tabs}}" wx:key='property'>
-    <view id="{{index}}" class="{{activeIndex == index ?'item_on':''}} default-item" bindtap="tabClick" style="width:{{tabW}}px">
-      {{item}}
-    </view>
+    <view id="{{index}}" class="{{activeIndex == index ?'item_on':''}} default-item" bindtap="tabClick" style="width:{{tabW}}px">{{item}}</view>
   </block>
   <!-- <view class="weui-navbar-slider" style="transform:translateX({{slideOffset}}px);"></view> -->
 </template>

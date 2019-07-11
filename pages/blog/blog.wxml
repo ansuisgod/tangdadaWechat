@@ -5,15 +5,12 @@
 <view class='nav bg-white' style='height:{{navH}}px'>
     <view class='nav-title'>
       <image src='../../static/search.png' mode='aspectFit' bindtap='search' class="back"></image>
-      <!-- <text class='profession' bindtap='release'>发布</text> -->
     </view>
 </view>
-
 <!-- 帖子的页面 -->
 <view class='main'>
   <template is="bloggIndex" data="{{conArr}}" />
 </view>
-
 <view class='addBox-choose-cover' wx:if='{{opened}}' bindtap='hideCoverss'></view>
 <!-- 遮罩层 -->
 <template is="button" data="{{ ...$wux.button.br }}"/>

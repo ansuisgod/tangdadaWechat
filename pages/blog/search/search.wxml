@@ -21,10 +21,7 @@
       <view class='askRight1'>{{item.reply.content_text}}</view>
     </view>
   </view>
-  <view class='more' style='display:{{moreAsk}}' bindtap='queryMoreAskInfo'>
-    查看更多
-  </view>
-
+  <view class='more' style='display:{{moreAsk}}' bindtap='queryMoreAskInfo'>查看更多</view>
 </view>
 <!-- 搜帖子部分视图模板 -->
 <view class='searchForPosts' style='display:{{showBlogg}}'>
@@ -55,9 +52,7 @@
       </view>
     </view>
   </view>
-  <view class='more' style='display:{{moreBlog}}' bindtap='searchMoreBlog'>
-    查看更多
-  </view>
+  <view class='more' style='display:{{moreBlog}}' bindtap='searchMoreBlog'>查看更多</view>
 </view>
 <!-- 找糖友视图模板 -->
 <view class='foundFriend' style='display:{{showFriend}}'>
@@ -71,10 +66,5 @@
       <view class='askRight'>{{item.nick_name}}</view>
     </view>
   </view>
-  
-  
-  <view class='more' style='display:{{moreF}}' bindtap='moreFriends'>
-    查看更多
-  </view>
-
+  <view class='more' style='display:{{moreF}}' bindtap='moreFriends'>查看更多</view>
 </view>

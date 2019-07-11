@@ -99,8 +99,6 @@
   width: 30%;
   flex-direction: row;
 }
-
-
 /* 问答部分 */
 .askQuestionArea{
   width: 100%;

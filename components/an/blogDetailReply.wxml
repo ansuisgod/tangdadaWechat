@@ -11,9 +11,7 @@
           {{item.user.nick_name}}
           <image src='../../../static/more.png' bindtap='mores' data-topicid='{{item.id}}' data-copycontent='{{item.content_text}}'></image>
         </view>
-        <view class='centerComment'>
-          {{item.content_text}}
-        </view>
+        <view class='centerComment'>{{item.content_text}}</view>
         <view class='centerComment' wx:if='{{item.content_images}}'>
           <image mode='aspectFill' bindtap='largerPreview' data-list='{{item.content_images}}' wx:if='{{item.content_images[0]}}' src='{{item.content_images[0]}}'></image>
           <image mode='aspectFill' bindtap='largerPreview' data-list='{{item.content_images}}' wx:if='{{item.content_images[1]}}' src='{{item.content_images[1]}}'></image>

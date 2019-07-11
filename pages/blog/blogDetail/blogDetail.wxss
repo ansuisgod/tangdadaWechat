@@ -1,5 +1,4 @@
 /* pages/blogDetail/blogDetail.wxss */
-@import "../../../plugin/wxParse/wxParse.wxss";
 .main{
   height: 100%;
   display: flex;
@@ -218,7 +217,7 @@
   display: flex;
 }
 .bottomBox .theCommentsSection .replay .add{
-  padding: 25rpx 0 0 0;
+  padding: 35rpx 0 0 0;
   width: 15%;
   text-align: center;
   justify-content: space-between;
@@ -227,8 +226,8 @@
   text-align: center;
   border: 1px solid #5e5e5e;
   border-radius: 40rpx;
-  width: 60rpx;
-  height: 60rpx;
+  width: 50rpx;
+  height: 50rpx;
 }
 .bottomBox .theCommentsSection .replay .inputArea{
   padding: 30rpx 0 0 0;

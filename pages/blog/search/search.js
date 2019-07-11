@@ -5,7 +5,6 @@ var abstac = require('../../../commonmethod/abstract.js'),
     tag_ids = '25',
     sizes = '4';
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -23,7 +22,6 @@ Page({
     showFriend: 'none',
     friendTitle:'none'
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -41,7 +39,6 @@ Page({
   queryUserInformation:function(){
     let platForm = abstac.mobilePhoneModels(this.data.platform),//手机型号
         that = this;
-    
     abstac.sms_Interface(app.publicVariable.queryUserInformationInterfaceAddress,
       { platform: platForm, wx_session_key: this.data.wxSessionKey},
     function(res){
@@ -168,7 +165,6 @@ Page({
       }, function (error) {
         console.log(error);
       });
-
       this.searchGoodFriend();//搜索好友函数
   },
   /**
@@ -179,7 +175,6 @@ Page({
   searchGoodFriend:function(){
     let platForms = abstac.mobilePhoneModels(this.data.platform),//手机型号
         that = this;
-
     abstac.sms_Interface(app.publicVariable.searchGoodFrendInterfaceAddress,
       { platform: platForms, size: sizes, gender: this.data.gender, city: this.data.city, wx_session_key: this.data.wxSessionKey, page: this.data.pages, keyword: this.data.searchValue},
     function(res){
@@ -188,7 +183,6 @@ Page({
       console.log(res);
       //有则取数据
       if (res.data.result.code == '2000'){
-        
         if (res.data.data.users == undefined){
           that.setData({
             showFriend: 'none',
@@ -220,7 +214,6 @@ Page({
       }else{
         abstac.promptBox(res.data.result.message);
       }
-      
     },function(error){
       console.log(error);
     });
@@ -285,49 +278,29 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
-
+  onReady: function () {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
-
+  onShow: function () {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
-
+  onHide: function () {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
-
+  onUnload: function () {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
-  },
-
+  onPullDownRefresh: function () {},
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
-  },
-
+  onReachBottom: function () {},
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function () {}
 })

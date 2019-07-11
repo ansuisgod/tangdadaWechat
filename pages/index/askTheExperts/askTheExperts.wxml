@@ -47,7 +47,6 @@
 
 <!-- 问答部分 -->
 <view class='askQuestionArea'>
-
   <view class='insideC' wx:for-item='item' wx:key='property' wx:for="{{dataList}}" style='display:{{defaultArea}};' bindtap='askTheExperts' data-ids='{{item.id}}'>
     <view class='asking' wx:if="{{item.title}}">
       <view class='askLeft'>
@@ -62,9 +61,7 @@
       <view class='askRight'>{{item.reply.content_text}}</view>
     </view>
   </view>
-
 </view>
-
 <view class='addBox-choose-cover' wx:if='{{opened}}' bindtap='hideCoverss'></view>
 <!-- 遮罩层 -->
 <template is="button" data="{{ ...$wux.button.br }}"/>

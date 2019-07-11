@@ -5,7 +5,6 @@ var abstac = require('../../commonmethod/abstract.js'),
     size = '30',
     arry = [];
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -25,7 +24,6 @@ Page({
       navH: app.globalData.navHeight,
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
-
     this.getBlogData();
     this.initButton();
   },
@@ -95,7 +93,6 @@ Page({
    */
   clickIntoDetail:function(e){
     console.log("文章的id主键=" + e.currentTarget.dataset.articlid);//打印日志
-
     //跳转到帖子的详情页面
     wx.navigateTo({
       url: '../../../blogDetail/blogDetail?blogId=' + e.currentTarget.dataset.articlid
@@ -123,31 +120,19 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
-
+  onReady: function () {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
-
+  onShow: function () {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
-
+  onHide: function () {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
-
+  onUnload: function () {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
@@ -155,13 +140,11 @@ Page({
     this.getBlogData();
     wx.stopPullDownRefresh();
   },
-
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
     console.log("触底事件的处理函数,页数" + this.data.page);
-
     //判断是否超过了总页数，如果超过了则没有下一页，否则还有下一页的数据
     if (this.data.totalPage < this.data.page) {
       abstac.promptBox("没有数据了！");
@@ -169,21 +152,11 @@ Page({
     } else {
       this.getBlogData();
     }
-
-    /**
-     * 滚动到底部是就让滚动条回到顶部
-     
-    wx.pageScrollTo({
-      scrollTop: 0,
-    })*/
   },
-
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  },
+  onShareAppMessage: function () {},
   /**
   * @desc:悬浮的按钮动画的效果隐藏和显示菜单
   * @date：20190704
@@ -192,7 +165,6 @@ Page({
     this.setData({
       opened: !1,
     })
-
     this.button = $wuxButton.init('br', {
       position: position,
       buttons: [
@@ -213,7 +185,6 @@ Page({
         index === 1 && wx.navigateTo({
           url: '/pages/blog/sendVideo/sendVideo?flags=1'
         })
-
         return true
       },
       callback(vm, opened) {

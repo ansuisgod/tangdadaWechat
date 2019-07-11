@@ -1,25 +1,19 @@
 <!--pages/index/askList/askList.wxml 更多问答列表展示视图模板-->
 <view class='outBox'>
-
   <view class='mainBox' wx:for='{{dataList}}' wx:key='property' bindtap='askTheExperts' data-ids='{{item.id}}'>
     <view class='allBox'>
-
       <view class='askBox'>
         <view class='askBoxLeft'>
           <view class='tiBox'>问</view>
         </view>
         <view class='askBoxRight'>{{item.title}}</view>
       </view>
-
       <view class='questionBox' wx:if='{{item.reply.content_text}}'>
         <view class='questionBoxLeft'>
           <view class='tiBox'>答</view>
         </view>
         <view class='questionBoxRight'>{{item.reply.content_text}}</view>
       </view>
-
-
     </view>
   </view>
-
 </view>

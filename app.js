@@ -23,8 +23,6 @@ App({
       })
     }
 
-    
-
     // 获取小程序更新机制兼容
     if (wx.canIUse('getUpdateManager')) {
       const updateManager = wx.getUpdateManager()
@@ -60,12 +58,6 @@ App({
       })
     }
 
-
-
-
-
-
-
     /*wx.login({
       success: res => {
         console.log(res);
@@ -85,20 +77,9 @@ App({
         console.log(err);
       }
     })
-
-
     // 初始化饮食挑选区状态
     that.initFoodsList()
-
   },
-
-
-
-
-
-
-
-
 
   // ///////////////////////////////////////  饮食挑选区
 
@@ -152,15 +133,6 @@ App({
 
 // ///////////////////////////////////////  饮食挑选区END
 
-
-
-
-
-
-
-
-
-
   globalData: {
     userInfo: null,
     foodsList: [], //饮食挑选区信息
@@ -207,11 +179,6 @@ App({
     getDraftBoxNumberInterfaceAddress: httpAdress + '/im/api/v1/note/list_topic_notes.json',//存入草稿箱的接口
     contactInformationInterfaceAddress: httpAdress + '/im/api/v1/store/exchange_item.json',//商城兑换商品填写提交用户兑换的地址信息接口
     shareInterfaceAddress: httpAdress + '/im/api/v1/topics/share_topic.json',//分享之后调用后台接口
-
-
-
-
-
 
 
     // li
@@ -269,19 +236,9 @@ App({
     setAlarmInfoInterfaceAddress: httpAdress + '/im/api/v1/tang/alarm/set_alarm.json',//新增提醒信息的接口
     deleteAlarmInfoInterfaceAddress: httpAdress + '/im/api/v1/tang/alarm/delete_alarm.json',//删除提醒信息的接口
     alarmInfoInfoInterfaceAddress: httpAdress + '/im/api/v1/tang/alarm/alarm_info.json',//获取提醒信息某个信息的接口
-  
-
-      
-      
-
-
-
-
-
 
     // http://api.prod.tangdada.com.cn/im/api/v1/badge/query_user_discount.json  不知道干嘛的
     // 暂时不用的
     setRefGoalInterfaceAddress: httpAdress + '/im/api/v1/tang/info/set_ref_goal.json',//修改参考建议的接口 (根据item字段区分 all获取全部))
-
   }
 })

@@ -1,7 +1,6 @@
 <!--pages/shopping/change/change.wxml-->
 <view>
   <view class='outmain'>
-
     <view class='goodsTop'>
       <view class='goodPic'>
         <image src='{{goodsDeInfo.pic}}'></image>
@@ -11,7 +10,6 @@
         <view class='integral'>{{goodsDeInfo.points}} \r\t 积分</view>
       </view>
     </view>
-
     <view class='contactInformationOfConsignee'>
       <view class='goodPic'>
         收货人姓名
@@ -20,7 +18,6 @@
         <input type='text' bindblur='nameOfConsigneeBlur' value='{{consinName}}' bindinput='nameOfConsignee' placeholder='请输入收货人姓名'></input>
       </view>
     </view>
-
     <view class='contactInformationOfConsignee'>
       <view class='goodPic'>
         收货人电话
@@ -29,15 +26,12 @@
         <input type='number' bindblur='phoneOfConsigneeBlur' value='{{consinPhone}}' bindinput='phoneOfConsignee' placeholder='请输入收货人有效的联系方式'></input>
       </view>
     </view>
-
     <view class='consigneeDetail'>
       <view class='goodPic'>
         收货人地址
       </view>
       <textarea bindinput='adressOfConsignee' value='{{consinAdress}}' bindblur='adressOfConsigneeBlur' placeholder='请输入收货地址，如省、市、区（县）、街道、路、号、室'></textarea>
     </view>
-
     <button class='confirms' bindtap='submitInfo' style='background-color:{{subBackgroundColor}};color:{{subFontColor}};'>确定</button>
-
   </view>
 </view>

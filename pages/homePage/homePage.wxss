@@ -30,7 +30,6 @@
   right: 0rpx;
   bottom: 0rpx;
 }
-
 .My-box-head-info {
   width: 532.5rpx;
   margin-left: 30rpx;
@@ -38,22 +37,18 @@
   justify-content:center;
   flex-direction: column;
 }
-
 .My-box-head-info-1{
   color: #5e5e5e;
   font-size: 35rpx;
 }
-
 .My-box-head-info-2{
   color: #fff;
   font-size: 10rpx;
 }
-
 .My-box-head-info-3{
   color: #858585;
   font-size: 28rpx;
 }
-
 /* 下面列表部分 */
 .My-box-options {
   width: 100%;
@@ -62,11 +57,9 @@
   /* margin-top: 35rpx; */
   display: flex;
 }
-
 .My-box-options:active{
   background-color: 	#f2f2f2;
 }
-
 .My-box-options-lft {
   flex: 1;
   margin-left: 37.5rpx;
@@ -74,12 +67,10 @@
   justify-content: flex-start;
   align-items: center;
 }
-
 .My-box-options-lft image {
   height: 40rpx;
   width: 40rpx;
 }
-
 .My-box-options-title {
   flex: 7;
   font-size: 30rpx;
@@ -88,7 +79,6 @@
   align-items: center;
   border-bottom: 1rpx solid #f5f5f5;
 }
-
 .My-box-options-num {
   flex: 1;
   font-size: 30rpx;
@@ -98,7 +88,6 @@
   justify-content: flex-end;
   border-bottom: 1rpx solid #f5f5f5;
 }
-
 .My-box-options-rit {
   flex: 1;
   display: flex;
@@ -106,7 +95,6 @@
   align-items: center;
   border-bottom: 1rpx solid #f5f5f5;
 }
-
 .My-box-options-rit image {
   height: 60rpx;
   width: 60rpx;
@@ -117,13 +105,13 @@
   height: auto;
 }
 .My-box .artical .articalList{
-  width: 95%;
-  min-height: 220rpx;
+  width: 90%;
+  min-height: 400rpx;
   border-bottom: 1px solid #f4f4f4;
   margin: 15rpx auto;
 }
 .My-box .artical .articalList .tilteAtical{
-  font-size: 38rpx;
+  font-size: 32rpx;
   color: #5c5c5c;
   height: 70rpx;
   font-weight: 700;
@@ -132,12 +120,26 @@
   white-space:nowrap;
 }
 .My-box .artical .articalList .contents{
-  height: 100rpx;
+  height: 180rpx;
   color: #848484;
-  font-size: 34rpx;
+  font-size: 30rpx;
+  display: flex;
+}
+.My-box .artical .articalList .contents .contentsLeftBox{
+  width: 50%;
+  flex-direction: row;
   overflow:hidden;
   text-overflow:ellipsis;
-  white-space:nowrap;
+  white-space:wrap;
+}
+.My-box .artical .articalList .contents .contentsrigthBox{
+  width: 50%;
+  text-align: center;
+  flex-direction: row;
+}
+.My-box .artical .articalList .contents .contentsrigthBox image{
+  width: 300rpx;
+  height: 170rpx;
 }
 .My-box .artical .articalList .bottom{
   display: flex;
@@ -145,12 +147,12 @@
 }
 .My-box .artical .articalList .bottom .bLeft{
   width: 50%;
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #848484;
   flex-direction: row;
 }
 .My-box .artical .articalList .bottom .bRight{
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #848484;
   width: 50%;
   flex-direction: row;

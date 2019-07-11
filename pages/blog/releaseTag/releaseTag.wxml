@@ -6,16 +6,13 @@
   <textarea placeholder='正文内容不少于20个字哦' value='{{contentTitle}}' bindinput='content'></textarea>
   <!-- 上传图片预览图片的视图模板 -->
   <view wx:for='{{chooseImgSrc}}' wx:key='property' wx:for-key='item' class='imgShowBox' wx:for-index='idx'>
-    <image class='del' src='../../../static/pro-fail.png' style="display:{{imgDisplay}}" bindtap='delPic' data-ids='{{idx}}'></image>
+    <image class='del' src='../../../images/personal/del.png' style="display:{{imgDisplay}}" bindtap='delPic' data-ids='{{idx}}'></image>
     <image class='imgList' src='{{item}}' style="display:{{imgDisplay}}"></image>
   </view>
-  
 </view>
 <view class='bottomArea'>
   <image src='../../../static/addPic.png' bindtap='choosePhotos'></image>
-  <text class='draftBox' style='color:{{saveDraftBoxColor}};' bindtap='saveDraftBox'>存入草稿箱</text>
 </view>
-
 <view class='blogContent'>
   <view class="outBox">
     <button class="btn {{btnActives == 'fant' ? 'active' : ''}}" bindtap='selectedPinche' data-active='fant' data-tagid='97'>肥胖</button>
@@ -23,7 +20,6 @@
     <button class="btn {{btnActives == 'heath' ? 'active' : ''}}" bindtap='selectedPinche' data-active='heath' data-tagid='99'>康复理疗</button>
   </view>
 </view>
-
 <view class='blogContent'>
   <button class='records' bindtap='releaseBtn'>发布</button>
 </view>

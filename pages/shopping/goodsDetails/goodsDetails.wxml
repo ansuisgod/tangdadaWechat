@@ -8,13 +8,11 @@
     <view class='titlesd'>{{goodsDeInfo.name}}</view>
     <view class='inteager'>{{goodsDeInfo.points}} 积分</view>
   </view>
-
   <view class='detailContent'>
     <view class='content'>商品名称：{{goodsDeInfo.name}}</view>
     <view class='content'>商品简介：{{goodsDeInfo.description}}</view>
     <view class='content'>商品流程：{{goodsDeInfo.remark}}</view>
   </view>
-
   <view class='detailContent'>
     <view class='content'>版权归糖大大所有</view>
   </view>

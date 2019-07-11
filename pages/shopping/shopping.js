@@ -2,7 +2,6 @@
 var abstac = require('../../commonmethod/abstract.js'),
     app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -38,7 +37,6 @@ Page({
   getUserPicture:function(){
     var that = this;
     let platform = abstac.mobilePhoneModels(that.data.platform);//手机型号
-
     abstac.sms_Interface(app.publicVariable.queryUserInformationInterfaceAddress,
       { wx_session_key: this.data.wxSessionKey, platform: platform, },
       function (res) {//查询成功
@@ -47,12 +45,10 @@ Page({
         console.log(res);
         //判断是否有数据，有则取数据
         if (res.data.result.code == '2000') {
-
           var data = res.data.data;
           that.setData({
             userPic: data
           });
-
         } else {
           abstac.promptBox(res.data.result.message);
         }
@@ -177,31 +173,23 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
-
+  onReady: function () {},
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.goodsList(this.data.page);//查询商品的列表的接口
+    this.getUserPicture();//获取微信用户的头像，一开始要按钮触发获取信息头像
+    this.queryIntegral();//查询用户的积分
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
-
+  onHide: function () {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
-
+  onUnload: function () {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
@@ -209,7 +197,6 @@ Page({
     this.goodsList(this.data.page);//查询商品的列表的接口
     wx.stopPullDownRefresh();
   },
-
   /**
    * 页面上拉触底事件的处理函数
    */
@@ -223,11 +210,8 @@ Page({
       this.goodsList();
     }
   },
-
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function () {}
 })

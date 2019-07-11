@@ -2,7 +2,6 @@
 var abstac = require('../../commonmethod/abstract.js');
 const app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -37,13 +36,10 @@ Page({
     disableLoginBtn:false,//登录页面的登录按钮的状态按
     disableRegBtn: false//注册页面的注册按钮的状态按
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-   
-  },
+  onLoad: function (options) {},
    /**
    * 获取电话号码的输入框的值
    */
@@ -61,8 +57,7 @@ Page({
         getcodeColortuses: '#a8a5a5',
         getCodeBackground: '#e5e5e5'
       });
-    }
-    
+    }  
   },
   /**
    * 注册输入框的电话号码
@@ -221,7 +216,6 @@ Page({
       let that = this,
           countDownNum = that.data.countDownNum;
       //封装网络请求接口
-
       /**
        * 校验是否已经注册接口地址
       */
@@ -285,7 +279,6 @@ Page({
     }else{
       let that = this,
           countDownNumReg = that.data.countDownNumReg;
-
       //封装网络请求接口
       /**
        * 校验是否已经注册接口地址
@@ -365,9 +358,7 @@ Page({
         pwdLoginCode = this.data.pwdLoginCode;
     if (pwdLoginNumber == '' || pwdLoginCode == ''){
       return;
-    }else{
-
-    }
+    }else{}
   },
   /**
    * 提交按钮的执行的方法
@@ -389,7 +380,6 @@ Page({
         console.log(res);
         if (res.code){
           let weCode = res.code;
-          
           //封装网络请求接口
           abstac.promptBox('登录中......');//提示框
           abstac.sms_Interface(app.publicVariable.loginInterfaceAddress, { code: weCode, phone: that.data.phoneNumber, v_code: that.data.pwdNumber },
@@ -406,7 +396,6 @@ Page({
                 wx.setStorageSync('sessionKey', wx_session_key);
                 wx.setStorageSync('wxnickname', nickname);
                 wx.setStorageSync('wxuPhone', uPhone);
-
                 wx.switchTab({
                   url: '../../pages/index/index'
                 })
@@ -441,49 +430,29 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
-
+  onReady: function () {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
-
+  onShow: function () {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
-
+  onHide: function () {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
-
+  onUnload: function () {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
-  },
-
+  onPullDownRefresh: function () {},
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
-  },
-
+  onReachBottom: function () {},
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    
-  }
+  onShareAppMessage: function () {}
 })

@@ -16,7 +16,6 @@
        <rich-text nodes='{{dataInfo.content_text}}'></rich-text>
     </view>
   </view>
-
   <!-- 回复区域视图模板 -->
 <view class='expectsReply' wx:if='{{dataInfo.reply}}'>
   <view class='replayList' wx:if='{{replarList}}' wx:for='{{replarList}}' wx:key='property'>
@@ -36,6 +35,4 @@
     </view>
   </view>
 </view>
-
 </view>
-

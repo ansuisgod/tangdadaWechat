@@ -2,7 +2,6 @@
 var abstac = require('../../../commonmethod/abstract.js'),
     app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -14,7 +13,6 @@ Page({
     contentHeight:'300rpx',//内容的最小高度
     listDisplay:'block'//点击更多就隐藏姓名列表
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -66,49 +64,31 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
-
+  onReady: function () {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
-
+  onShow: function () {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
-
+  onHide: function () {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
-
+  onUnload: function () {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
-  },
-
+  onPullDownRefresh: function () {},
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
     this.exportsRecommand();//向后台请求推荐专家接口数据信息
   },
-
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function () {}
 })

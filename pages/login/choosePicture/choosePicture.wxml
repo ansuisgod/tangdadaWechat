@@ -9,12 +9,7 @@
       <view class='bottom' style="{{index == id?'color:#ff7382':'color:#888;'}}">{{item.type}}</view>
     </view> 
   </view>
-
   <view class='finish'>
     <button bindtap='finishReg'>完成</button>
   </view>
-
-
-
 </view>
-

@@ -12,7 +12,6 @@
   <view wx:if='{{item.title}}' class='bottom'>{{item.title}}</view>
   <view wx:if='{{item.data.desc}}' class='bottom1'>{{item.data.desc}}</view>
 </view>
-
 <!-- 糖活动、糖友荟、养生糖视图模板 -->
 <view class='outAll' wx:if='{{allOtherArea == 1}}' wx:for-item='item' wx:key='property' wx:for="{{otherTypeDataList}}" bindtap='allClik' data-articlid='{{item.topic.id}}'>
   <view class='top'>
@@ -22,7 +21,6 @@
   <view wx:if='{{item.topic.title}}' class='bottom'>{{item.topic.title}}</view>
   <view wx:if='{{item.data.desc}}' class='bottom1'>{{item.data.desc}}</view>
 </view>
-
 <!-- 涨知识视图模板 -->
 <view class='outAll' wx:if='{{allOtherArea == 2}}' wx:for-item='item' wx:key='property' wx:for="{{increaseknowledge}}" bindtap='allClik' data-articlid='{{item.id}}'>
   <view class='top'>
@@ -31,5 +29,4 @@
   </view>
   <view wx:if='{{item.title}}' class='bottom'>{{item.title}}</view>
 </view>
-
 </template>

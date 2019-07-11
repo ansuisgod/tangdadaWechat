@@ -1,12 +1,12 @@
 // pages/blog/release/release.js
 var src_array = [],
     src_array1 = [],
+    arrya1 = [],
     abstac = require('../../../commonmethod/abstract.js'),
     app = getApp(),
     sizes = '20',
     pagess = '1';
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -21,7 +21,6 @@ Page({
     draftBoxNumber: '',//草稿箱的草稿条数
     saveDraftBoxColor:'#a9a9a9'//动态改变存入草稿箱文字的颜色
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -46,7 +45,6 @@ Page({
    * @desc:删除预览图片
    */
   delPic:function(e){
-    
     var imgArr = this.data.chooseImgSrc,
         picIndex = e.currentTarget.dataset.ids;
     if (picIndex == '0'){
@@ -54,10 +52,12 @@ Page({
     }else{
       imgArr.splice(picIndex, picIndex);
     }
-    
     this.setData({
-      chooseImgSrc:imgArr
+      chooseImgSrc:''
     });
+    arrya1 = [];
+    src_array = [];
+    src_array1 = [];
     console.log(imgArr);
     let imgLength = this.data.chooseImgSrc.length;
     //动态改变存入草稿箱的文字的颜色
@@ -88,10 +88,8 @@ Page({
         });
         //判断草稿箱里条数是否有，如果有则弹出提示框
         if (that.data.draftBoxNumber > '0'){
-          
           if (drafBbox == '1'){
             var cc = that.data.drafBoxData;
-            
             cc.content = JSON.parse(cc.content);
             that.setData({
               title: cc.title,
@@ -140,7 +138,6 @@ Page({
    */
   choosePhotos:function(){
     var that = this;
-
     wx.chooseImage({
       count: 3,
       sizeType: ['original', 'compressed'],
@@ -168,7 +165,6 @@ Page({
         }
       },
     })
-    
   },
   /**
    * @desc:点击存入草稿箱触发的函数
@@ -215,12 +211,10 @@ Page({
       abstac.promptBox("正文内容不能少于20个字！");
     }else{
       //循环动态的拼装参数的字符串的格式
-      var parmLength = this.data.interfaceData.length,
-        arrya1 = [];
+      var parmLength = this.data.interfaceData.length;
       for (var j = 0; j <= parmLength - 1; j++){
         arrya1.push({ 'url': src_array1[j] });
       }
-
       //调接口
       var tagId = '0',
           that = this,
@@ -231,7 +225,6 @@ Page({
             'text': this.data.content,
             'images': arrya1
           };
-      
       //打印日志
       console.log("tagId=" + tagId + "&platform=" + platform + "&html=" + html + "&title=" + title + "&wxSessionkey=" + this.data.wxSessionKey + "&content=" + contents);
       abstac.sms_Interface(app.publicVariable.postBlogInterfaceAddress,
@@ -247,16 +240,14 @@ Page({
             chooseImgSrc:'',
             interfaceData:''
           });
-
           wx.switchTab({
             url: '../../../pages/blog/blog'
           })
         }else{
           abstac.promptBox(res.data.result.message);
         }
-
       },function(error){
-
+        console.log(error);
       });
       arrya1 = [];
       src_array = [];
@@ -270,8 +261,6 @@ Page({
     let that = this,
         platformS = abstac.mobilePhoneModels(this.data.platform),
         file_category = '2';
-
-    // for (var i = 0; i <= this.data.chooseImgSrc.length; i++){//便利循环图片
       //将图片的路径上传服务器的地址
       wx.uploadFile({
         url: app.publicVariable.fileUploadPicInterfaceAddress + '?file_category=' + file_category + '&wx_session_key=' + that.data.wxSessionKey + '&platform=' + platformS,
@@ -281,8 +270,7 @@ Page({
           console.log("****************上传图片的接口返回函数***************");
           console.log(res);
           if (res.statusCode == '200'){
-            var dataResult = res;
-            dataResult.data = JSON.parse(dataResult.data);
+            res.data = JSON.parse(res.data);
             that.setData({
               interfaceData: src_array1.push(res.data.data.urls.origin),
               imgDisplay: 'block'
@@ -290,12 +278,10 @@ Page({
             that.setData({
               interfaceData: src_array1
             });
-          }else{
-
-          }
+            console.log(src_array1);
+          }else{}
         }
       })
-    // }
   },
   /**
    * @desc：获取标题输入框的值
@@ -336,49 +322,29 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
-
+  onReady: function () {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
-
+  onShow: function () {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
-
+  onHide: function () {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
-
+  onUnload: function () {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
-  },
-
+  onPullDownRefresh: function () {},
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
-  },
-
+  onReachBottom: function () {},
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function () {}
 })

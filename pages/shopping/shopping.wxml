@@ -5,7 +5,7 @@
   <!-- 上面的头部的部分开始 -->
 		<view class="userPicture" bindtap='integralList'>
 			<view class="left">
-        <image src="{{userPic.head_icon ? userPic.head_icon : userPic.gender == 1? man : woman}}"></image>
+        <image src="{{userPic.head_icon ? userPic.head_icon : userPic.gender == 1? man : woman}}" mode='aspectFill'></image>
       </view>
 			<view class="center">
 				<view class="topp">{{userName}}</view>
@@ -14,7 +14,6 @@
 			<view class="right"><image src="../../static/next.png" mode=""></image></view>
 		</view>
 		<!-- 上面的头部的部分结束 -->
-
     <!-- 中间商品列表的部分 -->
     <view class='listOfGoods'>
       <template is="goodsList" data="{{goodsLists}}" />

@@ -2,7 +2,6 @@
 <import src="../../../components/an/blogDetailReply.wxml" />
 <view class='main'>
   <view class='external'>
-
     <!-- 用户的信息 -->
     <view class='top'>
       <view class='left'>
@@ -25,22 +24,19 @@
         <rich-text nodes='{{content.title}}'></rich-text>
       </view> -->
     </view>
-
     <view class='picArea'>
       <view class='contentOutImg' wx:if='{{imageArr.mp4 == undefined}}' wx:for-index="idx" wx:key='property' wx:for="{{imageArr.images}}">
-        <image bindtap='largerPreview1' data-list='{{imageArr.images}}' wx:if="{{item.url}}" src='{{item.url}}'></image>
+        <image bindtap='largerPreview1' data-list='{{imageArr.images}}' wx:if="{{item.url}}" src='{{item.url}}' mode='aspectFill'></image>
       </view>
       <view class='contentOutImg'>
         <video class='imgList' wx:if='{{videoSrc}}' src="{{videoSrc}}" controls></video>
       </view>
     </view>
-
     <view class='contentOut' wx:if='{{content.content_text}}'>
       <view class='contentText'>
         <rich-text nodes='{{content.content_text}}'></rich-text>
       </view>
     </view>
-
     <!-- 评论列表的区域 -->
     <view class='commentList'>
       <view class='selectCommentsTitle' style='display:{{plicesShow}};'>精选评论</view>
@@ -48,10 +44,8 @@
         <template is="blogDetailReply" data="{{commentList}}" />
       </view>
     </view>
-
   </view>
 </view>
-
 <view class='bottomBox'>
  <!-- 用户评论框 -->
  <view class='theCommentsSection'>
@@ -66,12 +60,10 @@
       <view class='giveALike' style='display:{{showHiden}};'>
         <image src='{{dynamicLikedPicSrc}}' bindtap='giveALikeMethd'></image>
       </view>
-      
       <view class='share'>
         <button open-type='share' send-message-title='分享了'>
           <image style='display:{{showHiden}};' src='../../../static/share.png'></image>
         </button>
-        
         <view class='sends' bindtap='commentsSent' style='display:{{sendsOrHiden}};'>发送</view>
       </view>
     </view>
@@ -82,15 +74,10 @@
     <image src='../../../static/addPic.png' bindtap='choosePhotos'></image>
   </view>
   <view class='picListBox'>
-
     <view class='listssBox'  wx:for='{{chooseImgSrc}}' wx:key='property' wx:for-index='idx'>
-      <image class='del' src='../../../static/pro-fail.png' style="display:{{imgDisplay}}" bindtap='delPic' data-ids='{{idx}}'></image>
+      <image class='del' src='../../../images/personal/del.png' style="display:{{imgDisplay}}" bindtap='delPic' data-ids='{{idx}}'></image>
       <image class='thumb' src='{{item}}' style="display:{{imgDisplay}}"></image>
     </view>
-    
   </view>
 </view>
-
 </view>
- 
-

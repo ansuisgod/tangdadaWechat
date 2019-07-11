@@ -3,7 +3,6 @@ var abstac = require('../../../commonmethod/abstract.js'),
     size = '30',//请求数据大小
     app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -12,7 +11,6 @@ Page({
     goodsListRecords:'',
     page: '1'//页数
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -47,7 +45,6 @@ Page({
         for (var i = 0; i < datas.length; i++){
           datas[i].created_at = datas[i].created_at.substr(0, 10);
         }
-            
         if (that.data.page == '1'){
           that.setData({
             orderList: res.data.data.orders,
@@ -71,37 +68,24 @@ Page({
       }
     },
     function (error) {//接口调用失败
-
     });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
-  },
-
+  onReady: function () {},
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
-
+  onShow: function () {},
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-
-  },
-
+  onHide: function () {},
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-
-  },
-
+  onUnload: function () {},
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
@@ -109,7 +93,6 @@ Page({
     this.enquiryExchangeRecords();//请求接口查询商品的兑换的记录
     wx.stopPullDownRefresh();
   },
-
   /**
    * 页面上拉触底事件的处理函数
    */
@@ -123,11 +106,8 @@ Page({
       this.enquiryExchangeRecords();
     }
   },
-
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-
-  }
+  onShareAppMessage: function () {}
 })
