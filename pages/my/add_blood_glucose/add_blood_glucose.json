@@ -1,5 +1,6 @@
 {
     "usingComponents": {
       "scale": "/components/wx-scale/wx-scale"
-    }
+    },
+    "navigationBarTitleText": "评添加血糖记录"
 }

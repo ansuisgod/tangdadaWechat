@@ -70,7 +70,7 @@
   line-height: 70rpx;
   color: #a5a5a5;
   flex-direction: row;
-  font-size: 28rpx;
+  font-size: 30rpx;
 }
 .main .outContainer .insideCon .title{
   width: 100%;

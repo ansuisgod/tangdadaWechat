@@ -1,0 +1,221 @@
+/* pages/my/doctorText/doctorText.wxss */
+
+page {
+  background-color: #f3f3f3;
+  height: 100%;
+}
+
+/* 遮罩层 */
+.addBox-choose-covers {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.input-Max {
+  width: 650rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50rpx;
+  margin-top: 30rpx;
+}
+
+.input-box {
+  border: 4rpx solid #dadada;
+  background-color:#fff;
+  color: #b9b9b9;
+  padding: 10rpx 0;
+  font-size: 35rpx;
+  opacity: 0.9;
+  flex: 9;
+}
+
+.input-box input {
+  width: 600rpx;
+  margin-left: 25rpx;
+  min-height: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+
+
+
+
+
+
+.textarea-max {
+  width: 650rpx;
+  height: 640rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 50rpx;
+  margin-top: 30rpx;
+}
+
+.textarea-box {
+  border: 4rpx solid #dadada;
+  background-color:#fff;
+  color: #b9b9b9;
+  padding: 20rpx 0;
+  font-size: 35rpx;
+  opacity: 0.9;
+  flex: 9;
+}
+
+.textarea-box textarea {
+  width: 600rpx;
+  margin-left: 25rpx;
+  /* min-height: 60rpx;
+  height: 60rpx;*/
+  line-height: 50rpx; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.imagetext-logo-button button:after{
+   border: none;
+}
+.imagetext-logo-button button{
+   background-color: #ff7382;
+   width: 90%;
+   color: #fff
+}
+.imagetext-logo-button{
+  padding: 40rpx 0;
+}
+
+
+/* 灰色按钮 */
+.imagetext-logo-button2 button:after{
+   border: none;
+}
+.imagetext-logo-button2 button{
+   background-color: #e0e0e0;
+   width: 90%;
+   color: #fff
+}
+.imagetext-logo-button2{
+  padding: 40rpx 0;
+}
+
+
+
+
+
+.information-Box{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f3f3f3;
+}
+
+.information-Box-lien{
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 50rpx;
+  padding: 20rpx;
+  box-shadow: 0rpx 0rpx 15rpx #f3f3f3;
+  background-color: white;
+}
+
+.text-title1{
+  font-size: 40rpx;
+  color: #171717;
+  font-weight: 800;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.text-title2{
+  font-size: 30rpx;
+  color: #171717;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+}
+
+.text-content{
+  font-size: 30rpx;
+  color: #171717;
+  line-height:45rpx;
+}
+
+
+
+
+
+
+.botBox{
+  height: 120rpx;
+  width: 100%;
+  margin-top: 50rpx;
+  display: flex;
+  /* background-color: yellowgreen; */
+}
+
+.botBox-lft{
+  flex: 1;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: blueviolet; */
+}
+
+.botBox-lft-box{
+  height: 100rpx;
+  width: 150rpx;
+  border: 4rpx solid #dadada;
+  background-color: white;
+  font-size: 35rpx;
+  color: #888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.botBox-rit{
+  flex: 1;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botBox-rit-box{
+  height: 100rpx;
+  width: 150rpx;
+  border: 4rpx solid #dadada;
+  background-color: #ff7382;
+  font-size: 35rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+
+
+
+
+

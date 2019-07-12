@@ -53,7 +53,7 @@ view , scroll-view{
   left: 0;
   background: white;
   z-index: 100;
-  width: 70rpx;
+  width: 90rpx;
   height: 78rpx;
 }
 .searchIconn image{

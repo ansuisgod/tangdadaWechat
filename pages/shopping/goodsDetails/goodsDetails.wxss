@@ -39,7 +39,6 @@
 .picture{
   position: relative;
   width: 100%;
-  height: 500rpx;
 }
 .picture image{
   width: 100%;
@@ -47,7 +46,7 @@
 }
 .picture .inventory{
   position: absolute;
-  bottom:-10rpx;
+  bottom:5rpx;
   right: 20rpx;
   width: 150rpx;
   height: 60rpx;

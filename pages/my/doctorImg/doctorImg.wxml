@@ -1,0 +1,25 @@
+<!--pages/my/doctorImg/doctorImg.wxml-->
+<view class='contain'>
+  <!-- <view class='imagetext-logo'>
+      <image src='../../../images/personal/selection_top_icon.png'></image>
+  </view>
+
+  <view class='imagetext-logo-text'>糖大大</view> -->
+
+
+
+  <view class='imagetext-logo-text-1'>请点击选择您的图片</view>
+
+  <view class='imagetext-logo-img' bindtap='previewImages'>
+    <image mode='widthFix' src='{{files? files:"../../../images/personal/tianjia.png"}}'></image>
+  </view>
+
+  <view wx:if="{{show}}" class='imagetext-logo-button'>
+    <button bindtap='uploadFile'>上传</button>
+  </view>
+
+  <view wx:else class='imagetext-logo-button2'>
+    <button>上传中</button>
+  </view>
+
+</view>

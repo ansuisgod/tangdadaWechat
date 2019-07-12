@@ -52,7 +52,6 @@ Page({
         that = this;
     //打印日志
     console.log("session_key=" + this.data.wxSessionKey + "&topic_id=" + this.data.blogId + "&platform=" + localplatform);
-    abstac.promptBox("数据加载中...");
     abstac.sms_Interface(app.publicVariable.blogDetailInterfaceAddress,
       { html: '1', page: this.data.page, platform: localplatform, size: this.data.size, topic_id: this.data.blogId, wx_session_key: this.data.wxSessionKey },
       function (res) {//请求成功
@@ -248,7 +247,7 @@ Page({
    */
   hasSensitiveWords:function(str) {
     if(str == '' || str == undefined) return false;
-    var words = '台独,藏独,色情,淫荡,法轮功,淫秽,打到共产党,反党,胸部,裸体,傻逼,傻屌,funck,他妈的,操你妈';
+    var words = '台独,藏独,色情,淫荡,法轮功,淫秽,打到共产党,反党,胸部,裸体,傻逼,傻屌,funck,他妈的,操你妈,操你妹,操你';
     var array = words.split(','), len = array.length;
     for (var i = 0; i < len; i++) {
       var item = array[i];
@@ -497,7 +496,7 @@ Page({
               interfaceData: src_array1
             });
           } else {
-            abstac.promptBox(res.data.result.message);
+
           }
         }
       })
@@ -544,15 +543,16 @@ Page({
   /**
    * @desc:正文图片预览大图的效果
    */
-  largerPreview1: function (event) {
-    var imgList = event.currentTarget.dataset.list;//获取data-list
+  largerPreview1: function (e) {
+    var imgList = e.currentTarget.dataset.list;//获取data-list
+    var index = e.currentTarget.dataset.index;
     var cc = [];
     for (var j = 0; j < imgList.length; j++){
       cc.push(imgList[j].url);
     }
     //图片预览
     wx.previewImage({
-      current: '1', // 当前显示图片的http链接
+      current: cc[index], // 当前显示图片的http链接
       urls: cc // 需要预览的图片http链接列表
     });
   },

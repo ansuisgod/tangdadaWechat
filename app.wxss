@@ -1,4 +1,7 @@
 /**app.wxss**/
+page{
+  font-family: '宋体 SimSun';
+}
 .container {
   height: 100%;
   display: flex;
@@ -167,7 +170,7 @@
 .swiper-box .swiper-item .slide-view .obesityBox .topBox .rightBox{
   padding: 30rpx 0 0 0;
   text-align: left;
-  font-size: 32rpx;
+  font-size: 30rpx;
   flex-direction: row;
   color: #818181;
   width: 85%;
@@ -184,7 +187,7 @@
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerLeftBox .titleBox{
   height: 65rpx;
   padding: 15rpx 0 0 0;
-  font-size: 30rpx;
+  font-size: 32rpx;
   color: #5e5e5e;
   overflow:hidden;
   font-weight: 500;
@@ -192,7 +195,7 @@
   white-space:nowrap;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerLeftBox .mainBox{
-  font-size: 28rpx;
+  font-size: 30rpx;
   color: #828282;
   height: 210rpx;
   overflow:hidden;

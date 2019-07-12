@@ -106,7 +106,7 @@
 }
 .My-box .artical .articalList{
   width: 90%;
-  min-height: 400rpx;
+  min-height: 310rpx;
   border-bottom: 1px solid #f4f4f4;
   margin: 15rpx auto;
 }

@@ -10,7 +10,7 @@
 
 
     <view class='add-weight-input'>
-      <input class='placeholderTo' placeholder-class='placeholder' bindinput="bindInput" value='{{inputValue}}' placeholder="请输入体重" maxlength="5" type="number" />
+      <input class='placeholderTo' placeholder-class='placeholder' bindinput="bindInput" value='{{inputValue}}' placeholder="请输入体重" maxlength="5" type="digit" />
     </view>
 
     <view class="add-weight-unit">KG</view>

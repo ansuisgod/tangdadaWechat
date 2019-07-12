@@ -1,5 +1,6 @@
 {
     "usingComponents": {
       "scale": "/components/wx-scale/wx-scale"
-    }
+    },
+    "navigationBarTitleText": "添加血压记录"
 }

@@ -1,0 +1,80 @@
+<!--pages/my/doctorText/doctorText.wxml-->
+
+<view class=''>
+
+
+  <view class='input-Max'>
+    <view class='input-box'>
+      <input style='font-size: 30rpx;' maxlength="15" placeholder="请输入您的姓名" bindinput='name' />
+    </view>
+  </view>
+
+
+
+  <view class="textarea-max">
+    <view class="textarea-box">
+      <textarea class="" value="{{content}}" bindinput="content" maxlength="300" placeholder-class='textarea' placeholder="请输入医生详细资料：如性别，出生年月，所在地，职称，科室，医院，专业特长..." style="height: 600rpx;" placeholder-style="" />
+      <!-- <view class="weui-textarea-counter">0/200</view> -->
+    </view>
+  </view>
+
+
+  <view wx:if="{{show}}" class='imagetext-logo-button'>
+    <button bindtap='saveTo'>上传</button>
+  </view>
+
+  <view wx:else class='imagetext-logo-button2'>
+    <button>上传中</button>
+  </view>
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+<!-- <view class='addBox-choose-covers' wx:if='{{information}}' bindtap=''></view> -->
+<!-- 遮罩层 -->
+
+<view wx:if='{{information}}' class='information-Box'>
+
+  <view class='information-Box-lien'>
+
+    <view class='text-title1'>免责条款</view>
+    <view class='text-title2'>诚信承诺及免责条款</view>
+    <view class='text-content'>本人承诺向成都唐大大科技有限公司及旗下产品糖大大APP（以下简称糖大大）提供的《医师执业证书》及相关医师资格认证资料真实有效，无任何虚假申报情况。如有虚假本人愿意承担由此带来的所有法律后果</view>
+    <view class='text-content'>本人承诺所填写的诸如科室、职称、擅长领域、执业经历等内容均真实有效，无任何虚假申报情况。如有虚假本人愿意承担由此带来的法律后果</view>
+    <view class='text-content'>本人承诺在糖大大中的言行遵守国家法律、法规等规范性文件及糖大大的各项规则和要求，不违背社会公共利益或公共道德，不损害他人的合法权益。如因此产生任何法律后果，本人以自己的名义独立承担所有法律责任</view>
+    <view class='text-content'>本人承诺对糖大大的医师账户与密码的安全负责，除非有法律规定或司法裁定，且征得糖大大的书面同意，否则本人不得将账户借予他人使用。如因医师账户安全而产生任何纠纷，本人愿意承担由此带来的所有法律后果</view>
+
+  </view>
+
+
+
+
+  <view class='botBox'>
+
+    <view style='flex: 1;'></view>
+
+    <view class='botBox-lft'>
+      <view class='botBox-lft-box' bindtap='Mynotsend'>取消</view>
+    </view>
+
+    <view class='botBox-rit'>
+      <view class='botBox-rit-box' bindtap='MysendTo'>确认</view>
+    </view>
+
+    <view style='flex: 1;'></view>
+
+  </view>
+
+
+
+
+</view>

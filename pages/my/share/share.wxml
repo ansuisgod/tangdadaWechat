@@ -119,15 +119,23 @@
 
 
 <view class='listBox'>
+<scroll-view scroll-y="true" class='' style="height:680rpx;overflow:hidden;">
 
+<block wx:for="{{listInviteList}}">
       <view class='rules-content'>
        <view class='rules-content-img'>
-        <image class='' src='../../../images/personal/dot_1.png'></image>
+        <!-- <image class='' src='../../../images/personal/dot_1.png'></image> -->
+        <view class='{{index==0? "sorting1" : index==1 ? "sorting2":index==2? "sorting3": index>2?"sorting4":""}}'>{{index>2?index+1:""}}</view>
        </view>
-       <view class='rules-content-text'>啊是的地方vs士大夫得分速递公司</view>
+       <view class='rules-content-text'>{{item.name}}</view>
       </view>
+</block>
+       
 
+
+</scroll-view>
 </view>
+
 
 
     </view>

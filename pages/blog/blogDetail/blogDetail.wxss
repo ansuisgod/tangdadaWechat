@@ -26,8 +26,8 @@
 }
 .main .external .top .left image{
   border-radius: 60rpx;
-  width: 90rpx;
-  height: 90rpx;
+  width: 70rpx;
+  height: 70rpx;
 }
 .main .external .top .center{
   width: 60%;
@@ -41,7 +41,7 @@
 }
 .main .external .top .center .infomation{
   padding: 0 0 0 10rpx;
-  font-size: 26rpx;
+  font-size: 28rpx;
   color: #a7a7a7;
 }
 .main .external .top .right{
@@ -86,7 +86,7 @@
 }
 .main .external .contentOut .contentText{
   padding: 10rpx 15rpx;
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #828282;
 }
 .main .external .picArea .contentOutImg image{
@@ -99,7 +99,7 @@
 }
 .main .external .contentOut .articalTitle{
   padding: 10rpx 15rpx;
-  font-size: 38rpx;
+  font-size: 34rpx;
   font-weight: 700;
   color: #555;
 }
@@ -133,16 +133,16 @@
   border-bottom: 1px solid #e4e4e4;
 }
 .main .commentList .commentDetailList .leftComment{
-  width: 15%;
+  width: 13%;
   flex-direction: row;
 }
 .main .commentList .commentDetailList .leftComment image{
   border-radius: 60rpx;
-  width: 90rpx;
-  height: 90rpx;
+  width: 70rpx;
+  height: 70rpx;
 }
 .main .commentList .commentDetailList .rightComment{
-  width: 85%;
+  width: 87%;
   flex-direction: row;
 }
 /* 回复评论人的信息展示 */
@@ -224,10 +224,8 @@
 }
 .bottomBox .theCommentsSection .replay .add image{
   text-align: center;
-  border: 1px solid #5e5e5e;
-  border-radius: 40rpx;
-  width: 50rpx;
-  height: 50rpx;
+  width: 55rpx;
+  height: 55rpx;
 }
 .bottomBox .theCommentsSection .replay .inputArea{
   padding: 30rpx 0 0 0;

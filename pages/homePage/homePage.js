@@ -14,6 +14,7 @@ Page({
     userId:'',//用户的id
     followed: '',//是否已经关注1已经关注0未关注
     myFollowNum:'',
+    followMeNum:'',
     showOrHiden:'none'
   },
   /**
@@ -54,7 +55,8 @@ Page({
               userInfor: '',//帖子
               blogDate: '',//帖子的日期
               userId: res.data.data.user.id,
-              myFollowNum: res.data.data.my_follow_num,
+              myFollowNum: res.data.data.follow_me_num,
+              followMeNum: res.data.data.my_follow_num,
               showOrHiden: 'none',
               followed: res.data.data.follow_status//是否已经关注1已经关注0未关注
             });
@@ -68,7 +70,8 @@ Page({
               userInfor: res.data.data.topic,//帖子
               blogDate: createdDate.substr(0, 10),//帖子的日期
               userId: res.data.data.user.id,
-              myFollowNum: res.data.data.my_follow_num,
+              myFollowNum: res.data.data.follow_me_num,
+              followMeNum: res.data.data.my_follow_num,
               showOrHiden: 'block',
               followed: res.data.data.follow_status//是否已经关注1已经关注0未关注
             });

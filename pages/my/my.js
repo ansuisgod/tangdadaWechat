@@ -159,9 +159,13 @@ Page({
     wx.navigateTo({
       url: '/pages/my/ModifyMyInfo/ModifyMyInfo',
     })
+
+    // wx.navigateTo({  //cs
+    //   url: '/pages/my/doctorText/doctorText',
+    // })
   },
 
-
+  
   
 
   /**
@@ -181,6 +185,7 @@ Page({
     if (that.data.refreshState == '1'){
       that.queryUserInfo()
     }
+
     
   },
 

@@ -1,4 +1,4 @@
-// pages/my/headImage/headImage.js
+// pages/my/doctorImg/doctorImg.js
 var abstac = require('../../../commonmethod/abstract.js'),
   app = getApp();
 
@@ -10,8 +10,8 @@ Page({
    */
   data: {
     files: '',
-    headImgSrc:'',
-    show:true,
+    headImgSrc: '',
+    show: true,
   },
 
   /**
@@ -49,12 +49,12 @@ Page({
     let that = this,
       platformS = abstac.mobilePhoneModels(this.data.platform),
       file_category = '2';
-      //将图片的路径上传服务器的地址
+    //将图片的路径上传服务器的地址
 
     if (that.data.files == '') {
       abstac.promptBox("亲， 请选择一张图片哦！");
       return
-    } 
+    }
 
     wx.showLoading({
       title: '请求中',
@@ -63,46 +63,51 @@ Page({
     that.setData({
       show: false,
     });
-    
 
-      wx.uploadFile({
-        url: app.publicVariable.fileUploadPicInterfaceAddress + '?file_category=' + file_category + '&wx_session_key=' + that.data.wxSessionKey + '&platform=' + platformS,
-        filePath: that.data.files[0],
-        name: 'file',
-        success: res => {
+
+    wx.uploadFile({
+      url: app.publicVariable.fileUploadPicInterfaceAddress + '?file_category=' + file_category + '&wx_session_key=' + that.data.wxSessionKey + '&platform=' + platformS,
+      filePath: that.data.files[0],
+      name: 'file',
+      success: res => {
+        wx.hideLoading();
+        console.log("****************上传图片的接口返回函数***************");
+        console.log(res);
+        if (res.statusCode == '200') {
+          var dataResult = res;
+          dataResult.data = JSON.parse(dataResult.data);
+          let imgs = res.data.data.urls.origin
+          that.setData({
+            headImgSrc: imgs,
+          });
+
+
+          wx.redirectTo({
+            url: '/pages/my/doctorText/doctorText?img=' + imgs,
+          })
+
+
+          // // 子传父参数
+          // var pages = getCurrentPages();
+          // var prevPage = pages[pages.length - 2]; //上一个页面
+          // //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+          // prevPage.setData({
+          //   mydata: imgs
+          // })
+          // wx.navigateBack({//返回
+          //   delta: 1
+          // })
+          // // 子传父参数END
+
+
+
+          console.log(that.data.headImgSrc);
+        } else {
           wx.hideLoading();
-          console.log("****************上传图片的接口返回函数***************");
-          console.log(res);
-          if (res.statusCode == '200') {
-            var dataResult = res;
-            dataResult.data = JSON.parse(dataResult.data);
-            let imgs = res.data.data.urls.origin
-            that.setData({
-              headImgSrc: imgs,
-            });
-
-
-            // 子传父参数
-            var pages = getCurrentPages();
-            var prevPage = pages[pages.length - 2]; //上一个页面
-            //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
-            prevPage.setData({
-              mydata: imgs
-            })
-            wx.navigateBack({//返回
-              delta: 1
-            })
-            // 子传父参数END
-
-
-
-            console.log(that.data.headImgSrc);
-          } else {
-            wx.hideLoading();
-          }
         }
-      })
-    
+      }
+    })
+
   },
 
 

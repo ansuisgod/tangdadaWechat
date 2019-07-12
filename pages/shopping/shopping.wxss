@@ -19,16 +19,17 @@
 		line-height: 100rpx;
 	}
 .userPicture .center{
+    font-size: 30rpx;
 		width: 60%;
 		flex-direction: row;
 	}
 .userPicture .center .topp{
-		margin-top: 20rpx;
+		margin-top: 30rpx;
 		margin-left: 20rpx;
 		flex-direction: column;
 	}
 .userPicture .center .bottom{
-		margin-top: 20rpx;
+		margin-top: 25rpx;
 		margin-left: 20rpx;
 		flex-direction: column;
 		color: #999;
@@ -85,7 +86,7 @@
     color: #000;
     font-weight: 600;
     text-align: left;
-    font-size: 33rpx;
+    font-size: 32rpx;
     flex-direction: column;
     padding: 10rpx 0 0 5rpx;
     overflow:hidden;
@@ -95,7 +96,7 @@
   .listOfGoods .singlePart .integral{
     color: #999;
     text-align: left;
-    font-size: 33rpx;
+    font-size: 30rpx;
     flex-direction: column;
     padding: 10rpx 0 0 5rpx;
   }

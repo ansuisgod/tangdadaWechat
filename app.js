@@ -236,6 +236,15 @@ App({
     setAlarmInfoInterfaceAddress: httpAdress + '/im/api/v1/tang/alarm/set_alarm.json',//新增提醒信息的接口
     deleteAlarmInfoInterfaceAddress: httpAdress + '/im/api/v1/tang/alarm/delete_alarm.json',//删除提醒信息的接口
     alarmInfoInfoInterfaceAddress: httpAdress + '/im/api/v1/tang/alarm/alarm_info.json',//获取提醒信息某个信息的接口
+    setDoctorInfoInfoInterfaceAddress: httpAdress + '/im/api/v1/users/set_doctor_info.json',//提交医生信息的接口
+
+    listInviteInfoInfoInterfaceAddress: httpAdress + '/im/api/v1/users/list_invite_user.json',//获取我的邀请人员列表的接口
+      
+
+
+      
+
+
 
     // http://api.prod.tangdada.com.cn/im/api/v1/badge/query_user_discount.json  不知道干嘛的
     // 暂时不用的

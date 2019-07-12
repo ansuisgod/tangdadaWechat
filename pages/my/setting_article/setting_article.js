@@ -17,6 +17,27 @@ Page({
     that.setData({
       status : options.status
     })
+
+    if (options.status == '1') { 
+      wx.setNavigationBarTitle({
+        title: '用户协议'
+      })
+    } else if (options.status == '2') { 
+      wx.setNavigationBarTitle({
+        title: '使用说明'
+      })
+    } else if (options.status == '3') {
+      wx.setNavigationBarTitle({
+        title: '账号安全'
+      })
+     } else if (options.status == '4') { 
+      wx.setNavigationBarTitle({
+        title: '常见问题'
+      })
+     }
+
+
+  
   },
 
   /**

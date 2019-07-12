@@ -75,7 +75,10 @@
         "pages/my/IntegralRules/IntegralRules",
         "pages/my/searchFood/searchFood",
         "pages/my/ModifyMyInfo/ModifyMyInfo",
-        "pages/my/headImage/headImage"
+        "pages/my/headImage/headImage",
+        "pages/my/doctorText/doctorText",
+        "pages/my/doctorImg/doctorImg"
+        
     
   ],
   "window": {

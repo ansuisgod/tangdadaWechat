@@ -250,6 +250,13 @@ Page({
     this.setData({
       roleIndex: e.detail.value,
     });
+
+    if (e.detail.value == 3){
+      wx.navigateTo({
+        url: '/pages/my/doctorImg/doctorImg',
+      })
+    }
+
   },
 
 

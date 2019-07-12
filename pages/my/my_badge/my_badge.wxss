@@ -3,11 +3,17 @@
 .float-button2 {
   position: fixed;
   right: 20rpx;
-  bottom: 500rpx;
-  width: 150rpx;
-  height: 150rpx;
-  background: #eee;
+  bottom: 100rpx;
+  width: 120rpx;
+  height: 120rpx;
+  background: #ff7382;
+  color: white;
+  font-size: 30rpx;
   z-index: 10;
+  border-radius: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 

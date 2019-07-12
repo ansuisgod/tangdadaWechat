@@ -150,7 +150,11 @@ Page({
               rehabilitationTherapy: res.data.data.topics
             });
           }
-        } else {
+        } else if (res.data.result.code == '4000') {//如果出现用户会话过期就跳转到登录页面让用户重新登录
+          wx.navigateTo({
+            url: '/pages/login/login'
+          });
+        }else {
           abstac.promptBox(res.data.result.message);
         }
       }, function (error) {
