@@ -124,7 +124,7 @@ Page({
   itFans:function(){
     //跳转到TA的粉丝页面
     wx.navigateTo({
-      url: '../../pages/my/friends_circle/friends_circle?friendId=' + this.data.friendId
+      url: '../../pages/my/friends_circle/friends_circle?friendId=' + this.data.friendId+'&state=1'
     })
   },
   /**
@@ -135,7 +135,7 @@ Page({
   itFlows:function(){
     //跳转到TA的关注页面
     wx.navigateTo({
-      url: '../../pages/my/friends_circle/friends_circle?friendId=' + this.data.friendId
+      url: '../../pages/my/friends_circle/friends_circle?friendId=' + this.data.friendId + '&state=0'
     })
   },
   /**
