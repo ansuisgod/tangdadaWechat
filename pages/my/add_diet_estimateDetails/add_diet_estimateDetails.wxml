@@ -1,6 +1,10 @@
 <!--pages/my/add_diet_estimateDetails/add_diet_estimateDetails.wxml-->
 
 
-<view>估算详情页</view>
+<view wx:for='{{img[0]}}' class='img'>
+
+<image class='' style='' src='{{item}}' mode='widthFix'></image>
+
+</view>
 
 

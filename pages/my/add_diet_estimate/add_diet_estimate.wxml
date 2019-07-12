@@ -4,7 +4,7 @@
   <!-- list -->
   <block wx:for="{{foodCategoryLists}}">
 
-    <view class='addMotion-list' bindtap='estimateDetails'>
+    <view class='addMotion-list' bindtap='estimateDetails' data-info="{{item}}">
       <view class='addMotion-list-lft'>
         <image class='' style='' src='{{item.image_url}}'></image>
       </view>

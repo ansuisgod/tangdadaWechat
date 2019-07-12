@@ -22,7 +22,7 @@
   width: 15%;
   flex-direction: row;
   text-align: center;
-  padding: 25rpx 0 0 10rpx;
+  padding: 30rpx 0 0 10rpx;
 }
 .main .external .top .left image{
   border-radius: 60rpx;

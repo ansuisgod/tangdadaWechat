@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -68,6 +68,12 @@
 					"name": "饮食记录列表",
 					"pathName": "pages/my/diet_records/diet_records",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "估算页面",
+					"pathName": "pages/my/add_diet_estimate/add_diet_estimate",
 					"scene": null
 				}
 			]

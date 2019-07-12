@@ -90,7 +90,7 @@
  
   <view class='set_list-1'>
    <view class='set_list-1-time'>{{item.newtime}}</view>
-   <view class='set_list-1-date'>没发现是什么字段</view>
+   <view class='set_list-1-date'>{{item.title}}</view>
   </view>
   <view class='set_list-2'>提醒内容：{{item.arrInfo}}</view>
   <view class='set_list-3'>提醒手机号：{{item.phone}}</view>

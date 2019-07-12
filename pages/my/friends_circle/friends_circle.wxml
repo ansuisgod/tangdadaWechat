@@ -40,14 +40,14 @@
 
     <view class="title" bindtap="turnPage" data-types='0'>
       <view class='tab-name' style="{{currentPage == 0?'color: #fff':'color: #fff'}};">
-        我的关注
+        关注
       </view>
       <view class='tab-line' style="{{currentPage == 0?'color: #fff':'color: #fe7281'}};">———</view>
     </view>
 
     <view class="title" bindtap="turnPage" data-types='1'>
       <view class='tab-name' style="{{currentPage == 1?'color: #fff':'color: #fff'}};">
-        我的粉丝
+        粉丝
       </view>
       <view class='tab-line' style="{{currentPage == 1?'color: #fff':'color: #fe7281'}};">———</view>
     </view>

@@ -1,1 +1,10 @@
 /* pages/my/add_diet_estimateDetails/add_diet_estimateDetails.wxss */
+
+.img{
+  width: 700rpx;
+  margin-left: 25rpx;
+}
+
+.img image{
+  width: 700rpx;
+}

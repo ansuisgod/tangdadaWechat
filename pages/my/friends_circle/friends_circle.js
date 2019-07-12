@@ -39,6 +39,10 @@ Page({
     followsLists:[],//关注列表
     fansList:[],//粉丝列表
     currentPage: 0,
+
+
+    otherUser: false,
+    friendId: '',
   },
 
 
@@ -52,6 +56,19 @@ Page({
       platform: app.globalData.platform,
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
+
+
+
+    if (options.friendId != undefined) {
+
+      that.setData({
+        otherUser: true,
+        friendId: options.friendId,
+        currentPage: options.state,
+      });
+
+    }
+
 
     that.followsList()
     that.fansList()
@@ -79,28 +96,66 @@ Page({
     console.log(that.data.page + '-' + that.data.wxSessionKey + '-' + platform + '-' + that.data.size)
     console.log(app.publicVariable.followsInterfaceAddress)
 
-    abstac.sms_Interface(app.publicVariable.followsInterfaceAddress,
-      { page: that.data.page, wx_session_key: that.data.wxSessionKey, platform: platform, size: that.data.size },
-      function (res) {//查询成功
-        //打印日志
-        wx.hideLoading();
-        console.log("****************查询我的关注的列表***************");
-        console.log(res);
-        //判断是否有数据，有则取数据
-        if (res.data.result.code == '2000') {
-        let data = res.data.data.users
+
+
+    if (!that.data.otherUser) {
+
+
+
+      abstac.sms_Interface(app.publicVariable.followsInterfaceAddress,
+        { page: that.data.page, wx_session_key: that.data.wxSessionKey, platform: platform, size: that.data.size},
+        function (res) {//查询成功
+          //打印日志
+          wx.hideLoading();
+          console.log("****************查询我的关注的列表***************");
+          console.log(res);
+          //判断是否有数据，有则取数据
+          if (res.data.result.code == '2000') {
+            let data = res.data.data.users
             that.setData({
               followsLists: data,
             });
-          
-        } else {
-          abstac.promptBox(res.data.result.message);
-        }
-      },
-      function (error) {//查询失败
-        console.log(error);
-        wx.hideLoading();
-      });
+
+          } else {
+            abstac.promptBox(res.data.result.message);
+          }
+        },
+        function (error) {//查询失败
+          console.log(error);
+          wx.hideLoading();
+        });
+
+
+    }else{
+
+
+      abstac.sms_Interface(app.publicVariable.followsInterfaceAddress,
+        { page: that.data.page, wx_session_key: that.data.wxSessionKey, platform: platform, size: that.data.size, friend_id: that.data.friendId},
+        function (res) {//查询成功
+          //打印日志
+          wx.hideLoading();
+          console.log("****************查询我的关注的列表***************");
+          console.log(res);
+          //判断是否有数据，有则取数据
+          if (res.data.result.code == '2000') {
+            let data = res.data.data.users
+            that.setData({
+              followsLists: data,
+            });
+
+          } else {
+            abstac.promptBox(res.data.result.message);
+          }
+        },
+        function (error) {//查询失败
+          console.log(error);
+          wx.hideLoading();
+        });
+
+
+    }
+
+
   },
 
 
@@ -115,26 +170,63 @@ Page({
     let platform = abstac.mobilePhoneModels(that.data.platform);//手机型号
 
 
-    abstac.sms_Interface(app.publicVariable.fansInterfaceAddress,
-      { page: that.data.page, wx_session_key: that.data.wxSessionKey, platform: platform, size: that.data.size },
-      function (res) {//查询成功
-        //打印日志
-        console.log("****************查询我的关注的列表***************");
-        console.log(res);
-        //判断是否有数据，有则取数据
-        if (res.data.result.code == '2000') {
-          let data = res.data.data.users
-          that.setData({
-            fansList: data,
-          });
 
-        } else {
-          abstac.promptBox(res.data.result.message);
-        }
-      },
-      function (error) {//查询失败
-        console.log(error);
-      });
+    if (!that.data.otherUser) {
+
+
+
+      abstac.sms_Interface(app.publicVariable.fansInterfaceAddress,
+        { page: that.data.page, wx_session_key: that.data.wxSessionKey, platform: platform, size: that.data.size },
+        function (res) {//查询成功
+          //打印日志
+          console.log("****************查询我的关注的列表***************");
+          console.log(res);
+          //判断是否有数据，有则取数据
+          if (res.data.result.code == '2000') {
+            let data = res.data.data.users
+            that.setData({
+              fansList: data,
+            });
+
+          } else {
+            abstac.promptBox(res.data.result.message);
+          }
+        },
+        function (error) {//查询失败
+          console.log(error);
+        });
+
+
+    }else{
+
+
+
+      abstac.sms_Interface(app.publicVariable.fansInterfaceAddress,
+        { page: that.data.page, wx_session_key: that.data.wxSessionKey, platform: platform, size: that.data.size, friend_id: that.data.friendId },
+        function (res) {//查询成功
+          //打印日志
+          console.log("****************查询我的关注的列表***************");
+          console.log(res);
+          //判断是否有数据，有则取数据
+          if (res.data.result.code == '2000') {
+            let data = res.data.data.users
+            that.setData({
+              fansList: data,
+            });
+
+          } else {
+            abstac.promptBox(res.data.result.message);
+          }
+        },
+        function (error) {//查询失败
+          console.log(error);
+        });
+
+
+
+    }
+
+
   },
 
 

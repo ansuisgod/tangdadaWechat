@@ -318,6 +318,44 @@ Page({
     });
 
 
+
+
+
+    switch (that.data.status) {
+      case '0': //每天
+        var frequency = '010000000'
+        break
+      case '1': //单次
+        var frequency = '100000000'
+        break
+      case '2': //周一
+        var frequency = '001000000'
+        break
+      case '3': //周二
+        var frequency = '000100000'
+        break
+      case '4': //周三
+        var frequency = '000010000'
+        break
+      case '5': //周四
+        var frequency = '000001000'
+        break
+      case '6': //周五
+        var frequency = '000000100'
+        break
+      case '7': //周六
+        var frequency = '000000010'
+        break
+      case '8': //周日
+        var frequency = '000000001'
+        break
+      default:
+        break
+    }
+
+
+
+
     abstac.sms_Interface(app.publicVariable.setAlarmInfoInterfaceAddress, {
       platform: platform, 
       wx_session_key: this.data.wxSessionKey, 
@@ -328,7 +366,7 @@ Page({
       time: that.data.time,      //提醒时间
       mode: '2',      //暂时未发现是什么
       open: that.data.open,      //是否开启  //1为开启 2为关闭
-      frequency: '100000000',      //频率？  晓不得干嘛的
+      frequency: frequency,      //频率？  晓不得干嘛的
       code: that.data.verificationCode, //验证码
     },
       function (res) { //查询成功

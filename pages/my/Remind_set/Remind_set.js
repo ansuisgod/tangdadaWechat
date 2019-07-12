@@ -70,7 +70,46 @@ Page({
             }else{
               dataList.newtime = dataList.time
             }
+
+
+ switch (dataList.frequency) {
+            case '010000000': //每天
+              dataList.title = '每天'
+              break
+            case '100000000': //单次
+              dataList.title = dataList.time
+              break
+            case '001000000': //周一
+              dataList.title = '周一'
+              break
+            case '000100000': //周二
+              dataList.title = '周二'
+              break
+            case '000010000': //周三
+              dataList.title = '周三'
+              break
+            case '000001000': //周四
+              dataList.title = '周四'
+              break
+            case '000000100': //周五
+              dataList.title = '周五'
+              break
+            case '000000010': //周六
+              dataList.title = '周六'
+              break
+            case '000000001': //周日
+              dataList.title = '周日'
+              break
+            default:
+              break
           }
+
+
+
+          }
+
+
+
 
           for (var k = 0; k < data.length; k++) {
             var dataLists = data[k];

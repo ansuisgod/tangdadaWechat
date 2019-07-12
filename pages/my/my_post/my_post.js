@@ -7,12 +7,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    myCreateTopic:[], //我的发帖列表
+    myCreateTopic: [], //我的发帖列表
     isFromSearch: true,   // 用于判断searchSongList数组是不是空数组，默认true，空的数组
     page: 1,   // 设置加载的第几次，默认是第一次
     size: 5,      //返回数据的个数
     searchLoading: false, //"上拉加载"的变量，默认false，隐藏
     searchLoadingComplete: false,  //“没有数据”的变量，默认false，隐藏
+
+    otherUser:false,
+    userid:'',
   },
 
   /**
@@ -27,7 +30,23 @@ Page({
     });
 
 
+    
+
+
+
+if(options.userid != undefined){
+
+  that.setData({
+    otherUser: true,
+    userid: options.userid
+  });
+  
+}
+
+
     that.myCreateTopic()
+
+
   },
 
 
@@ -49,56 +68,109 @@ Page({
     wx.showLoading({
       title: '请求中',
     });
-    abstac.sms_Interface(app.publicVariable.myCreateTopicInterfaceAddress,
-      { page: page, wx_session_key: this.data.wxSessionKey, platform: platform, size: size  },
-      function (res) {//查询成功
-        //打印日志
-        wx.hideLoading();
-        console.log("****************我的发帖列表的接口***************");
-        console.log(res);
-        if (res.data.result.code == '2000') {
 
 
+    if (!that.data.otherUser){
+      abstac.sms_Interface(app.publicVariable.myCreateTopicInterfaceAddress,
+        { page: page, wx_session_key: this.data.wxSessionKey, platform: platform, size: size },
+        function (res) {//查询成功
+          //打印日志
+          wx.hideLoading();
+          console.log("****************我的发帖列表的接口***************");
+          console.log(res);
+          if (res.data.result.code == '2000') {
 
 
-          /**
-           * 将后台返回的数据中的summary字符串转化为json格式
-           */
-          var str = res.data.data.topics;
-          for (var i = 0; i <= str.length - 1; i++) {
-            str[i].summary = JSON.parse(str[i].summary);
-          }
+            /**
+             * 将后台返回的数据中的summary字符串转化为json格式
+             */
+            var str = res.data.data.topics;
+            for (var i = 0; i <= str.length - 1; i++) {
+              str[i].summary = JSON.parse(str[i].summary);
+            }
 
-          var data = res.data.data.topics;
-          if (data != 0) {
-            // var data = res.data.rows
-            let searchList = [];
-            //如果isFromSearch是true从data中取出数据，否则先从原来的数据继续添加
-            that.data.isFromSearch ? searchList = data : searchList = that.data.myCreateTopic.concat(data)
-            that.setData({
-              myCreateTopic: searchList, //获取数据数组
-              searchLoading: true   //把"上拉加载"的变量设为false，显示
-            })
-            //没有数据了，把“没有数据”显示，把“上拉加载”隐藏
+            var data = res.data.data.topics;
+            if (data != 0) {
+              // var data = res.data.rows
+              let searchList = [];
+              //如果isFromSearch是true从data中取出数据，否则先从原来的数据继续添加
+              that.data.isFromSearch ? searchList = data : searchList = that.data.myCreateTopic.concat(data)
+              that.setData({
+                myCreateTopic: searchList, //获取数据数组
+                searchLoading: true   //把"上拉加载"的变量设为false，显示
+              })
+              //没有数据了，把“没有数据”显示，把“上拉加载”隐藏
+            } else {
+              that.setData({
+                searchLoadingComplete: true, //把“没有数据”设为true，显示
+                searchLoading: false  //把"上拉加载"的变量设为false，隐藏
+              });
+            }
+
+
           } else {
-            that.setData({
-              searchLoadingComplete: true, //把“没有数据”设为true，显示
-              searchLoading: false  //把"上拉加载"的变量设为false，隐藏
-            });
+            abstac.promptBox(res.data.result.message);
           }
+        },
+        function (error) {//查询失败
+          console.log(error);
+          wx.hideLoading();
+        });
+    
+    
+    }else{
 
 
 
+      abstac.sms_Interface(app.publicVariable.myCreateTopicInterfaceAddress,
+        { page: page, wx_session_key: this.data.wxSessionKey, platform: platform, size: size, user_id: that.data.userid },
+        function (res) {//查询成功
+          //打印日志
+          wx.hideLoading();
+          console.log("****************我的发帖列表的接口***************");
+          console.log(res);
+          if (res.data.result.code == '2000') {
 
 
-        } else {
-          abstac.promptBox(res.data.result.message);
-        }
-      },
-      function (error) {//查询失败
-        console.log(error);
-        wx.hideLoading();
-      });
+            /**
+             * 将后台返回的数据中的summary字符串转化为json格式
+             */
+            var str = res.data.data.topics;
+            for (var i = 0; i <= str.length - 1; i++) {
+              str[i].summary = JSON.parse(str[i].summary);
+            }
+
+            var data = res.data.data.topics;
+            if (data != 0) {
+              // var data = res.data.rows
+              let searchList = [];
+              //如果isFromSearch是true从data中取出数据，否则先从原来的数据继续添加
+              that.data.isFromSearch ? searchList = data : searchList = that.data.myCreateTopic.concat(data)
+              that.setData({
+                myCreateTopic: searchList, //获取数据数组
+                searchLoading: true   //把"上拉加载"的变量设为false，显示
+              })
+              //没有数据了，把“没有数据”显示，把“上拉加载”隐藏
+            } else {
+              that.setData({
+                searchLoadingComplete: true, //把“没有数据”设为true，显示
+                searchLoading: false  //把"上拉加载"的变量设为false，隐藏
+              });
+            }
+
+          } else {
+            abstac.promptBox(res.data.result.message);
+          }
+        },
+        function (error) {//查询失败
+          console.log(error);
+          wx.hideLoading();
+        });
+
+
+    }
+
+    
   },
 
 
