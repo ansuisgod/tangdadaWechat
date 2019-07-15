@@ -1,4 +1,5 @@
 // pages/blogDetail/blogDetail.js
+var WxParse = require('../../../plugin/wxParse/wxParse.js');
 var abstac = require('../../../commonmethod/abstract.js'),
     app = getApp(),
     src_array = [],
@@ -19,7 +20,7 @@ Page({
     dynamicPlaceHolderValue: '说点什么...',//动态设置输入框的placeholder
     quoteId: '',//回复评论人的id
     noReplyFlag: '0',//标识是评论还是回复，默认是评论0，当用户点击回复图标就标识为1
-    size:'40',
+    size:'60',
     page:'1',
     dynamicLikedPicSrc: '',//默认点赞图片的路径【新增加的代码】
     likeFlag: '',//显示是否已经点赞的标志【新增加的代码】
@@ -127,6 +128,7 @@ Page({
             dynamicLikedPicSrc: likedPicSrc,
             likeFlag: likeFlagss
           });
+          WxParse.wxParse('wxParse', 'html', res.data.data.topic.content_text, that, 5);
         } else {//就弹出提示框
           abstac.promptBox(res.data.result.message);
         }

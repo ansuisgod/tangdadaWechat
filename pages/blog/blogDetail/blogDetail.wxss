@@ -1,4 +1,13 @@
 /* pages/blogDetail/blogDetail.wxss */
+@import "../../../plugin/wxParse/wxParse.wxss";
+.wxParse-inline{
+  display: block;
+  margin: 30rpx 0;
+}
+.wxParse-img{
+  width: 90%;
+  margin: 0;
+}
 .main{
   height: 100%;
   display: flex;

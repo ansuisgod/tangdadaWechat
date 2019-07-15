@@ -1,5 +1,6 @@
 <!--pages/blogDetail/blogDetail.wxml-->
 <import src="../../../components/an/blogDetailReply.wxml" />
+<import src="../../../plugin/wxParse/wxParse.wxml"/> 
 <view class='main'>
   <view class='external'>
     <!-- 用户的信息 -->
@@ -26,7 +27,7 @@
     </view>
     <view class='picArea'>
       <view class='contentOutImg' wx:if='{{imageArr.mp4 == undefined}}' wx:for-index="idx" wx:key='property' wx:for="{{imageArr.images}}">
-        <image bindtap='largerPreview1' data-index='{{idx}}' data-list='{{imageArr.images}}' wx:if="{{item.url}}" src='{{item.url}}' mode='aspectFill'></image>
+        <!-- <image bindtap='largerPreview1' data-index='{{idx}}' data-list='{{imageArr.images}}' wx:if="{{item.url}}" src='{{item.url}}' mode='aspectFill'></image> -->
       </view>
       <view class='contentOutImg'>
         <video class='imgList' wx:if='{{videoSrc}}' src="{{videoSrc}}" controls></video>
@@ -34,7 +35,8 @@
     </view>
     <view class='contentOut' wx:if='{{content.content_text}}'>
       <view class='contentText'>
-        <rich-text nodes='{{content.content_text}}'></rich-text>
+        <!-- <rich-text nodes='{{content.content_images}}'></rich-text> -->
+        <template is="wxParse" data="{{wxParseData:wxParse.nodes}}" />
       </view>
     </view>
     <!-- 评论列表的区域 -->
