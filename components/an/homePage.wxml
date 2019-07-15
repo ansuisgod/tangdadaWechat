@@ -45,7 +45,7 @@
       <image src='../../static/fans.png' />
     </view>
     <view class='My-box-options-title'>TA的粉丝</view>
-    <view class='My-box-options-num'>{{followMeNum}}</view>
+    <view class='My-box-options-num'>{{myFollowNum}}</view>
     <view class='My-box-options-rit'>
       <image src='../../images/personal/jian_right.png' />
     </view>
@@ -55,7 +55,7 @@
       <image src='../../static/flowe.png' />
     </view>
     <view class='My-box-options-title'>TA的关注</view>
-    <view class='My-box-options-num'>{{myFollowNum}}</view>
+    <view class='My-box-options-num'>{{followMeNum}}</view>
     <view class='My-box-options-rit'>
       <image src='../../images/personal/jian_right.png' />
     </view>

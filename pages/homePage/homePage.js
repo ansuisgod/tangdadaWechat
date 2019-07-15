@@ -40,7 +40,6 @@ Page({
     console.log("帖友的id=" + this.data.friendId);
     var that = this;
     //访问接口
-    abstac.promptBox("数据加载中...");
     abstac.sms_Interface(app.publicVariable.queryBlogFriendInformationInterfaceAddress,
       { friend_id: this.data.friendId, wx_session_key: this.data.wxSessionKey},//接口的参数
       function(res){//成功回调的函数
