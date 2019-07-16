@@ -85,7 +85,7 @@
 	-moz-transition-duration:4s;
 	-webkit-animation:rorate 4s linear infinite;
 	animation: rotate 4s linear infinite;
-  z-index: 999999;
+  z-index:9;
 }
 @-webkit-keyframes rotate{from{-webkit-transform:rotateY(0deg)}
 to{-webkit-transform:rotateY(360deg)}
@@ -100,7 +100,7 @@ to{-webkit-transform: rotateY(360deg);transform: rotateY(360deg)}
   right: 10rpx;
   width: 180rpx;
   height: 80rpx;
-  z-index: -99999;
+  z-index: -9;
 }
 /* 标题样式 */
 .outAll .bottom{
