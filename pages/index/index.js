@@ -58,7 +58,6 @@ Page({
   getDataList:function(){
     var that = this,
         platForms = abstac.mobilePhoneModels(this.data.platform);//手机型号
-    abstac.promptBox("数据加载中...");
     var taggId = this.data.typesId,
         ajaxUrl = '',
         parm = '',

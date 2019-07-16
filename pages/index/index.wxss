@@ -52,6 +52,7 @@
   text-align: center;
   line-height: 70rpx;
   border-radius: 30rpx;
+  font-family: '宋体 SimSun';
 }
 .outAll .top .capsuleRectangle1{
   width: 200rpx;
@@ -74,9 +75,9 @@
   top: 10rpx;
   right: 0;
   color: #da4a37;
-  font-size: 36rpx;
+  font-size: 32rpx;
   text-align: center;
-  line-height: 120rpx;
+  line-height: 106rpx;
   font-weight: 600;
   -webkit-transition-property:-webkit-transform;
 	-webkit-transition-duration:4s;
@@ -84,6 +85,7 @@
 	-moz-transition-duration:4s;
 	-webkit-animation:rorate 4s linear infinite;
 	animation: rotate 4s linear infinite;
+  z-index: 999999;
 }
 @-webkit-keyframes rotate{from{-webkit-transform:rotateY(0deg)}
 to{-webkit-transform:rotateY(360deg)}
@@ -91,6 +93,14 @@ to{-webkit-transform:rotateY(360deg)}
 @keyframes rotate{
 from{-webkit-transform: rotateY(0deg);transform: rotateY(0deg)}
 to{-webkit-transform: rotateY(360deg);transform: rotateY(360deg)}
+}
+.outAll .top .rotating image{
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  width: 180rpx;
+  height: 80rpx;
+  z-index: -99999;
 }
 /* 标题样式 */
 .outAll .bottom{
@@ -103,6 +113,7 @@ to{-webkit-transform: rotateY(360deg);transform: rotateY(360deg)}
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
+  font-family: '宋体 SimSun';
 }
 .outAll .bottom1{
   margin: 10rpx 0 0 0;
@@ -113,6 +124,7 @@ to{-webkit-transform: rotateY(360deg);transform: rotateY(360deg)}
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
+  font-family: '宋体 SimSun';
 }
 /*显示整个conts */
 .txt{

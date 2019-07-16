@@ -38,6 +38,7 @@
   color: #fff;
   line-height: 60rpx;
   font-size: 30rpx;
+  font-family: '宋体 SimSun';
 }
 .outBox .mainBox .allBox .questionBox .questionBoxLeft .tiBox{
   width: 60rpx;
@@ -48,18 +49,21 @@
   color: #fff;
   line-height: 60rpx;
   font-size: 30rpx;
+  font-family: '宋体 SimSun';
 }
 .outBox .mainBox .allBox .askBox .askBoxRight{
   width: 90%;
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #5e5e5e;
   flex-direction: row;
   padding: 10rpx 0 0 0;
+  font-family: '宋体 SimSun';
 }
 .outBox .mainBox .allBox .questionBox .questionBoxRight{
   padding: 10rpx 0 0 0;
   width: 90%;
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #a5a5a5;
   flex-direction: row;
+  font-family: '宋体 SimSun';
 }

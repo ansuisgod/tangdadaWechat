@@ -56,7 +56,7 @@
 </view>
 <!-- 找糖友视图模板 -->
 <view class='foundFriend' style='display:{{showFriend}}'>
-  <view class='askTitle' style='display:{{friendTitle}};'>找糖友</view>
+  <view class='askTitle' style='display:{{friendTitle}}'>找糖友</view>
   <view class='insideSearch' wx:for='{{searchFriend}}' wx:key='property' bindtap='friendInfo' data-frid='{{item.id}}'>
     <view class='asking'>
       <view class='askLeft'>

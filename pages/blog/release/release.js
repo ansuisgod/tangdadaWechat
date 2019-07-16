@@ -2,6 +2,7 @@
 var src_array = [],
     src_array1 = [],
     arrya1 = [],
+    arryaPic = [],
     abstac = require('../../../commonmethod/abstract.js'),
     app = getApp(),
     sizes = '20',
@@ -214,6 +215,7 @@ Page({
       var parmLength = this.data.interfaceData.length;
       for (var j = 0; j <= parmLength - 1; j++){
         arrya1.push({ 'url': src_array1[j] });
+        arryaPic.push('<img src='+src_array1[j]+' />');
       }
       //调接口
       var tagId = '0',
@@ -222,7 +224,7 @@ Page({
           html = '1',
           title = this.data.articalTilte,
           contents = {
-            'text': this.data.content,
+            'text': this.data.content + arryaPic,
             'images': arrya1
           };
       //打印日志

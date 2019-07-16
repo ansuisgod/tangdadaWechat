@@ -22,12 +22,13 @@ view , scroll-view{
  /*width:25%;*/
  display: inline-block;
  text-align: center;
- font-size: 34rpx;
+ font-size: 32rpx;
  box-sizing: border-box;
  height: 90rpx;
  line-height:90rpx;
  padding-bottom: 15rpx;
  color: #818181;
+ font-family: '宋体 SimSun';
 }
 .weui-navbar .item_on{
  border-bottom: 2px solid #fd7380;
@@ -78,9 +79,10 @@ view , scroll-view{
 }
 .dailyTask .dailyTaskInfo .taskTtile{
   padding: 15rpx 10rpx;
-  font-size: 38rpx;
+  font-size: 32rpx;
   color: #4e4e4e;
   text-align: left;
+  font-family: '宋体 SimSun';
 }
 .dailyTask .dailyTaskInfo .botomDaily{
   text-align: left;
@@ -94,5 +96,6 @@ view , scroll-view{
 .dailyTask .dailyTaskInfo .botomDaily .integral{
   vertical-align: middle;
   color: #fd7380;
-  font-size: 34rpx;
+  font-family: '宋体 SimSun';
+  font-size: 30rpx;
 }

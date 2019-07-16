@@ -24,25 +24,29 @@
   border-radius: 50rpx;
 }
 .box .outBox .topA .replayText{
-  font-size: 34rpx;
+  font-size: 32rpx;
   color: #2c2c2c;
   line-height: 90rpx;
   width: 85%;
   flex-direction: row;
+  font-family: '宋体 SimSun';
 }
 .box .outBox .topA .replayText .names{
+  font-family: '宋体 SimSun';
   color: #fd7380;
 }
 .box .outBox .centerA{
   padding: 15rpx 0 0 0;
-  font-size: 38rpx;
+  font-size: 32rpx;
   color: #303030;
-  font-weight: 700
+  font-weight: 700;
+  font-family: '宋体 SimSun';
 }
 .box .outBox .bottomA{
   padding: 15rpx 10rpx 0 0;
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #696969;
+  font-family: '宋体 SimSun';
 }
 /* 下面专家回复样式区域 */
 .box .expectsReply{
@@ -72,6 +76,8 @@
   display: flex;
 }
 .box .expectsReply .replayList .right .userArea .name{
+  font-size: 30rpx;
+  font-family: '宋体 SimSun';
   width: 85%;
   flex-direction: row;
 }
@@ -85,10 +91,12 @@
 }
 .box .expectsReply .replayList .right .rightContent{
   padding: 15rpx 0;
-  font-size: 32rpx;
+  font-size: 28rpx;
+  font-family: '宋体 SimSun';
   color: #696969;
 }
 .box .expectsReply .replayList .right .rightFloor{
-   font-size: 30rpx;
+  font-family: '宋体 SimSun';
+   font-size: 28rpx;
    color: #a1a1a1;
 }

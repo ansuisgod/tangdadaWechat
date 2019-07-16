@@ -36,13 +36,15 @@
 }
 .theOutsidePart .line .lineRight .top{
   padding: 5rpx 0 5rpx 20rpx;
-  font-size: 34rpx;
+  font-size: 32rpx;
   color: #5e5e5e;
+  font-family: '宋体 SimSun';
   font-weight: 600;
 }
 .theOutsidePart .line .lineRight .bottom{
   padding: 5rpx 0 5rpx 20rpx;
-  font-size: 32rpx;
+  font-size: 30rpx;
+  font-family: '宋体 SimSun';
   color: #858585;
 }
 .theOutsidePart .empty{

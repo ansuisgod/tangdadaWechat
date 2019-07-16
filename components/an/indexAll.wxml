@@ -5,8 +5,9 @@
   <view class='top'>
     <image src='{{item.data.pic.url}}' mode='aspectFill'></image>
     <view class='capsuleRectangle'>阅读:{{item.view_size}} 分享：{{item.share_num}} 点赞：{{item.topic.like_num}}</view>
-    <view class='rotating' wx:if='{{idx <= 9}}' style='background: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561453122080&di=a70747ce90ce792cafcb1a07e5ac92d3&imgtype=0&src=http%3A%2F%2Fpic22.nipic.com%2F20120710%2F8856735_175907574000_2.jpg) no-repeat center;background-size: 150rpx;'>
+    <view class='rotating' wx:if='{{idx <= 9}}'>
       {{idx+1}}
+      <image mode='aspectFill' src='../../static/cup.png'></image>
     </view>
   </view>
   <view wx:if='{{item.title}}' class='bottom'>{{item.title}}</view>

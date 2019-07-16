@@ -47,7 +47,6 @@ Page({
     var that = this;
     //打印日志
     console.log("商品id" + this.data.aGoodsId);
-    abstac.promptBox("数据加载中...");
     abstac.sms_Interface(app.publicVariable.goodsListfaceAddress,
       { id: this.data.aGoodsId },
       function (res) {//成功

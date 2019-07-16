@@ -27,7 +27,6 @@ Page({
     var that = this;
     //参数日志打印
     console.log("page=" + this.data.page + "&size=" + size + "&wx_session_key=" + this.data.wxSessionKey);
-    abstac.promptBox("数据加载中...");
     abstac.sms_Interface(app.publicVariable.enquiryRecordsInterfaceAddress,
       { size: size, page: this.data.page, wx_session_key: this.data.wxSessionKey},
     function (res) {//接口调用成功

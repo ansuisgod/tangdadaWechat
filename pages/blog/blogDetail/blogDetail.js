@@ -30,7 +30,8 @@ Page({
     imgDisplay: 'none',
     sendsOrHiden:'none',
     videoSrc:'',
-    hideContens:'block'
+    hideContens:'block',
+    wechat: 'none'
   },
   /**
    * 生命周期函数--监听页面加载
@@ -110,14 +111,9 @@ Page({
           /*
           * @desc：判断数据中是否有视频的字段,如果mp4字段不为空则调用judgeVideo，否则不调用judgeVideo方法
           */
-          var judgeMp4 = exchangeContents.content.mp4;
-          if (judgeMp4 == undefined){
+          if (exchangeContents.content.mp4 == 'true'){
             that.setData({
-              hideContens:'block'
-            });
-          }else{
-            that.setData({
-              hideContens: 'none'
+              wechat: 'block'
             });
             that.judgeVideo(exchangeContents.content);
           }

@@ -40,10 +40,17 @@ Page({
       console.log("**********专家回复详情接口返回的数据**********");
       console.log(res);
       if (res.data.result.code == '2000'){//有则获取数据
-        that.setData({
-          dataInfo:res.data.data.topic,
-          replarList: res.data.data.replies
-        });
+        if (res.data.data.replies == undefined){
+          that.setData({
+            dataInfo: res.data.data.topic,
+            replarList: ''
+          });
+        }else{
+          that.setData({
+            dataInfo: res.data.data.topic,
+            replarList: res.data.data.replies
+          });
+        }
       }else{
         abstac.promptBox(res.data.result.message);
       }

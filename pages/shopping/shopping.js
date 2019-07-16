@@ -64,7 +64,6 @@ Page({
    */
   goodsList:function(){
     var that = this;
-    abstac.promptBox("数据加载中...");
     abstac.sms_Interface(app.publicVariable.goodsListfaceAddress,
       { page: this.data.page },
       function (res) {//查询成功
@@ -89,7 +88,6 @@ Page({
             that.data.page = 1;
             return;
           } else {
-            abstac.promptBox("加载中...");
             that.setData({
               goodsLists: newList.concat(datas),
               page: that.data.page,
@@ -204,7 +202,6 @@ Page({
     console.log("触底事件的处理函数,页数" + this.data.page);
     //判断是否超过了总页数，如果超过了则没有下一页，否则还有下一页的数据
     if (this.data.totalPage < this.data.page){
-      abstac.promptBox("没有数据了！");
       return;
     }else{
       this.goodsList();

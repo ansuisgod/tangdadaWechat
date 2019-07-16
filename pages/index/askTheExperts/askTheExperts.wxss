@@ -31,6 +31,7 @@
 .askTopA .askInputLeft input{
   padding-left: 15rpx;
   font-size: 32rpx;
+  font-family: '宋体 SimSun';
   border-radius: 30rpx;
   border: 1px solid #5d625e;
 }
@@ -42,6 +43,7 @@
   flex-direction: row;
   margin: 0 auto;
   color: #fd7380;
+  font-family: '宋体 SimSun';
 }
 /* 语音部分样式 */
 .askTheExperts{
@@ -103,6 +105,7 @@
 .askQuestionArea{
   width: 100%;
   height: auto;
+  margin: 100rpx 0 0 0;
 }
 .askQuestionArea .insideC{
   width: 90%;
@@ -127,6 +130,7 @@
   line-height: 60rpx;
   font-size: 30rpx;
   color: #fff;
+  font-family: '宋体 SimSun';
 }
 .askQuestionArea .insideC .asking .askLeft .answer{
   width: 60rpx;
@@ -144,4 +148,5 @@
   font-size: 32rpx;
   width: 90%;
   flex-direction: row;
+  font-family: '宋体 SimSun';
 }

@@ -126,6 +126,7 @@ page{
  line-height:80rpx;
  padding-bottom: 0;
  color: #818181;
+ font-family: '宋体 SimSun';
 }
 .weui-navbar .item_on{
  border-bottom: 2px solid #fd7380;
@@ -173,6 +174,7 @@ page{
   font-size: 30rpx;
   flex-direction: row;
   color: #818181;
+  font-family: '宋体 SimSun';
   width: 85%;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox{
@@ -193,6 +195,7 @@ page{
   font-weight: 500;
   text-overflow:ellipsis;
   white-space:nowrap;
+  font-family: '宋体 SimSun';
 }
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerLeftBox .mainBox{
   font-size: 30rpx;
@@ -201,6 +204,7 @@ page{
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:wrap;
+  font-family: '宋体 SimSun';
 }
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerRightBox{
   width: 40%;
@@ -238,6 +242,7 @@ page{
   color: #a9a9a9;
   font-size: 28rpx;
   text-align: center;
+  font-family: '宋体 SimSun';
 }
 .swiper-box .swiper-item .slide-view .obesityBox .bottomBox .rightB{
   width: 15%;
@@ -260,4 +265,5 @@ page{
   color: #a9a9a9;
   flex-direction: row;
   font-size: 28rpx;
+  font-family: '宋体 SimSun';
 }

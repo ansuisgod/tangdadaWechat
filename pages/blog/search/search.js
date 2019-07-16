@@ -193,7 +193,8 @@ Page({
           //是否显示更多按钮
           if (userLength > '3') {
             that.setData({
-              moreF: 'block'
+              moreF: 'block',
+              friendTitle: 'block'
             });
           } else if (userLength == '0'){
             that.setData({

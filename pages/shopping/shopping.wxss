@@ -27,12 +27,14 @@
 		margin-top: 30rpx;
 		margin-left: 20rpx;
 		flex-direction: column;
+    font-family: '宋体 SimSun';
 	}
 .userPicture .center .bottom{
 		margin-top: 25rpx;
 		margin-left: 20rpx;
 		flex-direction: column;
 		color: #999;
+    font-family: '宋体 SimSun';
 	}
 .userPicture .center .bottom .nowJ{
 		color: #ff7382;
@@ -77,6 +79,7 @@
     right: 0;
     font-size: 30rpx;
     border-radius: 30rpx;
+    font-family: '宋体 SimSun';
   }
    .listOfGoods .singlePart .pic image{
      width: 100%;
@@ -92,6 +95,7 @@
     overflow:hidden;
     text-overflow:ellipsis;
     white-space:nowrap;
+    font-family: '宋体 SimSun';
   }
   .listOfGoods .singlePart .integral{
     color: #999;
@@ -99,6 +103,7 @@
     font-size: 30rpx;
     flex-direction: column;
     padding: 10rpx 0 0 5rpx;
+    font-family: '宋体 SimSun';
   }
  .listOfGoods .singlePart .toChange button{
     width: 200rpx;
@@ -108,6 +113,7 @@
     border-radius: 40rpx;
     margin: 15rpx auto 0 auto;
     color: #ff7382;
+    font-family: '宋体 SimSun';
   }
   .cleadd{
     clear: both;
