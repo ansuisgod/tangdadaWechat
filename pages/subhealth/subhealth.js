@@ -35,9 +35,9 @@ Page({
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
     /*进入页面分别加载完三个标签的默认数据*/
-    this.getDataInfo('97');//调用亚健康下面的肥胖类型的数据接口方法
-    this.getDataInfo('98');//调用亚健康下面的女性健康类型的数据接口方法
-    this.getDataInfo('99');//调用亚健康下面的康复理疗类型的数据接口方法
+    // this.getDataInfo('97');//调用亚健康下面的肥胖类型的数据接口方法
+    // this.getDataInfo('98');//调用亚健康下面的女性健康类型的数据接口方法
+    // this.getDataInfo('99');//调用亚健康下面的康复理疗类型的数据接口方法
     this.initButton();
   },
   /**
@@ -46,69 +46,63 @@ Page({
    * @param:page[页数]、platform【设备id】、size【请求数据的数量】、tag_id【类型id】、wx_session_key【微信的code值】
    */
   getDataInfoMore: function (tagIdx) {
-    var that = this;
+    var that = this,
+        pagesss = parseInt(this.data.pages) + 1;
     //打印参数日志
-    console.log('page=' + this.data.pages + '&platform=' + abstac.mobilePhoneModels(this.data.platform) + '&size=' + sizes + '&wx_session_key=' + this.data.wxSessionKey);
+    console.log('page=' + pagesss + '&platform=' + abstac.mobilePhoneModels(this.data.platform) + '&size=' + sizes + '&wx_session_key=' + this.data.wxSessionKey);
     abstac.promptBox("数据加载中...");
     abstac.sms_Interface(app.publicVariable.blogInterfaceAddress,
-      { page: this.data.pages, platform: abstac.mobilePhoneModels(this.data.platform), size: sizes, tag_id: tagIdx, wx_session_key: this.data.wxSessionKey},
+      { page: pagesss, platform: abstac.mobilePhoneModels(this.data.platform), size: sizes, tag_id: tagIdx, wx_session_key: this.data.wxSessionKey},
     function(res){
       console.log("****************亚健康滚动加载更多时接口成功时返回函数***************");
       console.log(res);
       if (res.data.result.code == '2000'){
-        var strs = res.data.data.topics;
-        for (var i = 0; i < strs.length; i++) {
-          strs[i].summary = JSON.parse(strs[i].summary);
-        }
-        var totalPage = res.data.data.pages,//数据的总页数
+        if (res.data.data.topics.length == '0'){
+          abstac.promptBox("没有数据了！");
+          that.setData({
+            pages: '1'
+          });
+          return;
+        }else{
+          var strs = res.data.data.topics;
+          for (var i = 0; i < strs.length; i++) {
+            strs[i].summary = JSON.parse(strs[i].summary);
+          }
+          var totalPage = res.data.data.pages,//数据的总页数
             datas = res.data.data.topics,
             obesityBox = that.data.obesity,
             womensHealthBox = that.data.womensHealth,
             rehabilitationTherapyBox = that.data.rehabilitationTherapy;
-        //实现滚动加载下一页的数据
-        if (that.data.pages == 1){
-          obesityBox = datas;
-          womensHealthBox = datas;
-          rehabilitationTherapyBox = datas;
-          if (tagIdx == '97') {
+          //实现滚动加载下一页的数据
+          if (that.data.pages > totalPage) {
             that.setData({
-              obesity: res.data.data.topics
+              pages: '1'
             });
-          } else if (tagIdx == '98') {
-            that.setData({
-              womensHealth: res.data.data.topics
-            });
-          } else if (tagIdx == '99') {
-            that.setData({
-              rehabilitationTherapy: res.data.data.topics
-            });
+            return;
+          } else {
+            console.log('2222222');
+            if (tagIdx == '97') {
+              that.setData({
+                obesity: obesityBox.concat(datas),
+                pages: that.data.pages,
+                totalPage: res.data.data.pages
+              });
+            } else if (tagIdx == '98') {
+              that.setData({
+                womensHealth: womensHealthBox.concat(datas),
+                pages: that.data.pages,
+                totalPage: res.data.data.pages
+              });
+            } else if (tagIdx == '99') {
+              that.setData({
+                rehabilitationTherapy: rehabilitationTherapyBox.concat(datas),
+                pages: that.data.pages,
+                totalPage: res.data.data.pages
+              });
+            }
           }
-        } else if (that.data.pages > totalPage){
-          abstac.promptBox("没有数据了！");
-          that.data.pages = 1;
-          return;
-        }else{
-          if (tagIdx == '97') {
-            that.setData({
-              obesity: obesityBox.concat(datas),
-              pages: that.data.pages,
-              totalPage: res.data.data.pages
-            });
-          } else if (tagIdx == '98') {
-            that.setData({
-              womensHealth: womensHealthBox.concat(datas),
-              pages: that.data.pages,
-              totalPage: res.data.data.pages
-            });
-          } else if (tagIdx == '99') {
-            that.setData({
-              rehabilitationTherapy: rehabilitationTherapyBox.concat(datas),
-              pages: that.data.pages,
-              totalPage: res.data.data.pages
-            });
-          }
+          pagesss++;
         }
-        that.data.pages++;
       }else{
         abstac.promptBox(res.data.result.message);
       }
