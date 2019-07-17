@@ -31,6 +31,7 @@
   padding-top:25rpx; 
   color: #656565;
   font-size: 32rpx;
+  font-family: '宋体 SimSun';
   width: 90%;
   flex-direction: row;
 }
@@ -45,20 +46,22 @@
 }
 .allBox .cycleBox .center .cLeft .title{
   padding: 35rpx 0 0 0;
-  font-size: 38rpx;
+  font-size: 32rpx;
   color: #5d5d5d;
   font-weight: 600;
   overflow: hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
+  font-family: '宋体 SimSun';
 }
 .allBox .cycleBox .center .cLeft .contentTitle{
   padding: 35rpx 0 0 0;
-  font-size: 32rpx;
+  font-size: 30rpx;
   color: #8c8c8c;
   overflow: hidden;
   text-overflow:ellipsis;
   height: 150rpx;
+  font-family: '宋体 SimSun';
 }
 .allBox .cycleBox .center .cRight{
   width: 30%;
@@ -92,6 +95,7 @@
   top: 5rpx;
   color: #a9a9a9;
   font-size: 28rpx;
+  font-family: '宋体 SimSun';
 }
 .allBox .cycleBox .bottoms .bRight{
   position: absolute;
@@ -109,4 +113,5 @@
   right: -35rpx;
   top: 5rpx;
   font-size: 28rpx;
+  font-family: '宋体 SimSun';
 }

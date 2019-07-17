@@ -140,29 +140,36 @@ Page({
   choosePhotos:function(){
     var that = this;
     wx.chooseImage({
-      count: 3,
-      sizeType: ['original', 'compressed'],
-      sourceType: ['album'],
+      count: 2,
+      sizeType: ['compressed'],
+      sourceType: ['album','camera'],
       success: function (res) {
-        //将所有的图片路径放在对象里面
-        src_array = src_array.concat(res.tempFilePaths);
-        that.setData({
-          chooseImgSrc: src_array,
-          imgDisplay: 'block'
-        });
-        //调用图片上传的接口
-        var tempFilePaths = res.tempFilePaths
-        that.uploadFile(tempFilePaths);
-        let imgLength = that.data.chooseImgSrc.length;
-        //动态改变存入草稿箱的文字的颜色
-        if (imgLength == '0') {
+        console.log(res);
+        let picSize = res.tempFiles[0].size;
+        if (picSize > '100000'){
+          abstac.promptBox('图片太大了，请重新选择小于5M图片');
+          return;
+        }else{
+          //将所有的图片路径放在对象里面
+          for (var k = 0; k <= res.tempFilePaths.length - 1; k++) {
+            src_array.push(res.tempFilePaths[k]);
+            that.uploadFile(res.tempFilePaths[k]);
+          }
           that.setData({
-            saveDraftBoxColor: '#a9a9a9'
+            chooseImgSrc: src_array,
+            imgDisplay: 'block'
           });
-        } else {
-          that.setData({
-            saveDraftBoxColor: '#ff7584'
-          });
+          let imgLength = that.data.chooseImgSrc.length;
+          //动态改变存入草稿箱的文字的颜色
+          if (imgLength == '0') {
+            that.setData({
+              saveDraftBoxColor: '#a9a9a9'
+            });
+          } else {
+            that.setData({
+              saveDraftBoxColor: '#ff7584'
+            });
+          }
         }
       },
     })
@@ -266,7 +273,7 @@ Page({
       //将图片的路径上传服务器的地址
       wx.uploadFile({
         url: app.publicVariable.fileUploadPicInterfaceAddress + '?file_category=' + file_category + '&wx_session_key=' + that.data.wxSessionKey + '&platform=' + platformS,
-        filePath: tempFilePaths[0],
+        filePath: tempFilePaths,
         name: 'file',
         success: res => {
           console.log("****************上传图片的接口返回函数***************");

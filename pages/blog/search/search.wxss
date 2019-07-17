@@ -160,7 +160,7 @@
   display: flex;
   overflow:hidden;
   text-overflow:ellipsis;
-  height: 200rpx;
+  height: 150rpx;
 }
 .searchForPosts .insideSearch .contentTtile .textLeft{
   width: 70%;

@@ -77,7 +77,7 @@
   color: #da4a37;
   font-size: 32rpx;
   text-align: center;
-  line-height: 106rpx;
+  line-height: 97rpx;
   font-weight: 600;
   -webkit-transition-property:-webkit-transform;
 	-webkit-transition-duration:4s;

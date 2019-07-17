@@ -120,22 +120,28 @@ Page({
   chooseVideo: function () {
     var that = this;
     wx.chooseVideo({
+      sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       compressed: true,
-      maxDuration: 60,
+      maxDuration: 40,
       success: function (res) {
-        var tempFilePaths = res.tempFilePath;
-        console.log(res);
-        //将所有的图片路径放在对象里面
-        src_array = src_array.concat(res.tempFilePaths);
-        that.setData({
-          chooseImgSrc: src_array,
-          imgDisplay: 'block'
-        });
-        //调用视频上传的接口
-        that.uploadFile(tempFilePaths);
-        //视频的缩略图的上传
-        that.thumbUploadFile();
+        if (res.size > '30000000'){
+          abstac.promptBox('视频太大了，请重新选择小于30M小视频');
+          return;
+        }else{
+          var tempFilePaths = res.tempFilePath;
+          console.log(res);
+          //将所有的图片路径放在对象里面
+          src_array = src_array.concat(res.tempFilePaths);
+          that.setData({
+            chooseImgSrc: src_array,
+            imgDisplay: 'block'
+          });
+          //调用视频上传的接口
+          that.uploadFile(tempFilePaths);
+          //视频的缩略图的上传
+          that.thumbUploadFile();
+        } 
       },
       fail: function (res) { },
       complete: function (res) { },
