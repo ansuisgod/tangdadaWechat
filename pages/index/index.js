@@ -48,7 +48,6 @@ Page({
       platform: app.globalData.platform,
       navH: app.globalData.navHeight
     })
-    this.getDataList();//获取数据
     this.initButton();
   },
   /**

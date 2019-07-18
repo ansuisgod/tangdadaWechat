@@ -45,7 +45,7 @@
   flex-direction: row;
 }
 .allBox .cycleBox .center .cLeft .title{
-  padding: 35rpx 0 0 0;
+  padding: 40rpx 0 0 0;
   font-size: 32rpx;
   color: #5d5d5d;
   font-weight: 600;
@@ -55,7 +55,7 @@
   font-family: '宋体 SimSun';
 }
 .allBox .cycleBox .center .cLeft .contentTitle{
-  padding: 35rpx 0 0 0;
+  padding: 25rpx 0 0 0;
   font-size: 30rpx;
   color: #8c8c8c;
   overflow: hidden;

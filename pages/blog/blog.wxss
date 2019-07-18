@@ -76,7 +76,8 @@
   font-size: 30rpx;
   overflow:hidden;
   text-overflow:ellipsis;
-  white-space:wrap;
+  word-wrap:break-word;
+  white-space:nowrap;
   font-family: '宋体 SimSun';
 }
 .main .outContainer .insideCon .imageDiv{

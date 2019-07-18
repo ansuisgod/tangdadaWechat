@@ -35,9 +35,9 @@ Page({
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
     /*进入页面分别加载完三个标签的默认数据*/
-    // this.getDataInfo('97');//调用亚健康下面的肥胖类型的数据接口方法
-    // this.getDataInfo('98');//调用亚健康下面的女性健康类型的数据接口方法
-    // this.getDataInfo('99');//调用亚健康下面的康复理疗类型的数据接口方法
+    this.getDataInfo('97');//调用亚健康下面的肥胖类型的数据接口方法
+    this.getDataInfo('98');//调用亚健康下面的女性健康类型的数据接口方法
+    this.getDataInfo('99');//调用亚健康下面的康复理疗类型的数据接口方法
     this.initButton();
   },
   /**

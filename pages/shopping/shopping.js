@@ -25,9 +25,6 @@ Page({
       platform: app.globalData.platform,
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
-    this.goodsList(this.data.page);//查询商品的列表的接口
-    this.getUserPicture();//获取微信用户的头像，一开始要按钮触发获取信息头像
-    this.queryIntegral();//查询用户的积分
   },
   /**
    * @desc:获取微信用户的头像，一开始要按钮触发获取信息头像
@@ -159,15 +156,6 @@ Page({
       url: '../../pages/my/my_points/my_points'
     })
   },
-  /**
-   * @desc:点击我要兑换按钮触发的函数
-   
-  forRecord: function () {
-    wx.navigateTo({
-      url: '../../../forRecord/forRecord'
-    })
-  },
-  */
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

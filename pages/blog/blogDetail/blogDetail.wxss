@@ -187,7 +187,6 @@
 .main .commentList .commentDetailList .rightComment .centerComment image{
   width: 250rpx;
   height: 150rpx;
-  margin: 0 0 0 10rpx;
 }
 .main .commentList .commentDetailList .rightComment .topComment{
   color: #fd7380;
