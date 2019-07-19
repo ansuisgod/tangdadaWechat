@@ -7,7 +7,7 @@
     <view class='top'>
       <view class='left'>
         <image wx:if="{{content.user.head_icon}}" src='{{content.user.head_icon}}' bindtap='homePage' data-friendid='{{content.user.id}}'></image>
-        <image wx:else bindtap='homePage' data-friendid='{{content.user.id}}' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561638291636&di=bae0f8e67e988b9522d8c6010f54c599&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fa12f24e688c1cda3ff4cc453f3486a88adaf08cc2cdb-tQvJqX_fw658'></image>
+        <image wx:else bindtap='homePage' data-friendid='{{content.user.id}}' src='../../../images/personal/man.png'></image>
       </view>
       <view class='center'>
         <view class='nickName'>{{content.user.nick_name}}</view>
@@ -21,21 +21,9 @@
     <!-- 内容展示区域视图模板 -->
     <view class='contentOut'>
       <view class='articalTitle'>{{content.title}}</view>
-      <!-- <view class='articalTitle'>
-        <rich-text nodes='{{content.title}}'></rich-text>
-      </view> -->
-    </view>
-    <view class='picArea'>
-      <view class='contentOutImg' wx:if='{{imageArr.mp4 == undefined}}' wx:for-index="idx" wx:key='property' wx:for="{{imageArr.images}}">
-        <!-- <image bindtap='largerPreview1' data-index='{{idx}}' data-list='{{imageArr.images}}' wx:if="{{item.url}}" src='{{item.url}}' mode='aspectFill'></image> -->
-      </view>
-      <!-- <view class='contentOutImg' style='display:{{wechat}};'>
-        <video class='imgList' src="{{videoSrc}}" controls></video>
-      </view> -->
     </view>
     <view class='contentOut' wx:if='{{content.content_text}}'>
       <view class='contentText'>
-        <!-- <rich-text nodes='{{content.content_images}}'></rich-text> -->
         <template is="wxParse" data="{{wxParseData:wxParse.nodes}}" />
       </view>
     </view>

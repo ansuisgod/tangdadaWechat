@@ -5,29 +5,45 @@
       <view class='top'>
         <view class='left'>
           <image wx:if='{{item.user.head_icon}}' src='{{item.user.head_icon}}'></image>
-          <image wx:else src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561638291636&di=bae0f8e67e988b9522d8c6010f54c599&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fa12f24e688c1cda3ff4cc453f3486a88adaf08cc2cdb-tQvJqX_fw658'></image>
+          <image wx:else src='../../../images/personal/man.png'></image>
         </view>
         <view class='right'>{{item.user.nick_name}}</view>
       </view>
       <view class='center'>
-        <view class='cLeft'>
+        <!-- 匹配是否有图片，如果没有图片则文字占100%，如果有图片则文字和图片并列显示布局 -->
+        <view class='cLeft' wx:if='{{item.summary.images == undefined}}' style="width:100%;flex-direction: row;">
           <view class='title'>{{item.title}}</view>
           <view class='contentTitle'>{{item.summary.text}}</view>
         </view>
-        <view class='cRight'>
-          <image wx:if='{{item.summary.images[0].url}}' src='{{item.summary.images[0].url}}'></image>
+        <view class='cLeft' wx:if='{{item.summary.images[0].url}}'>
+          <view class='title'>{{item.title}}</view>
+          <view class='contentTitle'>{{item.summary.text}}</view>
+        </view>
+        <view class='cRight' wx:if='{{item.summary.images[0].url}}'>
+          <image src='{{item.summary.images[0].url}}'></image>
         </view>
       </view>
-      <view class='bottoms'>
-        <view class='bLeft'>
-          <image src='../../../static/eye.png'></image>
-          <text class='look'>{{item.view_size}}</text>
+
+      <view class='bottom'>
+          <!-- 浏览次数 -->
+          <view class='leftB'>
+            <view class='leftBoxs'>
+              <image src='../../../static/eye.png'></image>
+            </view>
+            <view class='look'>{{item.view_size}}</view>
+          </view>
+          <!-- 点赞的次数 -->
+          <view class='rightB'>
+            <view class='boxRight'>
+              <image src='../../../static/like.png'></image>
+            </view>
+            <view class='like'>{{item.like_num}}</view>
+          </view>
         </view>
-        <view class='bRight'>
-          <image src='../../../static/like.png'></image>
-          <text class='like'>{{item.like_num}}</text>
-        </view>
-      </view>
+
     </view>
   </view>
+
+  
+
 </template>

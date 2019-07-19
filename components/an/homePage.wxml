@@ -7,7 +7,7 @@
       <view class='My-box-head-img-box'>
         <!-- 没有用户的头像设置默认的用户的头像 -->
         <image class='My-box-head-img-headImg' wx:if='{{blogUserInfo.head_image}}' src='{{blogUserInfo.head_image}}' />
-        <image class='My-box-head-img-headImg' wx:if='{{blogUserInfo.head_image == undefined}}' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561638291636&di=bae0f8e67e988b9522d8c6010f54c599&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fa12f24e688c1cda3ff4cc453f3486a88adaf08cc2cdb-tQvJqX_fw658' />
+        <image class='My-box-head-img-headImg' wx:if='{{blogUserInfo.head_image == undefined}}' src='../../images/personal/man.png' />
         <view>
           <image class='My-box-head-img-headSex' wx:if='{{blogUserInfo.gender == 2}}' src='../../images/personal/womanSex.png' />
           <image class='My-box-head-img-headSex' wx:else src='../../images/personal/manSex.png' />
