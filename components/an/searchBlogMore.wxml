@@ -20,7 +20,7 @@
           <view class='contentTitle'>{{item.summary.text}}</view>
         </view>
         <view class='cRight' wx:if='{{item.summary.images[0].url}}'>
-          <image src='{{item.summary.images[0].url}}'></image>
+          <image mode='aspectFill' src='{{item.summary.images[0].url}}'></image>
         </view>
       </view>
 

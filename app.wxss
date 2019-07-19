@@ -19,7 +19,6 @@ page{
   top: 0;
   left: 0;
   z-index: 10;
-  /* border-bottom: 1px solid #b8b4b4; */
 }
 .nav-title{
   width: 100%;
@@ -200,10 +199,14 @@ page{
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerLeftBox .mainBox{
   font-size: 30rpx;
   color: #828282;
-  height: 210rpx;
+  height: 194rpx;
   overflow:hidden;
   text-overflow:ellipsis;
-  white-space:wrap;
+  -webkit-line-clamp: 5;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
   font-family: '宋体 SimSun';
 }
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerRightBox{
@@ -212,6 +215,7 @@ page{
   text-align: center;
 }
 .swiper-box .swiper-item .slide-view .obesityBox .centerBox .centerRightBox image{
+  margin: 25rpx 0 0 0;
   width: 250rpx;
   height: 90%;
 }

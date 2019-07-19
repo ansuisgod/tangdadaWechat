@@ -69,15 +69,18 @@
   font-family: '宋体 SimSun';
 }
 .main .outContainer .insideCon .content{
-  padding: 15rpx 0 0 0;
+  padding: 10rpx 0 0 0;
   width: 100%;
-  height:88rpx;
+  height:83rpx;
   color: #828282;
   font-size: 30rpx;
   overflow:hidden;
   text-overflow:ellipsis;
-  word-wrap:break-word;
-  white-space:nowrap;
+  -webkit-line-clamp: 2;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
   font-family: '宋体 SimSun';
 }
 .main .outContainer .insideCon .imageDiv{

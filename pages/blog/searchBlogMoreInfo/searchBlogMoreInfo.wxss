@@ -56,12 +56,17 @@
   font-family: '宋体 SimSun';
 }
 .allBox .cycleBox .center .cLeft .contentTitle{
-  padding: 25rpx 0 0 0;
+  padding: 15rpx 0 0 0;
   font-size: 30rpx;
   color: #8c8c8c;
   overflow: hidden;
   text-overflow:ellipsis;
-  height: 150rpx;
+  -webkit-line-clamp: 3;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  height: 110rpx;
   font-family: '宋体 SimSun';
 }
 .allBox .cycleBox .center .cRight{

@@ -120,10 +120,16 @@
   white-space:nowrap;
 }
 .My-box .artical .articalList .contents{
-  height: 180rpx;
+  height: 120rpx;
   color: #848484;
   font-size: 30rpx;
   display: flex;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  -webkit-line-clamp: 3;
+  word-wrap: break-word;
+  white-space: normal !important;
+  -webkit-box-orient: vertical;
 }
 .My-box .artical .articalList .contents .contentsLeftBox{
   width: 50%;
