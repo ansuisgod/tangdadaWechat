@@ -37,7 +37,6 @@ Page({
     //打印日志
     console.log("页数=" + this.data.page + "&手机型号=" + platform + "&一页请求个数=" + size + "&tag_id=0&session_key=" + this.data.wxSessionKey);
     //访问网络
-    abstac.promptBox("数据加载中...");
     abstac.sms_Interface(app.publicVariable.blogInterfaceAddress, {
       page: this.data.page, platform: platform, size: size, tag_id: '0', wx_session_key: this.data.wxSessionKey
     },
@@ -71,7 +70,6 @@ Page({
             abstac.promptBox("没有数据了！");
             that.data.page = 1;
           }else{
-            abstac.promptBox("加载中...");
             that.setData({
               conArr: newList.concat(datas),
               page: that.data.page,
@@ -84,6 +82,53 @@ Page({
             url: '/pages/login/login'
           });
         }else {
+          abstac.promptBox(res.data.result.message);
+        }
+      },
+      function (error) {
+        abstac.promptBox(error.errMsg);
+        console.log(error);
+      });
+  },
+  getBlogDataPullDown: function () {
+    let platform = abstac.mobilePhoneModels(this.data.platform),//手机型号
+      that = this;
+    //打印日志
+    console.log("页数=1" + "&手机型号=" + platform + "&一页请求个数=" + size + "&tag_id=0&session_key=" + this.data.wxSessionKey);
+    //访问网络
+    abstac.sms_Interface(app.publicVariable.blogInterfaceAddress, {
+      page: '1', platform: platform, size: size, tag_id: '0', wx_session_key: this.data.wxSessionKey
+    },
+      function (res) {
+        console.log("****************帖子列下拉刷新数据口成功时返回函数***************");
+        console.log(res.data);
+        //判断是否有数据，有则取数据  
+        if (res.data.result.code == '2000') {
+          /**
+           * 将后台返回的数据中的summary字符串转化为json格式
+           */
+          var str = res.data.data.topics;
+          for (var i = 0; i <= str.length - 1; i++) {
+            str[i].summary = JSON.parse(str[i].summary);
+          }
+          /**
+           * 将后台的数据放到数组中
+           */
+          var datas = res.data.data.topics;
+          var newList = that.data.conArr;
+          var totalPage = res.data.pages;//数据的总页数
+          /**
+           * 判断当前的页数是否超过了总页数
+           */
+          newList = datas;
+          that.setData({
+            conArr: datas,
+          });
+        } else if (res.data.result.code == '4000') {//如果出现用户会话过期就跳转到登录页面让用户重新登录
+          wx.navigateTo({
+            url: '/pages/login/login'
+          });
+        } else {
           abstac.promptBox(res.data.result.message);
         }
       },
@@ -129,7 +174,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getBlogData();
+    //this.getBlogDataPullDown();
   },
   /**
    * 生命周期函数--监听页面隐藏
@@ -143,7 +188,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.getBlogData();
+    this.getBlogDataPullDown();
     wx.stopPullDownRefresh();
   },
   /**

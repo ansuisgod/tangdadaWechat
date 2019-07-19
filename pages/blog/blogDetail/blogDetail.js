@@ -30,8 +30,7 @@ Page({
     imgDisplay: 'none',
     sendsOrHiden:'none',
     videoSrc:'',
-    hideContens:'block',
-    wechat: 'none'
+    hideContens:'block'
   },
   /**
    * 生命周期函数--监听页面加载
@@ -111,12 +110,12 @@ Page({
           /*
           * @desc：判断数据中是否有视频的字段,如果mp4字段不为空则调用judgeVideo，否则不调用judgeVideo方法
           */
-          if (exchangeContents.content.mp4 == 'true'){
-            that.setData({
-              wechat: 'block'
-            });
-            that.judgeVideo(exchangeContents.content);
-          }
+          // if (exchangeContents.content.mp4 == 'true'){
+          //   that.setData({
+          //     wechat: 'block'
+          //   });
+          //   that.judgeVideo(exchangeContents.content);
+          // }
           that.setData({
             content: exchangeContents,
             imageArr: imagesS,
@@ -551,6 +550,16 @@ Page({
     //图片预览
     wx.previewImage({
       current: cc[index], // 当前显示图片的http链接
+      urls: cc // 需要预览的图片http链接列表
+    });
+  },
+  largerPreview2: function (e) {
+    var imgList = e.currentTarget.dataset.list;//获取data-list
+    var cc = [];
+    cc.push(imgList);
+    //图片预览
+    wx.previewImage({
+      current: '', // 当前显示图片的http链接
       urls: cc // 需要预览的图片http链接列表
     });
   },

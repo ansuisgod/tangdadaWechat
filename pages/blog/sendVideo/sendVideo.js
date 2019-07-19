@@ -1,6 +1,7 @@
 var src_array = [],
     src_array1 = [],
     arrya1 = [],
+    videoArry = [],
     abstac = require('../../../commonmethod/abstract.js'),
     app = getApp(),
     sizes = '20',
@@ -75,14 +76,15 @@ Page({
       for (var j = 0; j <= parmLength - 1; j++) {
         arrya1.push({ 'url': src_array1[j] });
       }
+      videoArry.push('<video src='+src_array1[1]+' controls></video>');
       //调接口
       var that = this,
           platform = abstac.mobilePhoneModels(this.data.platform),
           html = '1',
           title = this.data.articalTilte,
           contents = {
-            'text': this.data.content,
-            'mp4':'true',
+            'text': this.data.content + videoArry,
+            'mp4':'mp4mp4mp4',
             'images': arrya1
           };
       //打印日志
@@ -125,10 +127,10 @@ Page({
       compressed: true,
       maxDuration: 40,
       success: function (res) {
-        if (res.size > '30000000'){
+        if(res.size > '30000000'){
           abstac.promptBox('视频太大了，请重新选择小于30M小视频');
           return;
-        }else{
+        } else {
           var tempFilePaths = res.tempFilePath;
           console.log(res);
           //将所有的图片路径放在对象里面
@@ -141,7 +143,7 @@ Page({
           that.uploadFile(tempFilePaths);
           //视频的缩略图的上传
           that.thumbUploadFile();
-        } 
+        }
       },
       fail: function (res) { },
       complete: function (res) { },

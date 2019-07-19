@@ -16,9 +16,11 @@
           <image mode='aspectFill' bindtap='largerPreview' data-list='{{item.content_images}}' wx:if='{{item.content_images[0]}}' src='{{item.content_images[0]}}'></image>
           <image mode='aspectFill' bindtap='largerPreview' data-list='{{item.content_images}}' wx:if='{{item.content_images[1]}}' src='{{item.content_images[1]}}'></image>
         </view>
-        <view class='replies' wx:if='{{item.quote_content.text}}'>
+        <view class='replies' wx:if='{{item.quote_content}}'>
           <view class='repliesInfo'>回复：{{item.quote_user.nick_name}}</view>
-          {{item.quote_content.text}}
+          <view wx:if='{{item.quote_content.text}}'>{{item.quote_content.text}}</view>
+          <image mode='aspectFill' bindtap='largerPreview2' wx:if='{{item.quote_content.images[0].url}}' data-list='{{item.quote_content.images[0].url}}' src="{{item.quote_content.images[0].url}}"></image>
+          <image mode='aspectFill' bindtap='largerPreview2' wx:if='{{item.quote_content.images[1].url}}' data-list='{{item.quote_content.images[1].url}}' src="{{item.quote_content.images[1].url}}"></image>
         </view>
         <view class='bottomComment'>
           {{item.floor}}楼

@@ -29,9 +29,9 @@
       <view class='contentOutImg' wx:if='{{imageArr.mp4 == undefined}}' wx:for-index="idx" wx:key='property' wx:for="{{imageArr.images}}">
         <!-- <image bindtap='largerPreview1' data-index='{{idx}}' data-list='{{imageArr.images}}' wx:if="{{item.url}}" src='{{item.url}}' mode='aspectFill'></image> -->
       </view>
-      <view class='contentOutImg' style='display:{{wechat}};'>
+      <!-- <view class='contentOutImg' style='display:{{wechat}};'>
         <video class='imgList' src="{{videoSrc}}" controls></video>
-      </view>
+      </view> -->
     </view>
     <view class='contentOut' wx:if='{{content.content_text}}'>
       <view class='contentText'>

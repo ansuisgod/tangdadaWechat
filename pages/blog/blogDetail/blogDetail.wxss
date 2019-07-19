@@ -173,6 +173,10 @@
   border-radius: 10rpx;
   padding: 5rpx 15rpx;
 }
+.main .commentList .commentDetailList .rightComment .replies image{
+  width: 200rpx;
+  height: 150rpx;
+}
 .main .commentList .commentDetailList .rightComment .replies .repliesInfo{
   color: #4a4a4a;
   font-weight: 600;
@@ -183,8 +187,10 @@
   color: #676767;
   font-size: 28rpx;
   font-family: '宋体 SimSun';
+  padding: 0 0 0 10rpx;
 }
 .main .commentList .commentDetailList .rightComment .centerComment image{
+  margin: 0 0 0 15rpx;
   width: 250rpx;
   height: 150rpx;
 }
