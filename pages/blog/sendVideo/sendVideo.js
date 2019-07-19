@@ -16,6 +16,7 @@ Page({
     tagId:'97',
     imgDisplay: 'none',
     btnActives:'fant',
+    disableLoginBtn: false,//发布按钮的状态按
     articalTilte: '',//文章的标题
     content: '',//文本域
     draftBoxNumber: ''//草稿箱的草稿条数
@@ -66,11 +67,23 @@ Page({
   releaseBtn: function () {
     if (this.data.articalTilte == '') {
       abstac.promptBox("标题不能为空！");
+      this.setData({
+        disableLoginBtn: false
+      })
     } else if (this.data.content.length <= 20) {
       abstac.promptBox("正文内容不能少于20个字！");
+      this.setData({
+        disableLoginBtn: false
+      })
     } else if (this.data.interfaceData.length == '0'){
       abstac.promptBox("请选择上传视频");
+      this.setData({
+        disableLoginBtn: false
+      })
     }else{
+      this.setData({
+        disableLoginBtn: true
+      })
       //循环动态的拼装参数的字符串的格式
       var parmLength = this.data.interfaceData.length;
       for (var j = 0; j <= parmLength - 1; j++) {
@@ -102,10 +115,17 @@ Page({
               chooseImgSrc: '',
               interfaceData: ''
             });
-            wx.switchTab({
-              url: '../../../pages/subhealth/subhealth'
-            })
+            if (that.data.flaggs == '1') {
+              wx.switchTab({
+                url: '../../../pages/blog/blog'
+              })
+            } else {
+              wx.switchTab({
+                url: '../../../pages/subhealth/subhealth'
+              })
+            }
           } else {
+            console.log('2222222');
             abstac.promptBox(res.data.result.message);
           }
         }, function (error) {
@@ -153,6 +173,9 @@ Page({
    *  @desc：调用视频上传服务器的地址
    */
   uploadFile: function (tempFilePaths) {
+    this.setData({
+      disableLoginBtn: true
+    })
     abstac.promptBox('正在上传中....');
     let that = this,
         platformS = abstac.mobilePhoneModels(this.data.platform),
@@ -173,7 +196,8 @@ Page({
             imgDisplay: 'block'
           });
           that.setData({
-            interfaceData: src_array1
+            interfaceData: src_array1,
+            disableLoginBtn: false
           });
           console.log(that.data.interfaceData);
         } else {}

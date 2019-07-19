@@ -107,15 +107,6 @@ Page({
             likedPicSrc = "../../../static/liked.png";
             likeFlagss = '1';
           }
-          /*
-          * @desc：判断数据中是否有视频的字段,如果mp4字段不为空则调用judgeVideo，否则不调用judgeVideo方法
-          */
-          // if (exchangeContents.content.mp4 == 'true'){
-          //   that.setData({
-          //     wechat: 'block'
-          //   });
-          //   that.judgeVideo(exchangeContents.content);
-          // }
           that.setData({
             content: exchangeContents,
             imageArr: imagesS,
@@ -131,21 +122,6 @@ Page({
       function (error) {//请求失败
         console.log(error);
       });
-  },
-  /**
-   * @desc：视频处理的方法
-   * @date：20190624
-   */
-  judgeVideo:function(videoInfo){
-    if (videoInfo.images[1] == undefined){
-      this.setData({
-        videoSrc: videoInfo.images[0].url
-      });
-    }else{
-      this.setData({
-        videoSrc: videoInfo.images[1].url
-      });
-    }
   },
   /**
    * @desc:评论输入框触发的函数

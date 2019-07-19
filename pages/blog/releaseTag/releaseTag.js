@@ -19,6 +19,7 @@ Page({
     tagId: '97',
     interfaceData: '',
     imgDisplay: 'none',
+    disableLoginBtn: false,//发布按钮的状态按
     articalTilte: '',//文章的标题
     content: ''//文本域
   },
@@ -88,6 +89,9 @@ Page({
     } else if (this.data.content.length <= 20) {
       abstac.promptBox("正文内容不能少于20个字！");
     } else {
+      this.setData({
+        disableLoginBtn: true
+      })
       //循环动态的拼装参数的字符串的格式
       var parmLength = this.data.interfaceData.length;
       for (var j = 0; j <= parmLength - 1; j++) {
@@ -137,6 +141,9 @@ Page({
    *  @desc：调用图片上传服务器的地址
    */
   uploadFile: function (tempFilePaths) {
+    this.setData({
+      disableLoginBtn: true
+    })
     let that = this,
       platformS = abstac.mobilePhoneModels(this.data.platform),
       file_category = '2';
@@ -156,7 +163,8 @@ Page({
             imgDisplay: 'block'
           });
           that.setData({
-            interfaceData: src_array1
+            interfaceData: src_array1,
+            disableLoginBtn: false
           });
         } else {}
       }

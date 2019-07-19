@@ -15,5 +15,5 @@
   <text class='draftBox' style='color:{{saveDraftBoxColor}};' bindtap='saveDraftBox'>存入草稿箱</text>
 </view>
 <view class='blogContent'>
-  <button class='records' bindtap='releaseBtn'>发布</button>
+  <button class='records' bindtap='releaseBtn' disabled='{{disableLoginBtn}}'>发布</button>
 </view>

@@ -82,7 +82,7 @@
   z-index: 10;
   background: #fe7281;
   box-shadow: 0rpx 5rpx 12rpx #959595;
-  margin: 50rpx 0 150rpx 0;
+  margin: 25rpx 0 150rpx 0;
 }
 .records:active {
   background-color: rgba(254, 114, 129, 0.8);
