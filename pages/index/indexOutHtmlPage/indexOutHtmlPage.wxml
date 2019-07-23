@@ -1,0 +1,4 @@
+<!--pages/index/indexOutHtmlPage/indexOutHtmlPage.wxml-->
+<view class="boxs">
+<web-view src="{{url}}"></web-view>
+</view>

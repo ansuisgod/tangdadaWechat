@@ -30,7 +30,8 @@ Page({
       regCode: options.regCode,
       regPhone: options.regPhone,
       regverificationCodePhone: options.verificationCode,
-      platform: app.globalData.platform
+      platform: app.globalData.platform,
+      inviterid: options.inviterid
     });
     //打印日志
     console.log(options);
@@ -65,7 +66,7 @@ Page({
       unickName = this.data.nickName;
     }
     //打印日志
-    console.log("randomm=" + randomm + "*platform===" + platforms + "*注册电话号码=" + this.data.regPhone + "*密码=" + this.data.regCode + "*验证码==" + this.data.regverificationCodePhone + "*昵称=" + unickName + '*角色id' + this.data.role_id);
+    console.log("randomm=" + randomm + "*platform===" + platforms + "*注册电话号码=" + this.data.regPhone + "*密码=" + this.data.regCode + "*验证码==" + this.data.regverificationCodePhone + "*昵称=" + unickName + '*角色id' + this.data.role_id + '&inviterid=' + this.data.inviterid);
     let that = this;
     /**
      * @desc:调用注册的接口
@@ -74,7 +75,7 @@ Page({
     abstac.sms_Interface(app.publicVariable.registerInterfaceAddress,
       {
         phone: this.data.regPhone, password: this.data.regCode, code: this.data.regverificationCodePhone, platform: platforms,
-        device_id: randomm, nick_name: unickName, role_id: this.data.role_id
+        device_id: randomm, nick_name: unickName, role_id: this.data.role_id, inviterid: this.data.inviterid
       },
       function (res) {
         console.log("****************用户注册接口成功时返回函数***************");

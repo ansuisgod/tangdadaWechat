@@ -6,6 +6,7 @@
     "pages/index/expertsRecommend/expertsRecommend",
     "pages/index/expertsReply/expertsReply",
     "pages/index/askList/askList",
+    "pages/index/indexOutHtmlPage/indexOutHtmlPage",
     "pages/blog/blog",
     "pages/blog/release/release",
     "pages/blog/releaseTag/releaseTag",

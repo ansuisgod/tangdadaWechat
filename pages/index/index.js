@@ -239,9 +239,23 @@ Page({
       });
   },
   allClik:function(e){
-    wx.navigateTo({
-      url: '../../pages/blog/blogDetail/blogDetail?blogId=' + e.currentTarget.dataset.articlid
-    })
+    var topicId = e.currentTarget.dataset.topicid,
+        url = e.currentTarget.dataset.html,
+        recommend = e.currentTarget.dataset.recommend;
+    if (topicId == '-1'){
+      console.log(topicId);
+      wx.navigateTo({
+        url: '../../pages/index/indexOutHtmlPage/indexOutHtmlPage?url=' + url
+      })
+    } else if (recommend == '1'){
+      wx.navigateTo({
+        url: '../../pages/index/indexOutHtmlPage/indexOutHtmlPage?url=' + url
+      })
+    }else{
+      wx.navigateTo({
+        url: '../../pages/blog/blogDetail/blogDetail?blogId=' + e.currentTarget.dataset.articlid
+      })
+    }
   },
   /**
    * @desc:页面的下拉刷新操作

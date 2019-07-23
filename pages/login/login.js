@@ -1,5 +1,6 @@
 // pages/login/login.js
-var abstac = require('../../commonmethod/abstract.js');
+var abstac = require('../../commonmethod/abstract.js'),
+    inviterid = '';//邀请人的id
 const app = getApp();
 Page({
   /**
@@ -39,7 +40,16 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    /**
+     *@desc:判断是不是从外面的分享页面进来注册，如果是从邀请赚积分进来的就会带上inviterid参数,否则inviterid为空
+     *@auther:an
+     *@date:20190723
+     */
+    if (options.inviterid) {
+      inviterid = options.inviterid;
+    }
+  },
    /**
    * 获取电话号码的输入框的值
    */
@@ -339,13 +349,13 @@ Page({
    * 点击注册按钮触发函数
    */
   regFunc:function(){
-    console.log("注册密码======" + this.data.regPwdNumber + "注册输入框的电话号码====" + this.data.regPhoneNumber + "注册验证码===" + this.data.regGetCode);
+    console.log("注册密码======" + this.data.regPwdNumber + "&注册输入框的电话号码====" + this.data.regPhoneNumber + "&注册验证码===" + this.data.regGetCode + "&邀请人的id=" + inviterid);
     if (this.data.regPwdNumber == '' || this.data.regPhoneNumber == '' || this.data.regGetCode == ''){
       abstac.promptBox('请您检查输入的内容是否正确');//提示框
       return;
     }else{
       wx.navigateTo({
-        url: '/pages/login/inputNickName/inputNickName?regCode=' + this.data.regPwdNumber + '&regPhone=' + this.data.regPhoneNumber + '&verificationCode=' + this.data.regGetCode,
+        url: '/pages/login/inputNickName/inputNickName?regCode=' + this.data.regPwdNumber + '&regPhone=' + this.data.regPhoneNumber + '&verificationCode=' + this.data.regGetCode + '&inviterid=' + inviterid,
       })
     }
   },

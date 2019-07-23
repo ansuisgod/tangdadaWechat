@@ -24,7 +24,8 @@ Page({
       navH: app.globalData.navHeight,
       regCode: options.regCode,
       regPhone: options.regPhone,
-      verificationCode: options.verificationCode
+      verificationCode: options.verificationCode,
+      inviterid: options.inviterid
     })
     console.log(options);
   },
@@ -61,7 +62,7 @@ Page({
    */
   nextFunc: function () {
     wx.navigateTo({
-      url: '../choosePicture/choosePicture?nickName=' + this.data.nameInputValue + '&regCode=' + this.data.regCode + '&regPhone=' + this.data.regPhone + '&verificationCode=' + this.data.verificationCode
+      url: '../choosePicture/choosePicture?nickName=' + this.data.nameInputValue + '&regCode=' + this.data.regCode + '&regPhone=' + this.data.regPhone + '&verificationCode=' + this.data.verificationCode + '&inviterid=' + this.data.inviterid
     })
   },
   /**
@@ -69,7 +70,7 @@ Page({
    */
   skip: function () {
     wx.navigateTo({
-      url: '../choosePicture/choosePicture?nickName=&regCode=' + this.data.regCode + '&regPhone=' + this.data.regPhone + '&verificationCode=' + this.data.verificationCode
+      url: '../choosePicture/choosePicture?nickName=&regCode=' + this.data.regCode + '&regPhone=' + this.data.regPhone + '&verificationCode=' + this.data.verificationCode + '&inviterid=' + this.data.inviterid
     })
   },
   /**
