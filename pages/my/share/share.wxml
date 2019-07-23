@@ -3,7 +3,7 @@
 
 
 
-  <view class='share-invite' bindtap='invite'>
+  <view class='share-invite' bindtap='showBounced'>
     <image style='' src='../../../images/personal/invite.png' mode='' />
   </view>
 
@@ -19,42 +19,6 @@
 
 
 
-
-
-  <!-- // 转发类 // -->
-  <view class='addBox-choose-cover' wx:if='{{shareMenu}}' bindtap='hideCover'></view>
-
-
-  <view class='addBox-choose-content' wx:if='{{shareMenu}}' catchtouchmove="myCatchTouch">
-
-    <view class='addBox-choose-content-main  main-heights'>
-
-      <view class='share-box'>
-
-        <view class='share-box-img'>
-          <image style='height: 64rpx;width: 85rpx;' src='../../../images/personal/fxhb.png' mode='' />
-        </view>
-        <view class='share-box-text'>生成海报</view>
-
-      </view>
-
-      <view class='share-box'>
-
-        <view class='share-box-img'>
-          <image style='height: 70rpx;width: 70rpx;' src='../../../images/personal/fxwx.png' mode='' />
-        </view>
-        <view class='share-box-text'>转发好友</view>
-
-      </view>
-
-    </view>
-
-  </view>
-
-
-
-
-
   <!-- // 活动规则类 // -->
   <view class="dis-cou-detail zoom-in" wx:if="{{introduce}}" catchtouchmove="myCatchTouch">
     <view class="detail-content">
@@ -63,31 +27,31 @@
       <view class='rules-title'>活动规则</view>
 
       <view class='rules-content'>
-       <view class='rules-content-img'>
-        <image class='' src='../../../images/personal/dot_1.png'></image>
-       </view>
-       <view class='rules-content-text'>啊是的地方vs士大夫得分速递公司</view>
+        <view class='rules-content-img'>
+          <image class='' src='../../../images/personal/dot_1.png'></image>
+        </view>
+        <view class='rules-content-text'>啊是的地方vs士大夫得分速递公司</view>
       </view>
 
-            <view class='rules-content'>
-       <view class='rules-content-img'>
-        <image class='' src='../../../images/personal/dot_2.png'></image>
-       </view>
-       <view class='rules-content-text'>啊是的地方vs士大夫似的发士大夫豆腐干的风格的 豆腐干的比赛得分速递公司</view>
+      <view class='rules-content'>
+        <view class='rules-content-img'>
+          <image class='' src='../../../images/personal/dot_2.png'></image>
+        </view>
+        <view class='rules-content-text'>啊是的地方vs士大夫似的发士大夫豆腐干的风格的 豆腐干的比赛得分速递公司</view>
       </view>
 
-            <view class='rules-content'>
-       <view class='rules-content-img'>
-        <image class='' src='../../../images/personal/dot_3.png'></image>
-       </view>
-       <view class='rules-content-text'>啊是的地方vs</view>
+      <view class='rules-content'>
+        <view class='rules-content-img'>
+          <image class='' src='../../../images/personal/dot_3.png'></image>
+        </view>
+        <view class='rules-content-text'>啊是的地方vs</view>
       </view>
 
-            <view class='rules-content'>
-       <view class='rules-content-img'>
-        <image class='' src='../../../images/personal/dot_4.png'></image>
-       </view>
-       <view class='rules-content-text'>啊是的地方vs士的 豆腐干的比赛得分速递公司</view>
+      <view class='rules-content'>
+        <view class='rules-content-img'>
+          <image class='' src='../../../images/personal/dot_4.png'></image>
+        </view>
+        <view class='rules-content-text'>啊是的地方vs士的 豆腐干的比赛得分速递公司</view>
       </view>
 
 
@@ -112,29 +76,29 @@
       <!-- // <view class='rules-title'>活动规则</view> // -->
 
 
-       <view class='detail-close'>
+      <view class='detail-close'>
         <image class='detail-img' src='../../../images/personal/delete_ruleView.png' bindtap='shut2'></image>
-      </view> 
-
-
-
-<view class='listBox'>
-<scroll-view scroll-y="true" class='' style="height:680rpx;overflow:hidden;">
-
-<block wx:for="{{listInviteList}}">
-      <view class='rules-content'>
-       <view class='rules-content-img'>
-        <!-- <image class='' src='../../../images/personal/dot_1.png'></image> -->
-        <view class='{{index==0? "sorting1" : index==1 ? "sorting2":index==2? "sorting3": index>2?"sorting4":""}}'>{{index>2?index+1:""}}</view>
-       </view>
-       <view class='rules-content-text'>{{item.name}}</view>
       </view>
-</block>
-       
 
 
-</scroll-view>
-</view>
+
+      <view class='listBox'>
+        <scroll-view scroll-y="true" class='' style="height:680rpx;overflow:hidden;">
+
+          <block wx:for="{{listInviteList}}">
+            <view class='rules-content'>
+              <view class='rules-content-img'>
+                <!-- <image class='' src='../../../images/personal/dot_1.png'></image> -->
+                <view class='{{index==0? "sorting1" : index==1 ? "sorting2":index==2? "sorting3": index>2?"sorting4":""}}'>{{index>2?index+1:""}}</view>
+              </view>
+              <view class='rules-content-text'>{{item.name}}</view>
+            </view>
+          </block>
+
+
+
+        </scroll-view>
+      </view>
 
 
 
@@ -142,7 +106,7 @@
   </view>
 
 
-   <!-- //我的邀请类 // -->
+  <!-- //我的邀请类 // -->
 
 
 
@@ -160,6 +124,66 @@
 
 
 
-<!-- <web-view src="{{optionsurl}}"  bindmessage=""></web-view>  -->
 
 
+<!-- // 转发类 // -->
+<view class='addBox-choose-coverss' wx:if='{{shareBounced}}' bindtap='hideBounced'></view>
+
+
+<view class='addBox-choose-contents' wx:if='{{shareBounced}}' catchtouchmove="myCatchTouch">
+
+  <view class='addBox-choose-content-mains  main-heightss'>
+
+    <button class='share-boxs' bindtap='showShareImg'>
+
+      <view class='share-box-imgs'>
+        <image style='height: 80rpx;width: 80rpx;' src='../../../images/personal/pyq.png' mode='' />
+      </view>
+      <view class='share-box-texts'>生成分享图</view>
+
+    </button>
+
+    <button class='share-boxs' open-type="share">
+
+      <view class='share-box-imgs'>
+        <image style='height: 80rpx;width: 80rpx;' src='../../../images/personal/wx.png' mode='' />
+      </view>
+      <view class='share-box-texts'>分享给好友</view>
+
+    </button>
+
+  </view>
+
+</view>
+
+<!-- 分享图 -->
+<view class='addBox-choose-coverImg' wx:if='{{shareImg}}' bindtap='hideShareImg'></view>
+
+
+<view class='shareImg-Box' wx:if='{{shareImg}}'>
+
+  <view style=' display: flex;align-items: center;justify-content: center;flex-direction: column;height: 100%;width: 750rpx;'>
+
+    <view style=''>
+
+      <canvas canvas-id="myCanvas" style="width:{{ImgWidth}}px;height:{{Imgheigght}}px;border: 1px solid;margin:8% auto" />
+
+    </view>
+
+    <view class='' style='display: flex;align-items: center;justify-content: center;height: 60rpx;'>
+
+      <view style='width:160rpx;height:60rpx;'></view>
+
+      <view bindtap='cancelImg' style='width:160rpx;height:60rpx;background:#fff;color:#ff7382;text-align:center;line-height:60rpx;border-radius:10rpx;font-size:24rpx;margin:0 auto'>取消</view>
+      <view style='width:160rpx;height:60rpx;'></view>
+      <view bindtap='saveImg' style='width:160rpx;height:60rpx;background:#ff7382;color:#fff;text-align:center;line-height:60rpx;border-radius:10rpx;font-size:24rpx;margin:0 auto'>保存</view>
+
+      <view style='width:160rpx;height:60rpx;'></view>
+
+    </view>
+
+  </view>
+
+</view>
+
+<!-- 分享图 -->

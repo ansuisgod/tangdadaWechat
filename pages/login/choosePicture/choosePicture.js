@@ -14,11 +14,11 @@ Page({
     regPhone: '',//从上个页面传的参数：注册电话号码
     verificationCode: '',//从上个页面传的参数：注册验证码
     role_id: '1',//角色id
-    array: [{ src: 'http://hbimg.b0.upaiyun.com/69ad7a731f43d4b8729f1a2fbe65c43801ca0f033250-EV1vMf_fw658', type: '1型糖友', value: '1' }, 
-            { src: 'http://hbimg.b0.upaiyun.com/69ad7a731f43d4b8729f1a2fbe65c43801ca0f033250-EV1vMf_fw658', type: '2型糖友', value: '2' },
-            { src: 'http://pic.51yuansu.com/pic3/cover/02/96/71/5ad09ba522904_610.jpg', type: '糖友亲友', value: '14' }, 
-            { src: 'http://images.669pic.com/element_pic/57/50/92/64/fa124b89cedb3098c1876a2a7577327b.jpg', type: '医生', value: '4' },
-            { src: 'http://hbimg.b0.upaiyun.com/69ad7a731f43d4b8729f1a2fbe65c43801ca0f033250-EV1vMf_fw658', type: '其他', value: '4' }],
+    array: [{ src: '../../../static/type1.png', type: '1型糖友', value: '1' }, 
+            { src: '../../../static/type2.png', type: '2型糖友', value: '2' },
+            { src: '../../../static/type3.png', type: '糖友亲友', value: '14' }, 
+            { src: '../../../static/type4.png', type: '医生', value: '4' },
+            { src: '../../../static/type5.png', type: '其他', value: '4' }],
     id: 0
   },
   /**

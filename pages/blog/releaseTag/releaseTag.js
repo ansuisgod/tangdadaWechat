@@ -128,6 +128,9 @@ Page({
             })
           } else {
             abstac.promptBox(res.data.result.message);
+            this.setData({
+              disableLoginBtn: false
+            })
           }
         }, function (error) {
           console.log(error);
@@ -160,11 +163,11 @@ Page({
           dataResult.data = JSON.parse(dataResult.data);
           that.setData({
             interfaceData: src_array1.push(res.data.data.urls.origin),
-            imgDisplay: 'block'
+            imgDisplay: 'block',
+            disableLoginBtn: false
           });
           that.setData({
-            interfaceData: src_array1,
-            disableLoginBtn: false
+            interfaceData: src_array1
           });
         } else {}
       }

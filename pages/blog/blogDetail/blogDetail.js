@@ -114,7 +114,7 @@ Page({
             dynamicLikedPicSrc: likedPicSrc,
             likeFlag: likeFlagss
           });
-          WxParse.wxParse('wxParse', 'html', res.data.data.topic.content_text, that, 5);
+          WxParse.wxParse('wxParse', 'html', res.data.data.topic.content.text, that, 5);
         } else {//就弹出提示框
           abstac.promptBox(res.data.result.message);
         }

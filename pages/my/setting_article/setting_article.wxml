@@ -1,14 +1,20 @@
 <!--pages/my/setting_article/setting_article.wxml-->
 
-
-<view wx:if='{{status == 1}}' class=''>这里是协议内容</view>
-
-
-<view wx:if='{{status == 2}}' class=''>这里是使用说明内容</view>
+<view wx:if='{{status == 1}}' class=''>
+<web-view src="{{agreement}}"  bindmessage=""></web-view>
+</view>
 
 
-<view wx:if='{{status == 3}}' class=''>这里是账号安全内容</view>
+<view wx:if='{{status == 2}}' class=''>
+<web-view src="{{help}}"  bindmessage=""></web-view>
+</view>
 
 
-<view wx:if='{{status == 4}}' class=''>这里是常见安全内容</view>
+<view wx:if='{{status == 3}}' class=''>
+<web-view src="{{safe}}"  bindmessage=""></web-view>
+</view>
 
+
+<view wx:if='{{status == 4}}' class=''>
+<web-view src="{{problem}}"  bindmessage=""></web-view>
+</view>

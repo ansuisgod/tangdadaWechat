@@ -1,7 +1,7 @@
 <!-- 首页视图模板 -->
 <template name="indexAll">
 <!-- 全部视图模板 -->
-<view class='outAll' wx:if='{{allOtherArea == 0}}' wx:for-item='item' wx:for-index="idx" wx:key='property' wx:for="{{dataListInfo}}" bindtap='allClik' data-articlid='{{item.topic_id}}'>
+<view class='outAll' wx:if='{{allOtherArea == 0}}' wx:for-item='item' wx:for-index="idx" wx:key='property' wx:for="{{dataListInfo}}" bindtap='allClik' data-articlid='{{item.article_id}}'>
   <view class='top'>
     <image src='{{item.data.pic.url}}' mode='aspectFill'></image>
     <view class='capsuleRectangle'>阅读:{{item.view_size}} 分享：{{item.share_num}} 点赞：{{item.topic.like_num}}</view>

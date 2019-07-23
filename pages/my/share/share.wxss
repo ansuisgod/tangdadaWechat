@@ -36,107 +36,7 @@
 
 
 /* 分享弹框 */
-.addBox-choose-cover {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 33;
-}
 
-.addBox-choose-content {
-}
-
-.addBox-choose-content-main {
-  /* height: 40%; */
-  width: 100%;
-  /* background-color: white; */
-
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 35;
-  
-}
-
-
-
-
-/* 打开动画 */
-
-.addBox-choose-content-main {
-  -webkit-animation: slidingAN 0.3s linear 1 forwards;
-  animation: slidingAN 0.3s linear 1 forwards;
-}
-
-@keyframes slidingAN {
-  from {
-    transform: translateY(70%);
-  }
-
-  to {
-    transform: translateY(0%);
-  }
-}
-
-@-webkit-keyframes slidingAN {
-  from {
-    transform: translateY(70%);
-  }
-
-  to {
-    transform: translateY(0%);
-  }
-}
-
-::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  color: transparent;
-}
-
-
-/*  */
-.main-heights{
-  height:180rpx;
-  display: flex;
-  background-color: rgba(255,255,255,1);
-}
-
-.share-box{
-  width: 375rpx;
-  height: 180rpx;
-  /* background-color: yellow; */
-}
-
-.share-box-img{
-  width: 375rpx;
-  height: 110rpx;
-    display: flex;
-  align-items: center;
-  justify-content: center;
-  /* background-color: yellowgreen; */
-}
-
-.share-box-img image{
-  height: 100rpx;width: 100rpx;
-}
-
-.share-box-text{
-    display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  width: 375rpx;
-  height: 70rpx;
-  font-size: 30rpx;
-  color: #666;
-}
-
-.share-box:active{
-  background-color: 	#f2f2f2;
-}
 
 
 
@@ -379,4 +279,165 @@ page {
   justify-content: center;
   background-color: #e8e8e8;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 分享弹框 */
+.addBox-choose-coverss {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.addBox-choose-contents {
+}
+
+.addBox-choose-content-mains {
+  /* height: 40%; */
+  width: 100%;
+  /* background-color: white; */
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1001;
+  
+}
+
+.addBox-choose-content-mains button{
+  line-height: normal;
+  background-color: white;
+}
+
+
+
+
+/* 打开动画 */
+
+.addBox-choose-content-mains {
+  -webkit-animation: slidingAN 0.3s linear 1 forwards;
+  animation: slidingAN 0.3s linear 1 forwards;
+}
+
+@keyframes slidingAN {
+  from {
+    transform: translateY(70%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slidingAN {
+  from {
+    transform: translateY(70%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+
+/*  */
+.main-heightss{
+  height:180rpx;
+  display: flex;
+  background-color: rgba(255,255,255,1);
+  box-shadow:0rpx -3rpx 10rpx #c1c1c1;
+}
+
+.share-boxs{
+  width: 375rpx;
+  height: 180rpx;
+  /* background-color: yellow; */
+}
+
+.share-boxs::after {
+  border: none;
+}
+
+.share-box-imgs{
+  width: 375rpx;
+  height: 110rpx;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: yellowgreen; */
+}
+
+.share-box-imgs image{
+  height: 100rpx;width: 100rpx;
+}
+
+.share-box-texts{
+    display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 375rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.share-boxs:active{
+  background-color: 	#f2f2f2;
+}
+
+
+
+
+
+
+/* 分享图片 */
+
+.addBox-choose-coverImg {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1005;
+}
+
+.shareImg-Box{
+  height: 100%;
+  width: 750rpx;
+  /* margin-left: 50rpx; */
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1006;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
 

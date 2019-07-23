@@ -46,7 +46,8 @@ Page({
     this.setData({
       tabW: mtabW,
       platform: app.globalData.platform,
-      navH: app.globalData.navHeight
+      navH: app.globalData.navHeight,
+      pages:'1'
     })
     this.initButton();
   },
@@ -201,11 +202,11 @@ Page({
           var stres = res.data.data[taggsIds].data.topics;
           // 判读是否查到了数据信息
           if (stres == undefined){
-            abstac.promptBox("没有数据！");
+            //abstac.promptBox("没有数据！");
             //设置数据信息
-            that.setData({
-              otherTypeDataList: ''//没有则清空信息
-            });
+            // that.setData({
+            //   otherTypeDataList: ''//没有则清空信息
+            // });
             return;
           }else{
             for (var j = 0; j < stres.length; j++) {
@@ -306,7 +307,7 @@ Page({
       buttons: [
         {
           label: '任务',
-          icon: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562236684673&di=7c4217757c15998bb5ce16038a7ffa38&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic2%2Fcover%2F00%2F31%2F56%2F5810bd78d645b_610.jpg",
+          icon: "../../static/tasks.png",
         },
         {
           label: '问专家',

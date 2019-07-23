@@ -23,7 +23,7 @@
         收货人电话
       </view>
       <view class='goodDesc'>
-        <input type='number' bindblur='phoneOfConsigneeBlur' value='{{consinPhone}}' bindinput='phoneOfConsignee' placeholder='请输入收货人有效的联系方式'></input>
+        <input class='connecting' type='number' bindblur='phoneOfConsigneeBlur' value='{{consinPhone}}' bindinput='phoneOfConsignee' placeholder='请输入收货人有效的联系方式'></input>
       </view>
     </view>
     <view class='consigneeDetail'>

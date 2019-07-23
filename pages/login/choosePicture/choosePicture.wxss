@@ -10,7 +10,15 @@
   margin: 0 auto;
 }
 .rowList .left .top{
+  position: relative;
   text-align: center;
+}
+.rowList .left .top .pic1{
+  position: absolute;
+  top: 5rpx;
+  left: 135rpx;
+  width: 100rpx;
+  height: 100rpx;
 }
 .rowList .left .top image{
   width: 100rpx;

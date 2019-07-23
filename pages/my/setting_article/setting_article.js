@@ -6,6 +6,10 @@ Page({
    */
   data: {
     status:'',
+    agreement: 'http://api.sit.tangdadatech.com/im/agreement.html',
+    help: 'https://api.sit.tangdadatech.com/im/help.html',
+    safe: 'https://api.sit.tangdadatech.com/im/safe.html',
+    problem: 'https://api.sit.tangdadatech.com/im/problem.html',
   },
 
   /**

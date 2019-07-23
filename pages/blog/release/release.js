@@ -147,7 +147,7 @@ Page({
       success: function (res) {
         console.log(res);
         let picSize = res.tempFiles[0].size;
-        if (picSize > '100000'){
+        if (picSize > '500000'){
           abstac.promptBox('图片太大了，请重新选择小于5M图片');
           return;
         }else{
@@ -228,6 +228,7 @@ Page({
         arrya1.push({ 'url': src_array1[j] });
         arryaPic.push('<img src='+src_array1[j]+' />');
       }
+      console.log(arryaPic);
       //调接口
       var tagId = '0',
           that = this,
@@ -286,16 +287,16 @@ Page({
           console.log("****************上传图片的接口返回函数***************");
           console.log(res);
           if (res.statusCode == '200'){
-            res.data = JSON.parse(res.data);
+            var dataResult = res;
+            dataResult.data = JSON.parse(dataResult.data);
             that.setData({
               interfaceData: src_array1.push(res.data.data.urls.origin),
-              imgDisplay: 'block'
-            });
-            that.setData({
-              interfaceData: src_array1,
+              imgDisplay: 'block',
               disableLoginBtn: false
             });
-            console.log(src_array1);
+            that.setData({
+              interfaceData: src_array1
+            });
           }else{}
         }
       })

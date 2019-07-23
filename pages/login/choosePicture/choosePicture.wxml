@@ -4,7 +4,8 @@
   <view class='rowList' wx:key="property" wx:for='{{array}}' data-id='{{index}}' data-val='{{item.value}}' bindtap='clickPicFunc'>
     <view class='left'>
       <view class='top'>
-        <image src='{{item.src}}' style="{{index == id?'border: 1px solid #ff7382;border-radius: 40rpx;':'border:none;border-radius: 0;'}}"></image>
+        <image src='{{item.src}}'></image>
+        <image class="pic1" src="../../../static/type1_select.png" wx:if='{{index == id}}'></image>
       </view>
       <view class='bottom' style="{{index == id?'color:#ff7382':'color:#888;'}}">{{item.type}}</view>
     </view> 

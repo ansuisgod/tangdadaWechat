@@ -14,7 +14,7 @@
     <view class='content'>商品流程：{{goodsDeInfo.remark}}</view>
   </view>
   <view class='detailContent'>
-    <view class='content'>版权归糖大大所有</view>
+    <view class='content1'>版权归糖大大所有</view>
   </view>
   <view class='iWant' wx:if='{{inventory == 0}}' style='background-color:#e5e5e5;color:#a5a5a5;'>我要兑换</view>
   <view class='iWant' wx:if='{{inventory == 1}}' bindtap='recordes' style='background-color:#fd7380;color:#fff;'>我要兑换</view>

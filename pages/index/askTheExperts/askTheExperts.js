@@ -235,7 +235,7 @@ Page({
       buttons: [
         {
           label: '推荐专家',
-          icon: "http://pic.51yuansu.com/pic2/cover/00/46/80/58158bcb979c1_610.jpg",
+          icon: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562236532578&di=1dbd5447533e8dea28ab5a6419776c23&imgtype=0&src=http%3A%2F%2Fwww.zhongoudoctor.com%2Fimages%2Fupload%2Fimage%2F20150728%2F20150728080306_40888.png",
         }
       ],
       buttonClicked(index, item) {

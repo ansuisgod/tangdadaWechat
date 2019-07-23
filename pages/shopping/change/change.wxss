@@ -54,6 +54,12 @@
   font-size: 32rpx;
   font-family: '宋体 SimSun';
 }
+.outmain .contactInformationOfConsignee .goodDesc .connecting{
+  width: 430rpx;
+  height: 50rpx;
+  font-size: 32rpx;
+  font-family: '宋体 SimSun';
+}
 .outmain .consigneeDetail{
   font-size: 32rpx;
   height: 220rpx;

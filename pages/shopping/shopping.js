@@ -81,7 +81,6 @@ Page({
               goodsLists: datas,
             });
           }else if (that.data.page > totalPage) {
-            abstac.promptBox("没有数据了！");
             that.data.page = 1;
             return;
           } else {

@@ -267,11 +267,11 @@ Page({
       buttons: [
         {
           label: '发图文',
-          icon: "http://pic.51yuansu.com/pic2/cover/00/36/41/5811d43c85d48_610.jpg",
+          icon: "../../static/imageFont.png",
         },
         {
           label: '发视频',
-          icon: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562236755743&di=15a335a3203646dfbe5faf2b3dcdd19a&imgtype=0&src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F01%2F14%2F63%2F59043def1e433_610.jpg",
+          icon: "../../static/videos.png",
         }
       ],
       buttonClicked(index, item) {
