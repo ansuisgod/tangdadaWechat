@@ -20,7 +20,7 @@
       <view class='My-box-head-info-3'>糖大大号：{{blogUserInfo.no}}</view>
     </view>
   </view>
-  <view class='My-box-options' bindtap='postings'>
+  <view class='My-box-options' bindtap='postings' data-followed="{{followed}}">
     <view class='My-box-options-lft'>
       <image src='../../images/list/list2.png' />
     </view>
@@ -95,7 +95,8 @@
   </view>
 
   <view class='lookMore' wx:if="{{followed == '0'}}" bindtap='attentionOther' style='background-color:#fd7380;'>查看更多帖子请点击关注</view>
-  <view class='lookMore' wx:if="{{followed == '1'}}" style='background-color:#858585;'>等待对方回复</view>
+  <view class='lookMore' wx:elif="{{followed == '1'}}" bindtap='infoss' style='background-color:#858585;'>等待对方回复</view>
+  <view class='lookMore' wx:else bindtap='cancelTheAttention' style='background-color:#858585;'>取消关注</view>
   <view style='background-color: #fff;height: 20rpx;'></view>
 </view>
 </template>

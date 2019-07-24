@@ -301,11 +301,40 @@ Page({
       slideOffset: offsetW
     });
   },
-  hideCoverss: function () {
-    let menu = this.data.$wux.button.bt.opened;
-    let mytypes = $wux.button.bt.opened
+  /**
+   * @desc:重置浮动按钮，优化点击背景隐藏效果
+   * @date：20190723
+   */
+  hidenss: function (){
     this.setData({
-      mytypes: !menu,
+      opened: !1,
+    });
+    this.button = $wuxButton.init('br', {
+      buttons: [
+        {
+          label: '任务',
+          icon: "../../static/tasks.png",
+        },
+        {
+          label: '问专家',
+          icon: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562236532578&di=1dbd5447533e8dea28ab5a6419776c23&imgtype=0&src=http%3A%2F%2Fwww.zhongoudoctor.com%2Fimages%2Fupload%2Fimage%2F20150728%2F20150728080306_40888.png",
+        }
+      ],
+      buttonClicked(index, item) {
+        index === 0 && wx.navigateTo({
+          url: '/pages/index/task/task'
+        })
+
+        index === 1 && wx.navigateTo({
+          url: '/pages/index/askTheExperts/askTheExperts'
+        })
+        return true
+      },
+      callback(vm, opened) {
+        vm.setData({
+          opened,
+        })
+      },
     })
   },
   /**

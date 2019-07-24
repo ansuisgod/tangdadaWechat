@@ -3,8 +3,8 @@
   <view wx:key='property' wx:for="{{commentList}}">
     <view class='commentDetailList'>
       <view class='leftComment'>
-        <image wx:if='{{item.user.head_icon}}' src='{{item.user.head_icon}}'></image>
-        <image wx:else src='../../../images/personal/man.png'></image>
+        <image bindtap="homePage" data-friendid='{{item.user.id}}' wx:if='{{item.user.head_icon}}' src='{{item.user.head_icon}}'></image>
+        <image bindtap="homePage" data-friendid='{{item.user.id}}' wx:else src='../../../images/personal/man.png'></image>
       </view>
       <view class='rightComment'>
         <view class='topComment'>

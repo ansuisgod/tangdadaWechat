@@ -41,7 +41,12 @@ Page({
       platform: app.globalData.platform,
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
-    this.getDrafBoxNumber(options.drafbox);//获取草稿箱的条数的接口
+    //判断手机是否连接网络
+    if (app.globalData.netWorkType == '4g' || app.globalData.netWorkType == 'wifi' || app.globalData.netWorkType == '3g') {
+      this.getDrafBoxNumber(options.drafbox);//获取草稿箱的条数的接口
+    } else {
+      abstac.promptBox('请检查你的网络是否正常');//提示框
+    }
   },
   /**
    * @desc:删除预览图片

@@ -25,6 +25,13 @@ Page({
       platform: app.globalData.platform,
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
+    if (app.globalData.netWorkType == '4g' || app.globalData.netWorkType == 'wifi' || app.globalData.netWorkType == '3g') {
+      this.goodsList(this.data.page);//查询商品的列表的接口
+      this.getUserPicture();//获取微信用户的头像，一开始要按钮触发获取信息头像
+      this.queryIntegral();//查询用户的积分
+    } else {
+      abstac.promptBox('请检查你的网络是否正常');//提示框
+    }
   },
   /**
    * @desc:获取微信用户的头像，一开始要按钮触发获取信息头像

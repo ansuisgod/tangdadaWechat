@@ -1,7 +1,10 @@
 /* pages/my/my_points/my_points.wxss */
 @import '../../../components/wux.wxss';
 
-
+.floating-button{
+  width: 90rpx;
+  height: 90rpx;
+}
 .float-button2 {
   position: fixed;
   right: 20rpx;

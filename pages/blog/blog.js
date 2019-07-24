@@ -24,7 +24,12 @@ Page({
       navH: app.globalData.navHeight,
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
-    this.getBlogData();
+    //判断手机是否连接网络
+    if (app.globalData.netWorkType == '4g' || app.globalData.netWorkType == 'wifi' || app.globalData.netWorkType == '3g') {
+      this.getBlogData();
+    } else {
+      abstac.promptBox('请检查你的网络是否正常');//提示框
+    }
     this.initButton();
   },
   /**
@@ -203,6 +208,42 @@ Page({
     } else {
       this.getBlogData();
     }
+  },
+  /**
+   * @desc:重置浮动按钮，优化点击背景隐藏效果
+   * @date：20190723
+   */
+  hidenss: function () {
+    this.setData({
+      opened: !1,
+    });
+    this.button = $wuxButton.init('br', {
+      buttons: [
+        {
+          label: '发图文',
+          icon: "../../static/imageFont.png",
+        },
+        {
+          label: '发视频',
+          icon: "../../static/videos.png",
+        }
+      ],
+      buttonClicked(index, item) {
+        index === 0 && wx.navigateTo({
+          url: '/pages/blog/release/release'
+        })
+
+        index === 1 && wx.navigateTo({
+          url: '/pages/blog/sendVideo/sendVideo?flags=1'
+        })
+        return true
+      },
+      callback(vm, opened) {
+        vm.setData({
+          opened,
+        })
+      },
+    })
   },
   /**
    * 用户点击右上角分享

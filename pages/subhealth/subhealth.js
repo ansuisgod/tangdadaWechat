@@ -255,6 +255,42 @@ Page({
    */
   onShareAppMessage: function () {},
   /**
+   * @desc:重置浮动按钮，优化点击背景隐藏效果
+   * @date：20190723
+   */
+  hidenss: function () {
+    this.setData({
+      opened: !1,
+    });
+    this.button = $wuxButton.init('br', {
+      buttons: [
+        {
+          label: '发图文',
+          icon: "../../static/imageFont.png",
+        },
+        {
+          label: '发视频',
+          icon: "../../static/videos.png",
+        }
+      ],
+      buttonClicked(index, item) {
+        index === 0 && wx.navigateTo({
+          url: '/pages/blog/releaseTag/releaseTag'
+        })
+
+        index === 1 && wx.navigateTo({
+          url: '/pages/blog/sendVideo/sendVideo?flags=2'
+        })
+        return true
+      },
+      callback(vm, opened) {
+        vm.setData({
+          opened,
+        })
+      },
+    })
+  },
+  /**
   * @desc:悬浮的按钮动画的效果隐藏和显示菜单
   * @date：20190704
   */

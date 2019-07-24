@@ -11,6 +11,6 @@
 <view class='main'>
   <template is="bloggIndex" data="{{conArr}}" />
 </view>
-<view class='addBox-choose-cover' wx:if='{{opened}}' bindtap='hideCoverss'></view>
+<view class='addBox-choose-cover' wx:if='{{opened}}' bindtap='hidenss'></view>
 <!-- 遮罩层 -->
 <template is="button" data="{{ ...$wux.button.br }}"/>

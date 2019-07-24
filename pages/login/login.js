@@ -49,6 +49,9 @@ Page({
     if (options.inviterid) {
       inviterid = options.inviterid;
     }
+    if (app.globalData.netWorkType == '4g' || app.globalData.netWorkType == 'wifi' || app.globalData.netWorkType == '3g'){}else{
+      abstac.promptBox('请检查你的网络是否正常');//提示框
+    }
   },
    /**
    * 获取电话号码的输入框的值
@@ -222,6 +225,9 @@ Page({
     if (this.data.phoneNumber == '') {
       return;
     }else{
+      this.setData({
+        disableCode: true
+      });
       //登录页面获取短信验证码的接口
       let that = this,
           countDownNum = that.data.countDownNum;

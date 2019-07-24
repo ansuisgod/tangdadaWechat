@@ -105,7 +105,7 @@ Page({
           followed:'1'
         });
       }else{
-        abstac.promptBox("关注失败！");
+        abstac.promptBox(res.data.result.message);
         that.setData({
           followed: '0'
         });
@@ -114,6 +114,37 @@ Page({
     function (error) {//失败回调的函数
       console.log(error);
     });
+  },
+  /**
+   * @desc:取消关注
+   * @param:(关注的接口需要的参数)platform:设备系统[andorid:2 ios:1]、user_id：用户的id、wx_session_key：微信的code值
+   * @date:2019/06/10
+   */
+  cancelTheAttention:function(){
+    let platform = abstac.mobilePhoneModels(this.data.platform),//手机型号
+        userId = this.data.userId,//用户的id
+        that = this;
+    abstac.sms_Interface(app.publicVariable.cancelAttentionInterfaceAddress,
+      { platform: platform, wx_session_key: this.data.wxSessionKey, user_id: userId},
+      function (res) {//成功回调的函数
+        console.log("*********点击关注对方接口返回的数据*************");
+        console.log(res);
+        /*判断是否关注成功，成功则将按钮置为灰色*/
+        if (res.data.result.code == '2000') {
+          abstac.promptBox("取消关注成功");
+          that.setData({
+            followed: '0'
+          });
+        } else {
+          abstac.promptBox(res.data.result.message);
+          that.setData({
+            followed: '1'
+          });
+        }
+      },
+      function (error) {//失败回调的函数
+        console.log(error);
+      });
   },
   /**
    * @desc:跳转到TA的粉丝页面
@@ -143,13 +174,16 @@ Page({
    * @auther：an
    */
   postings:function(){
-    if (this.data.followed == '0'){
+    if (this.data.followed == '1' || this.data.followed == '0'){
       abstac.promptBox("关注成功才能查看");
     }else{
       wx.navigateTo({
         url: '../../pages/my/my_post/my_post?userid=' + this.data.friendId
       })
     }
+  },
+  infoss:function(){
+    abstac.promptBox("已申请关注对方");
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

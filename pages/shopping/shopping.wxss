@@ -68,17 +68,17 @@
     position: relative;
   }
   .listOfGoods .singlePart .pic .inventory{
-    width: 120rpx;
-    height: 70rpx;
+    width: 110rpx;
+    height: 50rpx;
     text-align: center;
     background-color: #fd7aa2;
     color: #fff;
-    line-height: 70rpx;
+    line-height: 50rpx;
     position: absolute;
     top: 0;
     right: 0;
-    font-size: 30rpx;
-    border-radius: 30rpx;
+    font-size: 28rpx;
+    border-radius: 20rpx;
     font-family: '宋体 SimSun';
   }
    .listOfGoods .singlePart .pic image{

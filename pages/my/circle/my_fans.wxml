@@ -19,7 +19,7 @@
         <block wx:for="{{fansList}}">
           <view class='myAttention-box-list'>
             <view class='myAttention-box-list-img'>
-              <image src="{{item.head_icon_circle}}" style="width: 80rpx; height: 80rpx;" />
+              <image src="{{item.head_icon}}" style="width: 80rpx; height: 80rpx;border-radius: 100rpx;" />
             </view>
             <view class='myAttention-box-list-name'>{{item.nick_name}}</view>
           </view>
