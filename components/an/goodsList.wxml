@@ -13,7 +13,7 @@
   </view>
   <view class='toChange'>
     <!-- 判断库存是否为0，则将按钮置灰色无法点击，否则就显示为红色可以点击 -->
-    <button wx:if="{{item.surplus != 0}}" bindtap='wantChange' style='background: #fff;color: #ff7382;border:1px solid #ff7382;' data-surplus='{{item.surplus}}' data-goodsid='{{item.id}}'>我要兑换</button>
+    <button wx:if="{{item.surplus != 0}}" bindtap='wantChange' data-userpoints='{{userIntegral}}' style='background: #fff;color: #ff7382;border:1px solid #ff7382;' data-goodsid='{{item.id}}'>我要兑换</button>
     <button wx:if="{{item.surplus == 0}}" style='background: #e5e5e5;color: #a5a5a5;border:none;'>兑光了</button>
   </view>
 </view>

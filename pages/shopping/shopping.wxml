@@ -16,6 +16,6 @@
 		<!-- 上面的头部的部分结束 -->
     <!-- 中间商品列表的部分 -->
     <view class='listOfGoods'>
-      <template is="goodsList" data="{{goodsLists}}" />
+      <template is="goodsList" data="{{goodsLists,userIntegral}}" />
     </view>
 </view>

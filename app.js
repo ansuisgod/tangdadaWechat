@@ -1,7 +1,7 @@
 //app.js
-  //var httpAdress = 'https://sit.tangdadatech.com';//接口的域名地址
+  var httpAdress = 'https://sit.tangdadatech.com';//接口的域名地址
   //var httpAdress = 'http://172.16.4.58:8093';//接口的域名地址
-  var httpAdress = 'https://tangapp.tangdadatech.com';
+  //var httpAdress = 'https://tangapp.tangdadatech.com';
 App({
   onLaunch: function () {
     var that = this

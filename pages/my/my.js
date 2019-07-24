@@ -54,6 +54,8 @@ Page({
         if (res.data.result.code == '2000') {
 
           var data = res.data.data;
+
+          wx.setStorageSync('UserId', data.user_id) //缓存用户微信信息
           that.setData({
             userCenter: data,
           });

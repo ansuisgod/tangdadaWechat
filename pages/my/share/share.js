@@ -61,7 +61,7 @@ listInviteList:'',
     ImgWidth: '',      //分享的页面宽
     Imgheigght: '',    //分享的页面高
 
-
+    UserId:'',         //用户id
   },
 
   /**
@@ -218,9 +218,10 @@ listInviteList:'',
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function (res) {
     console.log("------ onShareAppMessage ------")
     console.log(res)
+    console.log('inviterid=' + this.data.UserId);
     var that = this
     if (res.from === 'button') {
       // 来自页面内转发按钮
@@ -229,7 +230,7 @@ listInviteList:'',
         title: '糖大大',
         // imageUrl: '/images/icons/tri.png',
         imageUrl: 'http://shop-visit.oss-cn-hangzhou.aliyuncs.com/file/2017/12/06/13/54/34/1512539674217-1494425123.jpg',
-        path: '/pages/ActivityDetails/ActivityDetails?id=' + that.data.id,
+        path: '/pages/login/login?inviterid=' + that.data.UserId,
         success(res) {
           this.setData({
             shareBounced: false,
@@ -243,7 +244,7 @@ listInviteList:'',
         title: '糖大大',
         // imageUrl: '/images/icons/tri.png',
         imageUrl: 'http://shop-visit.oss-cn-hangzhou.aliyuncs.com/file/2017/12/06/13/54/34/1512539674217-1494425123.jpg',
-        path: '/pages/ActivityDetails/ActivityDetails?id=' + that.data.id,
+        path: '/pages/login/login?inviterid=' + that.data.UserId,
         success(res) {
           this.setData({
             shareBounced: false,
@@ -267,10 +268,16 @@ listInviteList:'',
   showBounced: function () {
     var that = this;
 
-    let menu = that.data.shareBounced
-    that.setData({
-      shareBounced: !menu,
-    })
+    if (wx.getStorageSync('UserId')){
+      var UserId = wx.getStorageSync('UserId')
+      let menu = that.data.shareBounced
+      that.setData({
+        shareBounced: !menu,
+        UserId: UserId,
+      })
+    }else(
+      abstac.promptBox("请先登录哦！")
+    )
 
   },
 
@@ -324,11 +331,11 @@ listInviteList:'',
     console.log("------ 获取二维码 ------")
     let that = this
     wx.request({
-      url: 'https://tangapp.tangdadatech.com/im/api/v1/share/getwxacodeunlimit?page=pages/my/share/share',
+      url: 'https://tangapp.tangdadatech.com/im/api/v1/share/getwxacodeunlimit?page=pages/login/login',
       // method: "GET",
       // responseType: 'arraybuffer',
       data: {
-        scene:  "1&123",
+        scene:  that.data.UserId + "&123",
       },
       header: {
         'content-type': 'application/octet-stream',

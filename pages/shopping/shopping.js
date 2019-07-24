@@ -122,7 +122,7 @@ Page({
       if(res.data.result.code == '2000'){
         var userName = wx.getStorageSync('wxnickname');
         that.setData({
-          userIntegral: res.data.data.acc_points,
+          userIntegral: res.data.data.points,
           userName: userName
         });
       }else{
@@ -140,7 +140,7 @@ Page({
     console.log("商品的id=" + e.currentTarget.dataset.goodsid);
     //跳转到兑换的详情页面
     wx.navigateTo({
-      url: '../../../change/change?goodsid=' + e.currentTarget.dataset.goodsid
+      url: '../../../change/change?goodsid=' + e.currentTarget.dataset.goodsid + '&userpoints=' + e.currentTarget.dataset.userpoints
     })
   },
   /**

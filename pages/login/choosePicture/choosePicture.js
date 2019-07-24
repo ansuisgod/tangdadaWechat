@@ -34,7 +34,7 @@ Page({
       inviterid: options.inviterid
     });
     //打印日志
-    console.log(options);
+    console.log(options.inviterid);
   },
   /**
    * 点击图片用户的时候触发的函数

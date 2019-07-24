@@ -27,7 +27,7 @@ Page({
       verificationCode: options.verificationCode,
       inviterid: options.inviterid
     })
-    console.log(options);
+    console.log(options.inviterid);
   },
   /**
    * 输入昵称的输入框输入触发的函数

@@ -21,6 +21,7 @@ Page({
     console.log(options);
     this.setData({
       aGoodsId: options.goodsid,
+      userPoints: options.userpoints,
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
     var nameSessionKey = wx.getStorageSync('consinNameSessionKey') || [];
@@ -71,55 +72,59 @@ Page({
    * @date:2019.06.04
    * @auther:an
    */
-  submitInfo:function(){
-    console.log("consinName=" + this.data.consinName + "&consinPhone=" + this.data.consinPhone + "&consinAdress=" + this.data.consinAdress);
-
+  submitInfo:function(e){
+    console.log("consinName=" + this.data.consinName + "&consinPhone=" + this.data.consinPhone + "&consinAdress=" + this.data.consinAdress + '&&userpoints' + this.data.userPoints + '&&goodspoints' + e.currentTarget.dataset.goodspoint);
     var consinName = this.data.consinName,//收货人姓名
-        consinPhone = this.data.consinPhone,//收货人的电话
-        consinAdress = this.data.consinAdress,//收货人的地址
-        that = this,
-        goodsLength = '1.0';
-    if (!(/^1[34578]\d{9}$/.test(consinPhone)) || consinName == '' || consinAdress == ''){
-      abstac.promptBox("请检查重新填写");
-      this.setData({
-        subBackgroundColor:'#e5e5e5',
-        subFontColor:'#a5a5a5'
-      });
-    }else{
-      //调用接口在提交地址信息
-      this.setData({
-        subBackgroundColor: '#fd7380',
-        subFontColor: '#fff'
-      });
-      abstac.sms_Interface(app.publicVariable.contactInformationInterfaceAddress,
-        { name: that.data.goodsDeInfo.name, receive_address: consinAdress, discount: goodsLength, id: this.data.aGoodsId, contact_method: consinPhone, contact_person: consinName, wx_session_key: this.data.wxSessionKey},
-      function(res){//接口调用成功
-        console.log("****************查询商品兑换记录接口返回函数***************");
-        console.log(res);
-        if (res.data.result.code == '2000'){
-          wx.showModal({
-            title: '提示',
-            content: '亲，你已成功兑换了<' + that.data.goodsDeInfo.name+'>，请静候佳音，我们的工作人员会尽快送出您兑换的奖品',
-            showCancel:false,
-            success: function (res) {
-              if (res.confirm) {
-                //跳转草稿箱的页面
-                wx.switchTab({
-                  url: '../../../pages/shopping/shopping'
-                });
-              }
+      consinPhone = this.data.consinPhone,//收货人的电话
+      consinAdress = this.data.consinAdress,//收货人的地址
+      that = this,
+      goodsLength = '1.0';
+    //判断用户的积分是不是大于商品的积分，如果是就进入兑换页面，如果小于商品的积分就提示信息。
+    if (this.data.userPoints >  e.currentTarget.dataset.goodspoint){
+      if (!(/^1[34578]\d{9}$/.test(consinPhone)) || consinName == '' || consinAdress == '') {
+        abstac.promptBox("请检查重新填写");
+        this.setData({
+          subBackgroundColor: '#e5e5e5',
+          subFontColor: '#a5a5a5'
+        });
+      } else {
+        //调用接口在提交地址信息
+        this.setData({
+          subBackgroundColor: '#fd7380',
+          subFontColor: '#fff'
+        });
+        abstac.sms_Interface(app.publicVariable.contactInformationInterfaceAddress,
+          { name: that.data.goodsDeInfo.name, receive_address: consinAdress, discount: goodsLength, id: this.data.aGoodsId, contact_method: consinPhone, contact_person: consinName, wx_session_key: this.data.wxSessionKey },
+          function (res) {//接口调用成功
+            console.log("****************查询商品兑换记录接口返回函数***************");
+            console.log(res);
+            if (res.data.result.code == '2000') {
+              wx.showModal({
+                title: '提示',
+                content: '亲，你已成功兑换了<' + that.data.goodsDeInfo.name + '>，请静候佳音，我们的工作人员会尽快送出您兑换的奖品',
+                showCancel: false,
+                success: function (res) {
+                  if (res.confirm) {
+                    //跳转草稿箱的页面
+                    wx.switchTab({
+                      url: '../../../pages/shopping/shopping'
+                    });
+                  }
+                }
+              })
+            } else {
+              abstac.promptBox(res.data.result.message);
             }
-          })
-        }else{
-          abstac.promptBox(res.data.result.message);
-        }
-      },
-      function (error) {//接口调用失败
-        abstac.promptBox(res.data.result.message);
-      });
-      wx.setStorageSync('consinNameSessionKey', consinName);
-      wx.setStorageSync('consinPhoneSessionKey', consinPhone);
-      wx.setStorageSync('consinAdressSessionKey', consinAdress);
+          },
+          function (error) {//接口调用失败
+            abstac.promptBox(res.data.result.message);
+          });
+        wx.setStorageSync('consinNameSessionKey', consinName);
+        wx.setStorageSync('consinPhoneSessionKey', consinPhone);
+        wx.setStorageSync('consinAdressSessionKey', consinAdress);
+      }
+    }else{
+      abstac.promptBox("你的积分不够兑换");
     }
   },
   /**
