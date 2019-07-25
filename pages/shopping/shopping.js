@@ -150,7 +150,7 @@ Page({
     console.log("商品的id="+e.currentTarget.dataset.goodsid);
     //跳转到兑换的详情页面
     wx.navigateTo({
-      url: '../../../goodsDetails/goodsDetails?goodsid=' + e.currentTarget.dataset.goodsid
+      url: '../../../goodsDetails/goodsDetails?goodsid=' + e.currentTarget.dataset.goodsid + '&userpoints=' + e.currentTarget.dataset.userpoints
     })
   },
   /**

@@ -75,7 +75,7 @@ Page({
     abstac.sms_Interface(app.publicVariable.registerInterfaceAddress,
       {
         phone: this.data.regPhone, password: this.data.regCode, code: this.data.regverificationCodePhone, platform: platforms,
-        device_id: randomm, nick_name: unickName, role_id: this.data.role_id, inviterid: this.data.inviterid
+        device_id: randomm, nick_name: unickName, role_id: this.data.role_id, inviter: this.data.inviterid
       },
       function (res) {
         console.log("****************用户注册接口成功时返回函数***************");

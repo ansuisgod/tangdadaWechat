@@ -16,7 +16,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      aGoodsId: options.goodsid
+      aGoodsId: options.goodsid,
+      userPoints: options.userpoints
     });
     //查询商品详情
     this.enquiryForDetails();
@@ -70,12 +71,16 @@ Page({
   /**
    * @desc：我要兑换按钮跳转到兑换的页面
    */
-  recordes:function(){
-    console.log("商品的id=" + this.data.aGoodsId);
-    //跳转到兑换的详情页面
-    wx.navigateTo({
-      url: '../../../pages/shopping/change/change?goodsid=' + this.data.aGoodsId
-    })
+  recordes:function(e){
+    console.log("商品的id=" + this.data.aGoodsId + 'point=' + e.currentTarget.dataset.goodspoints);
+    if (this.data.userPoints < e.currentTarget.dataset.goodspoints){
+      abstac.promptBox('亲，您现在的积分不够兑换改礼品哦！');
+    }else{
+      //跳转到兑换的详情页面
+      wx.navigateTo({
+        url: '../../../pages/shopping/change/change?goodsid=' + this.data.aGoodsId + '&userpoints=' + this.data.userPoints
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

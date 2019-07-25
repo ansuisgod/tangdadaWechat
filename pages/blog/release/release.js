@@ -6,6 +6,7 @@ var src_array = [],
     abstac = require('../../../commonmethod/abstract.js'),
     app = getApp(),
     sizes = '20',
+    noteId = '',
     pagess = '1';
 Page({
   /**
@@ -21,6 +22,7 @@ Page({
     content:'',//文本域
     disableLoginBtn: false,//发布按钮的状态按
     draftBoxNumber: '',//草稿箱的草稿条数
+    statuss:'',//标记是从草稿箱进来的
     saveDraftBoxColor:'#a9a9a9'//动态改变存入草稿箱文字的颜色
   },
   /**
@@ -29,14 +31,18 @@ Page({
   onLoad: function (options) {
     if (options.drafbox == '1'){
       this.setData({
-        drafBoxData: JSON.parse(options.info)
+        drafBoxData: JSON.parse(options.info),
+        statuss:'1'
       });
+      noteId = this.data.drafBoxData.id;
       console.log(this.data.drafBoxData);
     } else{
       this.setData({
-        drafBoxData: ''
+        drafBoxData: '',
+        statuss:'0'
       });
     }
+    console.log("statuss="+this.data.statuss);
     this.setData({
       platform: app.globalData.platform,
       wxSessionKey: wx.getStorageSync('sessionKey')
@@ -198,7 +204,7 @@ Page({
           'images': arrya1
         };
     abstac.sms_Interface(app.publicVariable.storageDraftBoxFrendInterfaceAddress,
-      { content: contents, wx_session_key: this.data.wxSessionKey, tag_id: tagIds, title: this.data.articalTilte},
+      { content: contents, wx_session_key: this.data.wxSessionKey, tag_id: tagIds, title: this.data.articalTilte },
     function(res){
       console.log("****************存入草稿箱的接口返回函数***************");
       console.log(res);
@@ -237,6 +243,7 @@ Page({
       //调接口
       var tagId = '0',
           that = this,
+          ajaxUrl = '',
           platform = abstac.mobilePhoneModels(this.data.platform),
           html = '1',
           title = this.data.articalTilte,
@@ -244,10 +251,16 @@ Page({
             'text': this.data.content + arryaPic,
             'images': arrya1
           };
+      //从草稿箱进来的就要叫一个参数note_id
+      if (this.data.statuss == '1') {
+        ajaxUrl = { platform: platform, html: html, title: title, content: contents, wx_session_key: this.data.wxSessionKey, tag_id: tagId, note_id: noteId};
+      }
+      if (this.data.statuss == '0') {
+        ajaxUrl = { platform: platform, html: html, title: title, content: contents, wx_session_key: this.data.wxSessionKey, tag_id: tagId };
+      }
       //打印日志
       console.log("tagId=" + tagId + "&platform=" + platform + "&html=" + html + "&title=" + title + "&wxSessionkey=" + this.data.wxSessionKey + "&content=" + contents);
-      abstac.sms_Interface(app.publicVariable.postBlogInterfaceAddress,
-        { platform: platform, html: html, title: title, content: contents, wx_session_key: this.data.wxSessionKey, tag_id: tagId},
+      abstac.sms_Interface(app.publicVariable.postBlogInterfaceAddress, ajaxUrl,
       function(res){
         console.log("****************发布帖子接口返回函数***************");
         console.log(res);

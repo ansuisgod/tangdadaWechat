@@ -42,7 +42,7 @@
         <view class='Details-info-heat'>
           <text style='color:#fe7383;'>{{item.food.calory}}</text>大卡 / {{item.food.weight}}克</view>
 
-        <view style='' bindtap='infoFoods' data-info="{{item.food}}">
+        <view style='' class="choose-foods" bindtap='infoFoods' data-info="{{item.food}}">
 
 
           <!-- 食物单位选择 -->

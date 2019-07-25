@@ -1,7 +1,7 @@
 <!-- 商品列表的模板 -->
 <template name="goodsList">
 <view class='singlePart' wx:key='property' wx:for="{{goodsLists}}">
-  <view bindtap="intoDetail" data-goodsid='{{item.id}}'>
+  <view bindtap="intoDetail" data-goodsid='{{item.id}}' data-userpoints='{{userIntegral}}'>
     <view class='pic'>
       <image src='{{item.pic}}' mode='aspectFill'></image>
       <view class='inventory'>{{item.surplus}} 件</view>
