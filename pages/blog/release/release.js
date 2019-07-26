@@ -35,7 +35,6 @@ Page({
         statuss:'1'
       });
       noteId = this.data.drafBoxData.id;
-      console.log(this.data.drafBoxData);
     } else{
       this.setData({
         drafBoxData: '',
@@ -111,6 +110,14 @@ Page({
               content: cc.content.text
             });
             console.log(cc);
+            src_array1.push(cc.content.images[0].url);
+            src_array1.push(cc.content.images[1].url);
+
+            that.setData({
+              interfaceData: src_array1,
+              chooseImgSrc: src_array1,
+              imgDisplay: 'block'
+            });
           }else{
             that.confirmationBox();//调用弹出提示框
           }
@@ -220,6 +227,8 @@ Page({
       console.log(error);
     });
     arrya1 = [];
+    src_array = [];
+    src_array1 = [];
   },
   /**
    * @desc:点击发布按钮触发的函数
