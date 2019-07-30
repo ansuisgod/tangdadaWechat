@@ -49,6 +49,10 @@ Page({
     if (options.inviterid) {
       inviterid = options.inviterid;
     }
+    if (options.scene){
+      let scene = decodeURIComponent(options.scene);
+      inviterid = options.scene.split("&")[0];
+    }
     console.log('inviterid=' + inviterid);
     if (app.globalData.netWorkType == '4g' || app.globalData.netWorkType == 'wifi' || app.globalData.netWorkType == '3g'){}else{
       abstac.promptBox('请检查你的网络是否正常');//提示框

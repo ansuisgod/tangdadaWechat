@@ -465,8 +465,11 @@ Page({
           wx.redirectTo({
             url: '/pages/my/diet_records/diet_records'
           })
-
-
+          try {
+            wx.removeStorageSync('foodsList')
+          } catch (e) {
+            // Do something when catch error
+          }
         } else {
           abstac.promptBox(res.data.result.message);
         }

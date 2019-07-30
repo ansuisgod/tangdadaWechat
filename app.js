@@ -4,7 +4,7 @@
   //var httpAdress = 'https://tangapp.tangdadatech.com';
 App({
   onLaunch: function () {
-    var that = this
+    var that = this 
     /**
      * 开始从本地缓存中查找sessionKey 和 appendid
      * 注释: 如果找到了这个sessionKey值则说明已经注册的用户，就向跳转到首页

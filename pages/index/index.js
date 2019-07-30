@@ -241,6 +241,8 @@ Page({
   allClik:function(e){
     var topicId = e.currentTarget.dataset.topicid,
         url = e.currentTarget.dataset.html,
+        articlid = e.currentTarget.dataset.articlid,
+        ids = e.currentTarget.dataset.ids,
         recommend = e.currentTarget.dataset.recommend;
     if (topicId == '-1'){
       console.log(topicId);
@@ -251,9 +253,13 @@ Page({
       wx.navigateTo({
         url: '../../pages/index/indexOutHtmlPage/indexOutHtmlPage?url=' + url
       })
+    } else if (articlid == '-1'){
+      wx.navigateTo({
+        url: '../../pages/blog/blogDetail/blogDetail?blogId=' + topicId
+      })
     }else{
       wx.navigateTo({
-        url: '../../pages/blog/blogDetail/blogDetail?blogId=' + e.currentTarget.dataset.articlid
+        url: '../../pages/blog/blogDetail/blogDetail?blogId=' + ids
       })
     }
   },

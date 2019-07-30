@@ -151,7 +151,11 @@ listInviteList:'',
     })
   },
 
-
+  ruternTo: function () {
+    wx.switchTab({
+      url: '/pages/my/my'
+    })
+  },
 
 
 

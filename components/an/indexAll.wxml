@@ -1,7 +1,7 @@
 <!-- 首页视图模板 -->
 <template name="indexAll">
 <!-- 全部视图模板 -->
-<view class='outAll' wx:if='{{allOtherArea == 0}}' wx:for-item='item' wx:for-index="idx" wx:key='property' wx:for="{{dataListInfo}}" bindtap='allClik' data-articlid='{{item.id}}' data-topicid="{{item.topic_id}}" data-html="{{item.url}}">
+<view class='outAll' wx:if='{{allOtherArea == 0}}' wx:for-item='item' wx:for-index="idx" wx:key='property' wx:for="{{dataListInfo}}" bindtap='allClik' data-articlid='{{item.article_id}}' data-topicid="{{item.topic_id}}" data-ids="{{item.id}}" data-html="{{item.url}}">
   <view class='top'>
     <image src='{{item.data.pic.url}}' mode='aspectFill'></image>
     <view class='capsuleRectangle'>阅读:{{item.view_size}} 分享：{{item.share_num}} 点赞：{{item.topic.like_num}}</view>
@@ -14,7 +14,7 @@
   <view wx:if='{{item.data.desc}}' class='bottom1'>{{item.data.desc}}</view>
 </view>
 <!-- 糖活动、糖友荟、养生糖视图模板 -->
-<view class='outAll' wx:if='{{allOtherArea == 1}}' wx:for-item='item' wx:key='property' wx:for="{{otherTypeDataList}}" bindtap='allClik' data-articlid='{{item.topic.id}}'>
+<view class='outAll' wx:if='{{allOtherArea == 1}}' wx:for-item='item' wx:key='property' wx:for="{{otherTypeDataList}}" bindtap='allClik' data-ids='{{item.topic.id}}'>
   <view class='top'>
     <image src='{{item.data.pic.url}}' mode='aspectFill'></image>
     <view class='capsuleRectangle'>阅读:{{item.topic.view_size}} 分享：{{item.topic.share_num}} 点赞：{{item.topic.like_num}}</view>

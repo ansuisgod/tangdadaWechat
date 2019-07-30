@@ -1,7 +1,11 @@
 <!--pages/my/share/share.wxml-->
 <view class=''>
 
-
+  <!-- 返回按钮 -->
+<view class='' style='position: absolute;left: 40rpx;top:80rpx;z-index: 50;'>
+<image class="" bindtap='ruternTo' style='height:40rpx;width:60rpx;border-radius: 60rpx;' src="../../../images/personal/ruturn.png" mode="aspectFill"></image>
+</view>
+<!-- 返回按钮END -->
 
   <view class='share-invite' bindtap='showBounced'>
     <image style='' src='../../../images/personal/invite.png' mode='' />
@@ -30,28 +34,28 @@
         <view class='rules-content-img'>
           <image class='' src='../../../images/personal/dot_1.png'></image>
         </view>
-        <view class='rules-content-text'>啊是的地方vs士大夫得分速递公司</view>
+        <view class='rules-content-text'>用户参加的活动次数不限</view>
       </view>
 
       <view class='rules-content'>
         <view class='rules-content-img'>
           <image class='' src='../../../images/personal/dot_2.png'></image>
         </view>
-        <view class='rules-content-text'>啊是的地方vs士大夫似的发士大夫豆腐干的风格的 豆腐干的比赛得分速递公司</view>
+        <view class='rules-content-text'>用户需要保证邀请的新用户为糖友</view>
       </view>
 
       <view class='rules-content'>
         <view class='rules-content-img'>
           <image class='' src='../../../images/personal/dot_3.png'></image>
         </view>
-        <view class='rules-content-text'>啊是的地方vs</view>
+        <view class='rules-content-text'>新用户在完成注册登录后，老用户才能获得200积分</view>
       </view>
 
       <view class='rules-content'>
         <view class='rules-content-img'>
           <image class='' src='../../../images/personal/dot_4.png'></image>
         </view>
-        <view class='rules-content-text'>啊是的地方vs士的 豆腐干的比赛得分速递公司</view>
+        <view class='rules-content-text'>最终解释权归糖大大所有</view>
       </view>
 
 
@@ -91,7 +95,7 @@
                 <!-- <image class='' src='../../../images/personal/dot_1.png'></image> -->
                 <view class='{{index==0? "sorting1" : index==1 ? "sorting2":index==2? "sorting3": index>2?"sorting4":""}}'>{{index>2?index+1:""}}</view>
               </view>
-              <view class='rules-content-text'>{{item.name}}</view>
+              <view class='rules-content-text'>{{item.nickname}}</view>
             </view>
           </block>
 

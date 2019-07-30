@@ -90,7 +90,7 @@
 
   <view class='Details-button'>
     <view wx:if='{{lock == false}}' class='Details-button-sava saveYes' bindtap='newDiet'>保存</view>
-    <view wx:else class='Details-button-sava saveNo' bindtap='newDiet'>已保存</view>
+    <view wx:else class='Details-button-sava saveNo'>已保存</view>
   </view>
 
 </view>
