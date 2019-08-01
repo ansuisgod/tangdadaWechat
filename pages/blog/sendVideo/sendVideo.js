@@ -143,9 +143,9 @@ Page({
     var that = this;
     wx.chooseVideo({
       sizeType: ['compressed'],
-      sourceType: ['album', 'camera'],
+      sourceType: ['album'],
       compressed: true,
-      maxDuration: 40,
+      maxDuration: 35,
       success: function (res) {
         if(res.size > '30000000'){
           abstac.promptBox('视频太大了，请重新选择小于30M小视频');
