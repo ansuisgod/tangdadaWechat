@@ -10,12 +10,12 @@
 
   <!-- 我的关注   -->
   <swiper-item id="my_attention">
-    <template is="my_attention" data="{{ts,testData,followsLists}}" />
+    <template is="my_attention" data="{{ts,testData,followsLists,woman,man}}" />
   </swiper-item>
 
   <!-- 我的粉丝   -->
   <swiper-item id="my_fans">
-    <template is="my_fans" data="{{ts1,testData,fansList}}" />
+    <template is="my_fans" data="{{ts1,testData,fansList,woman,man}}" />
   </swiper-item>
 
 </swiper>

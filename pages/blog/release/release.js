@@ -44,11 +44,17 @@ Page({
     console.log("statuss="+this.data.statuss);
     this.setData({
       platform: app.globalData.platform,
-      wxSessionKey: wx.getStorageSync('sessionKey')
+      wxSessionKey: wx.getStorageSync('sessionKey'),
+      question: options.question
     });
+    console.log(this.data.question);
     //判断手机是否连接网络
     if (app.globalData.netWorkType == '4g' || app.globalData.netWorkType == 'wifi' || app.globalData.netWorkType == '3g') {
-      this.getDrafBoxNumber(options.drafbox);//获取草稿箱的条数的接口
+      if (this.data.question == '1') {
+        
+      }else{
+        this.getDrafBoxNumber(options.drafbox);//获取草稿箱的条数的接口
+      }
     } else {
       abstac.promptBox('请检查你的网络是否正常');//提示框
     }
@@ -281,11 +287,20 @@ Page({
             chooseImgSrc:'',
             interfaceData:''
           });
-          wx.switchTab({
-            url: '../../../pages/blog/blog'
-          })
+          if (that.data.question == '1') {
+            wx.navigateTo({
+              url: '../../../pages/index/askTheExperts/askTheExperts'
+            });
+          } else {
+            wx.switchTab({
+              url: '../../../pages/blog/blog'
+            });
+          }
         }else{
           abstac.promptBox(res.data.result.message);
+          that.setData({
+            disableLoginBtn: false
+          })
         }
       },function(error){
         console.log(error);

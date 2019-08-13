@@ -1,0 +1,10 @@
+<!--pages/index/sportsRules/sportsRules.wxml-->
+<view class="ouBox">
+  <view class="mainBox">
+    <view>签到活动：</view>
+    <view style="text-indent: 50rpx;">1、注册糖大大app成为糖大大app的注册会员，即可有资格参与本次签到活动；</view>
+    <view style="text-indent: 50rpx;">2、连续每日签到50天，即可获得精美礼品；</view>
+    <view style="text-indent: 50rpx;">3、签到50天不可间断，如间断需从第一天开始；</view>
+    <view style="text-indent: 50rpx;">4、签到满50天后，点击领取礼物，需填写收货地址，以快递的形式寄给你。</view>
+  </view>
+</view>

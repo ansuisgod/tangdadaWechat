@@ -25,6 +25,17 @@ Page({
       platform: app.globalData.platform,
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
+    /**
+     * 开始从本地缓存中查找sessionKey 和 appendid
+     * 注释: 如果找到了这个sessionKey值则说明已经注册的用户，就向跳转到首页
+     *       如果没找到这个sessionKey值则说明没有注册，就跳转到注册的页面
+     */
+    var sessinKey = wx.getStorageSync('sessionKey') || [];
+    if (sessinKey == '') {
+      wx.navigateTo({
+        url: '/pages/login/login'
+      });
+    }
     if (app.globalData.netWorkType == '4g' || app.globalData.netWorkType == 'wifi' || app.globalData.netWorkType == '3g') {
       this.goodsList(this.data.page);//查询商品的列表的接口
       this.getUserPicture();//获取微信用户的头像，一开始要按钮触发获取信息头像
@@ -170,7 +181,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.goodsList(this.data.page);//查询商品的列表的接口
     this.getUserPicture();//获取微信用户的头像，一开始要按钮触发获取信息头像
     this.queryIntegral();//查询用户的积分
   },

@@ -1,5 +1,6 @@
 // pages/login/login.js
 var abstac = require('../../commonmethod/abstract.js'),
+    md5 = require('../../utils/md5.js'),
     inviterid = '';//邀请人的id
 const app = getApp();
 Page({
@@ -230,9 +231,9 @@ Page({
     if (this.data.phoneNumber == '') {
       return;
     }else{
-      this.setData({
-        disableCode: true
-      });
+      // this.setData({
+      //   disableCode: true
+      // });
       //登录页面获取短信验证码的接口
       let that = this,
           countDownNum = that.data.countDownNum;
@@ -360,13 +361,13 @@ Page({
    * 点击注册按钮触发函数
    */
   regFunc:function(){
-    console.log("注册密码======" + this.data.regPwdNumber + "&注册输入框的电话号码====" + this.data.regPhoneNumber + "&注册验证码===" + this.data.regGetCode + "&邀请人的id=" + inviterid);
+    console.log("注册密码======" + md5.hex_md5(this.data.regPwdNumber) + "&注册输入框的电话号码====" + this.data.regPhoneNumber + "&注册验证码===" + this.data.regGetCode + "&邀请人的id=" + inviterid);
     if (this.data.regPwdNumber == '' || this.data.regPhoneNumber == '' || this.data.regGetCode == ''){
       abstac.promptBox('请您检查输入的内容是否正确');//提示框
       return;
     }else{
       wx.navigateTo({
-        url: '/pages/login/inputNickName/inputNickName?regCode=' + this.data.regPwdNumber + '&regPhone=' + this.data.regPhoneNumber + '&verificationCode=' + this.data.regGetCode + '&inviterid=' + inviterid,
+        url: '/pages/login/inputNickName/inputNickName?regCode=' + md5.hex_md5(this.data.regPwdNumber) + '&regPhone=' + this.data.regPhoneNumber + '&verificationCode=' + this.data.regGetCode + '&inviterid=' + inviterid,
       })
     }
   },
@@ -394,9 +395,9 @@ Page({
     }else{
       // 封装微信登录
       var that = this;
-      that.setData({
-        disableLoginBtn: true
-      })
+      // that.setData({
+      //   disableLoginBtn: true
+      // })
       abstac.weChat_Login(function(res){
         console.log(res);
         if (res.code){

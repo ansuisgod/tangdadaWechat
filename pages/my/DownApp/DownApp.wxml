@@ -1,0 +1,10 @@
+<!--pages/my/DownApp/DownApp.wxml-->
+<view wx:if='{{status == 1}}' class=''>
+<web-view src="{{IOSUrl}}"  bindmessage=""></web-view>
+</view>
+
+
+<view wx:if='{{status == 2}}' class=''>
+<web-view src="{{AndroidUrl}}"  bindmessage=""></web-view>
+</view>
+

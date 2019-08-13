@@ -2,12 +2,12 @@
 
 /* 评测悬浮按钮 */
 .review{
-  height: 150rpx;
-  width: 150rpx;
+  height: 110rpx;
+  width: 110rpx;
   border-radius: 100rpx;
   background-color: #ff7382;
   color: white;
-  font-size: 30rpx;
+  font-size: 26rpx;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,6 @@
   height: 100vh;
   background-color: #f7f7f7;
 }
-
 .health-records-title{
   height: 100rpx;
   width: 92%;

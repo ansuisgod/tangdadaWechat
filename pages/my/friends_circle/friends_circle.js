@@ -17,7 +17,8 @@ Page({
 
 
 
-
+    woman: '../../../images/personal/woman.png',
+    man: '../../../images/personal/man.png',
 
 
 
@@ -237,6 +238,13 @@ Page({
    * @desc:点击用户的头像进入用户的主页
    */
   checkInfo: function (e) {
+    //跳转到用户的主页
+    wx.navigateTo({
+      url: '/pages/homePage/homePage?friendid=' + e.currentTarget.dataset.id
+    })
+  },
+
+  checkInfoFans: function (e) {
     //跳转到用户的主页
     wx.navigateTo({
       url: '/pages/homePage/homePage?friendid=' + e.currentTarget.dataset.id

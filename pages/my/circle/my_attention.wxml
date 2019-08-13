@@ -21,7 +21,7 @@
         <block wx:for="{{followsLists}}">
           <view class='myAttention-box-list' bindtap='checkInfo' data-id='{{item.id}}'>
             <view class='myAttention-box-list-img'>
-              <image src="{{item.head_icon}}" style="width: 80rpx; height: 80rpx;border-radius: 100rpx;" />
+              <image src="{{item.head_icon ? item.head_icon : item.gender == 1? man : woman}}" style="width: 80rpx; height: 80rpx;border-radius: 100rpx;" />
             </view>
             <view class='myAttention-box-list-name'>{{item.nick_name}}</view>
           </view>

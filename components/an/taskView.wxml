@@ -12,10 +12,10 @@
   <view class="slide-view">
   <view class='dailyTask' wx:for="{{everyDayTaskArr}}" wx:key='property'  wx:for-item='indexs'>
     <view class='dailyTaskInfo'>
-      <view class='taskTtile'>{{indexs.texts}}</view>
+      <view class='taskTtile'>{{indexs.ziduan}}</view>
       <view class='botomDaily'>
         <image src='../../../static/task_daily_icon.png'></image>
-        <text class='integral'>+{{indexs.point}}积分</text>  
+        <text class='integral'>+{{indexs.score}}</text>  
       </view>
     </view>
   </view>

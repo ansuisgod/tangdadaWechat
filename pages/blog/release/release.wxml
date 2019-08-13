@@ -12,7 +12,7 @@
 </view>
 <view class='bottomArea'>
   <image src='../../../static/addPic.png' bindtap='choosePhotos'></image>
-  <text class='draftBox' style='color:{{saveDraftBoxColor}};' bindtap='saveDraftBox'>存入草稿箱</text>
+  <text class='draftBox' wx:if='{{question != 1}}' style='color:{{saveDraftBoxColor}};' bindtap='saveDraftBox'>存入草稿箱</text>
 </view>
 <view class='blogContent'>
   <button class='records' bindtap='releaseBtn' disabled='{{disableLoginBtn}}'>发布</button>

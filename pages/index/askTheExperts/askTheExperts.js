@@ -99,7 +99,7 @@ Page({
    */
   askQuestions:function(){
     wx.navigateTo({
-      url: '../../../pages/blog/release/release'
+      url: '../../../pages/blog/release/release?question=1'
     })
   },
   /**
@@ -197,7 +197,12 @@ Page({
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {},
+  onUnload: function () {
+    wx.reLaunch({
+      url: '../../index/index'
+    })
+
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

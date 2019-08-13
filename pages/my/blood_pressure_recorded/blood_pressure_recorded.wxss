@@ -13,7 +13,10 @@
 }
 
 
-
+.floating-button{
+  width: 90rpx;
+  height: 90rpx;
+}
 /* 按钮 */
 .top-box{
   position: fixed;

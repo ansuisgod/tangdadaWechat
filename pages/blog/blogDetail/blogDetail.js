@@ -190,7 +190,7 @@ Page({
       function (res) {//成功
         console.log("********************评论发送接口返回数据***********************");
         console.log(res);
-        if (res.data.result.code == '2000') {
+        if (res.data.data.result.code == '2000') {
           abstac.promptBox("+5积分,需等待审核");
           that.setData({
             replyContent: '',
@@ -204,7 +204,7 @@ Page({
           src_array = [];
           src_array1 = [];
         } else {
-          abstac.promptBox("评论失败！");
+          abstac.promptBox(res.data.data.result.message);
         }
       },
       function (error) { //失败

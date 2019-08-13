@@ -1,7 +1,7 @@
 <!--pages/my/searchFood/searchFood.wxml-->
 <view class=''>
   <view class='input-box'>
-    <input placeholder="请输入运动名称🔍" confirm-type='search' bindconfirm="search" bindinput='search' value='{{search}}' placeholder-style="font-size: 30rpx; color: #999; padding-left:30rpx; text-align: center;"></input>
+    <input placeholder="请输入食物名称" confirm-type='search' bindconfirm="search" bindinput='search' value='{{search}}' placeholder-style="font-size: 30rpx; color: #999; padding-left:30rpx; text-align: center;"></input>
   </view>
 
   <view style='height:110rpx;'></view>

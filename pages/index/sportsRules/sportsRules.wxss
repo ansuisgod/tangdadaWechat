@@ -1,0 +1,12 @@
+/* pages/index/sportsRules/sportsRules.wxss */
+.ouBox{
+  width: 100%;
+  height: auto;
+}
+.ouBox .mainBox{
+  width: 90%;
+  height: auto;
+  margin: 60rpx auto;
+  color: #a3a0a0;
+  font-size: 32rpx;
+}

@@ -10,41 +10,6 @@
     </view>
   </view>
 </view>
-
-<!-- 搜索语音部分 -->
-<!-- <view class='askTheExperts'>
-  <view class='insideC' wx:for="{{audioArr}}" wx:for-item="v" wx:for-index="key" wx:key="content">
-
-    <view class='asking'>
-
-      <view class='askLeft'>
-        <view class='askIcon'>问</view>
-      </view>
-      
-      <view class='askRight' wx:if="{{!v.isplay}}" bindtap="play" data-key="{{key}}" data-id="{{v.id}}" data-isplay="{{v.isplay}}">
-        <view class='voiceOutA'>
-          <image src='https://xcx.quan5fen.com/Public/xcx-hitui/image/imgs-jyh/yuyin-ico.png'></image>
-        </view>
-        
-      </view>
-      <view class='voicePlayTime' wx:if="{{!v.isplay}}">
-        {{v.time}}
-      </view>
-
-      
-      <view class='askRight' wx:if="{{v.isplay}}" bindtap="stop" data-key="{{key}}" data-id="{{v.id}}" data-isplay="{{v.isplay}}">
-        <view class='voiceOutA'>
-          <image src='https://xcx.quan5fen.com/Public/xcx-hitui/image/imgs-jyh/yuyin-gif.gif'></image>
-        </view>
-        
-      </view>    
-      <view class='voicePlayTime' wx:if="{{v.isplay}}">
-        {{v.time}}
-      </view>
-    </view>
-  </view>
-</view> -->
-
 <!-- 问答部分 -->
 <view class='askQuestionArea'>
   <view class='insideC' wx:for-item='item' wx:key='property' wx:for="{{dataList}}" style='display:{{defaultArea}};' bindtap='askTheExperts' data-ids='{{item.id}}'>

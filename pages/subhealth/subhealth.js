@@ -34,6 +34,17 @@ Page({
       navH: app.globalData.navHeight,
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
+    /**
+     * 开始从本地缓存中查找sessionKey 和 appendid
+     * 注释: 如果找到了这个sessionKey值则说明已经注册的用户，就向跳转到首页
+     *       如果没找到这个sessionKey值则说明没有注册，就跳转到注册的页面
+     */
+    var sessinKey = wx.getStorageSync('sessionKey') || [];
+    if (sessinKey == '') {
+      wx.navigateTo({
+        url: '/pages/login/login'
+      });
+    }
     /*进入页面分别加载完三个标签的默认数据*/
     this.getDataInfo('97');//调用亚健康下面的肥胖类型的数据接口方法
     this.getDataInfo('98');//调用亚健康下面的女性健康类型的数据接口方法
@@ -144,11 +155,7 @@ Page({
               rehabilitationTherapy: res.data.data.topics
             });
           }
-        } else if (res.data.result.code == '4000') {//如果出现用户会话过期就跳转到登录页面让用户重新登录
-          wx.navigateTo({
-            url: '/pages/login/login'
-          });
-        }else {
+        } else {
           abstac.promptBox(res.data.result.message);
         }
       }, function (error) {

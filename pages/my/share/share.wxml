@@ -48,7 +48,7 @@
         <view class='rules-content-img'>
           <image class='' src='../../../images/personal/dot_3.png'></image>
         </view>
-        <view class='rules-content-text'>新用户在完成注册登录后，老用户才能获得200积分</view>
+        <view class='rules-content-text'>新用户在完成注册登录后，并发表一篇帖子审核通过后，新老用户均可获得200积分</view>
       </view>
 
       <view class='rules-content'>

@@ -14,8 +14,7 @@ Page({
     tabW: 0,
     pages:'1',
     imgSrcs: '',
-    everyDayTaskArr: [{ texts: '帖子审核通过，可获得10积分', point: '20' }, { texts: '发帖，可获得5积分', point: '5' },
-      { texts: '回帖，可获得5积分', point: '5' }, { texts: '添加健康记录，可获得10积分', point: '10' }]
+    everyDayTaskArr: ''
   },
   /**
    * 生命周期函数--监听页面加载
@@ -28,7 +27,7 @@ Page({
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
     this.activeTask();//调用接口显示数据的方法
-    //this.listEveryDayTask();调用每日任务的接口方法
+    this.listEveryDayTask();//调用每日任务的接口方法
   },
   /**
    * @desc:调用每日任务的接口方法
@@ -42,8 +41,15 @@ Page({
         console.log(res);
         //有则取数据
         if (res.data.result.code == '2000') {
+          var list = [];
+          for (var i = 0; i <= res.data.data.length - 1; i++){
+            var datass = res.data.data[i];
+            var cc = datass.split(",", 2);
+            var dd = cc[1].substring(3);
+            list.push({ 'ziduan': datass, "score": dd});
+          }
           that.setData({
-            everyDayTaskArr: res.data.data
+            everyDayTaskArr: list
           });
         } else {
           abstac.promptBox(res.data.result.message);
@@ -105,19 +111,8 @@ Page({
         url: '../../../pages/my/ModifyMyInfo/ModifyMyInfo'
       })
     }else{
-      wx.showModal({
-        title: '提示',
-        content: '请打开app签到！',
-        confirmText: '确定',
-        showCancel:false,
-        success: function (res) {
-          if (res.confirm) {
-            console.log('确认');
-          }
-          if (res.cancel) {
-            console.log('取消');
-          }
-        }
+      wx.navigateTo({
+        url: '../../../pages/index/signIn/signIn'
       })
     }
   },
@@ -142,6 +137,7 @@ Page({
    */
   onPullDownRefresh: function () {
     this.activeTask();//调用接口显示数据的方法
+    wx.stopPullDownRefresh();
   },
   /**
    * 页面上拉触底事件的处理函数

@@ -26,34 +26,7 @@
     </view>
 
   </view>
-
-  <!-- 输入验证码 -->
-  <!-- <view class='SMSBox-list2'>
-
-    <view class='SMSBox-1-2'></view>
-    <view class='SMSBox-2-2'>
-    </view>
-    <view class='SMSBox-3-2'>
-
-      <input class='placeholderTo' placeholder-class='placeholder' placeholder='请输入验证码' bindinput="handleVerificationCodeBlur" name="verificationCode" maxlength="4" type="number" />
-
-    </view>
-    <view class='SMSBox-4-2'>
-
-      <view class='SMSBox-4-2-code' bind:tap="sendMsg" style="background-color:{{sendBtnState.interval > 0 ? 'grey' : sendBtnState.color }};">{{sendBtnState.interval > 0 ? sendBtnState.interval + '秒后重试' : ' 获取验证码'}}</view>
-
-    </view>
-
-  </view>
-
--->
-
   <view style='height:60rpx;'></view> 
-
-
-
-
-
   <!-- 添加注意事项 -->
   <view class='SMSBox-list' bindtap='shareShare3'>
 
@@ -67,10 +40,7 @@
     </view>
 
   </view>
-
-
-
-  <view class='choose' style='height:120rpx;' hidden='{{arrText.length == ""}}'>
+<view class='choose' style='height:120rpx;' hidden='{{arrText.length == ""}}'>
 
     <block wx:for="{{arrText}}" wx:for-index="index">
       <view class='choose-box'>
@@ -82,15 +52,7 @@
     </block>
 
   </view>
-
-
-
-
-
-
-
-
-  <view style='height:60rpx;'></view>
+<view style='height:60rpx;'></view>
   <!-- 设置提醒频率 -->
   <view class='SMSBox-list-3' bindtap='shareShare2'>
 
@@ -116,13 +78,6 @@
   <view class='addBox-choose-content' wx:if='{{shareMenu2}}' catchtouchmove="myCatchTouch">
 
     <view class='addBox-choose-content-main  main-heights2'>
-
-      <!-- 按钮叉 -->
-      <!-- <view class='addBox-choose-content-del'>
-        <image class='' style='' bindtap='hideCover' mode='aspectFill' src='../../../images/personal/cha.png'></image>
-      </view> -->
-
-
       <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="0" data-text="每天">每天</view>
       <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="1" data-text="单次">单次</view>
       <view class='addBox-choose-content-mainList'  bindtap='goStatus' data-status="2" data-text="每周一">每周一</view>
@@ -141,12 +96,7 @@
 
   </view>
   <!--  -->
-
-
-
-
-
-  <!-- 添加提醒时间 -->
+<!-- 添加提醒时间 -->
 
   <view wx:if='{{status != 1}}'>
     <picker mode="time" value="{{time}}" start="09:00" end="17:30" bindchange="changeTime">
@@ -170,8 +120,6 @@
     </picker>
   </view>
 
-
-
   <view wx:else>
 
     <picker mode="multiSelector" value="{{dateTime1}}" bindchange="changeDateTime1" bindcolumnchange="changeDateTimeColumn1" range="{{dateTimeArray1}}">
@@ -183,10 +131,7 @@
           <image class='' style='' src='../../../images/personal/remindTimeN.png' mode='widthFix' />
         </view>
         <view class='SMSBox-3-3s'>添加提醒时间</view>
-
-        <!-- <view class='SMSBox-5-3s'>{{dateTimeArray1[0][dateTime1[0]]}}-{{dateTimeArray1[1][dateTime1[1]]}}-{{dateTimeArray1[2][dateTime1[2]]}} {{dateTimeArray1[3][dateTime1[3]]}}:{{dateTimeArray1[4][dateTime1[4]]}}</view> -->
-                <view class='SMSBox-5-3s'>{{time}}</view>
-
+          <view class='SMSBox-5-3s'>{{time}}</view>
         <view class='SMSBox-4-3'>
           <image class='' style='' src='../../../images/personal/jian_right.png' mode='widthFix' />
         </view>
@@ -196,13 +141,7 @@
     </picker>
 
   </view>
-
-
-
-
-
-
-  <view style='height:60rpx;'></view>
+<view style='height:60rpx;'></view>
   <!-- 是否开启提醒 -->
   <view class='SMSBox-list'>
     <view class='SMSBox-1'></view>
@@ -216,10 +155,7 @@
   <view class='note-box'>
     <textarea maxlength='50' hidden='{{shareMenu2 || shareMenu}}' placeholder='备注' style='height: 180rpx; width:670rpx;background-color: #fff;margin-left: 30rpx;font-size: 30rpx;padding: 10rpx;letter-spacing: 10rpx;' bindinput='content' value='{{content}}'></textarea>
   </view>
-
-
-
-  <!-- 保存按钮 -->
+<!-- 保存按钮 -->
   <view class='SaveButton-box'>
     <view class='SaveButton' bindtap='newRecord'>保存</view>
   </view>
@@ -233,40 +169,16 @@
   <view class='addBox-choose-content' wx:if='{{shareMenu}}' catchtouchmove="myCatchTouch">
 
     <view class='addBox-choose-content-main  main-heights3'>
-
-      <!-- 按钮叉 -->
-      <!-- <view class='addBox-choose-content-del'>
-        <image class='' style='' bindtap='hideCover' mode='aspectFill' src='../../../images/personal/cha.png'></image>
-      </view> -->
-
-
       <view class='texts-max'>
 
         <view class='texts'>每次遇到中文排版页面时，需要每个段落开头缩进两格。</view>
         <view class='texts'>1.每次遇到中文排版页面时，需要每个段落开头缩进两格。之前傻乎乎的，用程序检测标签来进行中文段落开头的空两格缩进，还在骂HTML怎么就不能像WORD一样，自动识别中文编排格式。直到今天和公司美工在做项目时，才从他那里得知，原来自己是坐在井底看天了，CSS的一个属性就可以搞定所有的段落。废话不多说，看代码：</view>
-
-
       </view>
-
-
-
     </view>
 
   </view>
 
   <!-- 手机号提示信息 -->
-
-
-
-
-
-
-
-
-
-
-
-  <!--  -->
   <view class='addBox-choose-cover' wx:if='{{shareMenu3}}' bindtap='hideCover3'></view>
   <!-- 遮罩层 -->
 
@@ -274,13 +186,6 @@
   <view class='addBox-choose-content' wx:if='{{shareMenu3}}' catchtouchmove="myCatchTouch">
 
     <view class='addBox-choose-content-main  main-heights4'>
-
-      <!-- 按钮叉 -->
-      <!-- <view class='addBox-choose-content-del'>
-        <image class='' style='' bindtap='hideCover' mode='aspectFill' src='../../../images/personal/cha.png'></image>
-      </view> -->
-
-
       <view class='headBox' bindtap='chooseNo'>
         <view class='headBox-lft'>清除已选项</view>
         <view class='headBox-rit'>
@@ -304,18 +209,4 @@
     </view>
 
   </view>
-  <!--  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 </view>

@@ -15,15 +15,6 @@
   </view>
 
 </view>
-
-
-
-
-
-
-
-
-
 <view class='setting-box-options' bindtap='goArticle'>
   <view class='setting-box-options-title'>昵称</view>
 
@@ -72,17 +63,11 @@
   <view class='setting-box-options1-inputs'>
     <view style='font-size: 28rpx; color: #999;'>{{sex}}</view>
   </view>
-
-
-  <view class='setting-box-options1-rit'>
+<view class='setting-box-options1-rit'>
     <view class='setting-box-options1-rit-choose' bindtap='chooseSex' data-choose="2" style='background-color:{{sexIndex == 2?"#ff7382":"#e5e5e5"}};color:{{sexIndex == 2?"white":"#a5a5a5"}};'>女</view>
     <view class='setting-box-options1-rit-choose' bindtap='chooseSex' data-choose="1" style='background-color:{{sexIndex == 1?"#ff7382":"#e5e5e5"}};color:{{sexIndex == 1?"white":"#a5a5a5"}};'>男</view>
   </view>
 </view>
-
-
-
-
 <!-- 角色 -->
 <view>
   <picker bindchange="changeRole" value="{{roleIndex}}" range="{{roleList}}">
@@ -99,9 +84,6 @@
     </view>
   </picker>
 </view>
-
-
-
 <!-- 出生日期 -->
 <view>
   <picker mode="date" value="1990-10-10" start="1900-10-01" end="2017-01-01" bindchange="changeAge">
@@ -118,28 +100,9 @@
     </view>
   </picker>
 </view>
-
-
-
-<!-- 修改密码 -->
-<!-- <view class='setting-box-options' bindtap='goArticle'>
-  <view class='setting-box-options-title'>修改密码</view>
-
-  <view class='setting-box-options-inputs'>
-    <view style='font-size: 28rpx; color: #999;'></view>
-  </view>
-
-  <view class='setting-box-options-rit'>
-    <image class='' style='' src='../../../images/personal/jian_right.png' mode='' />
-  </view>
-</view> -->
-
-
 <!-- 以下为特定弹框 -->
 
 <view wx:if='{{roleIndex == "0" || roleIndex == "1"}}'>
-
-
 <!-- 糖尿病类型 -->
 <view>
   <picker bindchange="changeType" value="{{typeIndex}}" range="{{typeList}}">
@@ -156,9 +119,6 @@
     </view>
   </picker>
 </view>
-
-
-
 <!-- 确诊日期 -->
 <view>
   <picker mode="date" value="2010-10-10" start="1900-10-01" end="2017-01-01" bindchange="changeDiagnosis">
@@ -175,9 +135,6 @@
     </view>
   </picker>
 </view>
-
-
-
 <!-- 起病方式 -->
 <view>
   <picker bindchange="changeWay" value="{{wayIndex}}" range="{{wayList}}">
@@ -209,13 +166,6 @@
     <image class='' style='' src='../../../images/personal/jian_right.png' mode='' />
   </view>
 </view>
-
-
-
-
-
-
-
 <!-- 并发症 -->
 <view class='setting-box-options2 {{arrText.length != 0? "yesHei":"noHei"}}'  bindtap='shareShare'>
   <view class='setting-box-options2-title'>并发症</view>
@@ -252,13 +202,6 @@
 <view class='addBox-choose-content' wx:if='{{shareMenu2}}' catchtouchmove="myCatchTouch">
 
   <view class='addBox-choose-content-main  main-heights2'>
-
-    <!-- 按钮叉 -->
-    <!-- <view class='addBox-choose-content-del'>
-        <image class='' style='' bindtap='hideCover' mode='aspectFill' src='../../../images/personal/cha.png'></image>
-      </view> -->
-
-
     <view class='headBox' bindtap='chooseNo2' >
       <view class='headBox-lft'>取消已选项</view>
       <view class='headBox-rit'>
@@ -282,21 +225,6 @@
   </view>
 
 </view>
-
-<!--  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- 并发症 -->
 <!--  -->
 
@@ -307,14 +235,7 @@
 <view class='addBox-choose-content' wx:if='{{shareMenu}}' catchtouchmove="myCatchTouch">
 
   <view class='addBox-choose-content-main  main-heights2'>
-
-    <!-- 按钮叉 -->
-    <!-- <view class='addBox-choose-content-del'>
-        <image class='' style='' bindtap='hideCover' mode='aspectFill' src='../../../images/personal/cha.png'></image>
-      </view> -->
-
-
-    <view class='headBox' bindtap='chooseNo' >
+   <view class='headBox' bindtap='chooseNo' >
       <view class='headBox-lft'>无其它并发症</view>
       <view class='headBox-rit'>
         <image style='height: 35rpx;width: 35rpx;' mode='' src='{{noChoose? hasSelect : noSelect}}'></image>
@@ -337,17 +258,3 @@
   </view>
 
 </view>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

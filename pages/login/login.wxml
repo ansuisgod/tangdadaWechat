@@ -1,7 +1,7 @@
 <!--pages/login/login.wxml-->
 <view class='section'>
   <!--tab切换-->
- <view class='help' style='background: url("https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1355880457,1520660024&fm=26&gp=0.jpg") no-repeat;'></view>
+  <view class='help'></view>
  <view class='taBar'>
       <view class="left {{currentTabb == 0 ? 'active':''}}" data-current="0" bindtap='clickTabb'>手机号登陆</view>
       <!-- <view class="right {{currentTabb == 2 ?'active':''}}" data-current="2" bindtap='clickTabb'>密码登录</view> -->
@@ -15,12 +15,6 @@
         <input type='number' placeholder='请输入11位手机号码' bindinput='phoneInput' name='phoneNumber'></input>
       </view>
     </view>
-    <!--<view class='rowlist' style='margin-top:20rpx;'>
-      <view class='left'>密码</view>
-      <view class='right'>
-        <input type='password' placeholder='请输入密码' bindblur='pwdBlur' bindinput='pwdInput' name='pwdNumber'></input>
-      </view>
-    </view>-->
     <view class='rowlistcode'>
     <view class='left'>
       <input type='number' placeholder='请输入验证码' bindinput='pwdInput' name="codeNumber"></input>
@@ -39,13 +33,13 @@
     <view class='rowlist' style='margin-top:40rpx;'>
       <view class='left'>+86</view>
       <view class='right'>
-        <input type='number' placeholder='请输入11位手机号码' bindblur='pwdLoginUserBlur' bindinput='pwdLoginPhoneInput' ></input>
+        <input type='number' placeholder='请输入11位手机号码' bindblur='pwdLoginUserBlur' bindinput='pwdLoginPhoneInput'></input>
       </view>
     </view>
     <view class='rowlist' style='margin-top:40rpx;'>
       <view class='left'>密码</view>
       <view class='right'>
-        <input type='password' placeholder='请输入6~20位密码' bindblur='pwdLoginPwdBlur' bindinput='pwdLoginPwdInput' ></input>
+        <input type='password' placeholder='请输入6~20位密码' bindblur='pwdLoginPwdBlur' bindinput='pwdLoginPwdInput'></input>
       </view>
     </view>
     <view class='loginbtn'>

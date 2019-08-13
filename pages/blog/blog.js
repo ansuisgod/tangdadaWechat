@@ -24,6 +24,17 @@ Page({
       navH: app.globalData.navHeight,
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
+    /**
+     * 开始从本地缓存中查找sessionKey 和 appendid
+     * 注释: 如果找到了这个sessionKey值则说明已经注册的用户，就向跳转到首页
+     *       如果没找到这个sessionKey值则说明没有注册，就跳转到注册的页面
+     */
+    var sessinKey = wx.getStorageSync('sessionKey') || [];
+    if (sessinKey == '') {
+      wx.navigateTo({
+        url: '/pages/login/login'
+      });
+    }
     //判断手机是否连接网络
     if (app.globalData.netWorkType == '4g' || app.globalData.netWorkType == 'wifi' || app.globalData.netWorkType == '3g') {
       this.getBlogData();
@@ -128,10 +139,6 @@ Page({
           newList = datas;
           that.setData({
             conArr: datas,
-          });
-        } else if (res.data.result.code == '4000') {//如果出现用户会话过期就跳转到登录页面让用户重新登录
-          wx.navigateTo({
-            url: '/pages/login/login'
           });
         } else {
           abstac.promptBox(res.data.result.message);

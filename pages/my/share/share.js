@@ -397,11 +397,11 @@ listInviteList:'',
     var qrcode_width = 90;    //绘制的二维码宽度
     var qrcode_heigth = 90;   //绘制的二维码高度
     //绘制的二维码在画布上的位置
-    // var qrcode_x = (this.data.ImgWidth - qrcode_width) / 2;
-    // var qrcode_y = this.data.Imgheigght - 120;   //绘制的二维码在画布上的位置  
+    var qrcode_x = (this.data.ImgWidth - qrcode_width) / 2;
+    var qrcode_y = this.data.Imgheigght - 120;   //绘制的二维码在画布上的位置  
 
-    var qrcode_x = 65;
-    var qrcode_y = this.data.Imgheigght - 130;   //绘制的二维码在画布上的位置
+    // var qrcode_x = 65;
+    // var qrcode_y = this.data.Imgheigght - 130;   //绘制的二维码在画布上的位置
 
     ctx.save();
 
@@ -510,6 +510,7 @@ listInviteList:'',
 
   cancelImg() {    //取消已绘制的卡片
     var that = this;
+    wx.hideLoading();
     that.setData({
       shareImg: false,
     })

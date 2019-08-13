@@ -16,6 +16,7 @@ Page({
   onLoad: function(options) {
     var that = this;
     that.setData({
+      platform: app.globalData.platform,
       wxSessionKey: wx.getStorageSync('sessionKey')
     });
     
@@ -110,10 +111,15 @@ Page({
   },
 
   goRemindSet: function () { //跳转入提醒设置
+    // wx.navigateTo({
+    //   url: '/pages/my/Remind_set/Remind_set',
+    // })
+    let platform = abstac.mobilePhoneModels(this.data.platform);//手机型号
     wx.navigateTo({
-      url: '/pages/my/Remind_set/Remind_set',
+      url: '/pages/my/DownApp/DownApp?status=' + platform,
     })
   },
+
 
 
   

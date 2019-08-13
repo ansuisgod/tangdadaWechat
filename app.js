@@ -9,7 +9,7 @@ App({
      * 开始从本地缓存中查找sessionKey 和 appendid
      * 注释: 如果找到了这个sessionKey值则说明已经注册的用户，就向跳转到首页
      *       如果没找到这个sessionKey值则说明没有注册，就跳转到注册的页面
-     */
+     
     var sessinKey = wx.getStorageSync('sessionKey') || [];
     if (sessinKey == ''){
       console.log('sessinKey=' + sessinKey);
@@ -22,7 +22,7 @@ App({
       wx.switchTab({
         url: '/pages/index/index'
       })
-    }
+    }*/
     //获取手机的网络状态
     wx.getNetworkType({
       success: function(res) {
@@ -189,6 +189,9 @@ App({
     contactInformationInterfaceAddress: httpAdress + '/im/api/v1/store/exchange_item.json',//商城兑换商品填写提交用户兑换的地址信息接口
     shareInterfaceAddress: httpAdress + '/im/api/v1/topics/share_topic.json',//分享之后调用后台接口
     cancelAttentionInterfaceAddress: httpAdress + '/im/api/v1/friends/cancel_follow.json',//取消关注后台接口
+    signTimeListInterfaceAddress: httpAdress + '/im/api/v1/store/list_signin_item.json',//查询签到的时间列表的接口
+    siginStausInterfaceAddress: httpAdress + '/im/api/v1/tasks/list_task_status.json',//查询是否已经签到的接口
+    siginsInterfaceAddress: httpAdress + '/im/api/v1/tasks/execute_task.json',//签到的接口
 
 
     // li

@@ -14,7 +14,10 @@
 }
 
 .motionRecords-box{}
-
+.floating-button{
+  width: 90rpx;
+  height: 90rpx;
+}
 
 .motionRecords-box-head{
   height: 30rpx;

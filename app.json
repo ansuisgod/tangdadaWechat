@@ -7,6 +7,8 @@
     "pages/index/expertsReply/expertsReply",
     "pages/index/askList/askList",
     "pages/index/indexOutHtmlPage/indexOutHtmlPage",
+    "pages/index/signIn/signIn",
+    "pages/index/sportsRules/sportsRules",
     "pages/blog/blog",
     "pages/blog/release/release",
     "pages/blog/releaseTag/releaseTag",
@@ -78,7 +80,8 @@
         "pages/my/ModifyMyInfo/ModifyMyInfo",
         "pages/my/headImage/headImage",
         "pages/my/doctorText/doctorText",
-        "pages/my/doctorImg/doctorImg"
+        "pages/my/doctorImg/doctorImg",
+        "pages/my/DownApp/DownApp"
         
     
   ],

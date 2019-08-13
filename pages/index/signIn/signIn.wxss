@@ -1,0 +1,154 @@
+/* pages/index/signIn/signIn.wxss */
+.topBox{
+  width: 100%;
+  height: auto;
+}
+.topBox .signStatus{
+  color: #000;
+  font-size: 38rpx;
+  line-height: 90rpx;
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+}
+.topBox .signInfo{
+  color: #616161;
+  font-size: 32rpx;
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+}
+.topBox .signBtn{
+  width: 100%;
+  height: 100rpx;
+}
+.topBox .signBtn .noStaus{
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  background: #ff7382;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 35rpx;
+}
+.topBox .signBtn .yesStaus{
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  background: #e5e5e5;
+  text-align: center;
+  font-size: 28rpx;
+  border-radius: 35rpx;
+}
+.topBox .ruleBox{
+  width: 100%;
+  height: 140rpx;
+  font-size: 28rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #ff7382;
+}
+.listBox{
+  width: 100%;
+  height: auto;
+}
+.listBox .rowBox{
+  width: 100%;
+  height: auto;
+  padding: 30rpx 0 20rpx 0;
+  border-bottom: 1px solid #dcdcdc;
+}
+.listBox .rowBox .contentBox{
+  width: 90%;
+  height: 250rpx;
+  margin: 0 auto;
+  display: flex;
+}
+.listBox .rowBox .contentBox .leftBox{
+  width: 40%;
+  flex-direction: row;
+}
+.listBox .rowBox .contentBox .leftBox image{
+  width: 200rpx;
+  height: 250rpx;
+}
+.listBox .rowBox .contentBox .rightBox{
+  width: 60%;
+  flex-direction: row;
+  position: relative;
+}
+.listBox .rowBox .contentBox .rightBox .titleBox{
+  height: 60rpx;
+  color: #000;
+  font-size: 38rpx;
+}
+.listBox .rowBox .contentBox .rightBox .signBoxs{
+  color: #000;
+  font-size: 34rpx;
+}
+.listBox .rowBox .contentBox .rightBox .yes{
+  width: 140rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #ff7382;
+  font-size: 30rpx;
+  color: #fff;
+  border-radius: 35rpx;
+  text-align: center;
+  position: absolute;
+  top: 130rpx;
+  left: 0;
+}
+.listBox .rowBox .contentBox .rightBox .no{
+  width: 140rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #e5e5e5;
+  font-size: 30rpx;
+  color: #fff;
+  border-radius: 35rpx;
+  text-align: center;
+  position: absolute;
+  top: 130rpx;
+  left: 0;
+}
+
+ .fillBox{
+  height: 100rpx;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+
+}
+.fillBox .bgline{
+  position: absolute;
+  top: 37rpx;
+  left: 0;
+  width: 1125rpx;
+  height: 1rpx;
+  z-index: -8999;
+  background: url('http://tangapp-file.tangdadatech.com/file/2019/08/13/09/29/25/20190813092925497-2136780086.png');
+}
+.scroll-box{
+  width: 80rpx;
+  height: 75rpx;
+  display: inline-block;
+  margin: 0 0 0 50rpx;
+}
+
+.scroll-box-img{
+  width: 80rpx;
+  height: 75rpx;
+  position: relative;
+  z-index: -10;
+}
+.scroll-box-text{
+  position: absolute;
+  font-size: 34rpx;
+  left: 20rpx;
+  top: 15rpx;
+  z-index: 50;
+}

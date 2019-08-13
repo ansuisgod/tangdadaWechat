@@ -18,7 +18,10 @@
   right: 45rpx;
   bottom: 100rpx;
 }
-
+.floating-button{
+  width: 90rpx;
+  height: 90rpx;
+}
 
 
 .motionRecords-box{}

@@ -30,6 +30,7 @@ Page({
 
     category: '', //时间段分类id
     lock: false, //防止多次点击按钮
+    record: '',  //是否显示提交健康记录加分提示
   },
 
   /**
@@ -66,11 +67,46 @@ Page({
 
     that.foodInfo()
     that.getNowFormatDate()
+    that.userTaskList()
   },
 
 
 
+  /**
+ * @desc:用户完成任务列表的接口
+ * @date:2019.06.18
+ * @auther:li
+ */
+  userTaskList: function () {
+    var that = this;
+    abstac.sms_Interface(app.publicVariable.userTaskInterfaceAddress,
+      { wx_session_key: this.data.wxSessionKey },
+      function (res) {//查询成功
+        //打印日志
+        console.log("****************用户任务列表的接口***************");
+        console.log(res);
+        if (res.data.result.code == '2000') {
 
+          let record = [];
+          let lists = res.data.data.tasks;
+          for (let u = 0; u < lists.length; u++) {
+            var listsId = lists[u];
+            if (listsId.task_id == 15) {
+              record.push(listsId)
+            }
+
+          }
+          that.setData({
+            record: record,
+          });
+        } else {
+          abstac.promptBox(res.data.result.message);
+        }
+      },
+      function (error) {//查询失败
+        console.log(error);
+      });
+  },
 
 
   getNowFormatDate: function () {//获取当前时间
@@ -459,17 +495,38 @@ Page({
             lock: true,
           })
 
-          that.setData({
-          });
-          abstac.promptBox('添加成功');
-          wx.redirectTo({
-            url: '/pages/my/diet_records/diet_records'
-          })
-          try {
-            wx.removeStorageSync('foodsList')
-          } catch (e) {
-            // Do something when catch error
+          if (that.data.record == '') {
+            wx.showToast({
+              title: '新增成功',
+              icon: 'success',
+              duration: 500
+            })
+          } else if (Number(that.data.record[0].times) == 5) {
+            wx.showToast({
+              title: '新增成功',
+              icon: 'success',
+              duration: 500
+            })
+          } else {
+            wx.showToast({
+              title: '添加健康记录成功，积分加1！',
+              icon: 'none',
+              duration: 500
+            })
           }
+
+          setTimeout(function () {
+            wx.redirectTo({
+              url: '/pages/my/diet_records/diet_records'
+            })
+          }, 600)
+
+          // try {
+          //   wx.removeStorageSync('foodsList')
+          // } catch (e) {
+          //   // Do something when catch error
+          // }
+          wx.setStorageSync('foodsList', [])
         } else {
           abstac.promptBox(res.data.result.message);
         }

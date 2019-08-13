@@ -1,0 +1,45 @@
+<!--pages/index/signIn/signIn.wxml-->
+<!-- 上部分区域 -->
+<view class="topBox">
+  <view class="signStatus">请签到</view>
+  <view class="signInfo">你已连续签到{{times}}天啦，加油</view>
+  <view class="signBtn">
+    <button wx:if="{{singinStaus == 0}}" class="noStaus" bindtap="sigin">请签到</button> 
+    <button wx:if="{{singinStaus == 1}}" class="yesStaus">已签到</button> 
+  </view>
+  <view class='fillBox'>
+    <scroll-view scroll-x="true" style="width: auto;overflow:hidden;">
+      <block wx:for="{{newObj}}" wx:key='property'>
+        <view class='scroll-box'>
+          <view class='scroll-box-img'>
+            <image style='height:75rpx;width:80rpx;display: flex;' src='{{item.src}}' />
+            <view class='scroll-box-text'>
+              <view wx:if='{{item.state == true}}' style='color:#fff;'>{{item.id}}</view>
+              <view wx:if='{{item.state == false}}' style='color:#ff7382;'>{{item.id}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="bgline"></view>
+</view>
+<view class="ruleBox" bindtap="sportsRules">签到活动规则</view>
+</view>
+<!-- 下面商品列表部分区域 -->
+<view class="listBox">
+  <view class="rowBox" wx:for='{{insertDatas}}' wx:key='property'>
+    <view class="contentBox">
+      <view class="leftBox">
+        <image mode='aspectFill'src="{{item.pic}}">
+        </image>
+      </view>
+      <view class="rightBox">
+        <view class="titleBox">{{item.name}}</view>
+        <view class="signBoxs">还差 <text style="color:#ff7382;">{{50-times}}</text>次签到可以领取</view>
+        <button wx:if="{{times == 50}}" class="yes" bindtap="toReceive" data-goodsid="{{item.id}}">领取</button>
+        <button wx:if="{{times < 50}}" class="no">领取</button>
+        <button wx:if="{{times == 0}}" class="no">领取</button>
+      </view>
+    </view>
+  </view>
+</view>

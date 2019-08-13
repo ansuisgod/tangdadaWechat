@@ -1,4 +1,6 @@
 // pages/my/setting/setting.js
+var abstac = require('../../../commonmethod/abstract.js'),
+  app = getApp();
 Page({
 
   /**
@@ -14,8 +16,19 @@ Page({
   onLoad: function (options) {
 
   },
-
-
+  LogOut: function() {
+    try {
+      // wx.clearStorageSync()
+      wx.removeStorageSync('sessionKey');
+    } catch (e) {
+      return
+      // Do something when catch error
+    }
+    abstac.promptBox('操作成功！');
+    wx.reLaunch({
+      url: '/pages/login/login'
+    })
+  },
   // 以下為跳转业务
   goHelp: function () {  //跳转入帮助
     wx.navigateTo({

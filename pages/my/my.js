@@ -20,6 +20,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    /**
+     * 开始从本地缓存中查找sessionKey 和 appendid
+     * 注释: 如果找到了这个sessionKey值则说明已经注册的用户，就向跳转到首页
+     *       如果没找到这个sessionKey值则说明没有注册，就跳转到注册的页面
+     */
+    var sessinKey = wx.getStorageSync('sessionKey') || [];
+    if (sessinKey == '') {
+      wx.navigateTo({
+        url: '/pages/login/login'
+      });
+    }
     var that = this;
     that.setData({
       platform: app.globalData.platform,
@@ -161,15 +172,7 @@ Page({
     wx.navigateTo({
       url: '/pages/my/ModifyMyInfo/ModifyMyInfo',
     })
-
-    // wx.navigateTo({  //cs
-    //   url: '/pages/my/doctorText/doctorText',
-    // })
   },
-
-  
-  
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

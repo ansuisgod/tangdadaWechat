@@ -11,8 +11,8 @@ Page({
     consinName:'',//收货人姓名
     consinPhone: '',//收货人电话
     consinAdress: '',//收货人地址
-    subBackgroundColor:'#e5e5e5',
-    subFontColor:'#a5a5a5'
+    subBackgroundColor:'#fd7380',
+    subFontColor:'#fff'
   },
   /**
    * 生命周期函数--监听页面加载
@@ -81,18 +81,12 @@ Page({
       goodsLength = '1.0';
     //判断用户的积分是不是大于商品的积分，如果是就进入兑换页面，如果小于商品的积分就提示信息。
     if (this.data.userPoints >  e.currentTarget.dataset.goodspoint){
-      if (!(/^1[34578]\d{9}$/.test(consinPhone)) || consinName == '' || consinAdress == '') {
-        abstac.promptBox("请检查重新填写");
-        this.setData({
-          subBackgroundColor: '#e5e5e5',
-          subFontColor: '#a5a5a5'
-        });
+      if (!(/^1[34578]\d{9}$/.test(consinPhone))) {
+        abstac.promptBox("请检查电话号码是否正确！");
+      } else if (consinName == '' || consinAdress == ''){
+        abstac.promptBox("请检查姓名、地址是否为空！");
       } else {
         //调用接口在提交地址信息
-        this.setData({
-          subBackgroundColor: '#fd7380',
-          subFontColor: '#fff'
-        });
         abstac.sms_Interface(app.publicVariable.contactInformationInterfaceAddress,
           { name: that.data.goodsDeInfo.name, receive_address: consinAdress, discount: goodsLength, id: this.data.aGoodsId, contact_method: consinPhone, contact_person: consinName, wx_session_key: this.data.wxSessionKey },
           function (res) {//接口调用成功

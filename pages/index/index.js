@@ -41,6 +41,8 @@ Page({
       wx.navigateTo({
         url: '/pages/login/login'
       });
+    }else{
+      this.autoSign();//调用自动签到接口
     }
     var mtabW = app.globalData.mtabW / 5;
     this.setData({
@@ -50,6 +52,29 @@ Page({
       pages:'1'
     })
     this.initButton();
+  },
+  /**
+   * @desc:自动签到接口
+   * @param：wx_session_key： 微信cide值，id：80固定写死了
+   */
+  autoSign:function(){
+    var that = this;
+    abstac.sms_Interface(app.publicVariable.siginsInterfaceAddress,
+      { id: '1', wx_session_key: wx.getStorageSync('sessionKey')},
+      function (res) {
+        console.log("**********自动签到的接口**********");
+        console.log(res);
+        if (res.data.result.code == '2000') {
+          if (res.data.ext_data == undefined){}else{
+            abstac.promptBox("完成签到任务,获取2积分");
+          }
+        } else {
+          abstac.promptBox(res.data.result.message);
+        }
+      },
+      function (error) {
+        console.log(error);
+      });
   },
   /**
    * @desc:获取数据列表信息

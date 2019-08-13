@@ -42,7 +42,7 @@
 
 
 <view class='maskBox-z' bindtap='hideCover'></view>
-
+    <view class='maskBox-z' bindtap='hideCover'></view>
     <view class='maskBox-lft'  bindtap='goSMS'>
       <view class='maskBox-lft-img'>
         <image class='' style='' src='../../../images/personal/remindPhone_note.png' mode='' />
@@ -53,12 +53,12 @@
     <view class='maskBox-z' bindtap='hideCover'></view>
 
 
-    <view class='maskBox-rit'>
+    <!-- <view class='maskBox-rit'>
       <view class='maskBox-rit-img'>
         <image class='' style='' src='../../../images/personal/remindPhone.png' mode='' />
       </view>
       <view class='maskBox-rit-text'>微信提醒</view>
-    </view>
+    </view> -->
 
 <view class='maskBox-z' bindtap='hideCover'></view>
 
